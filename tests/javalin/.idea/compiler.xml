@@ -6,8 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="javalin_test_dojo_hepia" />
-        <module name="0" />
+        <module name="javalin_test_webserver" />
       </profile>
     </annotationProcessing>
   </component>
