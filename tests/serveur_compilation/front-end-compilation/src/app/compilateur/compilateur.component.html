@@ -1,0 +1,13 @@
+<select (change)="update($event)">
+  <option value="help">?</option>
+  <option value="python">Python 3</option>
+  <option value="java">Java</option>
+</select>
+<br/>
+<br/>
+
+<textarea ref-code_input rows="20" cols="100">{{placeholer}}
+</textarea>
+<br/>
+<button *ngIf="display_button" (click)="compile(code_input.value)" class="code">compile</button>
+<p style="white-space: pre-wrap">{{result}}</p>
