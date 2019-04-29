@@ -6,8 +6,8 @@
 <br/>
 <br/>
 
-<textarea ref-code_input rows="20" cols="100">{{placeholer}}
+<textarea  rows="20" cols="100" [(ngModel)]="placeholer" >
 </textarea>
 <br/>
-<button *ngIf="display_button" (click)="compile(code_input.value)" class="code">compile</button>
+<button *ngIf="display_button" (click)="compile(placeholer)" class="code">compile</button>
 <p style="white-space: pre-wrap">{{result}}</p>

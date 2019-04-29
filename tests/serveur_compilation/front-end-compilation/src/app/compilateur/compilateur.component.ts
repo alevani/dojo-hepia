@@ -24,6 +24,7 @@ export class CompilateurComponent implements OnInit {
     this.type = event.target.value;
     this.display_button = true;
     if (this.type === 'python') {
+
       this.placeholer = 'def avg(marks):\n' +
         '  assert len(marks) != 0\n' +
         '  return sum(marks)/len(marks)\n' +
