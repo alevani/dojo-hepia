@@ -7,7 +7,7 @@ import org.apache.commons.lang.StringEscapeUtils;
 
 
 public class app {
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
 
         Javalin app = Javalin.create().enableCorsForAllOrigins().start(7000);
 
@@ -26,7 +26,7 @@ public class app {
             String code = StringEscapeUtils.escapeJava(ctx.queryParams("code").get(0));
 
             wr.writeBytes("{\"language\":\""+type+"\",\"stream\":\""+code+"\"}");
-            //wr.writeBytes("{\"language\":\"python\",\"stream\":\"def avg(marks):\\n   assert len(marks) != 0\\n   return sum(marks)/len(marks)\\nmark1 = []\\nprint('Average of mark1:',avg(mark1))\"}");
+
             wr.close();
 
             BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
