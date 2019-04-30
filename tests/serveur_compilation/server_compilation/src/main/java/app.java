@@ -55,7 +55,7 @@ public class app {
             /**************************/
 
             String line, output = "", error = "";
-            BufferedReader stdoutReader = new BufferedReader(new InputStreamReader(cmdProc.getInputStream()));
+            BufferedReader stdoutReaderl = new BufferedReader(new InputStreamReader(cmdProc.getInputStream()));
             while ((line = stdoutReader.readLine()) != null)
                 output += line + "\n";
 
