@@ -1,11 +1,12 @@
 textarea {
   background-color: rgba(43, 47, 57, 1);
-  border: 0;
+  border: 2px solid rgba(44, 62, 80, 1.0);
   color: white;
   margin: 20px;
   border-radius: 12px;
   padding: 10px;
   resize: none;
+  outline: none;
 }
 
 button {
@@ -28,14 +29,14 @@ button:hover {
 }
 
 .success {
-  border: 3px rgba(39, 174, 96,1.0) solid;
-  background-color: rgba(39, 174, 96,0.2);
+  border: 3px rgba(39, 174, 96, 1.0) solid;
+  background-color: rgba(39, 174, 96, 0.2);
 }
 
 select {
   padding-left: 10px;
   background-color: rgba(43, 47, 57, 1);
-  border: 0;
+  border: 2px solid white;
   color: white;
   margin: 20px;
   border-radius: 12px;

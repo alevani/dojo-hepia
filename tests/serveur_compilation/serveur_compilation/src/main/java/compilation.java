@@ -7,13 +7,14 @@ public class compilation {
     public HashMap<String, Object> execute_kata(JSONObject input) {
 
 
-        String filename = "", filename_test="", cmd = "", line, output = "", error = "";
+        String filename = "", filename_test="todeleteifitstayslikethis", cmd = "", line, output = "", error = "";
 
         switch (input.get("language").toString()) {
             case "python":
-                filename = "sample.py";
-                filename_test = "assert.py";
-                cmd = "python3 " + filename_test;
+                filename = "share_docker_file/sample.py";
+                filename_test = "share_docker_file/assert.py";
+                //  cmd = "python3 " + filename_test;
+                cmd = "docker run --rm --mount type=bind,source=/Users/freak/Desktop/dojo-hepia/tests/serveur_compilation/serveur_compilation/share_docker_file,dst=/env/ hey:1.1 python3 assert.py";
                 break;
             case "java":
                 filename = "app.java";
