@@ -7,12 +7,13 @@ public class compilation {
     public HashMap<String, Object> execute_kata(JSONObject input) {
 
 
-        String filename = "", cmd = "", line, output = "", error = "";
+        String filename = "", filename_test="", cmd = "", line, output = "", error = "";
 
         switch (input.get("language").toString()) {
             case "python":
                 filename = "sample.py";
-                cmd = "python " + filename;
+                filename_test = "assert.py";
+                cmd = "python3 " + filename_test;
                 break;
             case "java":
                 filename = "app.java";
@@ -28,8 +29,16 @@ public class compilation {
             e.printStackTrace();
         }
 
+        try(PrintWriter writer = new PrintWriter(filename_test,"UTF-8")){
+            writer.println(input.get("assert"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
 
-        long start,elapsed = 0;
+
+        long start, elapsed = 0;
         Process cmdProc = null;
 
         try {
@@ -74,6 +83,9 @@ public class compilation {
 
         // For delete purpose, create a File object also targeting sample.py
         File file = new File(filename);
+        file.delete();
+
+        file = new File(filename_test);
         file.delete();
 
         return json;

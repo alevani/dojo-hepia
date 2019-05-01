@@ -1,0 +1,43 @@
+textarea {
+  background-color: rgba(43, 47, 57, 1);
+  border: 0;
+  color: white;
+  margin: 20px;
+  border-radius: 12px;
+  padding: 10px;
+  resize: none;
+}
+
+button {
+  background-color: rgba(43, 47, 57, 1);
+  border: 0;
+  color: white;
+  margin: 20px;
+  border-radius: 12px;
+  padding: 10px;
+  outline: none;
+}
+
+button:hover {
+  background-color: rgba(52, 73, 94, 1.0);
+}
+
+.error {
+  border: 3px rgba(192, 57, 43, 0.8) solid;
+  background-color: rgba(192, 57, 43, 0.2);
+}
+
+.success {
+  border: 3px rgba(39, 174, 96,1.0) solid;
+  background-color: rgba(39, 174, 96,0.2);
+}
+
+select {
+  padding-left: 10px;
+  background-color: rgba(43, 47, 57, 1);
+  border: 0;
+  color: white;
+  margin: 20px;
+  border-radius: 12px;
+
+}

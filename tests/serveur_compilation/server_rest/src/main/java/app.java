@@ -24,8 +24,9 @@ public class app {
             DataOutputStream wr = new DataOutputStream (connection.getOutputStream());
             String type = StringEscapeUtils.escapeJava(ctx.queryParams("language").get(0));
             String code = StringEscapeUtils.escapeJava(ctx.queryParams("code").get(0));
+            String vassert = StringEscapeUtils.escapeJava(ctx.queryParams("test").get(0));
 
-            wr.writeBytes("{\"language\":\""+type+"\",\"stream\":\""+code+"\"}");
+            wr.writeBytes("{\"language\":\""+type+"\",\"stream\":\""+code+"\",\"assert\":\""+vassert+"\"}");
 
             wr.close();
 

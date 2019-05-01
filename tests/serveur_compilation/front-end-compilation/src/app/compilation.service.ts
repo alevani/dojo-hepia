@@ -5,7 +5,7 @@ import * as $ from 'jquery';
   providedIn: 'root'
 })
 export class CompilationService {
-  compile(type: string, stream: string): string {
+  compile(type: string, stream: string, assert: string): string {
     let response = '';
 
     $.ajax({
@@ -14,7 +14,8 @@ export class CompilationService {
       async: false,
       data: {
         language: type,
-        code: stream
+        code: stream,
+        test: assert
       },
       success(data) {
         response = data;

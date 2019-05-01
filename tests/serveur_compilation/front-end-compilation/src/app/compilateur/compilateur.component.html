@@ -4,10 +4,19 @@
   <option value="java">Java</option>
 </select>
 <br/>
-<br/>
 
-<textarea  rows="20" cols="100" [(ngModel)]="placeholer" >
+<br/>
+<textarea disabled rows="20" cols="100" [(ngModel)]="help">
+</textarea>
+<textarea rows="20" cols="100" [(ngModel)]="placeholer">
 </textarea>
 <br/>
-<button *ngIf="display_button" (click)="compile(placeholer)" class="code">compile</button>
-<p style="white-space: pre-wrap">{{result}}</p>
+<textarea disabled rows="20" cols="100" [(ngModel)]="assert">
+</textarea>
+<textarea [ngClass]="{'success':status === 0,'error':status === 1,'':status === 2}" style="white-space: pre-wrap" disabled rows="20" cols="100"
+          [(ngModel)]="result">
+</textarea>
+<br/>
+<button *ngIf="display_button" (click)="compile(placeholer,assert)" class="code">compile</button>
+<!--<p style="white-space: pre-wrap">{{result}}</p>-->
+
