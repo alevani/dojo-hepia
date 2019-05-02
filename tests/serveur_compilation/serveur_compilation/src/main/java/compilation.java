@@ -17,8 +17,10 @@ public class compilation {
                 cmd = "docker run --rm --mount type=bind,source=/Users/freak/Desktop/dojo-hepia/tests/serveur_compilation/serveur_compilation/share_docker_file,dst=/env/ hey:1.1 python3 assert.py";
                 break;
             case "java":
-                filename = "app.java";
-                cmd = "java " + filename;
+                filename = "share_docker_file/kata.java";
+                filename_test = "share_docker_file/Main.java";
+                cmd = "docker run --rm --mount type=bind,source=/Users/freak/Desktop/dojo-hepia/tests/serveur_compilation/serveur_compilation/share_docker_file,dst=/env/ java:1.2 export CLASSPATH=$CLASSPATH:junit-4.10.jar && javac -classpath ${CLASSPATH} Main.java kata.java && java Main";
+                //cmd = "java " + filename_test;
                 break;
         }
 
@@ -88,6 +90,15 @@ public class compilation {
 
         file = new File(filename_test);
         file.delete();
+
+        switch (input.get("language").toString()){
+            case "java":
+                file = new File("Main.class");
+                file.delete();
+                file = new File("kata.class");
+                file.delete();
+                break;
+        }
 
         return json;
     }

@@ -1,0 +1,8 @@
+ace-editor{
+  width:500px;
+  height: 300px;
+  border-radius: 12px;
+  border: 2px solid rgba(44, 62, 80, 1.0);
+  margin: 20px;
+  padding: 10px;
+}

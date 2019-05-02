@@ -1,25 +1,21 @@
 <select (change)="update($event)">
-  <option value="help">?</option>
+  <option value="plain_text">?</option>
   <option value="python">Python 3</option>
   <option value="java">Java</option>
 </select>
 <br/>
 
 <br/>
-<textarea disabled rows="20" cols="100" [(ngModel)]="help">
-</textarea>
+  <textarea disabled [(ngModel)]="help"></textarea>
+  <app-ace [code]="code" [type]="type" (new)="OnNewEvent($event)"></app-ace><br>
+  <app-ace-assert [code]="assert" [type]="type"></app-ace-assert>
+  <textarea [ngClass]="{'success':status === 0,'error':status === 1,'':status === 2}" style="white-space: pre-wrap" disabled [(ngModel)]="result"></textarea>
 
-<pre><code [highlight]="code"></code></pre>
 
-<!--<textarea rows="20" cols="100" [(ngModel)]="placeholer">
-</textarea>-->
+
+
+
 <br/>
-<textarea disabled rows="20" cols="100" [(ngModel)]="assert">
-</textarea>
-<textarea [ngClass]="{'success':status === 0,'error':status === 1,'':status === 2}" style="white-space: pre-wrap" disabled rows="20" cols="100"
-          [(ngModel)]="result">
-</textarea>
-<br/>
-<button *ngIf="display_button" (click)="compile(placeholer,assert)" class="code">compile</button>
+<button *ngIf="display_button" (click)="compile(code,assert)" class="code">compile</button>
 
 

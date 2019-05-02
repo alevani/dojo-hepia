@@ -1,27 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HighlightModule } from 'ngx-highlightjs';
 import { AppComponent } from './app.component';
 import { CompilateurComponent } from './compilateur/compilateur.component';
 import {FormsModule} from '@angular/forms';
-
-import python from 'highlight.js/lib/languages/python';
-
-export function hljsLanguages() {
-  return [
-    {name: 'python', func: python}
-  ];
-}
+import { AceEditorModule } from 'ng2-ace-editor';
+import { AceComponent } from './ace/ace.component';
+import { AceAssertComponent } from './ace-assert/ace-assert.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CompilateurComponent
+    CompilateurComponent,
+    AceComponent,
+    AceAssertComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HighlightModule.forRoot({ languages: hljsLanguages })
+    AceEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

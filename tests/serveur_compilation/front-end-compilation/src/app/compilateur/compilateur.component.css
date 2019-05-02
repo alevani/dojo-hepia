@@ -7,6 +7,13 @@ textarea {
   padding: 10px;
   resize: none;
   outline: none;
+  height: 300px;
+  width: 500px;
+}
+
+* {
+  font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+  display: inline-block
 }
 
 button {
