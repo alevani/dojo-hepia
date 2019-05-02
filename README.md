@@ -11,10 +11,12 @@
 | Monji         | Elève            |
 | Kata          | Exercice         |
 
-## C'est quoi ?
-Dojo Hepia est un site propre d'HEPIA, qui à pour but de proposer une plateforme simple de publication d'entrainement constitués de kata. Le but est d'encourager les professeurs à centraliser leurs exercices (de code) sur une seule et même plateforme.
+## But du projet
+Dojo hepia, est une outil d’apprentissage de programmation en ligne. Cette plateforme, spécialement construite pour Hepia, permet aux professeurs de publier des programmes sur des points importants de la programmation (tel que les listes, les pointeurs ou encore les tableaux), et de les scinder en une série d’exercice.
 
-Dojo Hepia permet de créer des programmes constitués de kata.
+Dojo hepia se voit donc doté d’un outil de programmation en ligne qui permet à un  élève de de tester son raisonnement en direct, et de valider un exercice de cette façon.
+
+Le but de cette plateforme est de proposer un outil pédagogique en ligne, simple d’utilisation.
 
 ## Pourquoi ?
 Parler de la valeur pédago ajoutée et de la plateforme de code et de compilation online
