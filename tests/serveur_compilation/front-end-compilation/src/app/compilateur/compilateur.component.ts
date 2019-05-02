@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CompilationService} from '../compilation.service';
 import * as $ from 'jquery';
+import {HighlightResult} from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-compilateur',
@@ -14,8 +15,6 @@ export class CompilateurComponent implements OnInit {
 
   result = 'no code compiled';
 
-  placeholer = 'Welcome to the compiler, please choose a language to begin !';
-
   type = 'help';
 
   assert = 'Assert that will be tested with the chosen language';
@@ -25,17 +24,15 @@ export class CompilateurComponent implements OnInit {
   help = '';
 
   status = 2;
-  error = {
-    'background-color': 'blue',
-  }
 
+  code = '';
 
   update(event: any): void {
     this.type = event.target.value;
     this.display_button = true;
     if (this.type === 'python') {
 
-      this.placeholer = 'def easyline(n):';
+      this.code = 'def easyline(n):';
       this.help = 'Le but ici est de jouer avec les tableaux en python. dans cet exercice, il faut multiplier tous les éléments d\'un tableau par 2.\neasyline([2,4]) donnera par exemple [4,8]';
       this.assert = 'from assertpy import assert_that\n' +
         'import sample as m\n' +
@@ -44,7 +41,7 @@ export class CompilateurComponent implements OnInit {
         'assert_that(m.easyline([45,53,12])).is_equal_to([90,106,24])\n' +
         'assert_that(m.easyline([3])).is_equal_to([6])';
     } else if (this.type === 'java') {
-      this.placeholer = 'public class HelloWorld {\n' +
+      this.code = 'public class HelloWorld {\n' +
         '\n' +
         '    public static void main(String[] args) {\n' +
         '        // Prints "Hello, World" to the terminal window.\n' +
@@ -54,7 +51,6 @@ export class CompilateurComponent implements OnInit {
         '}';
     } else {
       this.display_button = false;
-      this.placeholer = 'Welcome to the compiler, please choose a language to begin !';
     }
   }
 

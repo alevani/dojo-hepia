@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="09" />
         <module name="server_rest_new" />
+        <module name="09" />
       </profile>
     </annotationProcessing>
   </component>

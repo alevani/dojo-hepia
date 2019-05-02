@@ -2,12 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6a1f2e5-4f60-4227-82bb-83eb10fa94a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front-end-compilation/src/app/compilateur/compilateur.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../front-end-compilation/src/app/compilateur/compilateur.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JWT/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JWT/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JWT/src/main/java/MockUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JWT/src/main/java/app.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../angular/routing-test/src/app/nav/nav.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../angular/routing-test/src/app/nav/nav.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../angular/routing-test/src/app/nav/nav.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../angular/routing-test/src/app/nav/nav.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front-end-compilation/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front-end-compilation/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front-end-compilation/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front-end-compilation/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front-end-compilation/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front-end-compilation/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front-end-compilation/src/app/compilateur/compilateur.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../front-end-compilation/src/app/compilateur/compilateur.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front-end-compilation/src/app/compilateur/compilateur.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front-end-compilation/src/app/compilateur/compilateur.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../serveur_compilation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../serveur_compilation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../serveur_compilation/src/main/java/compilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../serveur_compilation/src/main/java/compilation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../serveur_compilation/target/classes/compilation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../serveur_compilation/target/classes/compilation.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,20 +32,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="45" column="10" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
+            <state relative-caret-position="450">
+              <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/app.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+            <state relative-caret-position="420">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
             </state>
           </provider>
         </entry>
@@ -67,10 +77,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1121" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="1920" />
+    <option name="width" value="954" />
+    <option name="height" value="1200" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -80,9 +90,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -150,16 +160,20 @@
       <workItem from="1556699423305" duration="678000" />
       <workItem from="1556700805455" duration="927000" />
       <workItem from="1556726276244" duration="564000" />
+      <workItem from="1556780852399" duration="717000" />
+      <workItem from="1556782481100" duration="1657000" />
+      <workItem from="1556798510990" duration="385000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2295000" />
+    <option name="totallyTimeSpent" value="5054000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1121" extended-state="0" />
+    <frame x="1920" y="0" width="1920" height="1200" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25772098" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2603834" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -168,7 +182,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32944608" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -196,15 +210,15 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="10" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
+        <state relative-caret-position="450">
+          <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/app.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        <state relative-caret-position="420">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>

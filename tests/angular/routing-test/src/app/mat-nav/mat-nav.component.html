@@ -1,0 +1,34 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav class="sidenav" fixedInViewport="true"
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="!(isHandset$ | async)">
+    <mat-toolbar>DOJO HEPIA</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="/moc">New program</a>
+      <a mat-list-item href="/moc">ME</a>
+      <a mat-list-item href="/moc">anyway</a>
+      <a mat-list-item href="/moc">MOC</a>
+      <a mat-list-item href="/moc">MOC</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <!--<mat-toolbar color="primary">
+
+      <span>routing-test</span>
+    </mat-toolbar>-->
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+<!--    <button
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      (click)="drawer.toggle()"
+      *ngIf="isHandset$ | async">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      awdadwawd
+    </button>-->
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
