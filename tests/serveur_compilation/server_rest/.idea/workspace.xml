@@ -2,19 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6a1f2e5-4f60-4227-82bb-83eb10fa94a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../front-end-compilation/src/app/ace/ace.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front-end-compilation/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front-end-compilation/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front-end-compilation/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front-end-compilation/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front-end-compilation/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../front-end-compilation/src/app/app.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front-end-compilation/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front-end-compilation/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front-end-compilation/src/app/compilateur/compilateur.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../front-end-compilation/src/app/compilateur/compilateur.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front-end-compilation/src/app/compilateur/compilateur.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../front-end-compilation/src/app/compilateur/compilateur.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front-end-compilation/src/app/compilateur/compilateur.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front-end-compilation/src/app/compilateur/compilateur.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../serveur_compilation/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../serveur_compilation/src/main/java/HostCompilation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front-end-compilation/src/app/ace-assert/ace-assert.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front-end-compilation/src/app/ace-assert/ace-assert.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front-end-compilation/src/app/ace/ace.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front-end-compilation/src/app/ace/ace.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../serveur_compilation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../serveur_compilation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../serveur_compilation/docker/dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../serveur_compilation/share_docker_file/test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../serveur_compilation/src/main/java/compilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../serveur_compilation/src/main/java/compilation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../serveur_compilation/share_docker_file/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../serveur_compilation/share_docker_file/kata.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../serveur_compilation/src/main/java/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/../serveur_compilation/src/main/java/app.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../serveur_compilation/src/main/java/compilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../serveur_compilation/src/main/java/DockerCompilation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../serveur_compilation/target/classes/compilation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../serveur_compilation/target/classes/compilation.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -30,20 +30,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+              <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/app.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="387">
+              <caret line="32" column="112" lean-forward="true" selection-start-line="32" selection-start-column="112" selection-end-line="32" selection-end-column="112" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -75,11 +78,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="x" value="180" />
-    <option name="y" value="112" />
-    <option name="width" value="1080" />
-    <option name="height" value="676" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="y" value="23" />
+    <option name="width" value="1920" />
+    <option name="height" value="1121" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -105,6 +107,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -166,14 +169,16 @@
       <workItem from="1556827416534" duration="171000" />
       <workItem from="1556827744217" duration="333000" />
       <workItem from="1556829690737" duration="985000" />
+      <workItem from="1556864771569" duration="1439000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7523000" />
+    <option name="totallyTimeSpent" value="8962000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <frame x="0" y="23" width="1920" height="1121" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.2603834" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -184,7 +189,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2993197" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -192,9 +197,9 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3283186" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32944608" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -213,14 +218,17 @@
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/app.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="387">
+          <caret line="32" column="112" lean-forward="true" selection-start-line="32" selection-start-column="112" selection-end-line="32" selection-end-column="112" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

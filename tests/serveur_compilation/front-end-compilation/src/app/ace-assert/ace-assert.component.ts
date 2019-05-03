@@ -18,16 +18,17 @@ export class AceAssertComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.editor.setTheme('dracula');
     this.editor.getEditor().setOptions({
-      enableBasicAutocompletion: true
+      enableBasicAutocompletion: true,
+      highlightActiveLine : false
     });
-
+/*
     this.editor.getEditor().commands.addCommand({
       name: 'showOtherCompletions',
       bindKey: 'Ctrl-.',
       exec(editor) {
 
       }
-    });
+    });*/
   }
 
 }

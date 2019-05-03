@@ -23,10 +23,10 @@ export class AceComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.editor.setTheme('dracula');
-
+/*
     this.editor.getEditor().setOptions({
-      enableBasicAutocompletion: true
-    });
+
+    });*/
 
 /*
     this.editor.getEditor().commands.addCommand({

@@ -7,7 +7,7 @@ public class app {
         Javalin app = Javalin.create().enableCorsForAllOrigins().start(6999);
 
         app.post("/", ctx -> {
-            compilation cpl = new compilation();
+            DockerCompilation cpl = new DockerCompilation();
             ctx.json(cpl.execute_kata(new JSONObject(ctx.body())));
         });
     }

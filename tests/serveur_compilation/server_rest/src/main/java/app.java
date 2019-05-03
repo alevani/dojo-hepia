@@ -1,6 +1,7 @@
 import io.javalin.Javalin;
 
 import java.io.*;
+import java.net.ConnectException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import org.apache.commons.lang.StringEscapeUtils;
@@ -13,24 +14,38 @@ public class app {
 
         app.get("/run/", ctx -> {
 
-
-            URL compilator = new URL("http://localhost:6999");
-            HttpURLConnection connection = (HttpURLConnection) compilator.openConnection();
-
-            connection.setRequestMethod("POST");
-            connection.setDoOutput(true);
+            HttpURLConnection connection = null;
+            try{
+                URL compilator = new URL("http://localhost:6999");
+                connection = (HttpURLConnection) compilator.openConnection();
+                connection.setRequestMethod("POST");
+                connection.setDoOutput(true);
+            }catch (ConnectException e){
+                e.printStackTrace();
+            }
 
             //Send request
-            DataOutputStream wr = new DataOutputStream (connection.getOutputStream());
             String type = StringEscapeUtils.escapeJava(ctx.queryParams("language").get(0));
             String code = StringEscapeUtils.escapeJava(ctx.queryParams("code").get(0));
             String vassert = StringEscapeUtils.escapeJava(ctx.queryParams("test").get(0));
 
-            wr.writeBytes("{\"language\":\""+type+"\",\"stream\":\""+code+"\",\"assert\":\""+vassert+"\"}");
+            try(DataOutputStream wr = new DataOutputStream (connection.getOutputStream())){
+                wr.writeBytes("{\"language\":\""+type+"\",\"stream\":\""+code+"\",\"assert\":\""+vassert+"\"}");
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }catch (ConnectException e){
+                e.printStackTrace();
+            }
 
-            wr.close();
+            try(BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()))){
+                String response = in.readLine();
+                ctx.result(response);
+            } catch(IOException e){
+                e.printStackTrace();
+            }
 
-            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
             //String inputLine;
             //while ((inputLine = in.readLine()) != null)
@@ -38,10 +53,10 @@ public class app {
 
             // For now, we can assume we will only need to fetch one response since the compilation
             // server does send one json object with all the required data.
-            String response = in.readLine();
 
-            ctx.result(response);
-            in.close();
+
+
+
 
         });
     }

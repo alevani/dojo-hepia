@@ -3,7 +3,7 @@ import org.json.JSONObject;
 import java.io.*;
 import java.util.HashMap;
 
-public class compilation {
+public class DockerCompilation {
     public HashMap<String, Object> execute_kata(JSONObject input) {
 
 
@@ -93,9 +93,9 @@ public class compilation {
 
         switch (input.get("language").toString()){
             case "java":
-                file = new File("Main.class");
+                file = new File("share_docker_file/Main.class");
                 file.delete();
-                file = new File("kata.class");
+                file = new File("share_docker_file/kata.class");
                 file.delete();
                 break;
         }
