@@ -2,6 +2,7 @@ import {AfterViewInit, Component, EventEmitter, Input, Output, ViewChild} from '
 import 'brace/index';
 import 'brace/theme/dracula';
 import 'brace/mode/python';
+import 'brace/mode/java';
 import 'brace/mode/plain_text';
 
 @Component({

@@ -41,7 +41,7 @@ export class CompilateurComponent implements OnInit {
         'assert_that(m.easyline([45,53,12])).is_equal_to([90,106,24])\n' +
         'assert_that(m.easyline([3])).is_equal_to([6])';
     } else if (this.type === 'java') {
-      this.code = 'public class kata {\n' +
+      this.code = 'public class Kata {\n' +
         '\n' +
         '    public static int[] bytwo(int[] input) {\n' +
         '        int[] output = new int[input.length];\n' +
@@ -58,8 +58,8 @@ export class CompilateurComponent implements OnInit {
         'public class Main {\n' +
         '\n' +
         '    public static void main(String[] args) {\n' +
-        '        assertArrayEquals(kata.bytwo(new int[]{2, 3, 5}), new int[]{4, 6, 10});\n' +
-        '        assertArrayEquals(kata.bytwo(new int[]{12, 34, 52}), new int[]{24, 68, 104});\n' +
+        '        assertArrayEquals(Kata.bytwo(new int[]{2, 3, 5}), new int[]{4, 6, 10});\n' +
+        '        assertArrayEquals(Kata.bytwo(new int[]{12, 34, 52}), new int[]{24, 68, 104});\n' +
         '    }\n' +
         '}';
     } else {

@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6a1f2e5-4f60-4227-82bb-83eb10fa94a5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../serveur_compilation/share_docker_file/java_test.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front-end-compilation/src/app/ace-assert/ace-assert.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front-end-compilation/src/app/ace-assert/ace-assert.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front-end-compilation/src/app/ace/ace.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front-end-compilation/src/app/ace/ace.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front-end-compilation/src/app/compilateur/compilateur.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front-end-compilation/src/app/compilateur/compilateur.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../serveur_compilation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../serveur_compilation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../serveur_compilation/src/main/java/HostCompilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../serveur_compilation/src/main/java/HostCompilation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../serveur_compilation/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/../serveur_compilation/target/classes/app.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../serveur_compilation/target/classes/compilation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../serveur_compilation/docker/java/dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../serveur_compilation/docker/java/dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../serveur_compilation/src/main/java/DockerCompilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../serveur_compilation/src/main/java/DockerCompilation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../serveur_compilation/target/classes/DockerCompilation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../serveur_compilation/target/classes/DockerCompilation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../serveur_compilation/target/classes/HostCompilation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../serveur_compilation/target/classes/HostCompilation.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -32,7 +38,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/app.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="162">
               <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -87,7 +93,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="1121" />
@@ -163,16 +169,15 @@
       <updated>1556178762532</updated>
       <workItem from="1556178766124" duration="8507000" />
       <workItem from="1556214856871" duration="3137000" />
-      <workItem from="1556882486866" duration="772000" />
+      <workItem from="1556882486866" duration="2779000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12487000" />
+    <option name="totallyTimeSpent" value="14494000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1121" extended-state="1" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1920" height="1121" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25559106" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -287,7 +292,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/app.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="162">
           <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />

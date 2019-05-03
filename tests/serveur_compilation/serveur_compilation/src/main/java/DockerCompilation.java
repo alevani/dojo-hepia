@@ -19,7 +19,7 @@ public class DockerCompilation {
             case "java":
                 filename = "share_docker_file/kata.java";
                 filename_test = "share_docker_file/Main.java";
-                cmd = "docker run --rm --mount type=bind,source=/Users/freak/Desktop/dojo-hepia/tests/serveur_compilation/serveur_compilation/share_docker_file,dst=/env/ java:1.2 export CLASSPATH=$CLASSPATH:junit-4.10.jar && javac -classpath ${CLASSPATH} Main.java kata.java && java Main";
+                cmd = "docker run --rm --mount type=bind,source=/Users/freak/Desktop/dojo-hepia/tests/serveur_compilation/serveur_compilation/share_docker_file,dst=/env/ java:4.0 ./java_test.sh";
                 //cmd = "java " + filename_test;
                 break;
         }

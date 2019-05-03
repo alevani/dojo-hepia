@@ -3,6 +3,7 @@ import {AfterViewInit, Component, Input, ViewChild} from '@angular/core';
 import 'brace/index';
 import 'brace/theme/dracula';
 import 'brace/mode/python';
+import 'brace/mode/java';
 import 'brace/mode/plain_text';
 
 @Component({
