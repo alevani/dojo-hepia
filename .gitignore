@@ -2,3 +2,7 @@
 \.DS_Store
 
 doc/
+
+tests/serveur_compilation/server_rest/\.idea/
+
+tests/serveur_compilation/serveur_compilation/\.idea/
