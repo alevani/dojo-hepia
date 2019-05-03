@@ -10,17 +10,12 @@ export class ExoPythonSampleComponent implements OnInit {
   constructor() {
   }
 
-  exoTitle = 'python';
-  exoSenseiName = 'Orestis Pileas Malaspinas';
-  exoDescription = 'blahbalh';
-
-  kataPython: Kata = {exoTitle,this.exoSenseName,exoDescription};
-
   ngOnInit() {
   }
 
 }
 
+/*
 export class Kata {
   private exoTitle: string;
   private exoSenseName: string;
@@ -31,4 +26,4 @@ export class Kata {
     this.exoSenseName = senseiName;
     this.exoDescription = desc;
   }
-}
+}*/

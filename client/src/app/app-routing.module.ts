@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {ExoPythonSampleComponent} from './exo-python-sample/exo-python-sample.component';
+import {ProgramDisplayerComponent} from './program-displayer/program-displayer.component';
 
 const routes: Routes = [
-  {path: 'python_sample', component: ExoPythonSampleComponent}
+  {path: 'program_test', component: ProgramDisplayerComponent}
 ];
 
 @NgModule({

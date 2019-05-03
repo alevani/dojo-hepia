@@ -1,0 +1,47 @@
+* {
+  color: rgba(236, 240, 241, 1);
+}
+
+.language {
+  color: rgba(230, 126, 34, 1);
+  float: right;
+}
+
+.language:hover {
+  color: rgba(211, 84, 0, 1.0);
+}
+
+.container {
+  padding-top: 15px;
+  margin-top: auto;
+
+}
+
+a.sensei {
+  color: #6c757d !important;
+}
+
+a.sensei:hover {
+  color: red;
+}
+
+a {
+  text-decoration: none;
+}
+
+.tag {
+  background-color: rgba(99, 110, 114, 0.4);
+  color: rgba(9, 132, 227, 1.0);
+  padding: 3px;
+  margin-right: 3px;
+}
+
+.nbkata {
+  font-size: 15px;
+  color: rgba(46, 204, 113, 1);
+  float: right;
+}
+
+.card {
+  background-color: rgba(43, 47, 57, 1);
+}

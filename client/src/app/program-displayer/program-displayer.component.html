@@ -1,0 +1,19 @@
+<span *ngFor="let program of programs">
+
+  <div class="container">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+    <a href="title">    <h5 class="card-title">{{program.title}}</h5></a>
+        <h6 class="card-subtitle mb-2 text-muted"><a class="sensei" href="">{{program.sensei}} </a><a href=""><span class="language">{{program.language}}</span></a></h6>
+      <br/>
+      <p class="card-text">{{program.description}}</p>
+      <span *ngFor="let tag of program.tag">
+      <span class="tag">{{tag}}</span>
+      </span>
+      <span class="nbkata">#{{program.nbKata}}</span>
+      </div>
+
+    </div>
+
+</div>
+</span>

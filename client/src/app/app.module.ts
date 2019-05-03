@@ -12,6 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from '@angular/router';
 import { ExoPythonSampleComponent } from './exo-python-sample/exo-python-sample.component';
 import { KataDisplayerComponent } from './kata-displayer/kata-displayer.component';
+import { ProgramDisplayerComponent } from './program-displayer/program-displayer.component';
+
 
 @NgModule({
   declarations: [
@@ -20,9 +22,11 @@ import { KataDisplayerComponent } from './kata-displayer/kata-displayer.componen
     TerminalAssertComponent,
     MainLeftSideNavComponent,
     ExoPythonSampleComponent,
-    KataDisplayerComponent
+    KataDisplayerComponent,
+    ProgramDisplayerComponent
   ],
   imports: [
+
     BrowserModule,
     BrowserAnimationsModule,
     LayoutModule,
