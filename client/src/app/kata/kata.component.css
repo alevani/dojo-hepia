@@ -1,0 +1,69 @@
+textarea {
+  background-color: rgba(43, 47, 57, 1);
+  border: 2px solid rgba(44, 62, 80, 1.0);
+  color: white;
+  font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+
+  border-radius: 6px;
+
+  resize: none;
+  outline: none;
+  height: 300px;
+  width: 500px;
+  padding: 10px;
+
+}
+
+.language {
+  color: rgba(230, 126, 34, 1);
+}
+
+.title {
+  font-size: 20px;
+  color:rgba(236,240,241,1);
+}
+.subtitle{
+
+  font-size:15px;
+  color:#6c757d !important;
+}
+.title a{
+  text-decoration: none;
+  color:#6c757d !important;
+  font-size: 20px;
+}
+
+.title a:hover{
+  color:rgba(67, 81, 86,1.0);
+}
+
+* {
+  font-family: "Helvetica Neue";
+  display: inline-block
+}
+
+button {
+  background-color: rgba(43, 47, 57, 1);
+  border: 0;
+  color: white;
+  outline: none;
+  font-familiy: Arial;
+  float:right;
+  padding: 10px;
+}
+
+button:hover {
+  background-color: rgba(52, 73, 94, 1.0);
+}
+
+.error {
+  border: 3px rgba(192, 57, 43, 0.8) solid;
+  background-color: rgba(192, 57, 43, 0.2);
+}
+
+.success {
+  border: 3px rgba(39, 174, 96, 1.0) solid;
+  background-color: rgba(39, 174, 96, 0.2);
+}
+
+

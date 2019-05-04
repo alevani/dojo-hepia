@@ -1,7 +1,3 @@
-interface Kata {
-  [key: string]: number;
-}
-
 export class Program {
   id: number;
   title: string;
@@ -9,6 +5,5 @@ export class Program {
   sensei: string;
   nbKata: number;
   description: string;
-  kata: Kata;
   tag: string[];
 }

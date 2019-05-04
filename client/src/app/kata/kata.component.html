@@ -1,0 +1,25 @@
+<div class="d-flex justify-content-center" style="margin-top:2%">
+  <div class="d-flex flex-column">
+    <div class="p-2 title">{{kata.title}} <a routerLink="/kata-displayer/0/{{kata.title}}/{{kata.language}}/{{kata.sensei}}">- {{kata.programTitle}}</a>
+      <br><span class="subtitle">{{kata.sensei}} <span class="language"> {{kata.language}}</span></span></div>
+    <div class="p-2 "><textarea disabled style="text-align: justify">{{kata.rules}}</textarea>
+      <app-terminal-code [code]="kata.canva" [type]="kata.language" (new)="OnNewEvent($event)"></app-terminal-code>
+    </div>
+
+    <div class="p-2">
+      <app-terminal-assert [code]="kata.assert" [type]="kata.language"></app-terminal-assert>
+      <textarea [ngClass]="{'success':status === 0,'error':status === 1,'':status === 2}" style="white-space: pre-wrap"
+                disabled>{{result}}</textarea>
+    </div>
+
+    <div class="p-2">
+
+      <button (click)="compile(kata.language,kata.canva,kata.assert)" class="code">TRY MY SOLUTION</button>
+      <button (click)="compile(kata.language,kata.canva,kata.assert)" style="margin-right: 10px" class="code">SURRENDER</button>
+    </div>
+  </div>
+
+
+</div>
+<!--[(ngModel)]="result"-->
+

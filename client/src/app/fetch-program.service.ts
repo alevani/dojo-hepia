@@ -8,7 +8,8 @@ import {PROGRAMS} from './program-displayer/programMock';
 export class FetchProgramService {
 
   getPrograms(sensei: string): Program[] {
-    return PROGRAMS.filter(x => x.sensei === sensei);
+    // return PROGRAMS.filter(x => x.sensei === sensei);
+    return PROGRAMS;
   }
 
   constructor() {

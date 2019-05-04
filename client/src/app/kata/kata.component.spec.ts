@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ExoPythonSampleComponent } from './exo-python-sample.component';
+import { KataComponent } from './kata.component';
 
-describe('ExoPythonSampleComponent', () => {
-  let component: ExoPythonSampleComponent;
-  let fixture: ComponentFixture<ExoPythonSampleComponent>;
+describe('KataComponent', () => {
+  let component: KataComponent;
+  let fixture: ComponentFixture<KataComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExoPythonSampleComponent ]
+      declarations: [ KataComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ExoPythonSampleComponent);
+    fixture = TestBed.createComponent(KataComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

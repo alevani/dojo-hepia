@@ -1,0 +1,25 @@
+
+.language {
+  color: rgba(230, 126, 34, 1);
+}
+
+.title {
+  font-size: 20px;
+  color:rgba(236,240,241,1);
+}
+.subtitle{
+
+  font-size:15px;
+  color:#6c757d !important;
+}
+
+* {
+  font-family: "Helvetica Neue";
+  display: inline-block
+}
+.card {
+  background-color: rgba(43, 47, 57, 1);
+}
+a {
+  text-decoration: none;
+}

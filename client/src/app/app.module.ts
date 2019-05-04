@@ -10,9 +10,10 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from '@angular/router';
-import { ExoPythonSampleComponent } from './exo-python-sample/exo-python-sample.component';
 import { KataDisplayerComponent } from './kata-displayer/kata-displayer.component';
 import { ProgramDisplayerComponent } from './program-displayer/program-displayer.component';
+import { KataComponent } from './kata/kata.component';
+import {AceEditorModule} from 'ng2-ace-editor';
 
 
 @NgModule({
@@ -21,9 +22,9 @@ import { ProgramDisplayerComponent } from './program-displayer/program-displayer
     TerminalCodeComponent,
     TerminalAssertComponent,
     MainLeftSideNavComponent,
-    ExoPythonSampleComponent,
     KataDisplayerComponent,
-    ProgramDisplayerComponent
+    ProgramDisplayerComponent,
+    KataComponent
   ],
   imports: [
 
@@ -36,7 +37,8 @@ import { ProgramDisplayerComponent } from './program-displayer/program-displayer
     MatIconModule,
     MatListModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    AceEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

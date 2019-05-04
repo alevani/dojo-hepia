@@ -1,3 +1,25 @@
-<p>
-  kata-displayer works!
-</p>
+<div class="container">
+  <span class="title">{{programTitle}}
+    <br>
+    <span class="subtitle">{{programSensei}} <span class="language"> {{programLanguage}}</span>
+  </span>
+  </span>
+
+  <div class="d-flex justify-content-start" style="margin-top:2%">
+    <div class="d-flex flex-row">
+      <span *ngFor="let kata of katas">
+        <div class="p-2">
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><a class="title" routerLink="/kata/{{kata.id}}">{{kata.title}}</a></h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{kata.difficulty}}</h6>
+          <br/>
+          <br/>
+          <p class="card-text">{{kata.description}}</p>
+          </div>
+        </div>
+        </div>
+      </span>
+    </div>
+  </div>
+</div>
