@@ -16,7 +16,7 @@ export const PROGRAMS: Program[] = [
     sensei: 'Stéphane Malandin',
     nbKata: 2,
     description: 'I/O in java',
-    tag: ['I/O', 'writable']
+    tag: ['I/O', 'writeable']
   }
 ];
 

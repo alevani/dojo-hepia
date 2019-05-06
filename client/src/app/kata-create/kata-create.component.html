@@ -1,0 +1,31 @@
+<div class="d-flex justify-content-center" style="margin-top:2%">
+  <div class="d-flex flex-column">
+    <div class="p-2"><input type="text" placeholder=" Some title.." [(ngModel)]="title"/></div>
+    <div class="p-2"><textarea [(ngModel)]="rules"></textarea></div>
+    <div class="p-2">
+      <app-terminal-code [code]="code" [type]="language" (new)="OnNewEventSolution($event)"></app-terminal-code>
+      <app-terminal-code style="margin-left: 20px;" [code]="assert" [type]="language"
+                         (new)="OnNewEventAssert($event)"></app-terminal-code>
+    </div>
+    <div class="p-2">
+      <app-terminal-code [code]="canva" [type]="language" (new)="OnNewEventCanva($event)"></app-terminal-code>
+      <textarea class="result" [ngClass]="{'success':status === 0,'error':status === 1,'':status === 2}"
+                style="white-space: pre-wrap" disabled>{{result}}</textarea>
+    </div>
+    <div class="p-2">
+      Afficher le code d'assertion dans le kata :
+      <select (change)="UpdateChoice($event)">
+        <option value="true">OUI</option>
+        <option value="false">NON</option>
+      </select>
+      <br/>
+      Nombre d'essai avant le débloquage de la solution :
+      <input type="number" value="0" [(ngModel)]="numberOfAttempt"/>
+      <input type="button" value="ESSAYER"/>
+      <input (click)="publish()" type="button" style="margin-left:10px" value="PUBLIER"/>
+
+    </div>
+  </div>
+</div>
+
+

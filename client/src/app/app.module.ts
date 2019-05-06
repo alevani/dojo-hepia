@@ -14,6 +14,9 @@ import { KataDisplayerComponent } from './kata-displayer/kata-displayer.componen
 import { ProgramDisplayerComponent } from './program-displayer/program-displayer.component';
 import { KataComponent } from './kata/kata.component';
 import {AceEditorModule} from 'ng2-ace-editor';
+import { KataCreateComponent } from './kata-create/kata-create.component';
+import { ProgramCreateComponent } from './program-create/program-create.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -24,7 +27,9 @@ import {AceEditorModule} from 'ng2-ace-editor';
     MainLeftSideNavComponent,
     KataDisplayerComponent,
     ProgramDisplayerComponent,
-    KataComponent
+    KataComponent,
+    KataCreateComponent,
+    ProgramCreateComponent
   ],
   imports: [
 
@@ -38,7 +43,8 @@ import {AceEditorModule} from 'ng2-ace-editor';
     MatListModule,
     AppRoutingModule,
     RouterModule,
-    AceEditorModule
+    AceEditorModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

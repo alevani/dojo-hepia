@@ -4,6 +4,7 @@ export class KataShowCase {
   difficulty: string;
   idProgram: number;
   description: string;
+  status: string;
 }
 
 

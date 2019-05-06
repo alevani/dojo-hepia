@@ -1,5 +1,6 @@
 import {Kata} from './kata';
 
+// TODO un kata n'a pas besoin de programtitile, ca devrait être passé par la classe d'en dessus (idem pour sensei)
 export const KATAS: Kata[] = [{
   id: 0,
   language: 'python',

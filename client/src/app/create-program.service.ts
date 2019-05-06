@@ -1,15 +1,18 @@
 import {Injectable} from '@angular/core';
 import * as $ from 'jquery';
+import {stringify} from 'querystring';
+import {Kata} from './kata/kata';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CompilationService {
-  compilationServer(obj: string): string {
+export class CreateProgramService {
+
+  createProgram(obj: string): string {
     let response = '';
 
     $.ajax({
-      url: 'http://localhost:7000/run/',
+      url: 'http://localhost:7000/program/create',
       type: 'POST',
       async: false,
       data: obj,

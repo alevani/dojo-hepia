@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-center" style="margin-top:2%">
+  <div class="d-flex flex-column">
+    <fieldset>
+      <legend>Nouveau programme</legend>
+    <div class="p-2"><label>Titre</label><input placeholder=" Un titre.." type="text" [(ngModel)]="programTitle" /></div>
+      <div class="p-2"><label>Langage cible</label><select (change)="update($event)"><option value="python">python</option><option value="java">java</option></select></div>
+    <div class="p-2"><label>Description du programme</label><textarea [(ngModel)]="programDescr" placeholder=" Une description.."></textarea></div>
+    <div class="p-2"><label>Tags</label><input type="text" [(ngModel)]="programTags" placeholder=" arrays,writeable,.."/></div>
+    <div class="p-2">
+
+        <input type="button" (click)="createProgram(false)" value="Créer"/>
+        <input type="button" (click)="createProgram(true)" style="float:right" value="Créer + Nouveau Kata"/>
+    </div>
+    </fieldset>
+  </div>
+</div>

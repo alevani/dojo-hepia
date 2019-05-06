@@ -1,0 +1,62 @@
+* {
+  display: inline-block;
+  font-family: "Helvetica Neue";
+}
+
+textarea.result {
+  background-color: rgba(43, 47, 57, 1);
+  border: 2px solid rgba(44, 62, 80, 1.0);
+  color: white;
+  font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+
+  border-radius: 6px;
+
+  resize: none;
+  outline: none;
+  height: 300px;
+  width: 500px;
+  padding: 10px;
+  margin-left: 20px;
+}
+
+textarea {
+  background-color: rgba(43, 47, 57, 1);
+  border: 2px solid rgba(44, 62, 80, 1.0);
+  color: white;
+  width: 100%;
+  height: 200px;
+
+  border-radius: 6px;
+
+  font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+  outline: none;
+  padding: 10px;
+}
+
+input[type=button] {
+  background-color: rgba(63, 67, 77, 1);
+  float: right;
+  border-radius: 7px;
+  color: rgba(236, 240, 241, 1.0);
+  padding: .7em;
+}
+
+:focus {
+  outline: none;
+}
+
+
+select {
+
+  padding: .6em 1.4em .5em .8em;
+  color: rgba(236, 240, 241, 1.0);
+  background-color: rgba(43, 47, 57, 1);
+  max-width: 20%;
+  width: 20%;
+  margin: 0;
+  border: 1px solid rgba(63, 67, 77, 1);
+  border-radius: 7px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}

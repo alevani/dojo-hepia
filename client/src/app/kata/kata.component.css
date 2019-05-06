@@ -37,6 +37,12 @@ textarea {
   color:rgba(67, 81, 86,1.0);
 }
 
+.container{
+  width: 70%;
+  background: blue;
+  height: 200px;
+}
+
 * {
   font-family: "Helvetica Neue";
   display: inline-block

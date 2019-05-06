@@ -8,4 +8,5 @@ export class Kata {
   canva: string;
   rules: string;
   assert: string;
+
 }

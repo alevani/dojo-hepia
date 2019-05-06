@@ -36,7 +36,12 @@ export class KataComponent implements OnInit {
   }
 
   compile(language: string, stream: string, assert: string): void {
-    const response = $.parseJSON(this.compilationService.compilationServer(language, stream, assert));
+    const response = $.parseJSON(this.compilationService.compilationServer(JSON.stringify({
+      language: this.kata.language,
+      stream: stream,
+      assert: assert
+    })));
+
 
     if (response.exit === 0) {
       this.status = 0;

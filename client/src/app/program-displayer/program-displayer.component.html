@@ -1,14 +1,16 @@
-<div class="d-flex flex-row">
+<div class="d-flex justify-content-center" style="margin-top:2%">
+  <div class="d-flex flex-column">
+    <div class="p-2" style="width:200px"></div>
+    <div class="p-2">Liste de programme</div>
 
+    <div class="p-2" >
   <span *ngFor="let program of programs">
-    <div class="p-2">
-
       <div class="card" style="width: 18rem;">
         <div class="card-body">
-      <a routerLink="/kata-displayer/{{program.id}}/{{program.title}}/{{program.language}}/{{program.sensei}}">    <h5
-        class="card-title">{{program.title}}</h5></a>
-          <h6 class="card-subtitle mb-2 text-muted"><a class="sensei" href="">{{program.sensei}} </a><a href=""><span
-            class="language">{{program.language}}</span></a></h6>
+          <a routerLink="/kata-displayer/{{program.id}}/{{program.title}}/{{program.language}}/{{program.sensei}}">
+            <h5 class="card-title">{{program.title}}</h5></a>
+          <h6 class="card-subtitle mb-2 text-muted"><a class="sensei" href="">{{program.sensei}} </a>
+            <a href=""><span class="language">{{program.language}}</span></a></h6>
         <br/>
         <p class="card-text">{{program.description}}</p>
         <span *ngFor="let tag of program.tag">
@@ -16,8 +18,13 @@
         </span>
         <span class="nbkata">#{{program.nbKata}}</span>
         </div>
-
       </div>
-    </div>
   </span>
+    </div>
+  </div>
 </div>
+
+
+
+
+
