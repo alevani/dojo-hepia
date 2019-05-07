@@ -7,7 +7,7 @@ import {FetchKataShowCaseService} from '../fetch-kata-show-case.service';
 @Component({
   selector: 'app-kata-displayer',
   templateUrl: './kata-displayer.component.html',
-  styleUrls: ['./kata-displayer.component.css']
+  styleUrls: ['./kata-displayer.component.scss']
 })
 export class KataDisplayerComponent implements OnInit {
 

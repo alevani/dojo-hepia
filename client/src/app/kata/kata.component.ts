@@ -9,7 +9,7 @@ import {CompilationService} from '../compilation.service';
 @Component({
   selector: 'app-kata',
   templateUrl: './kata.component.html',
-  styleUrls: ['./kata.component.css']
+  styleUrls: ['./kata.component.scss']
 })
 export class KataComponent implements OnInit {
 

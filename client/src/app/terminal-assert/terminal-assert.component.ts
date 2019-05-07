@@ -8,7 +8,7 @@ import 'brace/mode/plain_text';
 @Component({
   selector: 'app-terminal-assert',
   templateUrl: './terminal-assert.component.html',
-  styleUrls: ['./terminal-assert.component.css']
+  styleUrls: ['./terminal-assert.component.scss']
 })
 export class TerminalAssertComponent implements AfterViewInit {
 

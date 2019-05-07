@@ -4,7 +4,7 @@
     <div class="p-2"><input type="text" placeholder=" Some title.." [(ngModel)]="title"/></div>
     <div class="p-2"><textarea class="rules" [(ngModel)]="rules"></textarea></div>
     <div class="p-2">
-      <app-terminal-code [code]="code" [type]="language" (new)="OnNewEventSolution($event)"></app-terminal-code>
+      <app-terminal-code [code]="solution" [type]="language" (new)="OnNewEventSolution($event)"></app-terminal-code>
       <app-terminal-code style="margin-left: 20px;" [code]="assert" [type]="language"
                          (new)="OnNewEventAssert($event)"></app-terminal-code>
     </div>
@@ -14,16 +14,17 @@
                 style="white-space: pre-wrap" disabled>{{result}}</textarea>
     </div>
     <div class="p-2">
-      Afficher le code d'assertion dans le kata :
+
+      Display assert box while doing kata ?
       <select (change)="UpdateChoice($event)">
-        <option value="true">OUI</option>
-        <option value="false">NON</option>
+        <option value="true">Yes</option>
+        <option value="false">No</option>
       </select>
       <br/>
-      Nombre d'essai avant le débloquage de la solution :
+      Number of tests before unlocking the complete solution
       <input type="number" value="0" [(ngModel)]="numberOfAttempt"/>
-      <input (click)="try()" type="button" value="ESSAYER"/>
-      <input (click)="publish()" type="button" style="margin-left:10px" value="PUBLIER"/>
+      <input (click)="try()" type="button" value="TRY MY SOLUTION"/>
+      <input (click)="publish()" type="button" style="margin-left:10px" value="PUBLISH"/>
 
     </div>
   </div>

@@ -12,7 +12,9 @@ const routerOptions: ExtraOptions = {
 };
 
 const routes: Routes = [
-  {path: 'program_test', component: ProgramDisplayerComponent},
+  { path: '', redirectTo: '/programs', pathMatch: 'full' },
+
+  {path: 'programs', component: ProgramDisplayerComponent},
   {path: 'kata-displayer/:id/:title/:language/:sensei', component: KataDisplayerComponent},
   {path: 'kata/:prgtitle/:sensei/:prid/:id', component: KataComponent},
   {path: 'program_create', component: ProgramCreateComponent},

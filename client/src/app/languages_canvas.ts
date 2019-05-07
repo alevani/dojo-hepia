@@ -1,10 +1,28 @@
 export class Canva {
   id: string;
   assertCanva: string;
+  codeCanva: string;
 }
 
 
 // TODO un kata n'a pas besoin de programtitile, ca devrait être passé par la classe d'en dessus (idem pour sensei)
 export const LANG: Canva[] = [
-  {id: 'python', assertCanva: 'from assertpy import assert_that\nimport sample as m'}
+  {
+    id: 'python', assertCanva: 'from assertpy import assert_that\nimport sample as m' + '\n\n' +
+      '# Example : assert_that(m.yourfunction(someValues)).is_equal_to(targetedValues)', codeCanva: '# Write your code here'
+  },
+  {
+    id: 'java', assertCanva: 'import static org.junit.Assert.*;\n' +
+      '\n' +
+      'public class Main {\n' +
+      '\n' +
+      '    public static void main(String[] args) {\n' +
+      '       // Example : assertEquals(Kata.yourfunction(someValues,targetedValues))' +
+      '    }\n' +
+      '}', codeCanva: 'public class Kata {\n' +
+      '\n' +
+      '// Write your code here' +
+      '\n' +
+      '}\n'
+  }
 ];

@@ -8,7 +8,7 @@ import 'brace/mode/plain_text';
 @Component({
   selector: 'app-terminal-code',
   templateUrl: './terminal-code.component.html',
-  styleUrls: ['./terminal-code.component.css']
+  styleUrls: ['./terminal-code.component.scss']
 })
 
 export class TerminalCodeComponent implements AfterViewInit {

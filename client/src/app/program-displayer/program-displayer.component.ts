@@ -5,7 +5,7 @@ import {Program} from './program';
 @Component({
   selector: 'app-program-displayer',
   templateUrl: './program-displayer.component.html',
-  styleUrls: ['./program-displayer.component.css']
+  styleUrls: ['./program-displayer.component.scss']
 })
 export class ProgramDisplayerComponent implements OnInit {
 

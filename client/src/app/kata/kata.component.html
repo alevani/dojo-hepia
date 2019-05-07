@@ -3,7 +3,10 @@
     <div class="p-2 title">{{kata.title}} <a routerLink="/kata-displayer/{{programID}}/{{kata.title}}/{{kata.language}}/{{programSensei}}">- {{programTitle}}</a>
       <br><span class="subtitle">{{programSensei}} <span class="language"> {{kata.language}}</span></span></div>
 
-    <div class="p-2 "><textarea disabled style="text-align: justify">{{kata.rules}}</textarea>
+
+    <div class="p-2 "><label class="header">rules :</label></div>
+    <div class="p-2 ">
+      <textarea disabled style="text-align: justify">{{kata.rules}}</textarea>
       <app-terminal-code style="margin-left: 20px;" [code]="kata.canva" [type]="kata.language" (new)="OnNewEvent($event)"></app-terminal-code>
     </div>
 

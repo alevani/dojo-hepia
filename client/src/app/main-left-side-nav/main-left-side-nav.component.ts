@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-main-left-side-nav',
   templateUrl: './main-left-side-nav.component.html',
-  styleUrls: ['./main-left-side-nav.component.css']
+  styleUrls: ['./main-left-side-nav.component.scss']
 })
 export class MainLeftSideNavComponent {
 

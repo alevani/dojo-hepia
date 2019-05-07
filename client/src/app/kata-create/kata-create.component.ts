@@ -9,7 +9,7 @@ import {CompilationService} from '../compilation.service';
 @Component({
   selector: 'app-kata-create',
   templateUrl: './kata-create.component.html',
-  styleUrls: ['./kata-create.component.css']
+  styleUrls: ['./kata-create.component.scss']
 })
 export class KataCreateComponent implements OnInit {
 
@@ -22,7 +22,6 @@ export class KataCreateComponent implements OnInit {
   ) {
   }
 
-  code = '';
   language = ''; // TODO get from todo 3
   assert = '';
 
@@ -44,6 +43,8 @@ export class KataCreateComponent implements OnInit {
   getLANG(id: string): void {
     this.LANG = this.langservice.getLANG(id)[0];
     this.assert = this.LANG.assertCanva;
+    this.solution = this.LANG.codeCanva;
+    this.canva = this.LANG.codeCanva;
   }
 
   OnNewEventAssert(event: any): void {
