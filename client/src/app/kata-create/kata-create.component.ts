@@ -1,9 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {Canva} from '../languages_canvas';
 import {LANGService} from '../lang.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Location} from '@angular/common';
 import {CreateKataService} from '../create-kata.service';
+import {CompilationService} from '../compilation.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-kata-create',
@@ -15,7 +17,9 @@ export class KataCreateComponent implements OnInit {
   constructor(private langservice: LANGService,
               private route: ActivatedRoute,
               private location: Location,
-              private kateCreateService: CreateKataService
+              private kateCreateService: CreateKataService,
+              public router: Router,
+              private compilationService: CompilationService
   ) {
   }
 
@@ -70,6 +74,27 @@ export class KataCreateComponent implements OnInit {
       nbAttempt: this.numberOfAttempt,
       programID: this.programId
     }));
+
+    this.router.navigate(['/kata-displayer/' + this.programId + '']);
+  }
+
+  try(): void {
+    const response = $.parseJSON(this.compilationService.compilationServer(JSON.stringify({
+      language: this.language,
+      stream: this.solution,
+      assert: this.assert
+    })));
+
+
+    if (response.exit === 0) {
+      this.status = 0;
+      this.result = response.output + '\nTests passed';
+    } else {
+      this.status = 1;
+      this.result = response.error;
+    }
+
+    this.result += '\nExecuted in : ' + response.time + 'ms';
   }
 
   ngOnInit() {

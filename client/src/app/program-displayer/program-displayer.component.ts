@@ -15,12 +15,12 @@ export class ProgramDisplayerComponent implements OnInit {
   constructor(private fetchProgramService: FetchProgramService) {
   }
 
-  getProgram(sensei: string): void {
-    this.programs = this.fetchProgramService.getPrograms(sensei);
+  getProgram(): void {
+    this.programs = this.fetchProgramService.getPrograms();
   }
 
   ngOnInit() {
-    this.getProgram('Orestis Pileas Malaspinas');
+    this.getProgram();
   }
 
 }

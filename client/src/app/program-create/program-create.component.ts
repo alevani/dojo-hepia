@@ -17,7 +17,6 @@ export class ProgramCreateComponent implements OnInit {
   programDescr = '';
   programTags = '';
   programLanguage = 'python';
-
   programToKata = 0;
 
   update(event: any) {
@@ -25,15 +24,15 @@ export class ProgramCreateComponent implements OnInit {
   }
 
   createProgram(newkata: boolean): void {
-
+    console.log(this.programTags.split(','));
     this.programToKata = +this.createProgramService.createProgram(JSON.stringify({
+      id: + new Date(),
       sensei: 'Orestis Pileas Malaspinas',
       language: this.programLanguage,
       nbKata: 0,
       title: this.programTitle,
-      descr: this.programDescr,
-      tags: this.programTags,
-      kata: []
+      description: this.programDescr,
+      tags: this.programTags.split(',')
     }));
 
     if (newkata) {

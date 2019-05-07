@@ -1,10 +1,15 @@
 import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import {ExtraOptions, RouterModule, Routes} from '@angular/router';
 import {ProgramDisplayerComponent} from './program-displayer/program-displayer.component';
 import {KataDisplayerComponent} from './kata-displayer/kata-displayer.component';
 import {KataComponent} from './kata/kata.component';
 import {ProgramCreateComponent} from './program-create/program-create.component';
 import {KataCreateComponent} from './kata-create/kata-create.component';
+
+const routerOptions: ExtraOptions = {
+  useHash: false,
+  anchorScrolling: 'enabled'
+};
 
 const routes: Routes = [
   {path: 'program_test', component: ProgramDisplayerComponent},
@@ -18,7 +23,7 @@ const routes: Routes = [
   declarations: [],
 
   exports: [RouterModule],
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, routerOptions)],
 
 })
 export class AppRoutingModule {

@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {Kata} from './kata/kata';
 import * as $ from 'jquery';
 
 @Injectable({

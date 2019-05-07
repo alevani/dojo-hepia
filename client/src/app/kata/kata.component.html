@@ -9,7 +9,7 @@
 
     <div class="p-2">
       <app-terminal-assert [code]="kata.assert" [type]="kata.language"></app-terminal-assert>
-      <textarea [ngClass]="{'success':status === 0,'error':status === 1,'':status === 2}" style="white-space: pre-wrap"
+      <textarea [ngClass]="{'success':status === 0,'error':status === 1,'':status === 2}" style="white-space: pre-wrap;"
                 disabled>{{result}}</textarea>
     </div>
 

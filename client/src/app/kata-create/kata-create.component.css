@@ -1,9 +1,19 @@
+.error {
+  border: 3px rgba(192, 57, 43, 0.8) solid;
+  background-color: rgba(192, 57, 43, 0.2);
+}
+
+.success {
+  border: 3px rgba(39, 174, 96, 1.0) solid;
+  background-color: rgba(39, 174, 96, 0.2);
+}
+
 * {
   display: inline-block;
   font-family: "Helvetica Neue";
 }
 
-textarea.result {
+textarea {
   background-color: rgba(43, 47, 57, 1);
   border: 2px solid rgba(44, 62, 80, 1.0);
   color: white;
@@ -19,18 +29,10 @@ textarea.result {
   margin-left: 20px;
 }
 
-textarea {
-  background-color: rgba(43, 47, 57, 1);
-  border: 2px solid rgba(44, 62, 80, 1.0);
-  color: white;
+textarea.rules {
   width: 100%;
   height: 200px;
-
-  border-radius: 6px;
-
-  font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
-  outline: none;
-  padding: 10px;
+  margin: 0;
 }
 
 input[type=button] {
@@ -60,3 +62,5 @@ select {
   -webkit-appearance: none;
   appearance: none;
 }
+
+

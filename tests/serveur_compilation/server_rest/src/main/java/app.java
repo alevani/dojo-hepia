@@ -6,12 +6,6 @@ import java.net.ConnectException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import org.apache.commons.lang.StringEscapeUtils;
-import org.json.JSONObject;
-
-import static org.apache.commons.lang.StringEscapeUtils.escapeJava;
-
-
 public class app {
 
     private static ProgramsDataBase db = new LiveDB();
@@ -68,10 +62,12 @@ public class app {
 
         app.post("/kata/create", ctx -> {
             Kata kt = objectMapper.readValue(ctx.body(), Kata.class);
-            db.addKata(kt);
+            db.createKata(kt);
         });
 
-
+        app.get("/program/getall", ctx -> {
+            ctx.json(db.getAllPrograms());
+        });
 
     }
 

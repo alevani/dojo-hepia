@@ -1,9 +1,9 @@
-export class Program {
-  id: number;
+export interface Program {
+  id: string,
   title: string;
   language: string;
   sensei: string;
   nbKata: number;
   description: string;
-  tag: string[];
+  tags: string[];
 }
