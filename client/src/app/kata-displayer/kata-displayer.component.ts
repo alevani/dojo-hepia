@@ -16,6 +16,7 @@ export class KataDisplayerComponent implements OnInit {
   programTitle: string;
   programLanguage: string;
   programSensei: string;
+
   constructor(
     private route: ActivatedRoute,
     private location: Location,
@@ -28,7 +29,7 @@ export class KataDisplayerComponent implements OnInit {
     this.programSensei = this.route.snapshot.paramMap.get('sensei');
     this.programLanguage = this.route.snapshot.paramMap.get('language');
     this.programTitle = this.route.snapshot.paramMap.get('title');
-    this.katas = this.fetchKataShowCaseService.getPrograms(this.idProgram);
+    this.fetchKataShowCaseService.getKatasDetails(this.idProgram).subscribe((data: KataShowCase[]) => this.katas = data);
   }
 
   ngOnInit() {

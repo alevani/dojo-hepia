@@ -1,18 +1,17 @@
 import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
-import {Kata} from './kata/kata';
-import {KATAS} from './kata/kataMock';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FetchKataService {
 
-  getKata(kataId: number): Kata[] {
-    return KATAS;
+  getKata(programID: number, kataID: number) {
+    return this.http.get('http://localhost:7000/program/getkata/' + programID + '/' + kataID + '');
   }
 
-  constructor() {
+  constructor(private http: HttpClient) {
   }
 
 }

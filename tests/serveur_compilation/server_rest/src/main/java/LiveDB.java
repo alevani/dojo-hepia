@@ -1,31 +1,63 @@
 import java.util.ArrayList;
 
-public class LiveDB extends ProgramsDataBase{
+public class LiveDB extends ProgramsDataBase {
 
-    ArrayList<Program> programs;
     ArrayList<Kata> katas;
 
+    ArrayList<Program> programs;
 
     public LiveDB() {
-        programs = new ArrayList<>();
-
-
+        this.programs = new ArrayList<>();
+        this.katas = new ArrayList<>();
     }
 
-    public String createProgram(Program prg) {
-
-        programs.add(prg);
-        return String.valueOf(programs.indexOf(prg));
+    public void createProgram(Program prg) {
+        this.programs.add(prg);
     }
 
     public void createKata(Kata kata) {
-        katas.add(kata);
-        //programs.get(kata.getProgramID()).setKata();
-    //    programs.get(kata.getProgramID()).getKata().add(kata);
+
+        for (Program p : this.programs)
+            if (p.getId().equals(kata.getProgramID())) {
+                p.setNbKata(p.getNbKata() + 1);
+                p.getKatas().add(kata);
+                break;
+            }
     }
 
-    public ArrayList<Program> getAllPrograms(){
-        return programs;
+    public ArrayList<ProgramShowCase> getProgramsDetails() {
+        ArrayList<ProgramShowCase> p = new ArrayList<>();
+
+        for (Program prg : this.programs)
+            p.add(new ProgramShowCase(prg.getTitle(), prg.getSensei(), prg.getLanguage(), prg.getDescription(), prg.getNbKata(), prg.getTags(), prg.getId()));
+
+        return p;
+    }
+
+    public Kata getProgramKata(String programID, String kataID) {
+        ArrayList<Kata> ktemp = new ArrayList<>();
+        Kata kata = new Kata();
+        for (Program prg : this.programs)
+            if (prg.getId().equals(programID))
+                ktemp = prg.getKatas();
+            for(Kata k : ktemp)
+                if(k.getId().equals(kataID))
+                    kata = k;
+        return kata;
+    }
+
+    public ArrayList<KataShowCase> getProgramKatasDetails(String programID) {
+        ArrayList<KataShowCase> ktsc = new ArrayList<>();
+        ArrayList<Kata> kt = new ArrayList<>();
+        for (Program prg : this.programs)
+            if (prg.getId().equals(programID)) {
+                kt = prg.getKatas();
+                break;
+            }
+
+        for (Kata k : kt)
+            ktsc.add(new KataShowCase(k.getTitle(), k.getDifficulty(), k.getId(), "TODO"));
+        return ktsc;
     }
 
 }

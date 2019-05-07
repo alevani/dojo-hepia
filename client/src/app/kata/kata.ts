@@ -1,12 +1,13 @@
-export class Kata {
-  id: number;
+export interface Kata {
+  id: string;
   title: string;
-  sensei: string;
-  programTitle: string;
   language: string;
   solution: string;
   canva: string;
   rules: string;
-  assert: string;
-
+  cassert: string;
+  keepAssert: boolean;
+  nbAttempt: number;
+  programID: string;
+  difficulty: string;
 }

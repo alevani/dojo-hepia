@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="katas">
   <span class="title">{{programTitle}}
     <br>
     <span class="subtitle">{{programSensei}} <span class="language"> {{programLanguage}}</span>
@@ -11,13 +11,14 @@
         <div class="p-2">
         <div class="card" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title"><a class="title" routerLink="/kata/{{kata.id}}">{{kata.title}}</a></h5>
+          <h5 class="card-title"><a class="title"
+                                    routerLink="/kata/{{programTitle}}/{{programSensei}}/{{idProgram}}/{{kata.id}}">{{kata.title}}</a></h5>
           <br/>
           <h6 class="card-subtitle mb-2 text-muted">{{kata.difficulty}} </h6>
           <span style="float: right;">{{kata.status}}</span>
           <br/>
           <br/>
-          <p class="card-text">{{kata.description}}</p>
+          <!--<p class="card-text">{{kata.description}}</p>-->
           </div>
         </div>
         </div>

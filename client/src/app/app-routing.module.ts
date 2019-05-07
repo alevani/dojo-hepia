@@ -14,7 +14,7 @@ const routerOptions: ExtraOptions = {
 const routes: Routes = [
   {path: 'program_test', component: ProgramDisplayerComponent},
   {path: 'kata-displayer/:id/:title/:language/:sensei', component: KataDisplayerComponent},
-  {path: 'kata/:id', component: KataComponent},
+  {path: 'kata/:prgtitle/:sensei/:prid/:id', component: KataComponent},
   {path: 'program_create', component: ProgramCreateComponent},
   {path: 'kata_create/:id/:language', component: KataCreateComponent},
 ];

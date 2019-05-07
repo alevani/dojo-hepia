@@ -1,3 +1,4 @@
+/*
 import {Kata} from './kata';
 
 // TODO un kata n'a pas besoin de programtitile, ca devrait être passé par la classe d'en dessus (idem pour sensei)
@@ -17,3 +18,4 @@ export const KATAS: Kata[] = [{
     'assert_that(m.multiTwo([3])).is_equal_to([6])',
   solution: 'def multiTwo(n):\n' + '  return [i*2 for i in n]'
 }];
+*/

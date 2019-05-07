@@ -17,6 +17,7 @@ import {AceEditorModule} from 'ng2-ace-editor';
 import { KataCreateComponent } from './kata-create/kata-create.component';
 import { ProgramCreateComponent } from './program-create/program-create.component';
 import {FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import {FormsModule} from '@angular/forms';
     AppRoutingModule,
     RouterModule,
     AceEditorModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

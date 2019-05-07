@@ -16,7 +16,7 @@ export class ProgramDisplayerComponent implements OnInit {
   }
 
   getProgram(): void {
-    this.programs = this.fetchProgramService.getPrograms();
+    this.fetchProgramService.getPrograms().subscribe((data: Program[]) => this.programs = data);
   }
 
   ngOnInit() {

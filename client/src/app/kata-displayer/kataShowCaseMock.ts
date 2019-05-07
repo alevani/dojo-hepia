@@ -1,4 +1,4 @@
-import {KataShowCase} from './kataShowCase';
+/*import {KataShowCase} from './kataShowCase';
 
 export const KATAS: KataShowCase[] = [
   {
@@ -12,3 +12,4 @@ export const KATAS: KataShowCase[] = [
   {id: 1, title: 'Fopen', difficulty: 'Ceinture Jaune', idProgram: 1, description: 'TOFILL', status: 'FAILED'},
   {id: 2, title: 'Fwrite', difficulty: 'Ceinture Verte', idProgram: 1, description: 'TOFILL', status: 'RESOLVED'}
 ];
+*/

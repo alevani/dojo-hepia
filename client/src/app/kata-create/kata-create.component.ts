@@ -5,7 +5,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Location} from '@angular/common';
 import {CreateKataService} from '../create-kata.service';
 import {CompilationService} from '../compilation.service';
-import * as $ from 'jquery';
 
 @Component({
   selector: 'app-kata-create',
@@ -64,37 +63,44 @@ export class KataCreateComponent implements OnInit {
   }
 
   publish(): void {
+
     this.kateCreateService.publish(JSON.stringify({
+      id: +new Date(),
       title: this.title,
+      language: this.language,
       canva: this.canva,
       cassert: this.assert,
       solution: this.solution,
       rules: this.rules,
       keepAssert: this.keepAssertForKata,
       nbAttempt: this.numberOfAttempt,
-      programID: this.programId
-    }));
+      programID: this.programId,
+      difficulty: 'Ceinture blanche'
+    })).subscribe();
 
     this.router.navigate(['/kata-displayer/' + this.programId + '']);
   }
 
   try(): void {
-    const response = $.parseJSON(this.compilationService.compilationServer(JSON.stringify({
+    let response;
+
+    this.compilationService.compilationServer(JSON.stringify({
       language: this.language,
       stream: this.solution,
       assert: this.assert
-    })));
+    })).subscribe((data: string) => {
+      console.log(data);
+      response = data;
+      if (response.exit === 0) {
+        this.status = 0;
+        this.result = response.output + '\nTests passed';
+      } else {
+        this.status = 1;
+        this.result = response.error;
+      }
 
-
-    if (response.exit === 0) {
-      this.status = 0;
-      this.result = response.output + '\nTests passed';
-    } else {
-      this.status = 1;
-      this.result = response.error;
-    }
-
-    this.result += '\nExecuted in : ' + response.time + 'ms';
+      this.result += '\nExecuted in : ' + response.time + 'ms';
+    });
   }
 
   ngOnInit() {

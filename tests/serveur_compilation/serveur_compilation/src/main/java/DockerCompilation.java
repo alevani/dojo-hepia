@@ -13,14 +13,12 @@ public class DockerCompilation {
             case "python":
                 filename = "share_docker_file/sample.py";
                 filename_test = "share_docker_file/assert.py";
-                //  cmd = "python3 " + filename_test;
                 cmd = "docker run --rm --mount type=bind,source=/Users/freak/Desktop/dojo-hepia/tests/serveur_compilation/serveur_compilation/share_docker_file,dst=/env/ hey:1.1 python3 assert.py";
                 break;
             case "java":
                 filename = "share_docker_file/kata.java";
                 filename_test = "share_docker_file/Main.java";
                 cmd = "docker run --rm --mount type=bind,source=/Users/freak/Desktop/dojo-hepia/tests/serveur_compilation/serveur_compilation/share_docker_file,dst=/env/ java:4.0 ./java_test.sh";
-                //cmd = "java " + filename_test;
                 break;
         }
 
@@ -90,15 +88,6 @@ public class DockerCompilation {
 
         file = new File(filename_test);
         file.delete();
-
-        switch (input.get("language").toString()){
-            case "java":
-                file = new File("share_docker_file/Main.class");
-                file.delete();
-                file = new File("share_docker_file/kata.class");
-                file.delete();
-                break;
-        }
 
         return json;
     }

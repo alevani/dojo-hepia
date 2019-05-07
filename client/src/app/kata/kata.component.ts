@@ -17,6 +17,10 @@ export class KataComponent implements OnInit {
   idKata: number;
   status = 2;
   result = '';
+  programID: number;
+
+  programTitle: string;
+  programSensei: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,7 +32,13 @@ export class KataComponent implements OnInit {
 
   getKata(): void {
     this.idKata = +this.route.snapshot.paramMap.get('id');
-    this.kata = this.fetchKataService.getKata(this.idKata)[0];
+    this.programID = +this.route.snapshot.paramMap.get('prid');
+    this.programSensei = this.route.snapshot.paramMap.get('sensei');
+    this.programTitle = this.route.snapshot.paramMap.get('prgtitle');
+    this.fetchKataService.getKata(this.programID, this.idKata).subscribe((data: Kata) => {
+      this.kata = data;
+    });
+
   }
 
   OnNewEvent(event: any): void {
@@ -36,22 +46,25 @@ export class KataComponent implements OnInit {
   }
 
   compile(language: string, stream: string, assert: string): void {
-    const response = $.parseJSON(this.compilationService.compilationServer(JSON.stringify({
+    let response;
+
+    this.compilationService.compilationServer(JSON.stringify({
       language: this.kata.language,
       stream: stream,
       assert: assert
-    })));
+    })).subscribe((data: string) => {
+      console.log(data);
+      response = data;
+      if (response.exit === 0) {
+        this.status = 0;
+        this.result = response.output + '\nExercise passed';
+      } else {
+        this.status = 1;
+        this.result = response.error;
+      }
 
-
-    if (response.exit === 0) {
-      this.status = 0;
-      this.result = response.output + '\nExercise passed';
-    } else {
-      this.status = 1;
-      this.result = response.error;
-    }
-
-    this.result += '\nExecuted in : ' + response.time + 'ms';
+      this.result += '\nExecuted in : ' + response.time + 'ms';
+    });
   }
 
   ngOnInit() {

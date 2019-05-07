@@ -1,7 +1,7 @@
 public class Kata {
-    private String title, canva, cassert, solution, rules;
+    private String id, title, canva, cassert, solution, rules,programID,difficulty,language;
     private boolean keepAssert;
-    private int nbAttempt,programID;
+    private int nbAttempt;
 
 
     public boolean isKeepAssert() {
@@ -60,11 +60,35 @@ public class Kata {
         this.nbAttempt = nbAttempt;
     }
 
-    public int getProgramID() {
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getProgramID() {
         return programID;
     }
 
-    public void setProgramID(int programID) {
+    public void setProgramID(String programID) {
         this.programID = programID;
+    }
+
+    public String getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(String difficulty) {
+        this.difficulty = difficulty;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
     }
 }

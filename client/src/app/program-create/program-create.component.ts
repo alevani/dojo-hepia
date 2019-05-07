@@ -24,26 +24,27 @@ export class ProgramCreateComponent implements OnInit {
   }
 
   createProgram(newkata: boolean): void {
-    console.log(this.programTags.split(','));
-    this.programToKata = +this.createProgramService.createProgram(JSON.stringify({
-      id: + new Date(),
+    this.createProgramService.createProgram(JSON.stringify({
+      id: this.programToKata,
       sensei: 'Orestis Pileas Malaspinas',
       language: this.programLanguage,
       nbKata: 0,
       title: this.programTitle,
       description: this.programDescr,
-      tags: this.programTags.split(',')
-    }));
-
-    if (newkata) {
-      this.router.navigate(['/kata_create/' + this.programToKata + '/' + this.programLanguage + '']);
-    } else {
-      this.router.navigate(['/']);
-    }
+      tags: this.programTags.split(','),
+      katas: []
+    })).subscribe(() => {
+      if (newkata) {
+        this.router.navigate(['/kata_create/' + this.programToKata + '/' + this.programLanguage + '']);
+      } else {
+        this.router.navigate(['/']);
+      }
+    });
 
   }
 
   ngOnInit() {
+    this.programToKata = +new Date();
   }
 
 }

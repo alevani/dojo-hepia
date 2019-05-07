@@ -1,4 +1,4 @@
-import {Program} from './program';
+/*import {Program} from './program';
 
 export const PROGRAMS: Program[] = [
   {
@@ -20,3 +20,4 @@ export const PROGRAMS: Program[] = [
   }
 ];
 
+*/

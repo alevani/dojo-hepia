@@ -4,6 +4,7 @@ public class Program {
     private String id,sensei,language,title,description;
     private String[] tags;
     private int nbKata;
+    private ArrayList<Kata> katas;
 
     public String getSensei() {
         return sensei;
@@ -59,6 +60,14 @@ public class Program {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public ArrayList<Kata> getKatas() {
+        return katas;
+    }
+
+    public void setKatas(ArrayList<Kata> katas) {
+        this.katas = katas;
     }
 /*
     public ArrayList<Kata> getKata() {

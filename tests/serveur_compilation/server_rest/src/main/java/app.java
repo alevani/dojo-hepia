@@ -57,7 +57,7 @@ public class app {
 
         app.post("/program/create", ctx -> {
             Program prg = objectMapper.readValue(ctx.body(), Program.class);
-            ctx.result(db.createProgram(prg));
+            db.createProgram(prg);
         });
 
         app.post("/kata/create", ctx -> {
@@ -65,8 +65,16 @@ public class app {
             db.createKata(kt);
         });
 
-        app.get("/program/getall", ctx -> {
-            ctx.json(db.getAllPrograms());
+        app.get("/program/getdetails", ctx -> {
+            ctx.json(db.getProgramsDetails());
+        });
+
+        app.get("/program/getkatas/details/:id", ctx -> {
+            ctx.json(db.getProgramKatasDetails(ctx.pathParam("id")));
+        });
+
+        app.get("/program/getkata/:prid/:id", ctx -> {
+            ctx.json(db.getProgramKata(ctx.pathParam("prid"),ctx.pathParam("id")));
         });
 
     }

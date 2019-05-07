@@ -1,30 +1,19 @@
 import {Injectable} from '@angular/core';
-import * as $ from 'jquery';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class CreateProgramService {
 
-  createProgram(obj: string): string {
-    let response = '';
 
-    $.ajax({
-      url: 'http://localhost:7000/program/create',
-      type: 'POST',
-      async: false,
-      data: obj,
-      contentType: 'application/json',
-      success(data) {
-        response = data;
-      }
-
-    });
-
-    return response;
+  createProgram(obj: string) {
+    return this.http.post('http://localhost:7000/program/create', obj);
   }
 
-  constructor() {
+  constructor(private http: HttpClient) {
   }
 }
 

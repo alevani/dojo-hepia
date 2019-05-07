@@ -1,9 +1,7 @@
-export class KataShowCase {
-  id: number;
+export interface KataShowCase {
   title: string;
   difficulty: string;
-  idProgram: number;
-  description: string;
+  id: string;
   status: string;
 }
 

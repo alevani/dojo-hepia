@@ -1,30 +1,16 @@
 import {Injectable} from '@angular/core';
-import {Program} from './program-displayer/program';
-import {PROGRAMS} from './program-displayer/programMock';
-import * as $ from 'jquery';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FetchProgramService {
 
-  getPrograms(): Program[] {
-    let response = '';
-
-    $.ajax({
-      url: 'http://localhost:7000/program/getall',
-      type: 'get',
-      async: false,
-      success(data) {
-        response = data;
-      }
-
-    });
-
-    const obj: Program[] = response as Program;
-    return obj;
+  getPrograms() {
+    return this.http.get('http://localhost:7000/program/getdetails');
   }
 
-  constructor() {
+
+  constructor(private http: HttpClient) {
   }
 }

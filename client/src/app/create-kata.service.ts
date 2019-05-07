@@ -1,23 +1,15 @@
 import {Injectable} from '@angular/core';
-import * as $ from 'jquery';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class CreateKataService {
-
-  publish(obj: string): void {
-
-    $.ajax({
-      url: 'http://localhost:7000/kata/create',
-      type: 'POST',
-      async: false,
-      data: obj,
-      contentType: 'application/json'
-    });
-
+  publish(obj: string) {
+    return this.http.post('http://localhost:7000/kata/create', obj);
   }
 
-  constructor() {
+  constructor(private http: HttpClient) {
   }
 }
