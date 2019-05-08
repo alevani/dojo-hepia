@@ -60,4 +60,18 @@ public class LiveDB extends ProgramsDataBase {
         return ktsc;
     }
 
+    public ArrayList<String> getProgramDetailsByID(String id){
+        ArrayList<String> infos = new ArrayList<>();
+
+        for (Program p : this.programs)
+            if(p.getId().equals(id)){
+                infos.add(p.getTitle());
+                infos.add(p.getLanguage());
+                infos.add(p.getSensei());
+                break;
+            }
+
+        return infos;
+    }
+
 }

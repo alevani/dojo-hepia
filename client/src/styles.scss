@@ -1,4 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+  --color-cloud: rgba(236, 240, 241, 1);
+  --color-dark-blue: rgba(43, 47, 57, 1);
+  --color-light-blue: rgba(63, 67, 77, 1);
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.NOTFOUND {
+  color: rgba(83, 87, 97, 1);
+  font-size: 50px;
+}
+
+.button {
+  background-color: var(--color-light-blue) ;
+  border: 0;
+  padding: .4em .7em .4em .7em;
+  border-radius: .4em;
+  color: var(--color-cloud);
+  border:3px solid var(--color-cloud);
+
+}

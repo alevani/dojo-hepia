@@ -11,7 +11,7 @@ export class FetchKataShowCaseService {
   constructor(private http: HttpClient) {
   }
 
-  getKatasDetails(program: number) {
+  getKatasDetails(program: string) {
     return this.http.get('http://localhost:7000/program/getkatas/details/' + program + '');
   }
 }

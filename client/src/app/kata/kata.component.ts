@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Location} from '@angular/common';
 import {FetchKataService} from '../fetch-kata.service';
 import {Kata} from './kata';
-import * as $ from 'jquery';
 import {CompilationService} from '../compilation.service';
+import {FetchProgramIdService} from '../fetch-program-id.service';
+import {NgxUiLoaderService} from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-kata',
@@ -14,31 +15,50 @@ import {CompilationService} from '../compilation.service';
 export class KataComponent implements OnInit {
 
   kata: Kata;
-  idKata: number;
+  idKata: string;
   status = 2;
   result = '';
-  programID: number;
-
+  programID: string;
   programTitle: string;
   programSensei: string;
+  error = false;
+
+  katareceived = false;
 
   constructor(
     private route: ActivatedRoute,
     private location: Location,
     private fetchKataService: FetchKataService,
-    private compilationService: CompilationService
+    private compilationService: CompilationService,
+    private fetchProgramDetailsService: FetchProgramIdService,
+    private ngxLoader: NgxUiLoaderService
   ) {
   }
 
   getKata(): void {
-    this.idKata = +this.route.snapshot.paramMap.get('id');
-    this.programID = +this.route.snapshot.paramMap.get('prid');
-    this.programSensei = this.route.snapshot.paramMap.get('sensei');
-    this.programTitle = this.route.snapshot.paramMap.get('prgtitle');
-    this.fetchKataService.getKata(this.programID, this.idKata).subscribe((data: Kata) => {
-      this.kata = data;
+    this.ngxLoader.start();
+    this.programID = this.route.snapshot.paramMap.get('prid');
+    this.fetchProgramDetailsService.getDetails(this.programID).subscribe((data: string[]) => {
+      this.idKata = this.route.snapshot.paramMap.get('id');
+      this.programSensei = data[2];
+      this.programTitle = data[0];
+      this.fetchKataService.getKata(this.programID, this.idKata).subscribe((datas: Kata) => {
+          this.kata = datas;
+          this.ngxLoader.stop();
+          this.katareceived = true;
+        },
+        (error1 => {
+          if (error1.status === 404) {
+            this.ngxLoader.stop();
+            this.error = true;
+          }
+        }));
+    }, error1 => {
+      if (error1.status === 404) {
+        this.ngxLoader.stop();
+        this.error = true;
+      }
     });
-
   }
 
   OnNewEvent(event: any): void {

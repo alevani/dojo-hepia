@@ -5,6 +5,7 @@ import java.io.*;
 import java.net.ConnectException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 
 public class app {
 
@@ -66,15 +67,33 @@ public class app {
         });
 
         app.get("/program/getdetails", ctx -> {
-            ctx.json(db.getProgramsDetails());
+            ArrayList<ProgramShowCase> prgsc = db.getProgramsDetails();
+            if (prgsc.size() == 0)
+                ctx.status(404);
+            else
+                ctx.json(prgsc);
         });
 
         app.get("/program/getkatas/details/:id", ctx -> {
-            ctx.json(db.getProgramKatasDetails(ctx.pathParam("id")));
+            ArrayList<KataShowCase> ktsc = db.getProgramKatasDetails(ctx.pathParam("id"));
+            ctx.json(ktsc);
         });
 
         app.get("/program/getkata/:prid/:id", ctx -> {
-            ctx.json(db.getProgramKata(ctx.pathParam("prid"),ctx.pathParam("id")));
+
+            Kata kata = db.getProgramKata(ctx.pathParam("prid"), ctx.pathParam("id"));
+            if (kata.getId() == null)
+                ctx.status(404);
+            else
+                ctx.json(kata);
+        });
+
+        app.get("program/getdetails/:id", ctx -> {
+            ArrayList<String> s = db.getProgramDetailsByID(ctx.pathParam("id"));
+            if (s.size() == 0)
+                ctx.status(404);
+            else
+                ctx.json(s);
         });
 
     }

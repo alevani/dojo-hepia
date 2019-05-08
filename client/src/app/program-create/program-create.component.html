@@ -8,15 +8,16 @@
     <div class="p-2"><label>Tags</label><input type="text" [(ngModel)]="programTags" placeholder=" arrays,writeable,.."/></div>
     <div class="p-2">
 
-        <input type="button" (click)="createProgram(false)" value="CREATE"/>
-        <input type="button" (click)="createProgram(true)" style="float:right" value="CREATE + NEW KATA"/>
+        <input type="button" (click)="createProgram(false)" class="button" value="CREATE"/>
+        <input type="button" (click)="createProgram(true)" class="button" style="float:right" value="CREATE + NEW KATA"/>
+
     </div>
+
+      <div class="p-2">
+        <input type="button" class="button" style="float:right" value="addad + NEW KATA"/>
+      </div>
     </fieldset>
   </div>
 </div>
-<!-- Material input -->
-<div class="md-form">
-  <i class="fas fa-envelope prefix"></i>
-  <input type="text" id="inputIconEx1" class="form-control">
-  <label for="inputIconEx1">E-mail address</label>
-</div>
+
+

@@ -15,8 +15,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/programs', pathMatch: 'full' },
 
   {path: 'programs', component: ProgramDisplayerComponent},
-  {path: 'kata-displayer/:id/:title/:language/:sensei', component: KataDisplayerComponent},
-  {path: 'kata/:prgtitle/:sensei/:prid/:id', component: KataComponent},
+  {path: 'kata-displayer/:id', component: KataDisplayerComponent},
+  {path: 'kata/:prid/:id', component: KataComponent},
   {path: 'program_create', component: ProgramCreateComponent},
   {path: 'kata_create/:id/:language', component: KataCreateComponent},
 ];

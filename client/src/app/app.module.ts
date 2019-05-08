@@ -18,6 +18,8 @@ import {KataCreateComponent} from './kata-create/kata-create.component';
 import {ProgramCreateComponent} from './program-create/program-create.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {RNotFoundComponent} from './rnot-found/rnot-found.component';
+import {NgxUiLoaderModule} from 'ngx-ui-loader';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import {HttpClientModule} from '@angular/common/http';
     ProgramDisplayerComponent,
     KataComponent,
     KataCreateComponent,
-    ProgramCreateComponent
+    ProgramCreateComponent,
+    RNotFoundComponent
   ],
   imports: [
 
@@ -46,7 +49,8 @@ import {HttpClientModule} from '@angular/common/http';
     RouterModule,
     AceEditorModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxUiLoaderModule
 
   ],
   providers: [],

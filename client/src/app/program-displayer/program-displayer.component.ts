@@ -11,12 +11,20 @@ export class ProgramDisplayerComponent implements OnInit {
 
 
   programs: Program[];
+  programReceivedFailed = false;
 
   constructor(private fetchProgramService: FetchProgramService) {
   }
 
   getProgram(): void {
-    this.fetchProgramService.getPrograms().subscribe((data: Program[]) => this.programs = data);
+    this.fetchProgramService.getPrograms().subscribe((data: Program[]) => {
+      this.programs = data;
+
+    }, error1 => {
+      if (error1.status === 404) {
+        this.programReceivedFailed = true;
+      }
+    });
   }
 
   ngOnInit() {

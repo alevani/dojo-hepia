@@ -9,7 +9,7 @@ export class Canva {
 export const LANG: Canva[] = [
   {
     id: 'python', assertCanva: 'from assertpy import assert_that\nimport sample as m' + '\n\n' +
-      '# Example : assert_that(m.yourfunction(someValues)).is_equal_to(targetedValues)', codeCanva: '# Write your code here'
+      '# Example : \n# assert_that(m.yourfunction(someValues)).is_equal_to(targetedValues)', codeCanva: '# Write your code here'
   },
   {
     id: 'java', assertCanva: 'import static org.junit.Assert.*;\n' +
@@ -17,7 +17,7 @@ export const LANG: Canva[] = [
       'public class Main {\n' +
       '\n' +
       '    public static void main(String[] args) {\n' +
-      '       // Example : assertEquals(Kata.yourfunction(someValues,targetedValues))' +
+      '       // Example : \n// assertEquals(Kata.yourfunction(someValues,targetedValues))' +
       '    }\n' +
       '}', codeCanva: 'public class Kata {\n' +
       '\n' +

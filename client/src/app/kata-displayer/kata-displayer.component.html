@@ -1,11 +1,15 @@
-<div class="container" *ngIf="katas">
-  <input type="button" value="Create" routerLink="/kata_create/{{idProgram}}/{{programLanguage}}"/>
-  <span class="title">{{programTitle}}
-    <br>
-    <span class="subtitle">{{programSensei}} <span class="language"> {{programLanguage}}</span>
-  </span>
-  </span>
+<div *ngIf="!error" class="d-flex justify-content-center" style="margin-top:2%">
 
+  <div class="container">
+    <span *ngIf="inforreceived">
+    <span class="title">{{programTitle}}
+      <br>
+    <span class="subtitle">{{programSensei}} <span class="language"> {{programLanguage}}</span>
+    </span>
+      <input type="button" value="Create" routerLink="/kata_create/{{idProgram}}/{{programLanguage}}"/>
+  </span>
+    </span>
+    <span *ngIf="katas">
   <div class="d-flex justify-content-start" style="margin-top:2%">
     <div class="d-flex flex-row">
       <span *ngFor="let kata of katas">
@@ -13,7 +17,7 @@
         <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title"><a class="title"
-                                    routerLink="/kata/{{programTitle}}/{{programSensei}}/{{idProgram}}/{{kata.id}}">{{kata.title}}</a></h5>
+                                    routerLink="/kata/{{idProgram}}/{{kata.id}}">{{kata.title}}</a></h5>
           <br/>
           <h6 class="card-subtitle mb-2 text-muted">{{kata.difficulty}} </h6>
           <span style="float: right;">{{kata.status}}</span>
@@ -26,4 +30,13 @@
       </span>
     </div>
   </div>
+  </span>
+  </div>
+
+  <span *ngIf="!katas || !inforreceived"><ngx-ui-loader></ngx-ui-loader></span>
 </div>
+
+<div *ngIf="error">
+  <app-rnot-found></app-rnot-found>
+</div>
+
