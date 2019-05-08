@@ -26,7 +26,7 @@ export class ProgramCreateComponent implements OnInit {
   createProgram(newkata: boolean): void {
     this.createProgramService.createProgram(JSON.stringify({
       id: this.programToKata,
-      sensei: 'Orestis Pileas Malaspinas',
+      sensei: 'Shodai',
       language: this.programLanguage,
       nbKata: 0,
       title: this.programTitle,

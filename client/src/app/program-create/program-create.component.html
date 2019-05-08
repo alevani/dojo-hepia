@@ -2,19 +2,21 @@
   <div class="d-flex flex-column">
     <fieldset>
       <legend>New program</legend>
-    <div class="p-2"><label>Title</label><input placeholder="Some title.." type="text" [(ngModel)]="programTitle" /></div>
-      <div class="p-2"><label>Targeted language</label><select (change)="update($event)"><option value="python">python</option><option value="java">java</option></select></div>
-    <div class="p-2"><label>Program description</label><textarea [(ngModel)]="programDescr" placeholder="Some text.."></textarea></div>
-    <div class="p-2"><label>Tags</label><input type="text" [(ngModel)]="programTags" placeholder=" arrays,writeable,.."/></div>
-    <div class="p-2">
-
-        <input type="button" (click)="createProgram(false)" class="button" value="CREATE"/>
-        <input type="button" (click)="createProgram(true)" class="button" style="float:right" value="CREATE + NEW KATA"/>
-
-    </div>
-
+      <div class="p-2"><label>Title</label><input placeholder="Some title.." type="text" [(ngModel)]="programTitle"/>
+      </div>
+      <div class="p-2"><label>Targeted language</label><select (change)="update($event)">
+        <option value="python">python</option>
+        <option value="java">java</option>
+      </select></div>
+      <div class="p-2"><label>Program description</label><textarea [(ngModel)]="programDescr"
+                                                                   placeholder="Some text.."></textarea></div>
+      <div class="p-2"><label>Tags</label><input type="text" [(ngModel)]="programTags"
+                                                 placeholder=" arrays,writeable,.."/></div>
       <div class="p-2">
-        <input type="button" class="button" style="float:right" value="addad + NEW KATA"/>
+
+        <input type="button" (click)="createProgram(false)" class="button" value="Create"/>
+        <input type="button" (click)="createProgram(true)" class="button" style="float:right" value="Create with kata"/>
+
       </div>
     </fieldset>
   </div>

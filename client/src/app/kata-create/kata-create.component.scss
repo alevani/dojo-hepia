@@ -35,26 +35,32 @@ textarea.rules {
   margin: 0;
 }
 
-input[type=button] {
-  background-color: rgba(63, 67, 77, 1);
-  float: right;
-  border-radius: 7px;
-  color: rgba(236, 240, 241, 1.0);
-  padding: .7em;
-}
-
 :focus {
   outline: none;
 }
 
+input[type=number]{
+  width: 100px;
+  background-color: rgba(43, 47, 57, 1);
+  border: 1px solid rgba(63, 67, 77, 1);
+  border-radius: 7px;
+  color: rgba(236, 240, 241, 1.0);
+  padding: .6em 1.4em .5em .8em;
+}
+input[type=text]{
+
+  background-color: rgba(43, 47, 57, 1);
+  border: 1px solid rgba(63, 67, 77, 1);
+  border-radius: 7px;
+  color: rgba(236, 240, 241, 1.0);
+  padding: .6em 1.4em .5em .8em;
+}
 
 select {
-
   padding: .6em 1.4em .5em .8em;
   color: rgba(236, 240, 241, 1.0);
   background-color: rgba(43, 47, 57, 1);
-  max-width: 20%;
-  width: 20%;
+  max-width: 100%;
   margin: 0;
   border: 1px solid rgba(63, 67, 77, 1);
   border-radius: 7px;
@@ -63,4 +69,16 @@ select {
   appearance: none;
 }
 
+.header{
+  width: 100%;
+  height: 20px;
+  background-color: rgba(43, 47, 57, 1);
+  font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+  padding:3px 3px 3px 10px;
+  border-radius: 6px;
+}
 
+
+.animated{
+  transition: all .3s;
+}

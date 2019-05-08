@@ -40,6 +40,19 @@ export class KataCreateComponent implements OnInit {
   keepAssertForKata = true;
   numberOfAttempt = 0;
 
+  options = false;
+  instructions = true;
+
+
+  toggleOptions() {
+    this.options = ! this.options;
+    console.log(this.options);
+  }
+
+  toggleInstructions() {
+    this.instructions = !this.instructions;
+  }
+
   getLANG(id: string): void {
     this.LANG = this.langservice.getLANG(id)[0];
     this.assert = this.LANG.assertCanva;

@@ -1,25 +1,35 @@
 
 .language {
-  color: rgba(230, 126, 34, 1);
+  color: var(--color-language);
 }
 
 .title {
   font-size: 20px;
-  color:rgba(236,240,241,1);
+  color:var(--color-cloud);
 }
 .subtitle{
 
   font-size:15px;
-  color:#6c757d !important;
+  color:var(--color-dark-grey) !important;
 }
 
 * {
   font-family: "Helvetica Neue";
-  display: inline-block
+
 }
 .card {
-  background-color: rgba(43, 47, 57, 1);
+  background-color: var(--color-dark-blue);
 }
 a {
   text-decoration: none;
+}
+
+.difficulty{
+  color:var(--color-sunflower);
+  float:right;
+}
+
+.card:hover{
+  background-color: var(--color-electro);
+  border:1px solid var(--color-electro);
 }

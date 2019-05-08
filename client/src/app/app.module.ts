@@ -20,6 +20,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {RNotFoundComponent} from './rnot-found/rnot-found.component';
 import {NgxUiLoaderModule} from 'ngx-ui-loader';
+import { AlertModule } from 'ngx-alerts';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import {NgxUiLoaderModule} from 'ngx-ui-loader';
     AceEditorModule,
     FormsModule,
     HttpClientModule,
-    NgxUiLoaderModule
+    NgxUiLoaderModule,
+    AlertModule.forRoot({maxMessages: 5, timeout: 5000, position: 'right'})
 
   ],
   providers: [],

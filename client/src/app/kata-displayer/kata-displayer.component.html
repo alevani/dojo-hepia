@@ -1,40 +1,36 @@
-<div *ngIf="!error" class="d-flex justify-content-center" style="margin-top:2%">
-
-  <div class="container">
-    <span *ngIf="inforreceived">
-    <span class="title">{{programTitle}}
-      <br>
+<div style="margin:5rem 10rem 0 10rem" *ngIf="!error">
+  <div *ngIf="inforreceived">
+    <h1 class="title" style="margin:2rem 0 0 2rem;">{{programTitle}}
+    <br/>
     <span class="subtitle">{{programSensei}} <span class="language"> {{programLanguage}}</span>
     </span>
-      <input type="button" value="Create" routerLink="/kata_create/{{idProgram}}/{{programLanguage}}"/>
-  </span>
-    </span>
-    <span *ngIf="katas">
-  <div class="d-flex justify-content-start" style="margin-top:2%">
-    <div class="d-flex flex-row">
-      <span *ngFor="let kata of katas">
-        <div class="p-2">
-        <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title"><a class="title"
-                                    routerLink="/kata/{{idProgram}}/{{kata.id}}">{{kata.title}}</a></h5>
-          <br/>
-          <h6 class="card-subtitle mb-2 text-muted">{{kata.difficulty}} </h6>
-          <span style="float: right;">{{kata.status}}</span>
-          <br/>
-          <br/>
-          <!--<p class="card-text">{{kata.description}}</p>-->
+      <input type="button" class="button" style="margin:0 3rem 0 0;float:right" value="Create a new kata" routerLink="/kata_create/{{idProgram}}/{{programLanguage}}"/>
+  </h1>
+
+  </div>
+  <br/>
+
+  <div *ngIf="katas">
+
+    <div class="d-flex flex-wrap justify-content-start">
+    <span *ngFor="let kata of katas">
+        <div class="card" style="width: 18rem;margin: 2rem" routerLink="/kata/{{idProgram}}/{{kata.id}}">
+          <div class="card-body">
+            <h5 class="card-title"><a class="title"
+                                      routerLink="/kata/{{idProgram}}/{{kata.id}}">{{kata.title}}</a><span class="difficulty">{{kata.status}}</span></h5>
+            <br/>
+            <h6 class="card-subtitle mb-2 text-muted">{{kata.difficulty}}</h6>
+            <br/>
+            <br/>
+            <!--<p class="card-text">{{kata.description}}</p>-->
           </div>
-        </div>
         </div>
       </span>
     </div>
   </div>
-  </span>
-  </div>
-
-  <span *ngIf="!katas || !inforreceived"><ngx-ui-loader></ngx-ui-loader></span>
 </div>
+
+<span *ngIf="!katas || !inforreceived"><ngx-ui-loader></ngx-ui-loader></span>
 
 <div *ngIf="error">
   <app-rnot-found></app-rnot-found>

@@ -1,29 +1,30 @@
-<div class="d-flex justify-content-center" style="margin-top:2%">
-  <div *ngIf="programs" class="d-flex flex-column">
-    <div class="p-2"><h1>All available programs</h1></div>
-    <div class="p-2">
-  <span *ngFor="let program of programs">
-      <div class="card" style="width: 18rem;">
+<div style="margin:5rem 10rem 0 10rem" *ngIf="programs">
+  <h1 style="margin:2rem 0 0 2rem;text-align: center">All available programs</h1>
+  <div class="d-flex flex-wrap justify-content-start">
+    <div *ngFor="let program of programs">
+
+      <div class="card" routerLink="/kata-displayer/{{program.programID}}" style="width: 18rem;margin: 2rem">
         <div class="card-body">
           <a routerLink="/kata-displayer/{{program.programID}}">
             <h5 class="card-title">{{program.title}}</h5></a>
           <h6 class="card-subtitle mb-2 text-muted"><a class="sensei" href="">{{program.sensei}} </a>
             <a href=""><span class="language">{{program.language}}</span></a></h6>
-        <br/>
-        <p class="card-text">{{program.description}}</p>
-        <span *ngFor="let tag of program.tags">
+          <br/>
+          <p class="card-text">{{program.description}}</p>
+          <span *ngFor="let tag of program.tags">
         <span class="tag">{{tag}}</span>
         </span>
-        <span class="nbkata">#{{program.nbKata}}</span>
+          <span class="nbkata">#{{program.nbKata}}</span>
         </div>
       </div>
-  </span>
+
     </div>
-  </div>
-  <div class="d-flex flex-column" *ngIf="programReceivedFailed">
-    <div class="p-2">
-      <h1>Oops.. no program available ..</h1>
-    </div>
-    <h2><a routerLink="/program_create">Create a new program</a></h2>
   </div>
 </div>
+<div *ngIf="programReceivedFailed">
+  <h1 style="margin:2rem 0 0 2rem;text-align: center">Oops.. no program available ..</h1>
+  <h2 style="margin:2rem 0 0 2rem;text-align: center"><a routerLink="/program_create">Create a new program</a></h2>
+</div>
+
+
+<span *ngIf="!programs"><ngx-ui-loader></ngx-ui-loader></span>

@@ -6,6 +6,10 @@ import {Kata} from './kata';
 import {CompilationService} from '../compilation.service';
 import {FetchProgramIdService} from '../fetch-program-id.service';
 import {NgxUiLoaderService} from 'ngx-ui-loader';
+import {Canva} from '../languages_canvas';
+import {LANGService} from '../lang.service';
+import {AlertService} from 'ngx-alerts';
+
 
 @Component({
   selector: 'app-kata',
@@ -23,7 +27,15 @@ export class KataComponent implements OnInit {
   programSensei: string;
   error = false;
 
+  nbAttempt = 0;
+
+  filename = '';
+  assertname = '';
+
   katareceived = false;
+  assert = true;
+
+  LANG: Canva;
 
   constructor(
     private route: ActivatedRoute,
@@ -31,8 +43,17 @@ export class KataComponent implements OnInit {
     private fetchKataService: FetchKataService,
     private compilationService: CompilationService,
     private fetchProgramDetailsService: FetchProgramIdService,
-    private ngxLoader: NgxUiLoaderService
+    private ngxLoader: NgxUiLoaderService,
+    private langservice: LANGService,
+    private alertService: AlertService
   ) {
+  }
+
+
+  getLANG(id: string): void {
+    this.LANG = this.langservice.getLANG(id)[0];
+    this.assertname = this.LANG.assertname;
+    this.filename = this.LANG.filename;
   }
 
   getKata(): void {
@@ -44,6 +65,8 @@ export class KataComponent implements OnInit {
       this.programTitle = data[0];
       this.fetchKataService.getKata(this.programID, this.idKata).subscribe((datas: Kata) => {
           this.kata = datas;
+          this.assert = !datas.keepAssert;
+          this.getLANG(this.kata.language);
           this.ngxLoader.stop();
           this.katareceived = true;
         },
@@ -61,29 +84,33 @@ export class KataComponent implements OnInit {
     });
   }
 
+  Surrender() {
+    alert('Oops.. this functionality has not been implemented yet :( !');
+  }
+
   OnNewEvent(event: any): void {
     this.kata.canva = event.toString();
   }
 
   compile(language: string, stream: string, assert: string): void {
     let response;
-
+    this.nbAttempt++;
     this.compilationService.compilationServer(JSON.stringify({
       language: this.kata.language,
-      stream: stream,
-      assert: assert
+      stream,
+      assert
     })).subscribe((data: string) => {
       console.log(data);
       response = data;
       if (response.exit === 0) {
+        this.alertService.success('Executed in : ' + response.time + 'ms');
         this.status = 0;
-        this.result = response.output + '\nExercise passed';
+        this.result = response.output + 'Exercise passed';
       } else {
         this.status = 1;
         this.result = response.error;
+        this.alertService.danger('Run failed !');
       }
-
-      this.result += '\nExecuted in : ' + response.time + 'ms';
     });
   }
 

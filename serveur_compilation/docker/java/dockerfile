@@ -1,0 +1,11 @@
+FROM ubuntu:14.04
+
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get update && apt-get -y upgrade
+RUN apt-get install -y default-jdk
+
+RUN mkdir /env/
+ADD .bashrc /root/
+
+WORKDIR /env/
