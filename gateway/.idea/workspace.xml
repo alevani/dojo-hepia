@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6a1f2e5-4f60-4227-82bb-83eb10fa94a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/kata-create/kata-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/kata-create/kata-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/kata-create/kata-create.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/kata-create/kata-create.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/kata-create/kata-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/kata-create/kata-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/kata-displayer/kata-displayer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/kata-displayer/kata-displayer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/kata-displayer/kata-displayer.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/kata-displayer/kata-displayer.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/kata/kata.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/kata/kata.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/kata/kata.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/kata/kata.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/kata/kata.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/kata/kata.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/languages_canvas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/languages_canvas.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/main-left-side-nav/main-left-side-nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/main-left-side-nav/main-left-side-nav.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/main-left-side-nav/main-left-side-nav.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/main-left-side-nav/main-left-side-nav.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/program-create/program-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/program-create/program-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/program-create/program-create.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/program-create/program-create.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/program-create/program-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/program-create/program-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/program-displayer/program-displayer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/program-displayer/program-displayer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/program-displayer/program-displayer.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/program-displayer/program-displayer.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -48,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/app.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+            <state relative-caret-position="277">
+              <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -157,9 +138,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -229,11 +210,12 @@
       <workItem from="1557298032818" duration="4720000" />
       <workItem from="1557322451462" duration="202000" />
       <workItem from="1557327228313" duration="707000" />
+      <workItem from="1557391556472" duration="31000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48450000" />
+    <option name="totallyTimeSpent" value="48489000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -248,7 +230,7 @@
     <frame x="0" y="23" width="1920" height="1121" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2736954" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19914803" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -490,8 +472,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/app.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+        <state relative-caret-position="277">
+          <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

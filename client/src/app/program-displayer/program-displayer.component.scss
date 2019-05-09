@@ -7,6 +7,10 @@
   float: right;
 }
 
+.program-container{
+  margin:5rem 10rem 0 10rem;
+}
+
 .language:hover {
   color: var(--color-language-hover);
 }
@@ -45,4 +49,5 @@ a {
 .card:hover{
   background-color: var(--color-electro);
   border:1px solid var(--color-electro);
+  cursor: pointer;
 }
