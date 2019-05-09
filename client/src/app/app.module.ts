@@ -21,6 +21,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {RNotFoundComponent} from './rnot-found/rnot-found.component';
 import {NgxUiLoaderModule} from 'ngx-ui-loader';
 import { AlertModule } from 'ngx-alerts';
+import { TestJwtComponent } from './test-jwt/test-jwt.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { AlertModule } from 'ngx-alerts';
     KataComponent,
     KataCreateComponent,
     ProgramCreateComponent,
-    RNotFoundComponent
+    RNotFoundComponent,
+    TestJwtComponent
   ],
   imports: [
 
@@ -55,7 +57,7 @@ import { AlertModule } from 'ngx-alerts';
     AlertModule.forRoot({maxMessages: 5, timeout: 5000, position: 'right'})
 
   ],
-  providers: [],
+  providers: [  ],
   bootstrap: [AppComponent]
 
 })

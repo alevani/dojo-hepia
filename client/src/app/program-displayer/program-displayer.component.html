@@ -2,7 +2,6 @@
   <h1 style="margin:2rem 0 0 2rem;text-align: center">All available programs</h1>
   <div class="d-flex flex-wrap justify-content-start">
     <div *ngFor="let program of programs">
-
       <div class="card" routerLink="/kata-displayer/{{program.programID}}" style="width: 18rem;margin: 2rem">
         <div class="card-body">
           <a routerLink="/kata-displayer/{{program.programID}}">

@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class Program {
-    private String id,sensei,language,title,description;
-    private String[] tags;
+    private String _id,id,sensei,language,title,description;
+    private ArrayList<String> tags;
     private int nbKata;
     private ArrayList<Kata> katas;
 
@@ -46,12 +46,30 @@ public class Program {
         this.description = description;
     }
 
-    public String[] getTags() {
+
+
+    public ArrayList<Kata> getKatas() {
+        return katas;
+    }
+
+    public void setKatas(ArrayList<Kata> katas) {
+        this.katas = katas;
+    }
+
+    public ArrayList<String> getTags() {
         return tags;
     }
 
-    public void setTags(String[] tags) {
+    public void setTags(ArrayList<String> tags) {
         this.tags = tags;
+    }
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
     public String getId() {
@@ -60,14 +78,6 @@ public class Program {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public ArrayList<Kata> getKatas() {
-        return katas;
-    }
-
-    public void setKatas(ArrayList<Kata> katas) {
-        this.katas = katas;
     }
 /*
     public ArrayList<Kata> getKata() {

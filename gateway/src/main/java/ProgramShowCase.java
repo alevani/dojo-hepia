@@ -1,9 +1,12 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class ProgramShowCase {
     private String title,sensei,language,description,programID;
     private int nbKata;
-    private String[] tags;
+    private ArrayList<String> tags;
 
-    public ProgramShowCase(String title, String sensei, String language, String description, int nbKata, String[] tags, String programID){
+    public ProgramShowCase(String title, String sensei, String language, String description, int nbKata, ArrayList<String> tags, String programID){
         this.title = title;
         this.sensei = sensei;
         this.language = language;
@@ -53,19 +56,19 @@ public class ProgramShowCase {
         this.nbKata = nbKata;
     }
 
-    public String[] getTags() {
-        return tags;
-    }
-
-    public void setTags(String[] tags) {
-        this.tags = tags;
-    }
-
     public String getProgramID() {
         return programID;
     }
 
     public void setProgramID(String programID) {
         this.programID = programID;
+    }
+
+    public ArrayList<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(ArrayList<String> tags) {
+        this.tags = tags;
     }
 }
