@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {KataShowCase} from '../../kata-displayer/kataShowCase';
+import {KataShowCase} from '../../component/kata-displayer/kataShowCase';
 import * as $ from 'jquery';
 import {HttpClient} from '@angular/common/http';
 
