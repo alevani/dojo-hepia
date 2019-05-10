@@ -1,12 +1,15 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="!(isHandset$ | async)">
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="!(isHandset$ | async)">
     <mat-toolbar>DOJO HEPIA</mat-toolbar>
-    <mat-nav-list *ngIf="true">
+    <mat-nav-list *ngIf="currentUser">
       <a mat-list-item href="/programs">All programs</a>
-      <a mat-list-item href="/program_create">New program</a>
+      <div *ngIf="currentUser.role != Role.monji">
+        <a mat-list-item href="/program_create">New program</a>
+      </div>
+      <a mat-list-item href="/search">Search</a>
       <a mat-list-item (click)="logout()">Log out</a>
     </mat-nav-list>
   </mat-sidenav>

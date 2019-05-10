@@ -45,7 +45,7 @@ export class KataCreateComponent implements OnInit {
 
 
   toggleOptions() {
-    this.options = ! this.options;
+    this.options = !this.options;
     console.log(this.options);
   }
 
@@ -90,9 +90,7 @@ export class KataCreateComponent implements OnInit {
       nbAttempt: this.numberOfAttempt,
       programID: this.programId,
       difficulty: 'Ceinture blanche'
-    })).subscribe();
-
-    this.router.navigate(['/kata-displayer/' + this.programId + '']);
+    })).subscribe(data => this.router.navigate(['/kata-displayer/' + this.programId + '']));
   }
 
   try(): void {

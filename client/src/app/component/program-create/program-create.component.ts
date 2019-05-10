@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {CreateProgramService} from '../../services/program/create-program.service';
 import {Router} from '@angular/router';
+import {AuthenticationService} from '../../services/auth/authentication.service';
+import {User} from '../../_helper/_models/user';
 
 @Component({
   selector: 'app-program-create',
@@ -8,9 +10,11 @@ import {Router} from '@angular/router';
   styleUrls: ['./program-create.component.scss']
 })
 export class ProgramCreateComponent implements OnInit {
+  currentUser: User;
 
   constructor(private createProgramService: CreateProgramService,
-              public router: Router) {
+              public router: Router, private auth: AuthenticationService) {
+    this.currentUser = this.auth.currentUserValue;
   }
 
   programTitle = '';
@@ -26,7 +30,7 @@ export class ProgramCreateComponent implements OnInit {
   createProgram(newkata: boolean): void {
     this.createProgramService.createProgram(JSON.stringify({
       id: this.programToKata,
-      sensei: 'Shodai',
+      sensei: this.currentUser.username,
       language: this.programLanguage,
       nbKata: 0,
       title: this.programTitle,

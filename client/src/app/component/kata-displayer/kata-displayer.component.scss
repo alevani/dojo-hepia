@@ -12,7 +12,13 @@
   font-size:15px;
   color:var(--color-dark-grey) !important;
 }
+.notsub{
+  pointer-events: none;
 
+  /* for "disabled" effect */
+  opacity: 0.5;
+  background: var(--color-dark-blue);
+}
 * {
   font-family: "Helvetica Neue";
 

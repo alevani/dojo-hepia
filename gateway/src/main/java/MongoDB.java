@@ -111,4 +111,10 @@ public class MongoDB extends ProgramsDataBase {
 
         return p;
     }
+
+    public toggleSubscription
+
+    // [iduser, idprogram : 234, status : 1 , katas [{id:1,status:"resolved",mysol:".."}],done : 1]
+    // ou
+    // separer en deux tables ,plus simple surement pour les requetes
 }

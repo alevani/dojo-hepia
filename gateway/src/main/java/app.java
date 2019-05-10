@@ -106,7 +106,7 @@ public class app {
                 e.printStackTrace();
             }
 
-        },roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.post("/program/create", ctx -> {
             Program prg = objectMapper.readValue(ctx.body(), Program.class);
@@ -155,7 +155,6 @@ public class app {
 
         app.post("jwt/request/", ctx -> {
             MockUser u = checkUser(ctx);
-            Thread.sleep(2000);
 
             if (!(u == null)) {
                 String token = provider.generateToken(u);

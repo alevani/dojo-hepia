@@ -7,16 +7,19 @@ import {ProgramCreateComponent} from './component/program-create/program-create.
 import {KataCreateComponent} from './component/kata-create/kata-create.component';
 import {LoginComponent} from './component/login/login.component';
 import {AuthGuard} from './_guard/auth.guard';
+import {SearchbyComponent} from './component/searchby/searchby.component';
+import {Role} from './_helper/_models/roles';
 
 const routes: Routes = [
   {path: '', component: ProgramDisplayerComponent, canActivate: [AuthGuard]},
 
   {path: 'login', component: LoginComponent},
-  {path: 'programs', component: ProgramDisplayerComponent, canActivate: [AuthGuard]},
-  {path: 'kata-displayer/:id', component: KataDisplayerComponent, canActivate: [AuthGuard]},
-  {path: 'kata/:prid/:id', component: KataComponent, canActivate: [AuthGuard]},
-  {path: 'program_create', component: ProgramCreateComponent, canActivate: [AuthGuard]},
-  {path: 'kata_create/:id/:language', component: KataCreateComponent, canActivate: [AuthGuard]},
+  {path: 'programs', component: ProgramDisplayerComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
+  {path: 'search', component: SearchbyComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
+  {path: 'kata-displayer/:id', component: KataDisplayerComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
+  {path: 'kata/:prid/:id', component: KataComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
+  {path: 'program_create', component: ProgramCreateComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
+  {path: 'kata_create/:id/:language', component: KataCreateComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
   {path: '**', redirectTo: ''}
 ];
 

@@ -14,7 +14,11 @@ export class LoginComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private router: Router,
               private auth: AuthenticationService,
-              private formBuilder: FormBuilder) {
+              private formBuilder: FormBuilder,
+              private authenticationService: AuthenticationService) {
+    if (this.authenticationService.currentUserValue) {
+      this.router.navigate(['/']);
+    }
   }
 
   loginForm: FormGroup;

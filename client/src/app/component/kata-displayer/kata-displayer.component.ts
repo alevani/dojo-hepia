@@ -19,6 +19,8 @@ export class KataDisplayerComponent implements OnInit {
   programLanguage: string;
   programSensei: string;
   error = false;
+  subvalue: string;
+  isSubscribed = false;
 
   inforreceived = false;
 
@@ -29,6 +31,15 @@ export class KataDisplayerComponent implements OnInit {
     private fetchProgramDetailsService: FetchProgramIdService,
     private ngxLoader: NgxUiLoaderService
   ) {
+  }
+
+  subscribe() {
+    this.isSubscribed = !this.isSubscribed;
+    if (!this.isSubscribed) {
+      this.subvalue = 'Subscribe';
+    } else {
+      this.subvalue = 'Unsubscribe';
+    }
   }
 
   getKatas(): void {
@@ -52,6 +63,11 @@ export class KataDisplayerComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (!this.isSubscribed) {
+      this.subvalue = 'Subscribe';
+    } else {
+      this.subvalue = 'Unsubscribe';
+    }
     this.getKatas();
   }
 

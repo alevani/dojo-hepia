@@ -3,6 +3,8 @@ import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {AuthenticationService} from '../../services/auth/authentication.service';
+import {User} from '../../_helper/_models/user';
+import {Role} from '../../_helper/_models/roles';
 
 
 @Component({
@@ -12,6 +14,8 @@ import {AuthenticationService} from '../../services/auth/authentication.service'
 })
 export class MainLeftSideNavComponent {
 
+  currentUser: User;
+  Role = Role;
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches)
@@ -24,6 +28,8 @@ export class MainLeftSideNavComponent {
   }
 
   constructor(private breakpointObserver: BreakpointObserver, private auth: AuthenticationService) {
+    this.currentUser = this.auth.currentUserValue;
+
   }
 
 }
