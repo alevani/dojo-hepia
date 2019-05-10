@@ -1,0 +1,38 @@
+<div style="margin:5rem 10rem 0 10rem" *ngIf="!error">
+  <div *ngIf="inforreceived">
+    <h1 class="title" style="margin:2rem 0 0 2rem;">{{programTitle}}
+    <br/>
+    <span class="subtitle">{{programSensei}} <span class="language"> {{programLanguage}}</span>
+    </span>
+      <button mat-button style="margin:0 3rem 0 0;float:right" routerLink="/kata_create/{{idProgram}}/{{programLanguage}}">Create a new kata</button>
+  </h1>
+
+  </div>
+  <br/>
+
+  <div *ngIf="katas">
+
+    <div class="d-flex flex-wrap justify-content-start">
+    <span *ngFor="let kata of katas">
+        <div class="card" style="width: 18rem;margin: 2rem" routerLink="/kata/{{idProgram}}/{{kata.id}}">
+          <div class="card-body">
+            <h5 class="card-title"><a class="title"
+                                      routerLink="/kata/{{idProgram}}/{{kata.id}}">{{kata.title}}</a><span class="difficulty">{{kata.status}}</span></h5>
+            <br/>
+            <h6 class="card-subtitle mb-2 text-muted">{{kata.difficulty}}</h6>
+            <br/>
+            <br/>
+            <!--<p class="card-text">{{kata.description}}</p>-->
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+</div>
+
+<span *ngIf="!katas || !inforreceived"><ngx-ui-loader></ngx-ui-loader></span>
+
+<div *ngIf="error">
+  <app-rnot-found></app-rnot-found>
+</div>
+

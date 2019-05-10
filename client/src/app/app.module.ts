@@ -2,27 +2,29 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {TerminalCodeComponent} from './terminal-code/terminal-code.component';
-import {TerminalAssertComponent} from './terminal-assert/terminal-assert.component';
+import {TerminalCodeComponent} from './component/terminal-code/terminal-code.component';
+import {TerminalAssertComponent} from './component/terminal-assert/terminal-assert.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MainLeftSideNavComponent} from './main-left-side-nav/main-left-side-nav.component';
+import {MainLeftSideNavComponent} from './component/main-left-side-nav/main-left-side-nav.component';
 import {LayoutModule} from '@angular/cdk/layout';
-import {MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule} from '@angular/material';
+import {MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule} from '@angular/material';
 import {AppRoutingModule} from './app-routing.module';
 import {RouterModule} from '@angular/router';
-import {KataDisplayerComponent} from './kata-displayer/kata-displayer.component';
-import {ProgramDisplayerComponent} from './program-displayer/program-displayer.component';
-import {KataComponent} from './kata/kata.component';
+import {KataDisplayerComponent} from './component/kata-displayer/kata-displayer.component';
+import {ProgramDisplayerComponent} from './component/program-displayer/program-displayer.component';
+import {KataComponent} from './component/kata/kata.component';
 import {AceEditorModule} from 'ng2-ace-editor';
-import {KataCreateComponent} from './kata-create/kata-create.component';
-import {ProgramCreateComponent} from './program-create/program-create.component';
-import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
-import {RNotFoundComponent} from './rnot-found/rnot-found.component';
+import {KataCreateComponent} from './component/kata-create/kata-create.component';
+import {ProgramCreateComponent} from './component/program-create/program-create.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import {RNotFoundComponent} from './component/rnot-found/rnot-found.component';
 import {NgxUiLoaderModule} from 'ngx-ui-loader';
-import { AlertModule } from 'ngx-alerts';
-import { TestJwtComponent } from './test-jwt/test-jwt.component';
-
+import {AlertModule} from 'ngx-alerts';
+import {LoginComponent} from './component/login/login.component';
+import {JwtInterceptor} from './_helper/jwt.interceptor';
+import {ErrorInterceptor} from './_helper/error.interceptor';
+import { ProfilCardComponent } from './component/user/profil-card/profil-card.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { TestJwtComponent } from './test-jwt/test-jwt.component';
     KataCreateComponent,
     ProgramCreateComponent,
     RNotFoundComponent,
-    TestJwtComponent
+    LoginComponent,
+    ProfilCardComponent
   ],
   imports: [
 
@@ -54,10 +57,17 @@ import { TestJwtComponent } from './test-jwt/test-jwt.component';
     FormsModule,
     HttpClientModule,
     NgxUiLoaderModule,
-    AlertModule.forRoot({maxMessages: 5, timeout: 5000, position: 'right'})
+    AlertModule.forRoot({maxMessages: 5, timeout: 5000, position: 'right'}),
+    ReactiveFormsModule,
+    MatCardModule
 
   ],
-  providers: [  ],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: ErrorInterceptor,
+    multi: true
+  }],
+
   bootstrap: [AppComponent]
 
 })

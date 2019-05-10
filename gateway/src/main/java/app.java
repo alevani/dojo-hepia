@@ -3,6 +3,7 @@ import com.auth0.jwt.JWTCreator;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.javalin.Context;
 import io.javalin.Handler;
 import io.javalin.Javalin;
 import io.javalin.security.Role;
@@ -10,7 +11,7 @@ import javalinjwt.JWTAccessManager;
 import javalinjwt.JWTGenerator;
 import javalinjwt.JWTProvider;
 import javalinjwt.JavalinJWT;
-import javalinjwt.examples.JWTResponse;
+import org.json.JSONObject;
 
 import java.io.*;
 import java.net.ConnectException;
@@ -31,11 +32,9 @@ public class app {
         ANYONE
     }
 
-    static Map<String, Role> rolesMapping = new HashMap<String, Role>();
-
-
-    private static ProgramsDataBase db = new LiveDB();
+    private static ProgramsDataBase db = new MongoDB();
     private static ObjectMapper objectMapper = new ObjectMapper();
+    private static ArrayList<MockUser> users = new ArrayList<>();
 
     public static void main(String[] args) {
 
@@ -44,8 +43,7 @@ public class app {
 
         JWTGenerator<MockUser> generator = (user, alg) -> {
             JWTCreator.Builder token = JWT.create()
-                    .withClaim("name", user.name)
-                    .withClaim("password", user.password)
+                    .withClaim("username", user.name)
                     .withClaim("level", user.level);
             return token.sign(alg);
         };
@@ -54,9 +52,9 @@ public class app {
 
         JWTProvider provider = new JWTProvider(algorithm, generator, verifier);
 
-        MockUser user1 = new MockUser("Kevin", "Monji", "Kevin");
-        MockUser user2 = new MockUser("Shodai", "Shodai", "Shodai");
-        MockUser user3 = new MockUser("Sensei", "Monji", "Sensei");
+        users.add(new MockUser(0, "monji", "monji", "monji"));
+        users.add(new MockUser(1, "shodai", "shodai", "shodai"));
+        users.add(new MockUser(2, "sensei", "sensei", "sensei"));
 
         Handler decodeHandler = JavalinJWT.createHeaderDecodeHandler(provider);
 
@@ -66,6 +64,12 @@ public class app {
 
         app.before(decodeHandler);
 
+        Map<String, Role> rolesMapping = new HashMap<String, Role>();
+
+        rolesMapping.put("shodai", Roles.SHODAI);
+        rolesMapping.put("anyone", Roles.ANYONE);
+        rolesMapping.put("monji", Roles.MONJI);
+        rolesMapping.put("sensei", Roles.SENSEI);
 
         JWTAccessManager accessManager = new JWTAccessManager("level", rolesMapping, Roles.ANYONE);
         app.accessManager(accessManager);
@@ -102,25 +106,19 @@ public class app {
                 e.printStackTrace();
             }
 
-
-            //String inputLine;
-            //while ((inputLine = in.readLine()) != null)
-            //  System.out.println(inputLine);
-
-            // For now, we can assume we will only need to fetch one response since the compilation
-            // server does send one json object with all the required data.
-
         });
 
         app.post("/program/create", ctx -> {
             Program prg = objectMapper.readValue(ctx.body(), Program.class);
             db.createProgram(prg);
-        });
+            ctx.status(200);
+        }, roles(Roles.SHODAI, Roles.SENSEI));
 
         app.post("/kata/create", ctx -> {
             Kata kt = objectMapper.readValue(ctx.body(), Kata.class);
             db.createKata(kt);
-        });
+            ctx.status(200);
+        }, roles(Roles.SHODAI, Roles.SENSEI));
 
         app.get("/program/getdetails", ctx -> {
             ArrayList<ProgramShowCase> prgsc = db.getProgramsDetails();
@@ -131,21 +129,21 @@ public class app {
                     ctx.json(prgsc);
             else
                 ctx.status(404);
-        }, roles(Roles.SHODAI));
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.get("/program/getkatas/details/:id", ctx -> {
             ArrayList<KataShowCase> ktsc = db.getProgramKatasDetails(ctx.pathParam("id"));
             ctx.json(ktsc);
-        });
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.get("/program/getkata/:prid/:id", ctx -> {
 
             Kata kata = db.getProgramKata(ctx.pathParam("prid"), ctx.pathParam("id"));
-            if (kata.get_id() == null)
+            if (kata.getId() == null)
                 ctx.status(404);
             else
                 ctx.json(kata);
-        });
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.get("program/getdetails/:id", ctx -> {
             ArrayList<String> s = db.getProgramDetailsByID(ctx.pathParam("id"));
@@ -153,16 +151,37 @@ public class app {
                 ctx.status(404);
             else
                 ctx.json(s);
-        });
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.get("jwt/request/:user/:password", ctx -> {
-            if (user2.name.equals(ctx.pathParam("user")) && user2.password.equals(ctx.pathParam("password"))) {
-                String token = provider.generateToken(user2);
-                ctx.json(new JWTResponse(token));
+        app.post("jwt/request/", ctx -> {
+            MockUser u = checkUser(ctx);
+            Thread.sleep(2000);
+
+            if (!(u == null)) {
+                String token = provider.generateToken(u);
+
+                HashMap<String, String> p = new HashMap<>();
+                p.put("id", String.valueOf(u.id));
+                p.put("username", u.name);
+                p.put("token", token);
+                p.put("role", u.level);
+
+                ctx.json(p);
             } else {
-                ctx.json("{jwt_error:'invalid ids'}");
+                ctx.status(400).json("Username or password is incorrect");
             }
 
         }, roles(Roles.ANYONE));
+
+
+    }
+
+    public static MockUser checkUser(Context ctx){
+        JSONObject ids = new JSONObject(ctx.body());
+
+        for(MockUser u : users)
+            if (u.name.equals(ids.get("username")) && u.password.equals(ids.get("password")))
+                return u;
+        return null;
     }
 }
