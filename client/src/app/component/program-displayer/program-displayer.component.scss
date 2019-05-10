@@ -2,52 +2,8 @@
   color: var(--color-cloud);
 }
 
-.language {
-  color: var(--color-language);
-  float: right;
-}
 
 .program-container{
   margin:5rem 10rem 0 10rem;
 }
 
-.language:hover {
-  color: var(--color-language-hover);
-}
-
-
-a.sensei {
-  color: var(--color-dark-grey) !important;
-}
-
-a.sensei:hover {
-  color: red;
-}
-
-a {
-  text-decoration: none;
-}
-
-.tag {
-  background-color: rgba(99, 110, 114, 0.4);
-  color: rgba(9, 132, 227, 1.0);
-  padding: 3px;
-  margin-right: 3px;
-}
-
-.nbkata {
-  font-size: 15px;
-  color:var(--color-amethyst);
-  float: right;
-}
-
-.card {
-  background-color: var(--color-dark-blue);
-}
-
-
-.card:hover{
-  background-color: var(--color-electro);
-  border:1px solid var(--color-electro);
-  cursor: pointer;
-}

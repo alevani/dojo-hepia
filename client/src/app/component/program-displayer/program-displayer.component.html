@@ -1,25 +1,10 @@
 <div class="program-container" *ngIf="programs">
   <h1 style="margin:2rem 0 0 2rem;text-align: center">All available programs</h1>
-  <div class="d-flex flex-wrap justify-content-start">
-    <div *ngFor="let program of programs">
-      <div class="card" routerLink="/kata-displayer/{{program.programID}}" style="width: 18rem;margin: 2rem">
-        <div class="card-body">
-          <a routerLink="/kata-displayer/{{program.programID}}">
-            <h5 class="card-title">{{program.title}}</h5></a>
-          <h6 class="card-subtitle mb-2 text-muted"><a class="sensei" href="">{{program.sensei}} </a>
-            <a href=""><span class="language">{{program.language}}</span></a></h6>
-          <br/>
-          <p class="card-text">{{program.description}}</p>
-          <span *ngFor="let tag of program.tags">
-        <span class="tag">{{tag}}</span>
-        </span>
-          <span class="nbkata">#{{program.nbKata}}</span>
-        </div>
-      </div>
 
-    </div>
-  </div>
+    <app-card-displayer [programs]="programs"></app-card-displayer>
+
 </div>
+
 <div *ngIf="programReceivedFailed">
   <h1 style="margin:2rem 0 0 2rem;text-align: center">Oops.. no program available ..</h1>
   <h2 style="margin:2rem 0 0 2rem;text-align: center"><a routerLink="/program_create">Create a new program</a></h2>

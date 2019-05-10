@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FetchProgramService} from '../../services/program/fetch-program.service';
 import {Program} from './program';
 import {NgxUiLoaderService} from 'ngx-ui-loader';
+import {FetchProgramByTypeService} from '../../services/program/search/fetch-program-by-type.service';
 
 @Component({
   selector: 'app-program-displayer',

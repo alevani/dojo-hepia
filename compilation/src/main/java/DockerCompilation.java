@@ -7,18 +7,18 @@ public class DockerCompilation {
     public HashMap<String, Object> execute_kata(JSONObject input) {
 
 
-        String filename = "", filename_test="todeleteifitstayslikethis", cmd = "", line, output = "", error = "";
+        String filename = "", filename_test = "todeleteifitstayslikethis", cmd = "", line, output = "", error = "", dir = System.getProperty("user.dir");
 
         switch (input.get("language").toString()) {
             case "python":
                 filename = "share_docker_file/sample.py";
                 filename_test = "share_docker_file/assert.py";
-                cmd = "docker run --rm --mount type=bind,source=/Users/freak/Desktop/dojo-hepia/compilation/share_docker_file,dst=/env/ hey:1.1 python3 assert.py";
+                cmd = "docker run --rm --mount type=bind,source=" + dir + "/share_docker_file,dst=/env/ hey:1.1 python3 assert.py";
                 break;
             case "java":
                 filename = "share_docker_file/kata.java";
                 filename_test = "share_docker_file/Main.java";
-                cmd = "docker run --rm --mount type=bind,source=/Users/freak/Desktop/dojo-hepia/compilation/share_docker_file,dst=/env/ java:4.0 ./java_test.sh";
+                cmd = "docker run --rm --mount type=bind,source=" + dir + "/share_docker_file,dst=/env/ java:4.0 ./java_test.sh";
                 break;
         }
 
@@ -30,7 +30,7 @@ public class DockerCompilation {
             e.printStackTrace();
         }
 
-        try(PrintWriter writer = new PrintWriter(filename_test,"UTF-8")){
+        try (PrintWriter writer = new PrintWriter(filename_test, "UTF-8")) {
             writer.println(input.get("assert"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();

@@ -1,0 +1,22 @@
+<h6 *ngIf="filter" style="margin:0 0 0 2rem">Filtered by {{filterType}} : <span
+  class="filter-value">{{filterValue}}</span></h6>
+<div class="d-flex flex-wrap justify-content-start">
+  <div *ngFor="let program of programs">
+    <div class="card" style="width: 18rem;margin: 2rem">
+      <div class="card-body">
+        <a routerLink="/kata-displayer/{{program.programID}}"><h5 class="card-title">{{program.title}}</h5></a>
+        <h6 class="card-subtitle mb-2 text-muted"><a><span (click)="querySearch('sensei',program.sensei)"
+                                                           class="sensei">{{program.sensei}}</span> </a>
+          <a><span (click)="querySearch('language',program.language)" class="language">{{program.language}}</span></a>
+        </h6>
+        <br/>
+        <p class="card-text">{{program.description}}</p>
+        <span *ngFor="let tag of program.tags">
+        <span class="tag" (click)="querySearch('tags',tag)">{{tag}}</span>
+        </span>
+        <span class="nbkata">#{{program.nbKata}}</span>
+      </div>
+    </div>
+
+  </div>
+</div>

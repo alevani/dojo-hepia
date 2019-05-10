@@ -7,4 +7,5 @@ public abstract class ProgramsDataBase {
     public abstract Kata getProgramKata(String programID, String kataID);
     public abstract ArrayList<KataShowCase> getProgramKatasDetails(String programID);
     public abstract ArrayList<String> getProgramDetailsByID(String id);
+    public abstract ArrayList<ProgramShowCase> getProgramDetailsByResource(String type, String resource);
 }

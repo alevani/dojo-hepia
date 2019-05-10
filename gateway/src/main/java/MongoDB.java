@@ -99,4 +99,16 @@ public class MongoDB extends ProgramsDataBase {
         }
         return infos;
     }
+
+    public ArrayList<ProgramShowCase> getProgramDetailsByResource(String type, String resource) {
+        ArrayList<ProgramShowCase> p = new ArrayList<>();
+
+        MongoCollection<Program> cprograms = database.getCollection("Programs", Program.class);
+        Iterable<Program> programs = cprograms.find(eq(type, resource));
+
+        for (Program prg : programs)
+            p.add(new ProgramShowCase(prg.getTitle(), prg.getSensei(), prg.getLanguage(), prg.getDescription(), prg.getNbKata(), prg.getTags(), prg.getId()));
+
+        return p;
+    }
 }

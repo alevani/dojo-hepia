@@ -74,4 +74,9 @@ public class LiveDB extends ProgramsDataBase {
         return infos;
     }
 
+    @Override
+    public ArrayList<ProgramShowCase> getProgramDetailsByResource(String type, String resource) {
+        return null;
+    }
+
 }

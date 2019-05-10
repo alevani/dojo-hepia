@@ -25,6 +25,8 @@ import {LoginComponent} from './component/login/login.component';
 import {JwtInterceptor} from './_helper/jwt.interceptor';
 import {ErrorInterceptor} from './_helper/error.interceptor';
 import { ProfilCardComponent } from './component/user/profil-card/profil-card.component';
+import { CardDisplayerComponent } from './component/program-displayer/card-displayer/card-displayer.component';
+import { SearchbyComponent } from './component/searchby/searchby.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { ProfilCardComponent } from './component/user/profil-card/profil-card.co
     ProgramCreateComponent,
     RNotFoundComponent,
     LoginComponent,
-    ProfilCardComponent
+    ProfilCardComponent,
+    CardDisplayerComponent,
+    SearchbyComponent
   ],
   imports: [
 

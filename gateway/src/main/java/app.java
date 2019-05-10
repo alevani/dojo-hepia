@@ -106,7 +106,7 @@ public class app {
                 e.printStackTrace();
             }
 
-        });
+        },roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.post("/program/create", ctx -> {
             Program prg = objectMapper.readValue(ctx.body(), Program.class);
@@ -173,13 +173,25 @@ public class app {
 
         }, roles(Roles.ANYONE));
 
+        app.get("search/:type/:resource", ctx -> {
+            ArrayList<ProgramShowCase> p = db.getProgramDetailsByResource(ctx.pathParam("type"), ctx.pathParam("resource"));
+
+            if (p != null)
+                if (p.size() == 0)
+                    ctx.status(404);
+                else
+                    ctx.json(p);
+            else
+                ctx.status(404);
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
+
 
     }
 
-    public static MockUser checkUser(Context ctx){
+    public static MockUser checkUser(Context ctx) {
         JSONObject ids = new JSONObject(ctx.body());
 
-        for(MockUser u : users)
+        for (MockUser u : users)
             if (u.name.equals(ids.get("username")) && u.password.equals(ids.get("password")))
                 return u;
         return null;

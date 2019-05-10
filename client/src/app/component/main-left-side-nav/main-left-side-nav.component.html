@@ -5,7 +5,6 @@
       [opened]="!(isHandset$ | async)">
     <mat-toolbar>DOJO HEPIA</mat-toolbar>
     <mat-nav-list *ngIf="true">
-      <app-profil-card></app-profil-card>
       <a mat-list-item href="/programs">All programs</a>
       <a mat-list-item href="/program_create">New program</a>
       <a mat-list-item (click)="logout()">Log out</a>
@@ -21,7 +20,6 @@
       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
 
     </button>
-
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
