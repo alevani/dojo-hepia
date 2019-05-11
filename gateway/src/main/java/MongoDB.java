@@ -9,6 +9,7 @@ import java.util.Arrays;
 
 import static com.mongodb.client.model.Filters.*;
 import static com.mongodb.client.model.Updates.*;
+import static com.mongodb.client.model.Projections.*;
 import static org.bson.codecs.configuration.CodecRegistries.fromProviders;
 import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 
@@ -134,6 +135,19 @@ public class MongoDB extends ProgramsDataBase {
         else
             programSubs.updateOne(combine(eq("idprogram", idrogram), eq("iduser", userid)), set("status", true));
 
+    }
+
+    public ArrayList<ProgramShowCase> getUserSubscription(String userid) {
+        Iterable<ProgramSubscription> s = database.getCollection("ProgramsSubscription", ProgramSubscription.class).find(combine(eq("iduser", userid), eq("status", true))).projection(include("idprogram"));
+        ArrayList<String> idprog = new ArrayList<>();
+        ArrayList<ProgramShowCase> prgsc = new ArrayList<>();
+        MongoCollection<Program> cprograms = database.getCollection("Programs", Program.class);
+        for (ProgramSubscription sub : s) {
+            Program p = cprograms.find(eq("_id", sub.getIdprogram())).first();
+            prgsc.add(new ProgramShowCase(p.getTitle(), p.getSensei(), p.getLanguage(), p.getDescription(), p.getNbKata(), p.getTags(), p.getId()));
+        }
+
+        return prgsc;
     }
 
     // [iduser, idprogram : 234, status : 1 , katas [{id:1,status:"resolved",mysol:".."}],done : 1]

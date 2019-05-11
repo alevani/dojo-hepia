@@ -11,4 +11,5 @@ public abstract class ProgramsDataBase {
     public abstract ProgramSubscription getSubscriptionByID(String userid, String idrogram);
     public abstract void createProgramSubscritpion(ProgramSubscription p);
     public abstract void toggleSubscription(String userid, String idrogram);
+    public abstract ArrayList<ProgramShowCase> getUserSubscription(String userid);
 }

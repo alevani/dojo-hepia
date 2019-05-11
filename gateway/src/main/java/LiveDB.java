@@ -94,4 +94,9 @@ public class LiveDB extends ProgramsDataBase {
 
     }
 
+    @Override
+    public ArrayList<ProgramShowCase> getUserSubscription(String userid) {
+        return null;
+    }
+
 }
