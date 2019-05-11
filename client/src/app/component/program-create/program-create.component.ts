@@ -53,7 +53,7 @@ export class ProgramCreateComponent implements OnInit {
           if (newkata) {
             this.router.navigate(['/kata_create/' + this.programToKata + '/' + this.programLanguage + '']);
           } else {
-            this.router.navigate(['/']);
+            this.router.navigate(['/program/mine']);
           }
         }
       );

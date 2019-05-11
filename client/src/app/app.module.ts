@@ -28,6 +28,8 @@ import { ProfilCardComponent } from './component/user/profil-card/profil-card.co
 import { CardDisplayerComponent } from './component/program-displayer/card-displayer/card-displayer.component';
 import { SearchbyComponent } from './component/searchby/searchby.component';
 import { SubscriptionComponent } from './component/subscription/subscription.component';
+import { MineComponent } from './component/mine/mine.component';
+import { CardNoneallDisplayerComponent } from './component/program-displayer/card-noneall-displayer/card-noneall-displayer.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { SubscriptionComponent } from './component/subscription/subscription.com
     ProfilCardComponent,
     CardDisplayerComponent,
     SearchbyComponent,
-    SubscriptionComponent
+    SubscriptionComponent,
+    MineComponent,
+    CardNoneallDisplayerComponent
   ],
   imports: [
 

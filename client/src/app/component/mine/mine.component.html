@@ -1,12 +1,12 @@
 <div class="program-container" *ngIf="programs">
-  <h1 style="margin:2rem 0 0 2rem;text-align: center">My subscription</h1>
+  <h1 style="margin:2rem 0 0 2rem;text-align: center">My created programs</h1>
 
   <app-card-noneall-displayer [programs]="programs"></app-card-noneall-displayer>
 
 </div>
 
 <div *ngIf="programReceivedFailed">
-  <h1 style="margin:2rem 0 0 2rem;text-align: center">Oops.. no subscriptions available ..</h1>
+  <h1 style="margin:2rem 0 0 2rem;text-align: center">Oops.. you have not created any program yet..</h1>
 </div>
 
 

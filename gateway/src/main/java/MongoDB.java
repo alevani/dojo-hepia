@@ -139,8 +139,8 @@ public class MongoDB extends ProgramsDataBase {
 
     public ArrayList<ProgramShowCase> getUserSubscription(String userid) {
         Iterable<ProgramSubscription> s = database.getCollection("ProgramsSubscription", ProgramSubscription.class).find(combine(eq("iduser", userid), eq("status", true))).projection(include("idprogram"));
-        ArrayList<String> idprog = new ArrayList<>();
         ArrayList<ProgramShowCase> prgsc = new ArrayList<>();
+
         MongoCollection<Program> cprograms = database.getCollection("Programs", Program.class);
         for (ProgramSubscription sub : s) {
             Program p = cprograms.find(eq("_id", sub.getIdprogram())).first();
@@ -149,6 +149,17 @@ public class MongoDB extends ProgramsDataBase {
 
         return prgsc;
     }
+
+    public ArrayList<ProgramShowCase> getUserProgram(String userid) {
+        Iterable<Program> cprograms = database.getCollection("Programs", Program.class).find(eq("idsensei", userid));
+        ArrayList<ProgramShowCase> prgsc = new ArrayList<>();
+
+        for (Program p : cprograms)
+            prgsc.add(new ProgramShowCase(p.getTitle(), p.getSensei(), p.getLanguage(), p.getDescription(), p.getNbKata(), p.getTags(), p.getId()));
+
+        return prgsc;
+    }
+
 
     // [iduser, idprogram : 234, status : 1 , katas [{id:1,status:"resolved",mysol:".."}],done : 1]
     // ou

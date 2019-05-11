@@ -155,6 +155,17 @@ public class app {
                 ctx.status(404);
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
+        app.get("/subscription/mine/:userid", ctx -> {
+            ArrayList<ProgramShowCase> prgsc = db.getUserProgram(ctx.pathParam("userid"));
+            if (prgsc != null)
+                if (prgsc.size() == 0)
+                    ctx.status(404);
+                else
+                    ctx.json(prgsc);
+            else
+                ctx.status(404);
+        }, roles(Roles.SHODAI, Roles.SENSEI));
+
         app.get("/program/getkatas/details/:id", ctx -> {
             ArrayList<KataShowCase> ktsc = db.getProgramKatasDetails(ctx.pathParam("id"));
             ctx.json(ktsc);

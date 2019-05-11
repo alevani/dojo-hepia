@@ -10,17 +10,19 @@ import {AuthGuard} from './_guard/auth.guard';
 import {SearchbyComponent} from './component/searchby/searchby.component';
 import {Role} from './_helper/_models/roles';
 import {SubscriptionComponent} from './component/subscription/subscription.component';
+import {MineComponent} from './component/mine/mine.component';
 
 const routes: Routes = [
   {path: '', component: ProgramDisplayerComponent, canActivate: [AuthGuard]},
 
-  {path: 'login', component: LoginComponent},
-  {path: 'programs', component: ProgramDisplayerComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
-  {path: 'subscriptions', component: SubscriptionComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
-  {path: 'search', component: SearchbyComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
+  {path: 'user/login', component: LoginComponent},
+  {path: 'program', component: ProgramDisplayerComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
+  {path: 'program/subscriptions', component: SubscriptionComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
+  {path: 'program/mine', component: MineComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
+  {path: 'program/search', component: SearchbyComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
   {path: 'kata-displayer/:id', component: KataDisplayerComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
   {path: 'kata/:prid/:id', component: KataComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
-  {path: 'program_create', component: ProgramCreateComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
+  {path: 'program/create', component: ProgramCreateComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
   {path: 'kata_create/:id/:language', component: KataCreateComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
   {path: '**', redirectTo: ''}
 ];
