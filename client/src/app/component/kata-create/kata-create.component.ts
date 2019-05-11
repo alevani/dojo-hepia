@@ -5,7 +5,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Location} from '@angular/common';
 import {CreateKataService} from '../../services/kata/create-kata.service';
 import {CompilationService} from '../../services/compilation/compilation.service';
-
+import {v4 as uuid} from 'uuid';
 @Component({
   selector: 'app-kata-create',
   templateUrl: './kata-create.component.html',
@@ -33,7 +33,7 @@ export class KataCreateComponent implements OnInit {
   solution = '';
   rules = '';
 
-  programId = 0;
+  programId = '';
 
   LANG: Canva;
 
@@ -79,7 +79,7 @@ export class KataCreateComponent implements OnInit {
   publish(): void {
 
     this.kateCreateService.publish(JSON.stringify({
-      id: +new Date(),
+      id: uuid(),
       title: this.title,
       language: this.language,
       canva: this.canva,
@@ -116,9 +116,10 @@ export class KataCreateComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.programId = +this.route.snapshot.paramMap.get('id');
+    this.programId = this.route.snapshot.paramMap.get('id');
     this.language = this.route.snapshot.paramMap.get('language');
     this.getLANG(this.language);
+
   }
 
 }

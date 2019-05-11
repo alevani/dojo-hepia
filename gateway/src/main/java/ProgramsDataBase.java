@@ -8,4 +8,7 @@ public abstract class ProgramsDataBase {
     public abstract ArrayList<KataShowCase> getProgramKatasDetails(String programID);
     public abstract ArrayList<String> getProgramDetailsByID(String id);
     public abstract ArrayList<ProgramShowCase> getProgramDetailsByResource(String type, String resource);
+    public abstract ProgramSubscription getSubscriptionByID(String userid, String idrogram);
+    public abstract void createProgramSubscritpion(ProgramSubscription p);
+    public abstract void toggleSubscription(String userid, String idrogram);
 }

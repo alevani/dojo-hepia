@@ -9,6 +9,7 @@
       <div *ngIf="currentUser.role != Role.monji">
         <a mat-list-item href="/program_create">New program</a>
       </div>
+      <a mat-list-item href="/subscriptions">Subscriptions</a>
       <a mat-list-item href="/search">Search</a>
       <a mat-list-item (click)="logout()">Log out</a>
     </mat-nav-list>

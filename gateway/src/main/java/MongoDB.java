@@ -96,6 +96,7 @@ public class MongoDB extends ProgramsDataBase {
             infos.add(p.getTitle());
             infos.add(p.getLanguage());
             infos.add(p.getSensei());
+            infos.add(p.getIdsensei());
         }
         return infos;
     }
@@ -112,7 +113,28 @@ public class MongoDB extends ProgramsDataBase {
         return p;
     }
 
-    public toggleSubscription
+    public ProgramSubscription getSubscriptionByID(String userid, String idrogram) {
+        MongoCollection<ProgramSubscription> programSubs = database.getCollection("ProgramsSubscription", ProgramSubscription.class);
+        ProgramSubscription prgsub = programSubs.find(combine(eq("idprogram", idrogram), eq("iduser", userid))).first();
+
+        return prgsub;
+    }
+
+    public void createProgramSubscritpion(ProgramSubscription p) {
+        MongoCollection<ProgramSubscription> programSubs = database.getCollection("ProgramsSubscription", ProgramSubscription.class);
+        programSubs.insertOne(p);
+    }
+
+    public void toggleSubscription(String userid, String idrogram) {
+        MongoCollection<ProgramSubscription> programSubs = database.getCollection("ProgramsSubscription", ProgramSubscription.class);
+        ProgramSubscription prog = programSubs.find(combine(eq("idprogram", idrogram), eq("iduser", userid))).first();
+
+        if (prog.getStatus())
+            programSubs.updateOne(combine(eq("idprogram", idrogram), eq("iduser", userid)), set("status", false));
+        else
+            programSubs.updateOne(combine(eq("idprogram", idrogram), eq("iduser", userid)), set("status", true));
+
+    }
 
     // [iduser, idprogram : 234, status : 1 , katas [{id:1,status:"resolved",mysol:".."}],done : 1]
     // ou

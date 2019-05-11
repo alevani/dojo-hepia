@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Program {
-    private String _id,id,sensei,language,title,description;
+    private String _id,id,sensei,language,title,description,idsensei;
     private ArrayList<String> tags;
     private int nbKata;
     private ArrayList<Kata> katas;
@@ -78,6 +78,14 @@ public class Program {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getIdsensei() {
+        return idsensei;
+    }
+
+    public void setIdsensei(String idsensei) {
+        this.idsensei = idsensei;
     }
 /*
     public ArrayList<Kata> getKata() {

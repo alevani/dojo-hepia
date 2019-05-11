@@ -114,6 +114,19 @@ public class app {
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
+
+        app.post("program/createsubscription", ctx -> {
+            ProgramSubscription prg = objectMapper.readValue(ctx.body(), ProgramSubscription.class);
+            db.createProgramSubscritpion(prg);
+            ctx.status(200);
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
+
+        app.post("program/togglesubscription", ctx -> {
+            JSONObject input = new JSONObject(ctx.body());
+            db.toggleSubscription(String.valueOf(input.get("userid")), String.valueOf(input.get("programid")));
+            ctx.status(200);
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
+
         app.post("/kata/create", ctx -> {
             Kata kt = objectMapper.readValue(ctx.body(), Kata.class);
             db.createKata(kt);
@@ -184,7 +197,14 @@ public class app {
                 ctx.status(404);
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-
+        app.get("program/getsubscription/:programid/:userid", ctx -> {
+            ProgramSubscription p = db.getSubscriptionByID(ctx.pathParam("userid"), ctx.pathParam("programid"));
+            if (!(p == null))
+                ctx.json(p);
+            else {
+                ctx.status(404);
+            }
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
     }
 
     public static MockUser checkUser(Context ctx) {

@@ -4,10 +4,10 @@
       <br/>
       <span class="subtitle">{{programSensei}} <span class="language"> {{programLanguage}}</span>
     </span>
-      <button mat-button style="margin:0 3rem 0 0;float:right"
+      <button mat-button style="margin:0 3rem 0 0;float:right" *ngIf="isOwner"
               routerLink="/kata_create/{{idProgram}}/{{programLanguage}}">Create a new kata
       </button>
-      <button mat-button style="margin:0 3rem 0 0;float:right" (click)="subscribe()">{{subvalue}}</button>
+      <button mat-button style="margin:0 3rem 0 0;float:right" *ngIf="!isOwner" (click)="subscribe()">{{subvalue}}</button>
     </h1>
 
   </div>

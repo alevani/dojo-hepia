@@ -79,4 +79,19 @@ public class LiveDB extends ProgramsDataBase {
         return null;
     }
 
+    @Override
+    public ProgramSubscription getSubscriptionByID(String userid, String idrogram) {
+        return null;
+    }
+
+    @Override
+    public void createProgramSubscritpion(ProgramSubscription p) {
+
+    }
+
+    @Override
+    public void toggleSubscription(String userid, String idrogram) {
+
+    }
+
 }

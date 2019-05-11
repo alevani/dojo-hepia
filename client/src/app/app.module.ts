@@ -27,6 +27,7 @@ import {ErrorInterceptor} from './_helper/error.interceptor';
 import { ProfilCardComponent } from './component/user/profil-card/profil-card.component';
 import { CardDisplayerComponent } from './component/program-displayer/card-displayer/card-displayer.component';
 import { SearchbyComponent } from './component/searchby/searchby.component';
+import { SubscriptionComponent } from './component/subscription/subscription.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { SearchbyComponent } from './component/searchby/searchby.component';
     LoginComponent,
     ProfilCardComponent,
     CardDisplayerComponent,
-    SearchbyComponent
+    SearchbyComponent,
+    SubscriptionComponent
   ],
   imports: [
 
