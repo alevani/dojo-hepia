@@ -278,7 +278,7 @@ public class app {
 
         app.post("kata/update/subscription", ctx -> {
             JSONObject obj = new JSONObject(ctx.body());
-            db.updateKataSubscription(obj.getString("kataid"), obj.getString("programid"), obj.getString("userid"), obj.getString("sol"));
+            db.updateKataSubscription(obj.getString("kataid"), obj.getString("programid"), obj.getString("userid"), obj.getString("sol"),obj.getString("status"));
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 

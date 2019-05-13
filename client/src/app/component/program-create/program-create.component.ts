@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {CreateProgramService} from '../../services/program/create-program.service';
 import {Router} from '@angular/router';
 import {AuthenticationService} from '../../services/auth/authentication.service';
 import {User} from '../../_helper/_models/user';
-import {CreateSubscriptionService} from '../../services/program/subs/create-subscription.service';
 import {v4 as uuid} from 'uuid';
+import {ProgramSubscriptionService} from '../../services/program/subs/program-subscription.service';
+import {ProgramService} from '../../services/program/program.service';
 
 @Component({
   selector: 'app-program-create',
@@ -14,10 +14,10 @@ import {v4 as uuid} from 'uuid';
 export class ProgramCreateComponent implements OnInit {
   currentUser: User;
 
-  constructor(private createProgramService: CreateProgramService,
+  constructor(private programService: ProgramService,
               public router: Router,
               private auth: AuthenticationService,
-              private createSubService: CreateSubscriptionService) {
+              private programSubscription: ProgramSubscriptionService) {
     this.currentUser = this.auth.currentUserValue;
   }
 
@@ -32,7 +32,7 @@ export class ProgramCreateComponent implements OnInit {
   }
 
   createProgram(newkata: boolean): void {
-    this.createProgramService.createProgram(JSON.stringify({
+    this.programService.createProgram(JSON.stringify({
       id: this.programToKata,
       sensei: this.currentUser.username,
       language: this.programLanguage,
@@ -43,7 +43,7 @@ export class ProgramCreateComponent implements OnInit {
       idsensei: this.currentUser.id,
       katas: []
     })).subscribe(() => {
-      this.createSubService.createSubscription(JSON.stringify({
+      this.programSubscription.createSubscription(JSON.stringify({
         id: uuid(),
         iduser: this.currentUser.id,
         idprogram: this.programToKata,

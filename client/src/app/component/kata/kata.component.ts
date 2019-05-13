@@ -1,10 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Location} from '@angular/common';
-import {FetchKataService} from '../../services/kata/fetch-kata.service';
 import {Kata} from './kata';
 import {CompilationService} from '../../services/compilation/compilation.service';
-import {FetchProgramIdService} from '../../services/program/fetch-program-id.service';
 import {NgxUiLoaderService} from 'ngx-ui-loader';
 import {Canva} from '../../languages_canvas';
 import {LANGService} from '../../services/LANG/lang.service';
@@ -12,7 +10,9 @@ import {AlertService} from 'ngx-alerts';
 import {AuthenticationService} from '../../services/auth/authentication.service';
 import {KataSubscription} from '../../interfaces/subscriptions/KataSubscription';
 import {v4 as uuid} from 'uuid';
-import {KataSubscriptionService} from '../../services/program/kata/kata-subscription.service';
+import {KataSubscriptionService} from '../../services/kata/kata-subscription.service';
+import {ProgramService} from '../../services/program/program.service';
+import {KataService} from '../../services/kata/kata.service';
 
 @Component({
   selector: 'app-kata',
@@ -36,6 +36,8 @@ export class KataComponent implements OnInit {
   isResolved = false;
   filename = '';
   assertname = '';
+  nbAttemptBeforeSurreding: number;
+  newTry = false;
 
   katareceived = false;
   assert = true;
@@ -45,9 +47,9 @@ export class KataComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private location: Location,
-    private fetchKataService: FetchKataService,
+    private kataService: KataService,
     private compilationService: CompilationService,
-    private fetchProgramDetailsService: FetchProgramIdService,
+    private programService: ProgramService,
     private ngxLoader: NgxUiLoaderService,
     private langservice: LANGService,
     private alertService: AlertService,
@@ -66,12 +68,13 @@ export class KataComponent implements OnInit {
 
   getKata(): void {
     this.ngxLoader.start();
-    this.fetchProgramDetailsService.getDetails(this.programID).subscribe((data: string[]) => {
+    this.programService.getDetails(this.programID).subscribe((data: string[]) => {
       this.programSensei = data[2];
       this.programTitle = data[0];
-      this.fetchKataService.getKata(this.programID, this.idKata).subscribe((datas: Kata) => {
+      this.kataService.getKata(this.programID, this.idKata).subscribe((datas: Kata) => {
           this.kata = datas;
           this.assert = !datas.keepAssert;
+          this.nbAttemptBeforeSurreding = datas.nbAttempt;
           this.getLANG(this.kata.language);
           this.ngxLoader.stop();
           this.getSubscription();
@@ -91,8 +94,16 @@ export class KataComponent implements OnInit {
     });
   }
 
+  newtry() {
+    this.newTry = true;
+  }
+
   Surrender() {
-    alert('Oops.. this functionality has not been implemented yet :( !');
+    if (this.nbAttempt >= this.nbAttemptBeforeSurreding) {
+      return;
+    } else {
+      this.alertService.info('Oh.. Looks like you did not try enough !');
+    }
   }
 
   OnNewEvent(event: any): void {
@@ -109,34 +120,51 @@ export class KataComponent implements OnInit {
     })).subscribe((data: string) => {
       console.log(data);
       response = data;
-      this.nbAttempt++;
 
-      this.kataSubscriptionService.increment(JSON.stringify({
-        kataid: this.idKata,
-        programid: this.programID,
-        userid: this.auth.currentUserValue.id
-      })).subscribe(() => {
+      if (!this.isResolved && !this.newTry) {
+        this.nbAttempt++;
+        this.kataSubscriptionService.increment(JSON.stringify({
+          kataid: this.idKata,
+          programid: this.programID,
+          userid: this.auth.currentUserValue.id
+        })).subscribe(() => {
 
-        if (response.exit === 0) {
-          this.kataSubscriptionService.update(JSON.stringify({
-            kataid: this.idKata,
-            programid: this.programID,
-            userid: this.auth.currentUserValue.id,
-            sol: stream
-          })).subscribe(() => {
-            this.alertService.success('Executed in : ' + response.time + 'ms');
-            this.status = 0;
-            this.result = response.output + 'Exercise passed';
-            this.isResolved = true;
+          if (response.exit === 0) {
             this.kataStatus = 'RESOLVED';
-          });
+            this.kataSubscriptionService.update(JSON.stringify({
+              kataid: this.idKata,
+              programid: this.programID,
+              userid: this.auth.currentUserValue.id,
+              sol: stream,
+              status: this.kataStatus
+            })).subscribe(() => {
+              this.alertService.success('Executed in : ' + response.time + 'ms');
+              this.status = 0;
+              this.result = response.output + 'Exercise passed';
+              this.isResolved = true;
+            });
+          } else {
+            this.status = 1;
+            this.result = response.error;
+            this.alertService.danger('Run failed !');
+          }
+          this.compiling = false;
+        });
+      } else {
+        if (response.exit === 0) {
+          this.alertService.success('Executed in : ' + response.time + 'ms');
+          this.status = 0;
+          this.result = response.output + 'Exercise passed';
+          this.isResolved = true;
+          this.kataStatus = 'RESOLVED';
         } else {
           this.status = 1;
           this.result = response.error;
           this.alertService.danger('Run failed !');
         }
         this.compiling = false;
-      });
+      }
+
 
     });
   }

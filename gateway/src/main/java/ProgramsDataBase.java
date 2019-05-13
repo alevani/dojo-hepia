@@ -33,6 +33,6 @@ public abstract class ProgramsDataBase {
 
     public abstract void incKataSubscriptionAttempt(String kataid, String programid, String userid);
 
-    public abstract void updateKataSubscription(String kataid, String programid, String userid, String sol);
+    public abstract void updateKataSubscription(String kataid, String programid, String userid, String sol,String status);
 
 }

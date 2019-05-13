@@ -2,16 +2,14 @@ import {Component, OnInit} from '@angular/core';
 import {KataShowCase} from './kataShowCase';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Location} from '@angular/common';
-import {FetchKataShowCaseService} from '../../services/kata/fetch-kata-show-case.service';
-import {FetchProgramIdService} from '../../services/program/fetch-program-id.service';
 import {NgxUiLoaderService} from 'ngx-ui-loader';
-import {GetSubscriptionService} from '../../services/program/subs/get-subscription.service';
 import {AuthenticationService} from '../../services/auth/authentication.service';
 import {User} from '../../_helper/_models/user';
 import {ProgramSubscription} from '../../interfaces/subscriptions/ProgramSubscription';
-import {CreateSubscriptionService} from '../../services/program/subs/create-subscription.service';
-import {ToggleSubscriptionService} from '../../services/program/subs/toggle-subscription.service';
 import {v4 as uuid} from 'uuid';
+import {ProgramSubscriptionService} from '../../services/program/subs/program-subscription.service';
+import {ProgramService} from '../../services/program/program.service';
+import {KataService} from '../../services/kata/kata.service';
 @Component({
   selector: 'app-kata-displayer',
   templateUrl: './kata-displayer.component.html',
@@ -42,13 +40,12 @@ export class KataDisplayerComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private location: Location,
-    private fetchKataShowCaseService: FetchKataShowCaseService,
-    private fetchProgramDetailsService: FetchProgramIdService,
+    private kataService: KataService,
+    private programService: ProgramService,
     private ngxLoader: NgxUiLoaderService,
-    private subsService: GetSubscriptionService,
     private auth: AuthenticationService,
-    private createSubsService: CreateSubscriptionService,
-    private toggleSubsService: ToggleSubscriptionService
+    private programSubscription: ProgramSubscriptionService
+
   ) {
   }
 
@@ -62,7 +59,7 @@ export class KataDisplayerComponent implements OnInit {
   subscribe() {
 
     if (this.nullsubs) {
-      this.createSubsService.createSubscription(JSON.stringify({
+      this.programSubscription.createSubscription(JSON.stringify({
         id: uuid(),
         iduser: this.currentUser.id,
         idprogram: this.idProgram,
@@ -73,11 +70,11 @@ export class KataDisplayerComponent implements OnInit {
         this.isSubscribed = true;
         this.nullsubs = false;
         this.subvalue = 'Unsubscribe';
-        this.subsService.getSubs(this.idProgram, this.currentUser.id).subscribe((data: ProgramSubscription) => this.subscription = data);
+        this.programSubscription.getSubs(this.idProgram, this.currentUser.id).subscribe((data: ProgramSubscription) => this.subscription = data);
       });
     } else {
       this.isSubscribed = !this.isSubscribed;
-      this.toggleSubsService.toggle(JSON.stringify({programid: this.idProgram, userid: this.currentUser.id})).subscribe(() => {
+      this.programSubscription.toggle(JSON.stringify({programid: this.idProgram, userid: this.currentUser.id})).subscribe(() => {
         if (this.isSubscribed) {
           this.subvalue = 'Unsubscribe';
         } else {
@@ -88,7 +85,7 @@ export class KataDisplayerComponent implements OnInit {
   }
 
   getSubs() {
-    this.subsService.getSubs(this.idProgram, this.currentUser.id).subscribe((data: ProgramSubscription) => {
+    this.programSubscription.getSubs(this.idProgram, this.currentUser.id).subscribe((data: ProgramSubscription) => {
       this.subscription = data;
       console.log(data);
       this.isSubscribed = this.subscription.status;
@@ -109,7 +106,7 @@ export class KataDisplayerComponent implements OnInit {
   getKatas() {
 
     this.ngxLoader.start();
-    this.fetchProgramDetailsService.getDetails(this.idProgram).subscribe((data: string[]) => {
+    this.programService.getDetails(this.idProgram).subscribe((data: string[]) => {
       this.programTitle = data[0];
       this.programLanguage = data[1];
       this.programSensei = data[2];
@@ -120,7 +117,7 @@ export class KataDisplayerComponent implements OnInit {
       this.getSubs();
 
       this.inforreceived = true;
-      this.fetchKataShowCaseService.getKatasDetails(this.idProgram).subscribe((datas: KataShowCase[]) => {
+      this.kataService.getKatasDetails(this.idProgram).subscribe((datas: KataShowCase[]) => {
         this.katas = datas;
         this.ngxLoader.stop();
       });

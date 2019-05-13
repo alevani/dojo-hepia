@@ -3,9 +3,9 @@ import {Canva} from '../../languages_canvas';
 import {LANGService} from '../../services/LANG/lang.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Location} from '@angular/common';
-import {CreateKataService} from '../../services/kata/create-kata.service';
 import {CompilationService} from '../../services/compilation/compilation.service';
 import {v4 as uuid} from 'uuid';
+import {KataService} from '../../services/kata/kata.service';
 @Component({
   selector: 'app-kata-create',
   templateUrl: './kata-create.component.html',
@@ -16,7 +16,7 @@ export class KataCreateComponent implements OnInit {
   constructor(private langservice: LANGService,
               private route: ActivatedRoute,
               private location: Location,
-              private kateCreateService: CreateKataService,
+              private kataService: KataService,
               public router: Router,
               private compilationService: CompilationService
   ) {
@@ -78,7 +78,7 @@ export class KataCreateComponent implements OnInit {
 
   publish(): void {
 
-    this.kateCreateService.publish(JSON.stringify({
+    this.kataService.publish(JSON.stringify({
       id: uuid(),
       title: this.title,
       language: this.language,

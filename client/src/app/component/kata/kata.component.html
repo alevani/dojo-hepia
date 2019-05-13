@@ -26,8 +26,8 @@
 
     <div class="p-2">
 
-      <button mat-button [hidden]="!isResolved" (click)="Surrender()" style="margin-right: 10px">Try again</button>
-      <button mat-button [disabled]="compiling || isResolved" (click)="compile(kata.language,kata.canva,kata.cassert)"
+      <button mat-button [hidden]="!isResolved" [disabled]="newTry" (click)="newtry()" style="margin-right: 10px">Try again</button>
+      <button mat-button [disabled]="compiling || (isResolved && !newTry )" (click)="compile(kata.language,kata.canva,kata.cassert)"
               style="float:right">Run</button>
       <button mat-button [disabled]="compiling || isResolved" (click)="Surrender()"
               style="margin-right: 10px">Surrender</button>

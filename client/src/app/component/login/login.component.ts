@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         data => {
           this.router.navigate([this.returnUrl]);
-          //location.reload();
+          location.reload();
         },
         error => {
           this.error = error.error;

@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Program} from '../program-displayer/program';
 import {NgxUiLoaderService} from 'ngx-ui-loader';
-import {FetchSubscriptionService} from '../../services/program/subs/fetch-subscription.service';
 import {AuthenticationService} from '../../services/auth/authentication.service';
+import {ProgramSubscriptionService} from '../../services/program/subs/program-subscription.service';
 
 @Component({
   selector: 'app-subscription',
@@ -14,13 +14,13 @@ export class SubscriptionComponent implements OnInit {
   programs: Program[];
   programReceivedFailed = false;
 
-  constructor(private fetchSubscriptionService: FetchSubscriptionService, private ngxLoader: NgxUiLoaderService, private auth: AuthenticationService) {
+  constructor(private programSubscription: ProgramSubscriptionService, private ngxLoader: NgxUiLoaderService, private auth: AuthenticationService) {
   }
 
   getProgram(): void {
 
     this.ngxLoader.start();
-    this.fetchSubscriptionService.getSubscription(this.auth.currentUserValue.id).subscribe((data: Program[]) => {
+    this.programSubscription.getSubscription(this.auth.currentUserValue.id).subscribe((data: Program[]) => {
       this.programs = data.filter((x) => x.sensei !== this.auth.currentUserValue.username);
       this.ngxLoader.stop();
     }, error1 => {

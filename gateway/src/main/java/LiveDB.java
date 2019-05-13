@@ -125,8 +125,10 @@ public class LiveDB extends ProgramsDataBase {
     }
 
     @Override
-    public void updateKataSubscription(String kataid, String programid, String userid, String sol) {
+    public void updateKataSubscription(String kataid, String programid, String userid, String sol, String status) {
 
     }
+
+
 
 }

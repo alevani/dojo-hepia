@@ -2,7 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Program} from '../program-displayer/program';
 import {NgxUiLoaderService} from 'ngx-ui-loader';
 import {AuthenticationService} from '../../services/auth/authentication.service';
-import {FetchMineService} from '../../services/program/subs/fetch-mine.service';
+import {ProgramSubscriptionService} from '../../services/program/subs/program-subscription.service';
+
 
 @Component({
   selector: 'app-mine',
@@ -14,13 +15,13 @@ export class MineComponent implements OnInit {
   programs: Program[];
   programReceivedFailed = false;
 
-  constructor(private fetchMineService: FetchMineService, private ngxLoader: NgxUiLoaderService, private auth: AuthenticationService) {
+  constructor(private programSubscription: ProgramSubscriptionService, private ngxLoader: NgxUiLoaderService, private auth: AuthenticationService) {
   }
 
   getProgram(): void {
 
     this.ngxLoader.start();
-    this.fetchMineService.getMine(this.auth.currentUserValue.id).subscribe((data: Program[]) => {
+    this.programSubscription.getMine(this.auth.currentUserValue.id).subscribe((data: Program[]) => {
       this.programs = data;
       this.ngxLoader.stop();
     }, error1 => {

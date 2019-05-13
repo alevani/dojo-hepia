@@ -201,12 +201,12 @@ public class MongoDB extends ProgramsDataBase {
         programs.updateOne(combine(eq("iduser", userid), eq("idprogram", programid)), set("katas", katas));
     }
 
-    public void updateKataSubscription(String kataid, String programid, String userid,String sol) {
+    public void updateKataSubscription(String kataid, String programid, String userid,String sol,String status) {
         ArrayList<KataSubscription> katas = database.getCollection("ProgramsSubscription", ProgramSubscription.class).find(combine(eq("iduser", userid), eq("idprogram", programid))).first().getKatas();
 
         for (KataSubscription k : katas) {
             if (k.getId().equals(kataid)){
-                k.setStatus("RESOLVED");
+                k.setStatus(status);
                 k.setMysol(sol);
             }
         }

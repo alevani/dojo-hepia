@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CreateProgramService } from './create-program.service';
+import { KataService } from './kata.service';
 
-describe('CreateProgramService', () => {
+describe('KataService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: CreateProgramService = TestBed.get(CreateProgramService);
+    const service: KataService = TestBed.get(KataService);
     expect(service).toBeTruthy();
   });
 });
