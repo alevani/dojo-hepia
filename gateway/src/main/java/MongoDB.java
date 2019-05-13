@@ -23,11 +23,8 @@ public class MongoDB extends ProgramsDataBase {
     public MongoDB() {
         MongoCredential credential = MongoCredential.createCredential("shodai", "DojoHepia", "shodai".toCharArray());
         this.mongoClient = new MongoClient(new ServerAddress("localhost", 27017), Arrays.asList(credential), MongoClientOptions.builder().codecRegistry(pojoCodecRegistry).build());
-
-        //this.mongoClient = new MongoClient("http://admin:pass@localhost", MongoClientOptions.builder().codecRegistry(pojoCodecRegistry).build());
         this.database = mongoClient.getDatabase("DojoHepia");
-        /*MongoCollection<Program> programs = database.getCollection("Programs",Program.class);
-        programs.drop();*/
+
     }
 
     public void createProgram(Program prg) {
@@ -36,16 +33,10 @@ public class MongoDB extends ProgramsDataBase {
     }
 
     public void createKata(Kata kata) {
-        MongoCollection<Program> programs = database.getCollection("Programs", Program.class);
-        ArrayList katas = new ArrayList();
-
-        for (Program p : programs.find())
-            if (p.getId().equals(kata.getProgramID())) {
-                katas = p.getKatas();
-                break;
-            }
-
+        ArrayList<Kata> katas = database.getCollection("Programs", Program.class).find(eq("_id", kata.getProgramID())).first().getKatas();
         katas.add(kata);
+
+        MongoCollection<Program> programs = database.getCollection("Programs", Program.class);
         programs.updateOne(eq("_id", kata.getProgramID()), combine(inc("nbKata", 1), set("katas", katas)));
     }
 
@@ -160,8 +151,70 @@ public class MongoDB extends ProgramsDataBase {
         return prgsc;
     }
 
+    public ArrayList<KataSubscription> getKataSubscription(String programid, String userid) {
+        ArrayList<KataSubscription> s = database.getCollection("ProgramsSubscription", ProgramSubscription.class).find(combine(eq("iduser", userid), eq("programid", programid))).projection(include("katas")).first().getKatas();
 
-    // [iduser, idprogram : 234, status : 1 , katas [{id:1,status:"resolved",mysol:".."}],done : 1]
-    // ou
-    // separer en deux tables ,plus simple surement pour les requetes
+        return s;
+    }
+
+    public KataSubscription getKataSubscriptionByID(String kataid, String programid, String userid) {
+
+        ProgramSubscription s = database.getCollection("ProgramsSubscription", ProgramSubscription.class).find(combine(eq("iduser", userid), eq("idprogram", programid),eq("status",true))).projection(include("katas")).first();
+
+        if (s == null) {
+            return new KataSubscription();
+        } else
+            for (KataSubscription k : s.getKatas()) {
+                if (k.getId().equals(kataid))
+                    return k;
+            }
+        return null;
+    }
+
+    public void createKataSubscription(String kataid, String programid, String userid) {
+        ArrayList<KataSubscription> katas = database.getCollection("ProgramsSubscription", ProgramSubscription.class).find(combine(eq("iduser", userid), eq("idprogram", programid))).first().getKatas();
+        katas.add(new KataSubscription(kataid, "ON-GOING", "", 0));
+
+        MongoCollection<ProgramSubscription> programs = database.getCollection("ProgramsSubscription", ProgramSubscription.class);
+        programs.updateOne(combine(eq("iduser", userid), eq("idprogram", programid)), set("katas", katas));
+    }
+
+    /**
+     * TODO trouver un moyen simple de rentrer dans la liste de kata avec mongo db, parce que la c'est vraiment très couteu à chaque appel.
+     * TODO voir si je peux pas transformer kataSubrription en une mongo collection dans ProgramSub.. et pourquoi pas
+     * TODO si 4a marche changer Arraylist kata en Mongo collection kata dans Program
+     *
+     * @param kataid
+     * @param programid
+     * @param userid
+     */
+    public void incKataSubscriptionAttempt(String kataid, String programid, String userid) {
+        ArrayList<KataSubscription> katas = database.getCollection("ProgramsSubscription", ProgramSubscription.class).find(combine(eq("iduser", userid), eq("idprogram", programid))).first().getKatas();
+
+        for (KataSubscription k : katas) {
+            if (k.getId().equals(kataid))
+                k.setNbAttempt(k.getNbAttempt() + 1);
+
+        }
+
+        MongoCollection<ProgramSubscription> programs = database.getCollection("ProgramsSubscription", ProgramSubscription.class);
+        programs.updateOne(combine(eq("iduser", userid), eq("idprogram", programid)), set("katas", katas));
+    }
+
+    public void updateKataSubscription(String kataid, String programid, String userid,String sol) {
+        ArrayList<KataSubscription> katas = database.getCollection("ProgramsSubscription", ProgramSubscription.class).find(combine(eq("iduser", userid), eq("idprogram", programid))).first().getKatas();
+
+        for (KataSubscription k : katas) {
+            if (k.getId().equals(kataid)){
+                k.setStatus("RESOLVED");
+                k.setMysol(sol);
+            }
+        }
+
+        MongoCollection<ProgramSubscription> programs = database.getCollection("ProgramsSubscription", ProgramSubscription.class);
+        programs.updateOne(combine(eq("iduser", userid), eq("idprogram", programid)), set("katas", katas));
+        programs.updateOne(combine(eq("iduser", userid), eq("idprogram", programid)), inc("nbKataDone",1));
+    }
+
+
 }

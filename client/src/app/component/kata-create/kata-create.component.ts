@@ -22,7 +22,7 @@ export class KataCreateComponent implements OnInit {
   ) {
   }
 
-  language = ''; // TODO get from todo 3
+  language = '';
   assert = '';
 
   status = 2;

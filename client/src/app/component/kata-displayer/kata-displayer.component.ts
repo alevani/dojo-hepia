@@ -11,7 +11,7 @@ import {User} from '../../_helper/_models/user';
 import {ProgramSubscription} from '../../interfaces/subscriptions/ProgramSubscription';
 import {CreateSubscriptionService} from '../../services/program/subs/create-subscription.service';
 import {ToggleSubscriptionService} from '../../services/program/subs/toggle-subscription.service';
-
+import {v4 as uuid} from 'uuid';
 @Component({
   selector: 'app-kata-displayer',
   templateUrl: './kata-displayer.component.html',
@@ -31,6 +31,7 @@ export class KataDisplayerComponent implements OnInit {
   inforreceived = false;
   subscription: ProgramSubscription;
   subvalue = 'Unsubscribe';
+
   // Tells if the users has already a registered subscription
   // The subscription could exist even if the user is un subscribed (it keeps the programs data
   // if once the user has been subscribe)
@@ -62,6 +63,7 @@ export class KataDisplayerComponent implements OnInit {
 
     if (this.nullsubs) {
       this.createSubsService.createSubscription(JSON.stringify({
+        id: uuid(),
         iduser: this.currentUser.id,
         idprogram: this.idProgram,
         status: true,
@@ -88,6 +90,7 @@ export class KataDisplayerComponent implements OnInit {
   getSubs() {
     this.subsService.getSubs(this.idProgram, this.currentUser.id).subscribe((data: ProgramSubscription) => {
       this.subscription = data;
+      console.log(data);
       this.isSubscribed = this.subscription.status;
       if (!this.isSubscribed) {
         this.subvalue = 'Subscribe';

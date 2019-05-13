@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class ProgramSubscription {// [iduser, idprogram : 234, status : 1 , katas [{id:1,status:"resolved",mysol:".."}],done : 1]
 
-    private String _id, iduser, idprogram;
+    private String _id,id, iduser, idprogram;
     private boolean status;
     private int nbKataDone;
     private ArrayList<KataSubscription> katas;
@@ -55,5 +55,13 @@ public class ProgramSubscription {// [iduser, idprogram : 234, status : 1 , kata
 
     public void setNbKataDone(int nbKataDone) {
         this.nbKataDone = nbKataDone;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

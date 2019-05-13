@@ -104,4 +104,29 @@ public class LiveDB extends ProgramsDataBase {
         return null;
     }
 
+    @Override
+    public ArrayList<KataSubscription> getKataSubscription(String programid, String userid) {
+        return null;
+    }
+
+    @Override
+    public KataSubscription getKataSubscriptionByID(String kataid, String programid, String userid) {
+        return null;
+    }
+
+    @Override
+    public void createKataSubscription(String kataid, String programid, String userid) {
+
+    }
+
+    @Override
+    public void incKataSubscriptionAttempt(String kataid, String programid, String userid) {
+
+    }
+
+    @Override
+    public void updateKataSubscription(String kataid, String programid, String userid, String sol) {
+
+    }
+
 }

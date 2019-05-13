@@ -4,6 +4,8 @@ public class Kata {
     private int nbAttempt;
 
 
+
+
     public boolean isKeepAssert() {
         return keepAssert;
     }

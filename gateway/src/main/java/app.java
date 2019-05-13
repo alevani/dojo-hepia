@@ -108,28 +108,11 @@ public class app {
 
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
+        /** PROGRAM **/
+
         app.post("/program/create", ctx -> {
             Program prg = objectMapper.readValue(ctx.body(), Program.class);
             db.createProgram(prg);
-            ctx.status(200);
-        }, roles(Roles.SHODAI, Roles.SENSEI));
-
-
-        app.post("program/createsubscription", ctx -> {
-            ProgramSubscription prg = objectMapper.readValue(ctx.body(), ProgramSubscription.class);
-            db.createProgramSubscritpion(prg);
-            ctx.status(200);
-        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
-
-        app.post("program/togglesubscription", ctx -> {
-            JSONObject input = new JSONObject(ctx.body());
-            db.toggleSubscription(String.valueOf(input.get("userid")), String.valueOf(input.get("programid")));
-            ctx.status(200);
-        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
-
-        app.post("/kata/create", ctx -> {
-            Kata kt = objectMapper.readValue(ctx.body(), Kata.class);
-            db.createKata(kt);
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
@@ -142,6 +125,91 @@ public class app {
                     ctx.json(prgsc);
             else
                 ctx.status(404);
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
+
+        app.get("program/getdetails/:id", ctx -> {
+            ArrayList<String> s = db.getProgramDetailsByID(ctx.pathParam("id"));
+            if (s.size() == 0)
+                ctx.status(404);
+            else
+                ctx.json(s);
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
+
+        app.post("/kata/create", ctx -> {
+            Kata kt = objectMapper.readValue(ctx.body(), Kata.class);
+            db.createKata(kt);
+            ctx.status(200);
+        }, roles(Roles.SHODAI, Roles.SENSEI));
+
+        /******************/
+
+
+        /** KATAS **/
+
+        app.get("/program/getkatas/details/:id", ctx -> {
+            ArrayList<KataShowCase> ktsc = db.getProgramKatasDetails(ctx.pathParam("id"));
+            ctx.json(ktsc);
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
+
+        app.get("/program/getkata/:prid/:id", ctx -> {
+
+            Kata kata = db.getProgramKata(ctx.pathParam("prid"), ctx.pathParam("id"));
+            if (kata.getId() == null)
+                ctx.status(404);
+            else
+                ctx.json(kata);
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
+
+        /******************/
+
+        /** USER **/
+
+        app.post("jwt/request/", ctx -> {
+            MockUser u = checkUser(ctx);
+
+            if (!(u == null)) {
+                String token = provider.generateToken(u);
+
+                HashMap<String, String> p = new HashMap<>();
+                p.put("id", String.valueOf(u.id));
+                p.put("username", u.name);
+                p.put("token", token);
+                p.put("role", u.level);
+
+                ctx.json(p);
+            } else {
+                ctx.status(400).json("Username or password is incorrect");
+            }
+
+        }, roles(Roles.ANYONE));
+
+        /******************/
+
+        /** PROGRAM SEARCH **/
+        app.get("search/:type/:resource", ctx -> {
+            ArrayList<ProgramShowCase> p = db.getProgramDetailsByResource(ctx.pathParam("type"), ctx.pathParam("resource"));
+
+            if (p != null)
+                if (p.size() == 0)
+                    ctx.status(404);
+                else
+                    ctx.json(p);
+            else
+                ctx.status(404);
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
+
+        /******************/
+
+
+        /** PROGRAM SUBSCRIPTION **/
+
+        app.get("program/getsubscription/:programid/:userid", ctx -> {
+            ProgramSubscription p = db.getSubscriptionByID(ctx.pathParam("userid"), ctx.pathParam("programid"));
+            if (!(p == null))
+                ctx.json(p);
+            else {
+                ctx.status(404);
+            }
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.get("/subscription/get/:userid", ctx -> {
@@ -166,68 +234,57 @@ public class app {
                 ctx.status(404);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
-        app.get("/program/getkatas/details/:id", ctx -> {
-            ArrayList<KataShowCase> ktsc = db.getProgramKatasDetails(ctx.pathParam("id"));
-            ctx.json(ktsc);
+        app.post("program/createsubscription", ctx -> {
+            ProgramSubscription prg = objectMapper.readValue(ctx.body(), ProgramSubscription.class);
+            db.createProgramSubscritpion(prg);
+            ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.get("/program/getkata/:prid/:id", ctx -> {
-
-            Kata kata = db.getProgramKata(ctx.pathParam("prid"), ctx.pathParam("id"));
-            if (kata.getId() == null)
-                ctx.status(404);
-            else
-                ctx.json(kata);
+        app.post("program/togglesubscription", ctx -> {
+            JSONObject input = new JSONObject(ctx.body());
+            db.toggleSubscription(input.getString("userid"), input.getString("programid"));
+            ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.get("program/getdetails/:id", ctx -> {
-            ArrayList<String> s = db.getProgramDetailsByID(ctx.pathParam("id"));
-            if (s.size() == 0)
-                ctx.status(404);
-            else
-                ctx.json(s);
-        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
+        /******************/
 
-        app.post("jwt/request/", ctx -> {
-            MockUser u = checkUser(ctx);
+        /** KATA SUBSCRIPTION **/
 
-            if (!(u == null)) {
-                String token = provider.generateToken(u);
+        app.get("kata/get/subscriptioninfos/:userid/:programid/:kataid", ctx -> {
+            KataSubscription k = db.getKataSubscriptionByID(ctx.pathParam("kataid"), ctx.pathParam("programid"), ctx.pathParam("userid"));
 
-                HashMap<String, String> p = new HashMap<>();
-                p.put("id", String.valueOf(u.id));
-                p.put("username", u.name);
-                p.put("token", token);
-                p.put("role", u.level);
-
-                ctx.json(p);
-            } else {
-                ctx.status(400).json("Username or password is incorrect");
-            }
-
-        }, roles(Roles.ANYONE));
-
-        app.get("search/:type/:resource", ctx -> {
-            ArrayList<ProgramShowCase> p = db.getProgramDetailsByResource(ctx.pathParam("type"), ctx.pathParam("resource"));
-
-            if (p != null)
-                if (p.size() == 0)
-                    ctx.status(404);
+            if (!(k == null))
+                if (k.getId() == null)
+                    ctx.status(402);
                 else
-                    ctx.json(p);
-            else
+                    ctx.status(200).json(k);
+            else if (k == null)
                 ctx.status(404);
+
+
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.get("program/getsubscription/:programid/:userid", ctx -> {
-            ProgramSubscription p = db.getSubscriptionByID(ctx.pathParam("userid"), ctx.pathParam("programid"));
-            if (!(p == null))
-                ctx.json(p);
-            else {
-                ctx.status(404);
-            }
+        app.post("kata/create/subscription", ctx -> {
+            JSONObject obj = new JSONObject(ctx.body());
+            db.createKataSubscription(obj.getString("kataid"), obj.getString("programid"), obj.getString("userid"));
+            ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
+
+        app.post("kata/inc/subscription", ctx -> {
+            JSONObject obj = new JSONObject(ctx.body());
+            db.incKataSubscriptionAttempt(obj.getString("kataid"), obj.getString("programid"), obj.getString("userid"));
+            ctx.status(200);
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
+
+        app.post("kata/update/subscription", ctx -> {
+            JSONObject obj = new JSONObject(ctx.body());
+            db.updateKataSubscription(obj.getString("kataid"), obj.getString("programid"), obj.getString("userid"), obj.getString("sol"));
+            ctx.status(200);
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
+
+        /******************/
     }
+
 
     public static MockUser checkUser(Context ctx) {
         JSONObject ids = new JSONObject(ctx.body());

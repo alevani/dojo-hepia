@@ -25,4 +25,14 @@ public abstract class ProgramsDataBase {
 
     public abstract ArrayList<ProgramShowCase> getUserProgram(String userid);
 
+    public abstract ArrayList<KataSubscription> getKataSubscription(String programid, String userid);
+
+    public abstract KataSubscription getKataSubscriptionByID(String kataid, String programid, String userid);
+
+    public abstract void createKataSubscription(String kataid, String programid, String userid);
+
+    public abstract void incKataSubscriptionAttempt(String kataid, String programid, String userid);
+
+    public abstract void updateKataSubscription(String kataid, String programid, String userid, String sol);
+
 }

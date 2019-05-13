@@ -44,6 +44,7 @@ export class ProgramCreateComponent implements OnInit {
       katas: []
     })).subscribe(() => {
       this.createSubService.createSubscription(JSON.stringify({
+        id: uuid(),
         iduser: this.currentUser.id,
         idprogram: this.programToKata,
         status: true,

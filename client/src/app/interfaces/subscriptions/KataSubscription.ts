@@ -3,4 +3,5 @@ export interface KataSubscription {
   id: string;
   status: string;
   mysol: string;
+  nbAttempt: number;
 }
