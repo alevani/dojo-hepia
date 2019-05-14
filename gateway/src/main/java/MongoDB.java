@@ -160,7 +160,7 @@ public class MongoDB extends ProgramsDataBase {
     }
 
     public ArrayList<ProgramShowCase> getUserSubscription(String userid) {
-        Iterable<ProgramSubscription> s = database.getCollection("ProgramsSubscription", ProgramSubscription.class).find(combine(eq("iduser", userid), eq("status", true))).projection(include("idprogram","nbKataDone"));
+        Iterable<ProgramSubscription> s = database.getCollection("ProgramsSubscription", ProgramSubscription.class).find(combine(eq("iduser", userid), eq("status", true))).projection(include("idprogram", "nbKataDone"));
         ArrayList<ProgramShowCase> prgsc = new ArrayList<>();
 
         MongoCollection<Program> cprograms = database.getCollection("Programs", Program.class);
@@ -177,7 +177,7 @@ public class MongoDB extends ProgramsDataBase {
         ArrayList<ProgramShowCase> prgsc = new ArrayList<>();
 
         for (Program p : cprograms)
-            prgsc.add(new ProgramShowCase(p.getTitle(), p.getSensei(), p.getLanguage(), p.getDescription(), p.getNbKata(), p.getTags(), p.getId(),-1));
+            prgsc.add(new ProgramShowCase(p.getTitle(), p.getSensei(), p.getLanguage(), p.getDescription(), p.getNbKata(), p.getTags(), p.getId(), -1));
 
         return prgsc;
     }
@@ -246,12 +246,13 @@ public class MongoDB extends ProgramsDataBase {
 
         MongoCollection<ProgramSubscription> programs = database.getCollection("ProgramsSubscription", ProgramSubscription.class);
         programs.updateOne(combine(eq("iduser", userid), eq("idprogram", programid)), set("katas", katas));
-        programs.updateOne(combine(eq("iduser", userid), eq("idprogram", programid)), inc("nbKataDone", 1));
+        if (status.equals("RESOLVED"))
+            programs.updateOne(combine(eq("iduser", userid), eq("idprogram", programid)), inc("nbKataDone", 1));
     }
 
-    public void deleteProgram(String programid){
-        database.getCollection("Programs",Program.class).deleteMany(eq("_id",programid));
-        database.getCollection("ProgramsSubscription",ProgramSubscription.class).deleteMany(eq("idprogram",programid));
+    public void deleteProgram(String programid) {
+        database.getCollection("Programs", Program.class).deleteMany(eq("_id", programid));
+        database.getCollection("ProgramsSubscription", ProgramSubscription.class).deleteMany(eq("idprogram", programid));
     }
 
 

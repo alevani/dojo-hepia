@@ -17,10 +17,10 @@
                          (new)="OnNewEvent($event)"></app-terminal-code>
     </div>
 <div class="p-2 "><label [hidden]="assert" style="margin-right: 20px;" class="header">{{assertname}}</label><label
-  class="header">output :</label></div>
+   [ngClass]="{'header':true,'no-assert':assert===true}" >output :</label></div>
     <div class="p-2">
       <app-terminal-assert [hidden]="assert" [code]="kata.cassert" [type]="kata.language"></app-terminal-assert>
-      <textarea [ngClass]="{'success':status === 0,'error':status === 1,'':status === 2}" style="white-space: pre-wrap;"
+      <textarea [ngClass]="{'success':status === 0,'error':status === 1,'':status === 2,'no-assert':assert===true}" style="white-space: pre-wrap;"
                 disabled>{{result}}</textarea>
     </div>
 

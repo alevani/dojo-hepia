@@ -16,7 +16,7 @@
   </div>
   <br/>
 
-  <div *ngIf="katas" [ngClass]="isSubscribed ? '' : 'notsub'">
+  <div *ngIf="katas" disabled [ngClass]="isSubscribed ? '' : 'notsub'">
 
     <div class="d-flex flex-wrap justify-content-start">
     <span *ngFor="let kata of katas">

@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d8fb2c1-8426-4933-8193-ee68625cf8de" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/LiveDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/LiveDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/MongoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ProgramsDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ProgramsDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/app.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -209,12 +205,12 @@
       <workItem from="1557730932798" duration="1630000" />
       <workItem from="1557747003109" duration="1499000" />
       <workItem from="1557817028907" duration="3195000" />
-      <workItem from="1557833112052" duration="188000" />
+      <workItem from="1557833112052" duration="420000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37388000" />
+    <option name="totallyTimeSpent" value="37620000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -238,7 +234,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.48795182" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.48795182" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3987952" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />

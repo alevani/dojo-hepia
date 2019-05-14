@@ -114,7 +114,7 @@ export class KataComponent implements OnInit {
         });
       }
     } else {
-      this.alertService.info('Oh.. Looks like you did not try enough !\nThe surrender options is unlock at ' + this.nbAttemptBeforeSurreding + ' tries for this kata.');
+      this.alertService.warning('Oh.. Looks like you did not try enough !\nThe surrender options is unlock at ' + this.nbAttemptBeforeSurreding + ' tries for this kata.');
     }
   }
 
@@ -159,6 +159,9 @@ export class KataComponent implements OnInit {
             this.status = 1;
             this.result = response.error;
             this.alertService.danger('Run failed !');
+            if (this.nbAttempt >= this.nbAttemptBeforeSurreding) {
+              this.alertService.info('Solution unlocked ! you can now surrender peasant.');
+            }
           }
           this.compiling = false;
         });
