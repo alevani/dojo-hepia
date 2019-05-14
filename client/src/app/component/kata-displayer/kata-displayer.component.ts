@@ -117,7 +117,7 @@ export class KataDisplayerComponent implements OnInit {
       this.getSubs();
 
       this.inforreceived = true;
-      this.kataService.getKatasDetails(this.idProgram).subscribe((datas: KataShowCase[]) => {
+      this.kataService.getKatasDetails(this.idProgram,this.auth.currentUserValue.id).subscribe((datas: KataShowCase[]) => {
         this.katas = datas;
         this.ngxLoader.stop();
       });

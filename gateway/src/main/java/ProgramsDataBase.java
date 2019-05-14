@@ -9,7 +9,7 @@ public abstract class ProgramsDataBase {
 
     public abstract Kata getProgramKata(String programID, String kataID);
 
-    public abstract ArrayList<KataShowCase> getProgramKatasDetails(String programID);
+    public abstract ArrayList<KataShowCase> getProgramKatasDetails(String programID,String userid);
 
     public abstract ArrayList<String> getProgramDetailsByID(String id);
 

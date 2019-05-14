@@ -2,10 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d8fb2c1-8426-4933-8193-ee68625cf8de" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/share_docker_file/Kata.class" beforeDir="false" afterPath="$PROJECT_DIR$/share_docker_file/Kata.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/share_docker_file/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/share_docker_file/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DockerCompilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DockerCompilation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-displayer/card-noneall-displayer/card-noneall-displayer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-displayer/card-noneall-displayer/card-noneall-displayer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/services/kata/kata.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/services/kata/kata.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/LiveDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/LiveDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/MongoDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ProgramShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ProgramShowCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ProgramsDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ProgramsDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/app.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/LiveDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/LiveDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/MongoDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/MongoDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ProgramShowCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/ProgramShowCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ProgramsDataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/ProgramsDataBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/app$Roles.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/app$Roles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/app.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -206,12 +220,12 @@
       <workItem from="1557503425176" duration="255000" />
       <workItem from="1557730932798" duration="1630000" />
       <workItem from="1557747003109" duration="1499000" />
-      <workItem from="1557817028907" duration="1125000" />
+      <workItem from="1557817028907" duration="2892000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35130000" />
+    <option name="totallyTimeSpent" value="36897000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

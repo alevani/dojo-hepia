@@ -30,13 +30,24 @@ a {
   text-decoration: none;
 }
 
-.difficulty{
-  color:var(--color-sunflower);
-  float:right;
-}
-
 .card:hover{
   background-color: var(--color-electro);
   border:1px solid var(--color-electro);
   cursor: pointer;
+}
+
+.TODO {
+  color: var(--color-sunflower);
+}
+
+.RESOLVED {
+  color: rgba(46, 204, 113, 1.0);
+}
+
+.ON-GOING {
+  color: rgba(230, 126, 34, 1.0);
+}
+
+.FAILED{
+  color:rgba(231, 76, 60,1.0);
 }

@@ -46,7 +46,7 @@ public class LiveDB extends ProgramsDataBase {
         return kata;
     }
 
-    public ArrayList<KataShowCase> getProgramKatasDetails(String programID) {
+    public ArrayList<KataShowCase> getProgramKatasDetails(String programID, String userid) {
         ArrayList<KataShowCase> ktsc = new ArrayList<>();
         ArrayList<Kata> kt = new ArrayList<>();
         for (Program prg : this.programs)

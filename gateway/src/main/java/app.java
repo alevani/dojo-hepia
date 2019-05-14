@@ -23,24 +23,41 @@ import java.util.Map;
 
 import static io.javalin.security.SecurityUtil.roles;
 
+/**
+ * Gateway of DojoHepia
+ * Created by Alexandre Vanini for Hepia © HEPIA 2019 (Bachelor Thesis project)
+ * Purpose : Http Server
+ */
 public class app {
 
+    // Roles of the routes
     enum Roles implements Role {
-        SHODAI,
-        MONJI,
-        SENSEI,
-        ANYONE
+        SHODAI,   // Super user role
+        SENSEI,   // High user role
+        MONJI,    // Middle user role
+        ANYONE    // Low user role
     }
 
+    // Data base object, can be changed if your object extends "ProgramsDataBase"
     private static ProgramsDataBase db = new MongoDB();
+
+    // Jackson Object mapper, convert received stream into Java Designed Object
     private static ObjectMapper objectMapper = new ObjectMapper();
+
+    // Temporary list of users
     private static ArrayList<MockUser> users = new ArrayList<>();
 
+    /**
+     * Entry point of the gateway, no args needed
+     * @param args - Not needed
+     */
     public static void main(String[] args) {
 
-        // JWT
-        Algorithm algorithm = Algorithm.HMAC256("dojohepia");
+        // JWT                                   //secret
+        Algorithm algorithm = Algorithm.HMAC256("cd47488e09fa86d6e2549b824cb1f47422921539");
 
+        // Every time a user is requesting a token, it passes trough here
+        // It generates a token based on user's name and his level
         JWTGenerator<MockUser> generator = (user, alg) -> {
             JWTCreator.Builder token = JWT.create()
                     .withClaim("username", user.name)
@@ -49,19 +66,22 @@ public class app {
         };
 
         JWTVerifier verifier = JWT.require(algorithm).build();
-
         JWTProvider provider = new JWTProvider(algorithm, generator, verifier);
 
+        // Mock list of users - Temporary
         users.add(new MockUser(0, "monji", "monji", "monji"));
         users.add(new MockUser(1, "shodai", "shodai", "shodai"));
         users.add(new MockUser(2, "sensei", "sensei", "sensei"));
 
+        // Decoder Handler
         Handler decodeHandler = JavalinJWT.createHeaderDecodeHandler(provider);
 
 
-        // OUT
+        // Javalin server creation
         Javalin app = Javalin.create().enableCorsForAllOrigins();
 
+        // Every time a user tries to reach a route of the server, it passes trough the before handler.
+        // This ensure the user has a compatible token to reach routes, if the token is faked or deprecated, it returns a 401 status (Unauthorized)
         app.before(decodeHandler);
 
         Map<String, Role> rolesMapping = new HashMap<String, Role>();
@@ -71,16 +91,25 @@ public class app {
         rolesMapping.put("monji", Roles.MONJI);
         rolesMapping.put("sensei", Roles.SENSEI);
 
+
+        // Tells the access manager that, ANYONE is the most basic role.
         JWTAccessManager accessManager = new JWTAccessManager("level", rolesMapping, Roles.ANYONE);
         app.accessManager(accessManager);
+
+        // Start the server at port 7000
         app.start(7000);
         // END OF JWT
 
+
+        /**
+         * Compilation route - body must contain data to compile
+         */
         app.post("/run/", ctx -> {
 
             HttpURLConnection connection = null;
 
             try {
+                // Create a new connection on compilation server (port 6999)
                 URL compilator = new URL("http://localhost:6999");
                 connection = (HttpURLConnection) compilator.openConnection();
                 connection.setRequestMethod("POST");
@@ -90,6 +119,7 @@ public class app {
             }
 
             try (DataOutputStream wr = new DataOutputStream(connection.getOutputStream())) {
+                // Write body content into http post
                 wr.writeBytes(ctx.body());
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
@@ -99,6 +129,7 @@ public class app {
                 e.printStackTrace();
             }
 
+            // Reads the result got from the compilation server
             try (BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
                 String response = in.readLine();
                 ctx.result(response);
@@ -106,10 +137,14 @@ public class app {
                 e.printStackTrace();
             }
 
+            // This tells that /run/ is only accessible by users who have these roles
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         /** PROGRAM **/
 
+        /**
+         *  Create a program -> Expect complete object like Program in body
+         */
         app.post("/program/create", ctx -> {
             Program prg = objectMapper.readValue(ctx.body(), Program.class);
             db.createProgram(prg);
@@ -146,8 +181,8 @@ public class app {
 
         /** KATAS **/
 
-        app.get("/program/getkatas/details/:id", ctx -> {
-            ArrayList<KataShowCase> ktsc = db.getProgramKatasDetails(ctx.pathParam("id"));
+        app.get("/program/getkatas/details/:id/:userid", ctx -> {
+            ArrayList<KataShowCase> ktsc = db.getProgramKatasDetails(ctx.pathParam("id"),ctx.pathParam("userid"));
             ctx.json(ktsc);
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 

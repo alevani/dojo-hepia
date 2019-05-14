@@ -6,6 +6,7 @@ import org.bson.codecs.pojo.PojoCodecProvider;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 
 import static com.mongodb.client.model.Filters.*;
 import static com.mongodb.client.model.Updates.*;
@@ -43,8 +44,10 @@ public class MongoDB extends ProgramsDataBase {
     public ArrayList<ProgramShowCase> getProgramsDetails() {
         ArrayList<ProgramShowCase> p = new ArrayList<>();
         MongoCollection<Program> programs = database.getCollection("Programs", Program.class);
+        MongoCollection<ProgramSubscription> programSubs = database.getCollection("ProgramsSubscription", ProgramSubscription.class);
 
         for (Program prg : programs.find()) {
+
             p.add(new ProgramShowCase(prg.getTitle(), prg.getSensei(), prg.getLanguage(), prg.getDescription(), prg.getNbKata(), prg.getTags(), prg.getId()));
         }
 
@@ -59,23 +62,50 @@ public class MongoDB extends ProgramsDataBase {
         ArrayList<Kata> katas = programs.find(eq("_id", programID)).first().getKatas();
 
         for (Kata k : katas)
-            if (k.getId().equals(kataID))
+            if (k.getId().equals(kataID)) {
                 kata = k;
-
+                break;
+            }
         return kata;
 
     }
 
-    public ArrayList<KataShowCase> getProgramKatasDetails(String programID) {
+    public ArrayList<KataShowCase> getProgramKatasDetails(String programID, String userid) {
         ArrayList<KataShowCase> ktsc = new ArrayList<>();
         MongoCollection<Program> programs = database.getCollection("Programs", Program.class);
 
         ArrayList<Kata> k = programs.find(eq("_id", programID)).first().getKatas();
 
-        for (Kata kt : k)
-            ktsc.add(new KataShowCase(kt.getTitle(), kt.getDifficulty(), kt.getId(), "TODO"));
+        k.forEach(x -> {
+            ktsc.add(new KataShowCase(x.getTitle(), x.getDifficulty(), x.getId(), getKataStatus(x.getId(), programID, userid)));
+        });
 
         return ktsc;
+    }
+
+    /**
+     * TODO Vraiment très couteux........
+     *
+     * @param kataid
+     * @param programid
+     * @param userid
+     * @return
+     */
+
+    private String getKataStatus(String kataid, String programid, String userid) {
+        MongoCollection<ProgramSubscription> programs = database.getCollection("ProgramsSubscription", ProgramSubscription.class);
+        ProgramSubscription subscription = programs.find(combine(eq("iduser", userid), eq("idprogram", programid))).first();
+
+        if (subscription == null)
+            return "TODO";
+
+        ArrayList<KataSubscription> k = subscription.getKatas();
+
+        for (KataSubscription ks : k) {
+            if (ks.getId().equals(kataid))
+                return ks.getStatus();
+        }
+        return "TODO";
     }
 
     public ArrayList<String> getProgramDetailsByID(String id) {
@@ -99,8 +129,9 @@ public class MongoDB extends ProgramsDataBase {
         MongoCollection<Program> cprograms = database.getCollection("Programs", Program.class);
         Iterable<Program> programs = cprograms.find(eq(type, resource));
 
-        for (Program prg : programs)
-            p.add(new ProgramShowCase(prg.getTitle(), prg.getSensei(), prg.getLanguage(), prg.getDescription(), prg.getNbKata(), prg.getTags(), prg.getId()));
+        programs.forEach(x -> {
+            p.add(new ProgramShowCase(x.getTitle(), x.getSensei(), x.getLanguage(), x.getDescription(), x.getNbKata(), x.getTags(), x.getId()));
+        });
 
         return p;
     }
@@ -129,14 +160,14 @@ public class MongoDB extends ProgramsDataBase {
     }
 
     public ArrayList<ProgramShowCase> getUserSubscription(String userid) {
-        Iterable<ProgramSubscription> s = database.getCollection("ProgramsSubscription", ProgramSubscription.class).find(combine(eq("iduser", userid), eq("status", true))).projection(include("idprogram"));
+        Iterable<ProgramSubscription> s = database.getCollection("ProgramsSubscription", ProgramSubscription.class).find(combine(eq("iduser", userid), eq("status", true))).projection(include("idprogram","nbKataDone"));
         ArrayList<ProgramShowCase> prgsc = new ArrayList<>();
 
         MongoCollection<Program> cprograms = database.getCollection("Programs", Program.class);
-        for (ProgramSubscription sub : s) {
-            Program p = cprograms.find(eq("_id", sub.getIdprogram())).first();
-            prgsc.add(new ProgramShowCase(p.getTitle(), p.getSensei(), p.getLanguage(), p.getDescription(), p.getNbKata(), p.getTags(), p.getId()));
-        }
+        s.forEach(x -> {
+            Program p = cprograms.find(eq("_id", x.getIdprogram())).first();
+            prgsc.add(new ProgramShowCase(p.getTitle(), p.getSensei(), p.getLanguage(), p.getDescription(), p.getNbKata(), p.getTags(), p.getId(), x.getNbKataDone()));
+        });
 
         return prgsc;
     }
@@ -146,7 +177,7 @@ public class MongoDB extends ProgramsDataBase {
         ArrayList<ProgramShowCase> prgsc = new ArrayList<>();
 
         for (Program p : cprograms)
-            prgsc.add(new ProgramShowCase(p.getTitle(), p.getSensei(), p.getLanguage(), p.getDescription(), p.getNbKata(), p.getTags(), p.getId()));
+            prgsc.add(new ProgramShowCase(p.getTitle(), p.getSensei(), p.getLanguage(), p.getDescription(), p.getNbKata(), p.getTags(), p.getId(),-1));
 
         return prgsc;
     }
@@ -159,7 +190,7 @@ public class MongoDB extends ProgramsDataBase {
 
     public KataSubscription getKataSubscriptionByID(String kataid, String programid, String userid) {
 
-        ProgramSubscription s = database.getCollection("ProgramsSubscription", ProgramSubscription.class).find(combine(eq("iduser", userid), eq("idprogram", programid),eq("status",true))).projection(include("katas")).first();
+        ProgramSubscription s = database.getCollection("ProgramsSubscription", ProgramSubscription.class).find(combine(eq("iduser", userid), eq("idprogram", programid), eq("status", true))).projection(include("katas")).first();
 
         if (s == null) {
             return new KataSubscription();
@@ -192,28 +223,30 @@ public class MongoDB extends ProgramsDataBase {
         ArrayList<KataSubscription> katas = database.getCollection("ProgramsSubscription", ProgramSubscription.class).find(combine(eq("iduser", userid), eq("idprogram", programid))).first().getKatas();
 
         for (KataSubscription k : katas) {
-            if (k.getId().equals(kataid))
+            if (k.getId().equals(kataid)) {
                 k.setNbAttempt(k.getNbAttempt() + 1);
-
+                break;
+            }
         }
 
         MongoCollection<ProgramSubscription> programs = database.getCollection("ProgramsSubscription", ProgramSubscription.class);
         programs.updateOne(combine(eq("iduser", userid), eq("idprogram", programid)), set("katas", katas));
     }
 
-    public void updateKataSubscription(String kataid, String programid, String userid,String sol,String status) {
+    public void updateKataSubscription(String kataid, String programid, String userid, String sol, String status) {
         ArrayList<KataSubscription> katas = database.getCollection("ProgramsSubscription", ProgramSubscription.class).find(combine(eq("iduser", userid), eq("idprogram", programid))).first().getKatas();
 
         for (KataSubscription k : katas) {
-            if (k.getId().equals(kataid)){
+            if (k.getId().equals(kataid)) {
                 k.setStatus(status);
                 k.setMysol(sol);
+                break;
             }
         }
 
         MongoCollection<ProgramSubscription> programs = database.getCollection("ProgramsSubscription", ProgramSubscription.class);
         programs.updateOne(combine(eq("iduser", userid), eq("idprogram", programid)), set("katas", katas));
-        programs.updateOne(combine(eq("iduser", userid), eq("idprogram", programid)), inc("nbKataDone",1));
+        programs.updateOne(combine(eq("iduser", userid), eq("idprogram", programid)), inc("nbKataDone", 1));
     }
 
 

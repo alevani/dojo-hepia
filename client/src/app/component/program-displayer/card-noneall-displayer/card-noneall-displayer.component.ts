@@ -15,7 +15,7 @@ export class CardNoneallDisplayerComponent implements OnInit {
   filterValue: string;
   filterType: string;
 
-  programNonFiltered: object ;
+  programNonFiltered: object;
 
   querySearch(type: string, res: string) {
 
@@ -30,6 +30,7 @@ export class CardNoneallDisplayerComponent implements OnInit {
 
   ngOnInit() {
     this.programNonFiltered = this.programs;
+
   }
 
 }

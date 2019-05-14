@@ -2,10 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6a1f2e5-4f60-4227-82bb-83eb10fa94a5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-displayer/card-noneall-displayer/card-noneall-displayer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-displayer/card-noneall-displayer/card-noneall-displayer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/services/kata/kata.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/services/kata/kata.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../compilation/share_docker_file/Kata.class" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/share_docker_file/Kata.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../compilation/share_docker_file/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/share_docker_file/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../compilation/src/main/java/DockerCompilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/src/main/java/DockerCompilation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LiveDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LiveDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MongoDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProgramShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgramShowCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProgramsDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgramsDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LiveDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LiveDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MongoDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MongoDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ProgramShowCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ProgramShowCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ProgramsDataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ProgramsDataBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app$Roles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app$Roles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -37,20 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/app.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3855">
-              <caret line="280" column="158" selection-start-line="280" selection-start-column="158" selection-end-line="280" selection-end-column="158" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MongoDB.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2925">
-              <caret line="208" column="34" selection-start-line="208" selection-start-column="34" selection-end-line="208" selection-end-column="34" />
+            <state relative-caret-position="161">
+              <caret line="120" column="71" selection-start-line="120" selection-start-column="71" selection-end-line="120" selection-end-column="71" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,43 +61,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/LiveDB.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/MongoDB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Program.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="334">
+              <caret line="179" column="148" selection-start-line="179" selection-start-column="148" selection-end-line="179" selection-end-column="148" />
               <folding>
-                <element signature="e#1540#1541#0" expanded="true" />
-                <element signature="e#1571#1572#0" expanded="true" />
-                <element signature="e#1619#1620#0" expanded="true" />
-                <element signature="e#1659#1660#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/KataSubscription.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ProgramShowCase.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ProgramsDataBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+              <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -103,9 +84,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ProgramSubscription.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="26" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="26" />
+            <state relative-caret-position="165">
+              <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
               <folding>
+                <element signature="e#401#402#0" expanded="true" />
+                <element signature="e#431#432#0" expanded="true" />
                 <element signature="e#1246#1247#0" expanded="true" />
                 <element signature="e#1271#1272#0" expanded="true" />
                 <element signature="e#1307#1308#0" expanded="true" />
@@ -132,6 +115,9 @@
       <find>thread</find>
       <find>out</find>
       <find>println</find>
+      <find>programid</find>
+      <find>idprogram</find>
+      <find>programID</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -143,7 +129,6 @@
         <option value="$PROJECT_DIR$/src/main/java/programManagement.java" />
         <option value="$PROJECT_DIR$/src/main/java/liveDB.java" />
         <option value="$PROJECT_DIR$/src/main/java/KataShowCase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ProgramShowCase.java" />
         <option value="$PROJECT_DIR$/src/main/java/JWT.java" />
         <option value="$PROJECT_DIR$/src/main/java/JWToken.java" />
         <option value="$PROJECT_DIR$/src/main/java/MockUser.java" />
@@ -153,9 +138,10 @@
         <option value="$PROJECT_DIR$/src/main/java/KataSubscription.java" />
         <option value="$PROJECT_DIR$/src/main/java/ProgramSubscription.java" />
         <option value="$PROJECT_DIR$/src/main/java/ProgramsDataBase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MongoDB.java" />
-        <option value="$PROJECT_DIR$/src/main/java/app.java" />
         <option value="$PROJECT_DIR$/src/main/java/LiveDB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/app.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ProgramShowCase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/MongoDB.java" />
       </list>
     </option>
   </component>
@@ -309,12 +295,12 @@
       <workItem from="1557598576481" duration="1674000" />
       <workItem from="1557730072445" duration="9505000" />
       <workItem from="1557747000214" duration="5376000" />
-      <workItem from="1557817025145" duration="638000" />
+      <workItem from="1557817025145" duration="6900000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112139000" />
+    <option name="totallyTimeSpent" value="118401000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -364,15 +350,50 @@
     <option name="version" value="1" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/MongoDB.java</url>
+          <line>248</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/MongoDB.java</url>
+          <line>103</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/MongoDB.java</url>
+          <line>96</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression=" database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid))).first()" language="JAVA" />
         <watch expression="database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid))).projection(include(&quot;katas&quot;)).first()" language="JAVA" />
+        <watch expression="programs.updateOne(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid)), inc(&quot;nbKataDone&quot;, 1))" />
+        <watch expression="programs.find(combine(eq(&quot;iduser&quot;,userid),eq(&quot;idprogram&quot;,programid))).first().getNbKataDone()" language="JAVA" />
+        <watch expression="programs.find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid))).first()" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>programs.find(combine(eq(&quot;iduser&quot;,userid),eq(&quot;idprogram&quot;,programid))).first().getNbKataDone()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>programs.find(combine(eq(&quot;iduser&quot;,userid),eq(&quot;idprogram&quot;,programid)))</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid))).projection(include(&quot;katas&quot;)).first()</expression-string>
         <language-id>JAVA</language-id>
@@ -410,11 +431,6 @@
       </expression>
       <expression>
         <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;status&quot;, true))).projection(include(&quot;idprogram&quot;)).first()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>database.getCollection(&quot;Programs&quot;, Program.class).find().first()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -461,55 +477,10 @@
     <entry file="jar://$MAVEN_REPOSITORY$/io/javalin/javalin/2.8.0/javalin-2.8.0.jar!/io/javalin/core/util/ContextUtil.class">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/KataShowCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="10" />
-          <folding>
-            <element signature="e#443#444#0" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#737#738#0" expanded="true" />
-            <element signature="e#766#767#0" expanded="true" />
-            <element signature="e#810#811#0" expanded="true" />
-            <element signature="e#846#847#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Kata.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ProgramShowCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3855">
-          <caret line="280" column="158" selection-start-line="280" selection-start-column="158" selection-end-line="280" selection-end-column="158" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MongoDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2925">
-          <caret line="208" column="34" selection-start-line="208" selection-start-column="34" selection-end-line="208" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -526,25 +497,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/KataShowCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="25" />
+          <folding>
+            <element signature="e#443#444#0" expanded="true" />
+            <element signature="e#476#477#0" expanded="true" />
+            <element signature="e#737#738#0" expanded="true" />
+            <element signature="e#766#767#0" expanded="true" />
+            <element signature="e#810#811#0" expanded="true" />
+            <element signature="e#846#847#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/KataSubscription.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/LiveDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ProgramsDataBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="165">
+          <caret line="11" column="97" selection-start-line="11" selection-start-column="97" selection-end-line="11" selection-end-column="97" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ProgramSubscription.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="26" />
+        <state relative-caret-position="165">
+          <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
           <folding>
+            <element signature="e#401#402#0" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
             <element signature="e#1246#1247#0" expanded="true" />
             <element signature="e#1271#1272#0" expanded="true" />
             <element signature="e#1307#1308#0" expanded="true" />
@@ -553,10 +548,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/LiveDB.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ProgramShowCase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="120" column="71" selection-start-line="120" selection-start-column="71" selection-end-line="120" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MongoDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="179" column="148" selection-start-line="179" selection-start-column="148" selection-end-line="179" selection-end-column="148" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

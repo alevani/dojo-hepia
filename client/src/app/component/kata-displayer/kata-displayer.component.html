@@ -20,8 +20,9 @@
         <div class="card" style="width: 18rem;margin: 2rem" routerLink="/kata/{{idProgram}}/{{kata.id}}">
           <div class="card-body">
             <h5 class="card-title"><a class="title"
-                                      routerLink="/kata/{{idProgram}}/{{kata.id}}">{{kata.title}}</a><span
-              class="difficulty">{{kata.status}}</span></h5>
+                                      routerLink="/kata/{{idProgram}}/{{kata.id}}">{{kata.title}}</a>
+            <span style="float:right;"
+              [ngClass]="{'TODO':kata.status==='TODO','ON-GOING':kata.status==='ON-GOING','RESOLVED':kata.status==='RESOLVED','FAILED': kata.status==='FAILED'}">{{kata.status}}</span></h5>
             <br/>
             <h6 class="card-subtitle mb-2 text-muted">{{kata.difficulty}}</h6>
             <br/>
