@@ -10,6 +10,7 @@ import {v4 as uuid} from 'uuid';
 import {ProgramSubscriptionService} from '../../services/program/subs/program-subscription.service';
 import {ProgramService} from '../../services/program/program.service';
 import {KataService} from '../../services/kata/kata.service';
+
 @Component({
   selector: 'app-kata-displayer',
   templateUrl: './kata-displayer.component.html',
@@ -44,8 +45,8 @@ export class KataDisplayerComponent implements OnInit {
     private programService: ProgramService,
     private ngxLoader: NgxUiLoaderService,
     private auth: AuthenticationService,
-    private programSubscription: ProgramSubscriptionService
-
+    private programSubscription: ProgramSubscriptionService,
+    private router: Router,
   ) {
   }
 
@@ -103,6 +104,14 @@ export class KataDisplayerComponent implements OnInit {
     });
   }
 
+  delete(id: string) {
+    if (confirm('Are you sure you want to delete this program ? all katas and users datas regarding this katas will be deleted as well.')) {
+      this.programService.deleteProgram(id).subscribe(() => {
+        this.router.navigate(['program/mine']);
+      });
+    }
+  }
+
   getKatas() {
 
     this.ngxLoader.start();
@@ -117,7 +126,7 @@ export class KataDisplayerComponent implements OnInit {
       this.getSubs();
 
       this.inforreceived = true;
-      this.kataService.getKatasDetails(this.idProgram,this.auth.currentUserValue.id).subscribe((datas: KataShowCase[]) => {
+      this.kataService.getKatasDetails(this.idProgram, this.auth.currentUserValue.id).subscribe((datas: KataShowCase[]) => {
         this.katas = datas;
         this.ngxLoader.stop();
       });

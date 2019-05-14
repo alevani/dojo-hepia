@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 @Injectable({
@@ -17,6 +17,11 @@ export class ProgramService {
   getDetails(id: string) {
     return this.http.get('http://localhost:7000/program/getdetails/' + id + '');
   }
+
+  deleteProgram(id: string) {
+    return this.http.post('http://localhost:7000/program/delete', JSON.stringify({programid: id}));
+  }
+
   constructor(private http: HttpClient) {
   }
 }

@@ -2,7 +2,7 @@
   class="filter-value">{{filterValue}}</span></h6>
 <div class="d-flex flex-wrap justify-content-start">
   <div *ngFor="let program of programs">
-    <div class="card" style="width: 18rem;margin: 2rem">
+    <div class="card">
       <div class="card-body">
         <a routerLink="/kata-displayer/{{program.programID}}"><h5 class="card-title">{{program.title}}</h5></a>
         <h6 class="card-subtitle mb-2 text-muted"><a><span (click)="querySearch('sensei',program.sensei)"

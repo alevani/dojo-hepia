@@ -2,24 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d8fb2c1-8426-4933-8193-ee68625cf8de" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-displayer/card-noneall-displayer/card-noneall-displayer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-displayer/card-noneall-displayer/card-noneall-displayer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/services/kata/kata.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/services/kata/kata.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/LiveDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/LiveDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/MongoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ProgramShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ProgramShowCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ProgramsDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ProgramsDataBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/app.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/LiveDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/LiveDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/MongoDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/MongoDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ProgramShowCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/ProgramShowCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ProgramsDataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/ProgramsDataBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/app$Roles.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/app$Roles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/app.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,12 +21,12 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/DockerCompilation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="20" column="127" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="127" />
+              <caret line="20" column="127" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="127" />
             </state>
           </provider>
         </entry>
@@ -89,8 +77,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -125,6 +111,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -220,12 +208,13 @@
       <workItem from="1557503425176" duration="255000" />
       <workItem from="1557730932798" duration="1630000" />
       <workItem from="1557747003109" duration="1499000" />
-      <workItem from="1557817028907" duration="2892000" />
+      <workItem from="1557817028907" duration="3195000" />
+      <workItem from="1557833112052" duration="188000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36897000" />
+    <option name="totallyTimeSpent" value="37388000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -240,7 +229,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3211731" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32546496" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -249,7 +238,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.48795182" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.48795182" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3987952" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -362,16 +351,12 @@
     <entry file="file://$PROJECT_DIR$/share_docker_file/java_test.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/share_docker_file/kata.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/share_docker_file/Main.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/share_docker_file/kata.java" />
+    <entry file="file://$PROJECT_DIR$/share_docker_file/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/DockerCompilation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="20" column="127" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="127" />
+          <caret line="20" column="127" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="127" />
         </state>
       </provider>
     </entry>

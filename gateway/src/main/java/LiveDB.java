@@ -129,6 +129,10 @@ public class LiveDB extends ProgramsDataBase {
 
     }
 
+    @Override
+    public void deleteProgram(String programid) {
+
+    }
 
 
 }

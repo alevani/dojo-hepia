@@ -31,6 +31,8 @@
 
 .card {
   background-color: var(--color-dark-blue);
+  width: 18.4rem;
+  margin: 2rem
 }
 
 

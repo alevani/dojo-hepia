@@ -249,5 +249,10 @@ public class MongoDB extends ProgramsDataBase {
         programs.updateOne(combine(eq("iduser", userid), eq("idprogram", programid)), inc("nbKataDone", 1));
     }
 
+    public void deleteProgram(String programid){
+        database.getCollection("Programs",Program.class).deleteMany(eq("_id",programid));
+        database.getCollection("ProgramsSubscription",ProgramSubscription.class).deleteMany(eq("idprogram",programid));
+    }
+
 
 }

@@ -9,7 +9,7 @@ public abstract class ProgramsDataBase {
 
     public abstract Kata getProgramKata(String programID, String kataID);
 
-    public abstract ArrayList<KataShowCase> getProgramKatasDetails(String programID,String userid);
+    public abstract ArrayList<KataShowCase> getProgramKatasDetails(String programID, String userid);
 
     public abstract ArrayList<String> getProgramDetailsByID(String id);
 
@@ -33,6 +33,8 @@ public abstract class ProgramsDataBase {
 
     public abstract void incKataSubscriptionAttempt(String kataid, String programid, String userid);
 
-    public abstract void updateKataSubscription(String kataid, String programid, String userid, String sol,String status);
+    public abstract void updateKataSubscription(String kataid, String programid, String userid, String sol, String status);
+
+    public abstract void deleteProgram(String programid);
 
 }

@@ -176,6 +176,11 @@ public class app {
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
+        app.post("program/delete",ctx -> {
+            db.deleteProgram(new JSONObject(ctx.body()).getString("programid"));
+            ctx.status(200);
+        },roles(Roles.SHODAI, Roles.SENSEI));
+
         /******************/
 
 
