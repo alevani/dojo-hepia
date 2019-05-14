@@ -100,9 +100,21 @@ export class KataComponent implements OnInit {
 
   Surrender() {
     if (this.nbAttempt >= this.nbAttemptBeforeSurreding) {
-      return;
+      if (confirm('Are you sure you want to surrender ? the solution will be displayed but you won\'t be able to make xp on this kata again.')) {
+        this.kataSubscriptionService.update(JSON.stringify({
+          kataid: this.idKata,
+          programid: this.programID,
+          userid: this.auth.currentUserValue.id,
+          sol: this.kata.solution,
+          status: 'FAILED'
+        })).subscribe(() => {
+          this.kata.canva = this.kata.solution;
+          this.kataStatus = 'FAILED';
+          this.isResolved = true;
+        });
+      }
     } else {
-      this.alertService.info('Oh.. Looks like you did not try enough !');
+      this.alertService.info('Oh.. Looks like you did not try enough !\nThe surrender options is unlock at ' + this.nbAttemptBeforeSurreding + ' tries for this kata.');
     }
   }
 
@@ -155,8 +167,6 @@ export class KataComponent implements OnInit {
           this.alertService.success('Executed in : ' + response.time + 'ms');
           this.status = 0;
           this.result = response.output + 'Exercise passed';
-          this.isResolved = true;
-          this.kataStatus = 'RESOLVED';
         } else {
           this.status = 1;
           this.result = response.error;
@@ -174,7 +184,7 @@ export class KataComponent implements OnInit {
       this.kataInfo = data;
       this.nbAttempt = this.kataInfo.nbAttempt;
       this.kataStatus = this.kataInfo.status;
-      if (this.kataInfo.status === 'RESOLVED') {
+      if (this.kataInfo.status === 'RESOLVED' || this.kataInfo.status === 'FAILED') {
         this.isResolved = true;
         this.kata.canva = this.kataInfo.mysol;
       }

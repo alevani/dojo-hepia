@@ -13,12 +13,12 @@ public class DockerCompilation {
             case "python":
                 filename = "share_docker_file/sample.py";
                 filename_test = "share_docker_file/assert.py";
-                cmd = "docker run --rm --mount type=bind,source=" + dir + "/share_docker_file,dst=/env/ hey:1.1 python3 assert.py";
+                cmd = "docker run --rm --mount type=bind,source=" + dir + "/share_docker_file,dst=/env/ python:1.0 python3 assert.py";
                 break;
             case "java":
                 filename = "share_docker_file/kata.java";
                 filename_test = "share_docker_file/Main.java";
-                cmd = "docker run --rm --mount type=bind,source=" + dir + "/share_docker_file,dst=/env/ java:4.0 ./java_test.sh";
+                cmd = "docker run --rm --mount type=bind,source=" + dir + "/share_docker_file,dst=/env/ java:1.0 ./java_test.sh";
                 break;
         }
 

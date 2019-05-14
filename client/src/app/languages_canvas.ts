@@ -24,7 +24,7 @@ export const LANG: Canva[] = [
       '\n' +
       '    public static void main(String[] args) {\n' +
       '       // Example : \n// assertEquals(Kata.yourfunction(someValues,targetedValues))' +
-      '    }\n' +
+      '    \n}\n' +
       '}', codeCanva: 'public class Kata {\n' +
       '\n' +
       '// Write your code here' +
