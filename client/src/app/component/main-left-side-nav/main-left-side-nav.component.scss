@@ -1,0 +1,26 @@
+.sidenav-container {
+  height: 100%;
+}
+
+
+.mat-sidenav-content{
+  background-color: var(--color-soft-light-blue);
+}
+.sidenav {
+  width: 150px;
+  background-color: var(--color-dark-blue);
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+*{
+  color : var(--color-cloud);
+}

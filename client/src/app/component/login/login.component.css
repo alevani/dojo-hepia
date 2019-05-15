@@ -1,0 +1,14 @@
+input{
+
+  background-color: rgba(43, 47, 57, 1);
+  border: 1px solid rgba(63, 67, 77, 1);
+  border-radius: 7px;
+  color: rgba(236, 240, 241, 1.0);
+  padding: .6em 1.4em .5em .8em;
+}
+
+input:focus{
+  background-color: rgba(43, 47, 57, 1);
+  color: var(--color-cloud);
+  outline:none;
+}

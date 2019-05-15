@@ -1,5 +1,113 @@
 # Dojo Hepia
 
+## RUN ME - DojoHepia
+
+### prerequisites
+
+<p>MAVEN</p>
+<p>DOCKER</p>
+<p>DOCKER-COMPOSE</p>
+<p>ANGULAR CLI</p>
+
+### Temporary users ids :
+
+| Username | Password | Privileges |
+|----------|----------|------------|
+| shodai   | shodai   | shodai     |
+| sensei   | sensei   | sensei     |
+| monji    | monji    | monji      |
+
+<b>Users privileges hierarchy</b>
+<p>shodai>sensei>monji</p>
+
+#### Client
+
+>./client/
+```
+npm install
+ng serve --open
+```
+
+#### Gateway
+>./gateway/
+```
+mvn package
+mvn exec:java
+```
+
+#### Compilateur
+>./compilation/
+```
+mvn package
+mvn exec:java
+```
+
+##### Create java container
+
+>./compilation/docker/java
+```
+docker build . -t java:1.0
+```
+
+##### Create python container
+
+>./compilation/docker/python
+```
+docker build . -t python:1.0
+```
+
+#### MongoDB
+
+##### Create container
+
+>./mongodb/
+```
+docker-compose up -d
+```
+
+##### Create user
+
+>./mongodb/
+```
+docker-compose exec mongo mongo admin -u root
+password : example
+```
+
+insert the following command :
+
+```
+db.createUser(
+  {
+    user: "shodai",
+    pwd: "shodai",
+    roles: [
+       { role: "readWrite", db: "DojoHepia" }
+    ]
+  }
+)
+```
+
+##### Importing data
+<p>If you want to popularize the database with programs and katas, you can insert the following files in the mongo db database</p>
+
+>./mongodb/data/programs
+
+>./mongodb/data/programssubscriptions
+
+<p>to import the datas, copy past them and to the following steps :</p>
+
+>./mongodb/
+```
+docker-compose exec mongo mongo admin -u root
+password : example
+```
+```
+use DojoHepia
+db.Programs.insertMany(<programs-copied-data>);
+db.ProgramsSubscription.insertMany(<programsSubscription-copied-data>);
+```
+
+
 ## Vocabulaire
 | Art - Martial | Dojo Hepia       |
 |---------------|------------------|

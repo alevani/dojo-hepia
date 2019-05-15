@@ -1,0 +1,60 @@
+.language {
+  color: var(--color-language);
+  float: right;
+}
+
+.language:hover {
+
+  border-bottom: 1px solid var(--color-language-hover);
+  cursor: pointer;
+}
+
+a:hover{
+  color: var(--color-cloud);
+}
+.sensei {
+  color: var(--color-dark-grey) !important;
+}
+
+.sensei:hover {
+  border-bottom: 1px solid var(--color-dark-grey);
+  cursor: pointer;
+}
+
+.tag {
+  background-color: rgba(99, 110, 114, 0.4);
+  color: rgba(9, 132, 227, 1.0);
+  padding: 3px;
+  margin-right: 3px;
+}
+
+.tag:hover {
+  border-bottom: 1px solid rgba(9, 132, 227, 1.0);
+  cursor: pointer;
+}
+
+.nbkata {
+  font-size: 15px;
+  color: var(--color-amethyst);
+  float: right;
+}
+
+.card {
+  background-color: var(--color-dark-blue);
+  width: 18.4rem;
+  margin:2rem;
+}
+
+
+.card:hover {
+  background-color: var(--color-electro);
+  border: 1px solid var(--color-electro);
+}
+
+* {
+  color: var(--color-cloud);
+}
+
+.filter-value {
+  color: var(--color-language);
+}

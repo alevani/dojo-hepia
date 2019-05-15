@@ -1,0 +1,55 @@
+
+.language {
+  color: var(--color-language);
+}
+
+.title {
+  font-size: 20px;
+  color:var(--color-cloud);
+}
+.subtitle{
+
+  font-size:15px;
+  color:var(--color-dark-grey) !important;
+}
+.notsub{
+  pointer-events: none;
+
+  /* for "disabled" effect */
+  opacity: 0.5;
+  background: var(--color-dark-blue);
+}
+* {
+  font-family: "Helvetica Neue";
+
+}
+.card {
+  width: 18rem;
+  margin: 2rem;
+  background-color: var(--color-dark-blue);
+}
+a {
+  text-decoration: none;
+}
+
+.card:hover{
+  background-color: var(--color-electro);
+  border:1px solid var(--color-electro);
+  cursor: pointer;
+}
+
+.TODO {
+  color: var(--color-sunflower);
+}
+
+.RESOLVED {
+  color: rgba(46, 204, 113, 1.0);
+}
+
+.ON-GOING {
+  color: rgba(230, 126, 34, 1.0);
+}
+
+.FAILED{
+  color:rgba(231, 76, 60,1.0);
+}

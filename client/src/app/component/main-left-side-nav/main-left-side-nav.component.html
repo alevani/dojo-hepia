@@ -1,0 +1,30 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="!(isHandset$ | async)">
+    <mat-toolbar routerLink="/">DOJO HEPIA</mat-toolbar>
+    <mat-nav-list *ngIf="currentUser">
+      <a mat-list-item routerLink="/program">All programs</a>
+      <div *ngIf="currentUser.role != Role.monji">
+        <a mat-list-item routerLink="/program/create">New program</a>
+        <a mat-list-item routerLink="/program/mine">My programs</a>
+      </div>
+      <a mat-list-item routerLink="/program/subscriptions">Subscriptions</a>
+      <a mat-list-item routerLink="/program/search">Search</a>
+      <a mat-list-item (click)="logout()">Log out</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <button
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      (click)="drawer.toggle()"
+      *ngIf="isHandset$ | async">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+
+    </button>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

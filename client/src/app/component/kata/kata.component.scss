@@ -1,0 +1,90 @@
+textarea {
+  background-color: rgba(43, 47, 57, 1);
+  border: 2px solid rgba(44, 62, 80, 1.0);
+  color: white;
+  font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+
+  border-radius: 6px;
+
+  resize: none;
+  outline: none;
+  height: 300px;
+  width: 500px;
+  padding: 10px;
+}
+
+.language {
+  color: rgba(230, 126, 34, 1);
+}
+
+.title {
+  font-size: 20px;
+  color: rgba(236, 240, 241, 1);
+}
+
+.subtitle {
+
+  font-size: 15px;
+  color: #6c757d !important;
+}
+
+.title a {
+  text-decoration: none;
+  color: #6c757d !important;
+  font-size: 20px;
+}
+
+.title a:hover {
+  color: rgba(67, 81, 86, 1.0);
+}
+
+.container {
+  width: 70%;
+  background: blue;
+  height: 200px;
+}
+
+* {
+  font-family: "Helvetica Neue";
+  display: inline-block
+}
+
+.error {
+  border: 3px rgba(192, 57, 43, 0.8) solid;
+  background-color: rgba(192, 57, 43, 0.2);
+}
+
+.success {
+  border: 3px rgba(39, 174, 96, 1.0) solid;
+  background-color: rgba(39, 174, 96, 0.2);
+}
+
+.header {
+  width: 500px;
+  height: 20px;
+  background-color: rgba(43, 47, 57, 1);
+  font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+  padding: 3px 3px 3px 10px;
+  border-radius: 6px;
+}
+
+
+.TODO {
+  color: var(--color-sunflower);
+}
+
+.RESOLVED {
+  color: rgba(46, 204, 113, 1.0);
+}
+
+.ON-GOING {
+  color: rgba(230, 126, 34, 1.0);
+}
+
+.FAILED{
+  color:rgba(231, 76, 60,1.0);
+}
+
+.no-assert{
+  width: 100%;
+}

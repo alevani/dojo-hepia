@@ -2,13 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9effdb46-08d0-4cbd-b283-1a3f84f5311a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/assert_test01.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../serveur_compilation/front-end-compilation/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../serveur_compilation/front-end-compilation/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../client/src/app/kata-displayer/kataShowCase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../client/src/app/kata-displayer/kataShowCase.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../client/src/app/program-create/program-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../client/src/app/program-create/program-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../client/src/app/program-displayer/program-displayer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../client/src/app/program-displayer/program-displayer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../client/src/app/program-displayer/program.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../client/src/app/program-displayer/program.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../gateway/src/main/java/Kata.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/src/main/java/Kata.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../gateway/src/main/java/LiveDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/src/main/java/LiveDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../gateway/src/main/java/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/src/main/java/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../gateway/src/main/java/ProgramShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/src/main/java/ProgramShowCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../gateway/src/main/java/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/src/main/java/app.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../gateway/target/classes/Kata.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/target/classes/Kata.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../gateway/target/classes/LiveDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/target/classes/LiveDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../gateway/target/classes/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/target/classes/Program.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../gateway/target/classes/ProgramShowCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/target/classes/ProgramShowCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../gateway/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/target/classes/app.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -146,16 +155,17 @@
       <updated>1556636994757</updated>
       <workItem from="1556636997623" duration="502000" />
       <workItem from="1556696058143" duration="2450000" />
+      <workItem from="1557408015513" duration="6000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2952000" />
+    <option name="totallyTimeSpent" value="2958000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="355" y="87" width="1400" height="1000" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2533137" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2569956" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
