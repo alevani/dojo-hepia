@@ -81,9 +81,20 @@ db.createUser(
 
 >./mongodb/data/programs
 
->./mongodb/data/programssubscription
+>./mongodb/data/programssubscriptions
 
-<p>to import </p>
+<p>to import the datas copy past them and to the following steps :</p>
+
+>./mongodb/
+```
+docker-compose exec mongo mongo admin -u root
+password : example
+```
+```
+db.Programs.insertOne(<programs-copied-data>);
+db.ProgramsSubscription.insertOne(<programsSubscription-copied-data>);
+```
+
 
 ## Vocabulaire
 | Art - Martial | Dojo Hepia       |
