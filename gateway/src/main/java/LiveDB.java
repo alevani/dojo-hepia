@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public class LiveDB extends ProgramsDataBase {
 
     ArrayList<Kata> katas;
-
     ArrayList<Program> programs;
 
     public LiveDB() {

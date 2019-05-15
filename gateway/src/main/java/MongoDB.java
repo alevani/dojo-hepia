@@ -1,12 +1,13 @@
 import com.mongodb.*;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Indexes;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
+import java.util.regex.Pattern;
 
 import static com.mongodb.client.model.Filters.*;
 import static com.mongodb.client.model.Updates.*;
@@ -25,6 +26,7 @@ public class MongoDB extends ProgramsDataBase {
         MongoCredential credential = MongoCredential.createCredential("shodai", "DojoHepia", "shodai".toCharArray());
         this.mongoClient = new MongoClient(new ServerAddress("localhost", 27017), Arrays.asList(credential), MongoClientOptions.builder().codecRegistry(pojoCodecRegistry).build());
         this.database = mongoClient.getDatabase("DojoHepia");
+        database.getCollection("Programs").createIndex(Indexes.ascending("title"));
 
     }
 
@@ -127,10 +129,12 @@ public class MongoDB extends ProgramsDataBase {
         ArrayList<ProgramShowCase> p = new ArrayList<>();
 
         MongoCollection<Program> cprograms = database.getCollection("Programs", Program.class);
-        Iterable<Program> programs = cprograms.find(eq(type, resource));
+        Pattern regex = Pattern.compile(resource, Pattern.CASE_INSENSITIVE);
+        Iterable<Program> programs = cprograms.find(eq(type, regex));
+
 
         programs.forEach(x -> {
-            p.add(new ProgramShowCase(x.getTitle(), x.getSensei(), x.getLanguage(), x.getDescription(), x.getNbKata(), x.getTags(), x.getId()));
+            p.add(new ProgramShowCase(x.getTitle(), x.getSensei(), x.getLanguage(), x.getDescription(), x.getNbKata(), x.getTags(), x.getId(), -1));
         });
 
         return p;
@@ -254,6 +258,12 @@ public class MongoDB extends ProgramsDataBase {
         database.getCollection("Programs", Program.class).deleteMany(eq("_id", programid));
         database.getCollection("ProgramsSubscription", ProgramSubscription.class).deleteMany(eq("idprogram", programid));
     }
+/*
+    public void deletekatas(String kataid, String programid){
 
+        database.getCollection("ProgramsSubscription",ProgramSubscription.class).deleteMany();//
+        database.getCollection("Programs",Program.class).deleteMany(eq("_id",programid));
+    }
+*/
 
 }

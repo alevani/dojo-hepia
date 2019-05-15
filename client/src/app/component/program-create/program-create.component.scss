@@ -1,4 +1,4 @@
-input[type=text]{
+input{
   width: 100%;
   background-color: rgba(43, 47, 57, 1);
   border: 1px solid rgba(63, 67, 77, 1);
@@ -7,11 +7,15 @@ input[type=text]{
   padding: .6em 1.4em .5em .8em;
 }
 
-
+input:focus{
+  background-color: rgba(43, 47, 57, 1);
+  color: var(--color-cloud);
+  outline:none;
+}
 
 select {
 
-  padding: .6em 1.4em .5em .8em;
+  //padding: .6em 1.4em .5em .8em;
   color: rgba(236, 240, 241, 1.0);
   background-color: rgba(43, 47, 57, 1);
   width: 100%;
@@ -24,8 +28,21 @@ select {
   appearance: none;
 }
 
+select:focus{
+  background-color: rgba(43, 47, 57, 1);
+  color: var(--color-cloud);
+  outline:none;
+}
+
+textarea:focus{
+  background-color: rgba(43, 47, 57, 1);
+  color: var(--color-cloud);
+  outline:none;
+}
+
 label{
   margin-top:.4em;
+  color : var(--color-cloud);
 }
 
 textarea{
@@ -46,17 +63,18 @@ textarea{
 fieldset {
   border: 3px solid var(--color-light-blue);
   border-radius: 6px;
-
+  width:500px;
   padding: 1rem;
 }
 
 legend {
   text-align: center;
+  color : var(--color-cloud);
 
 }
 
 *{
   font-family: "Helvetica Neue";
-  color : var(--color-cloud);
+
 }
 

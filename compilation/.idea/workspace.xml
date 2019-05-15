@@ -2,8 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d8fb2c1-8426-4933-8193-ee68625cf8de" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/mine/mine.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/mine/mine.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-displayer/card-displayer/card-displayer.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-displayer/card-displayer/card-displayer.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-displayer/card-noneall-displayer/card-noneall-displayer.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-displayer/card-noneall-displayer/card-noneall-displayer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-displayer/card-noneall-displayer/card-noneall-displayer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-displayer/card-noneall-displayer/card-noneall-displayer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-displayer/card-noneall-displayer/card-noneall-displayer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-displayer/program-displayer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-displayer/program-displayer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/searchby/searchby.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/searchby/searchby.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/searchby/searchby.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/searchby/searchby.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/subscription/subscription.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/subscription/subscription.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/share_docker_file/Kata.class" beforeDir="false" afterPath="$PROJECT_DIR$/share_docker_file/Kata.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/share_docker_file/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/share_docker_file/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DockerCompilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DockerCompilation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/LiveDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/LiveDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/MongoDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ProgramShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ProgramShowCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/app.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/DockerCompilation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="20" column="127" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="127" />
+            <state relative-caret-position="45">
+              <caret line="6" column="67" lean-forward="true" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -73,6 +91,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -85,30 +105,10 @@
               <item name="compilation" type="462c0819:PsiDirectoryNode" />
               <item name="share_docker_file" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="compilation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="compilation" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="compilation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="compilation" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="compilation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="compilation" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -206,11 +206,13 @@
       <workItem from="1557747003109" duration="1499000" />
       <workItem from="1557817028907" duration="3195000" />
       <workItem from="1557833112052" duration="420000" />
+      <workItem from="1557842013256" duration="237000" />
+      <workItem from="1557902518593" duration="3056000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37620000" />
+    <option name="totallyTimeSpent" value="40913000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -222,10 +224,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32546496" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33404863" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -234,7 +235,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.48795182" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.48795182" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3987952" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -264,24 +265,31 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/DockerCompilation.java</url>
-          <line>45</line>
+          <line>86</line>
           <properties />
-          <option name="timeStamp" value="11" />
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="cmd" language="JAVA" />
-        <watch expression="ctx.body()" />
-        <watch expression="escapeJava()" language="JAVA" />
-        <watch expression="new JSONObject(ctx.body())" />
-        <watch expression="input.get(&quot;assert&quot;)" />
+        <watch expression="output.equals(&quot;&quot;)" language="JAVA" />
+        <watch expression="error.equals(&quot;&quot;)" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>error.equals(&quot;&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>output.equals(&quot;&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>cmd</expression-string>
         <language-id>JAVA</language-id>
@@ -351,8 +359,8 @@
     <entry file="file://$PROJECT_DIR$/share_docker_file/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/DockerCompilation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="127" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="127" />
+        <state relative-caret-position="45">
+          <caret line="6" column="67" lean-forward="true" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
         </state>
       </provider>
     </entry>

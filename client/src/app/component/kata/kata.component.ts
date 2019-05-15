@@ -96,6 +96,7 @@ export class KataComponent implements OnInit {
 
   newtry() {
     this.newTry = true;
+    this.alertService.info('This won\'t affect your overall score');
   }
 
   Surrender() {

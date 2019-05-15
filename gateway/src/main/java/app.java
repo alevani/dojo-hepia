@@ -231,11 +231,11 @@ public class app {
 
             if (p != null)
                 if (p.size() == 0)
-                    ctx.status(404);
+                    ctx.status(404).json("No program matched the specified query");
                 else
                     ctx.json(p);
             else
-                ctx.status(404);
+                ctx.status(404).json("No program matched the specified query");
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         /******************/

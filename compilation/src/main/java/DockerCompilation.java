@@ -77,7 +77,11 @@ public class DockerCompilation {
         HashMap<String, Object> json = new HashMap<>();
 
         //exit value of the ran program
-        json.put("exit", cmdProc.exitValue());
+        if (!error.equals(""))
+            //json.put("exit", cmdProc.exitValue());
+            json.put("exit", 1);
+        else
+            json.put("exit", 0);
         json.put("output", output);
         json.put("error", error);
         json.put("time", elapsed);

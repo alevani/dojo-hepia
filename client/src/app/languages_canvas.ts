@@ -22,12 +22,10 @@ export const LANG: Canva[] = [
       '\n' +
       'public class Main {\n' +
       '\n' +
-      '    public static void main(String[] args) {\n' +
-      '       // Example : \n// assertEquals(Kata.yourfunction(someValues,targetedValues))' +
-      '    \n}\n' +
+      '    public static void main(String[] args) {\n\n' +
+      '// Example : \n// assertEquals(Kata.yourfunction(someValues,targetedValues))' +
+      '    \n\n   }\n' +
       '}', codeCanva: 'public class Kata {\n' +
-      '\n' +
-      '// Write your code here' +
       '\n' +
       '}\n',
     assertname: 'Main.java',

@@ -7,7 +7,15 @@ import {TerminalAssertComponent} from './component/terminal-assert/terminal-asse
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MainLeftSideNavComponent} from './component/main-left-side-nav/main-left-side-nav.component';
 import {LayoutModule} from '@angular/cdk/layout';
-import {MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule} from '@angular/material';
+import {
+  MatToolbarModule,
+  MatButtonModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatListModule,
+  MatCardModule,
+  MatInputModule, MatFormFieldModule, MatExpansionModule, MatGridListModule, MatSnackBarModule
+} from '@angular/material';
 import {AppRoutingModule} from './app-routing.module';
 import {RouterModule} from '@angular/router';
 import {KataDisplayerComponent} from './component/kata-displayer/kata-displayer.component';
@@ -60,6 +68,11 @@ import { CardNoneallDisplayerComponent } from './component/program-displayer/car
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatSnackBarModule,
     MatListModule,
     AppRoutingModule,
     RouterModule,

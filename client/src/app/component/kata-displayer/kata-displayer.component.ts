@@ -10,6 +10,8 @@ import {v4 as uuid} from 'uuid';
 import {ProgramSubscriptionService} from '../../services/program/subs/program-subscription.service';
 import {ProgramService} from '../../services/program/program.service';
 import {KataService} from '../../services/kata/kata.service';
+import {MatSnackBar} from '@angular/material';
+
 
 @Component({
   selector: 'app-kata-displayer',
@@ -47,6 +49,7 @@ export class KataDisplayerComponent implements OnInit {
     private auth: AuthenticationService,
     private programSubscription: ProgramSubscriptionService,
     private router: Router,
+    private snackBar: MatSnackBar
   ) {
   }
 
@@ -78,8 +81,14 @@ export class KataDisplayerComponent implements OnInit {
       this.programSubscription.toggle(JSON.stringify({programid: this.idProgram, userid: this.currentUser.id})).subscribe(() => {
         if (this.isSubscribed) {
           this.subvalue = 'Unsubscribe';
+          this.snackBar.open('Subscribed to ' + this.programTitle,'', {
+            duration: 2000
+          });
         } else {
           this.subvalue = 'Subscribe';
+          this.snackBar.open('Unsubscribed from ' + this.programTitle,'', {
+            duration: 2000
+          });
         }
       });
     }

@@ -17,18 +17,22 @@
                          (new)="OnNewEvent($event)"></app-terminal-code>
     </div>
 <div class="p-2 "><label [hidden]="assert" style="margin-right: 20px;" class="header">{{assertname}}</label><label
-   [ngClass]="{'header':true,'no-assert':assert===true}" >output :</label></div>
+  [ngClass]="{'header':true,'no-assert':assert===true}">output :</label></div>
     <div class="p-2">
       <app-terminal-assert [hidden]="assert" [code]="kata.cassert" [type]="kata.language"></app-terminal-assert>
-      <textarea [ngClass]="{'success':status === 0,'error':status === 1,'':status === 2,'no-assert':assert===true}" style="white-space: pre-wrap;"
+      <textarea [ngClass]="{'success':status === 0,'error':status === 1,'':status === 2,'no-assert':assert===true}"
+                style="white-space: pre-wrap;"
                 disabled>{{result}}</textarea>
     </div>
 
     <div class="p-2">
 
       <button mat-button [hidden]="!isResolved" [disabled]="newTry" (click)="newtry()" style="margin-right: 10px">Try again</button>
-      <button mat-button [disabled]="compiling || (isResolved && !newTry )" (click)="compile(kata.language,kata.canva,kata.cassert)"
+      <button mat-button [disabled]="compiling || (isResolved && !newTry )"
+              (click)="compile(kata.language,kata.canva,kata.cassert)"
               style="float:right">Run</button>
+      <img style="float:right" *ngIf="compiling"
+           src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
       <button mat-button [disabled]="compiling || isResolved" (click)="Surrender()"
               style="margin-right: 10px">Surrender</button>
     </div>

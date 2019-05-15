@@ -6,6 +6,8 @@ import {Location} from '@angular/common';
 import {CompilationService} from '../../services/compilation/compilation.service';
 import {v4 as uuid} from 'uuid';
 import {KataService} from '../../services/kata/kata.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+
 @Component({
   selector: 'app-kata-create',
   templateUrl: './kata-create.component.html',
@@ -18,7 +20,8 @@ export class KataCreateComponent implements OnInit {
               private location: Location,
               private kataService: KataService,
               public router: Router,
-              private compilationService: CompilationService
+              private compilationService: CompilationService,
+              private formBuilder: FormBuilder,
   ) {
   }
 
@@ -31,26 +34,19 @@ export class KataCreateComponent implements OnInit {
   result = '';
   canva = '';
   solution = '';
-  rules = '';
 
   programId = '';
 
   LANG: Canva;
 
-  keepAssertForKata = true;
-  numberOfAttempt = 0;
+  CreateForm: FormGroup;
+  submitted = false;
 
-  options = false;
-  instructions = true;
+  compiling = false;
 
 
-  toggleOptions() {
-    this.options = !this.options;
-    console.log(this.options);
-  }
-
-  toggleInstructions() {
-    this.instructions = !this.instructions;
+  get f() {
+    return this.CreateForm.controls;
   }
 
   getLANG(id: string): void {
@@ -72,28 +68,36 @@ export class KataCreateComponent implements OnInit {
     this.solution = event.toString();
   }
 
-  UpdateChoice(event: any): void {
-    this.keepAssertForKata = event.target.value;
-  }
 
   publish(): void {
 
+    this.submitted = true;
+
+    if (this.CreateForm.invalid) {
+      return;
+    }
+
+    if (this.f.number.value < 0) {
+      return;
+    }
+
     this.kataService.publish(JSON.stringify({
       id: uuid(),
-      title: this.title,
+      title: this.f.title.value,
       language: this.language,
       canva: this.canva,
       cassert: this.assert,
       solution: this.solution,
-      rules: this.rules,
-      keepAssert: this.keepAssertForKata,
-      nbAttempt: this.numberOfAttempt,
+      rules: this.f.instruction.value,
+      keepAssert: this.f.assert.value,
+      nbAttempt: this.f.number.value,
       programID: this.programId,
       difficulty: 'Ceinture blanche'
     })).subscribe(data => this.router.navigate(['/kata-displayer/' + this.programId + '']));
   }
 
   try(): void {
+    this.compiling = true;
     let response;
 
     this.compilationService.compilationServer(JSON.stringify({
@@ -101,7 +105,6 @@ export class KataCreateComponent implements OnInit {
       stream: this.solution,
       assert: this.assert
     })).subscribe((data: string) => {
-      console.log(data);
       response = data;
       if (response.exit === 0) {
         this.status = 0;
@@ -110,7 +113,7 @@ export class KataCreateComponent implements OnInit {
         this.status = 1;
         this.result = response.error;
       }
-
+      this.compiling = false;
       this.result += '\nExecuted in : ' + response.time + 'ms';
     });
   }
@@ -119,6 +122,13 @@ export class KataCreateComponent implements OnInit {
     this.programId = this.route.snapshot.paramMap.get('id');
     this.language = this.route.snapshot.paramMap.get('language');
     this.getLANG(this.language);
+
+    this.CreateForm = this.formBuilder.group({
+      title: ['', Validators.required],
+      assert: ['', Validators.required],
+      number: ['', Validators.required],
+      instruction: ['', Validators.required],
+    });
 
   }
 

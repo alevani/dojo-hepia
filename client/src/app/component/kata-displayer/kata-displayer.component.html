@@ -20,7 +20,7 @@
 
     <div class="d-flex flex-wrap justify-content-start">
     <span *ngFor="let kata of katas">
-        <div class="card" style="width: 18rem;margin: 2rem" routerLink="/kata/{{idProgram}}/{{kata.id}}">
+        <div class="card" routerLink="/kata/{{idProgram}}/{{kata.id}}">
           <div class="card-body">
             <h5 class="card-title"><a class="title"
                                       routerLink="/kata/{{idProgram}}/{{kata.id}}">{{kata.title}}</a>

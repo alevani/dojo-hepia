@@ -16,6 +16,7 @@ public class ProgramShowCase {
         this.tags = tags;
         this.programID = programID;
         this.nbKataDone = nbKataDone;
+        
 
     }
 
