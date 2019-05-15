@@ -80,6 +80,7 @@ db.createUser(
 <p>If you want to popularize the database with programs and katas, you can insert the following file in the mongo db database</p>
 
 >./mongodb/data/programs
+
 >./mongodb/data/programssubscription
 
 <p>to import </p>
