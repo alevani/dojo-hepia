@@ -57,11 +57,9 @@ db.createUser(
 ```
 
 ##### (optional) Importing data
-<p>If you want to popularize the database with programs and katas, you can insert the following files in the mongo db database</p>
+<p>If you want to popularize the database with programs and katas, you can insert the following file in the mongo db database</p>
 
 >./mongodb/data/programs
-
->./mongodb/data/programssubscriptions
 
 <p>to import the datas, copy past them and to the following steps :</p>
 
