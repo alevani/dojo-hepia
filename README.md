@@ -15,7 +15,7 @@
 |----------|----------|------------|
 | shodai   | admin   | shodai     |
 
-<p>When connected to shodai account, you can generate tokens to create further sensei in "Sponsorship" (location : left nav bar)</p>
+<p style="color:red;">When connected to shodai account, you can generate tokens to create further sensei in "Sponsorship" (location : left nav bar)</p>
 <p>All created account without token will automatically be ranked as "monji"</p>
 <b>Users privileges hierarchy</b>
 
