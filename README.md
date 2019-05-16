@@ -1,5 +1,11 @@
 # Dojo Hepia
 
+## 2.5.0 update :
+
+- Now users can create their own account
+- Already trusted sensei can generate token, this token can be used by someone who wants to create a Sensei account
+- Auth token and Sponsorship token have now expiration date (six day and ten minutes each respectively).
+
 ## RUN ME - DojoHepia
 
 ### prerequisites
