@@ -37,4 +37,10 @@ public abstract class ProgramsDataBase {
 
     public abstract void deleteProgram(String programid);
 
+    public abstract void createUser(MockUser u);
+
+    public abstract MockUser checkUser(String username, String password);
+
+    public abstract boolean doUserExists(String username);
+
 }

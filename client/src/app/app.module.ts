@@ -14,7 +14,7 @@ import {
   MatIconModule,
   MatListModule,
   MatCardModule,
-  MatInputModule, MatFormFieldModule, MatExpansionModule, MatGridListModule, MatSnackBarModule
+  MatInputModule, MatFormFieldModule, MatExpansionModule, MatGridListModule, MatSnackBarModule, MatCheckboxModule
 } from '@angular/material';
 import {AppRoutingModule} from './app-routing.module';
 import {RouterModule} from '@angular/router';
@@ -38,6 +38,9 @@ import { SearchbyComponent } from './component/searchby/searchby.component';
 import { SubscriptionComponent } from './component/subscription/subscription.component';
 import { MineComponent } from './component/mine/mine.component';
 import { CardNoneallDisplayerComponent } from './component/program-displayer/card-noneall-displayer/card-noneall-displayer.component';
+import { SigninComponent } from './component/signin/signin.component';
+import { TokenComponent } from './component/token/token.component';
+
 
 @NgModule({
   declarations: [
@@ -57,7 +60,9 @@ import { CardNoneallDisplayerComponent } from './component/program-displayer/car
     SearchbyComponent,
     SubscriptionComponent,
     MineComponent,
-    CardNoneallDisplayerComponent
+    CardNoneallDisplayerComponent,
+    SigninComponent,
+    TokenComponent
   ],
   imports: [
 
@@ -71,6 +76,7 @@ import { CardNoneallDisplayerComponent } from './component/program-displayer/car
     MatInputModule,
     MatFormFieldModule,
     MatExpansionModule,
+    MatCheckboxModule,
     MatGridListModule,
     MatSnackBarModule,
     MatListModule,

@@ -1,5 +1,23 @@
 <div class="container" style="margin-top:10%">
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+
+   <!-- <div class="form-group">
+      <label for="firstname">First name</label>
+      <input type="text" formControlName="firstname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }"/>
+      <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+        <div *ngIf="f.firstname.errors.required">First name is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastname">Last name</label>
+      <input type="text" formControlName="lastname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }"/>
+      <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+        <div *ngIf="f.lastname.errors.required">Last name is required</div>
+      </div>
+    </div>-->
+
+
     <div class="form-group">
       <label for="username">Username</label>
       <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }"/>
@@ -15,13 +33,21 @@
       </div>
     </div>
     <div class="form-group">
-      <button [disabled]="loading" mat-button style="float:right">Login</button>
+      <button [disabled]="loading" mat-button style="float:right">Sign in</button>
       <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+    </div>
+
+    <mat-checkbox (change)="toggleChecked()">I have a token</mat-checkbox>
+    <div *ngIf="checked" class="form-group">
+      <hr>
+      <input type="text" formControlName="token"  placeholder="Past your given token" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.token.errors }"/>
+      <div *ngIf="submitted && f.token.errors" class="invalid-feedback">
+        <div *ngIf="f.token.errors.required">Token is required</div>
+      </div>
     </div>
     <br>
     <br>
     <div *ngIf="error" class="alert alert-danger">{{error}}</div>
   </form>
-  <a routerLink="/user/signin">Create my account</a>
 </div>
 

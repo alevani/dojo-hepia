@@ -28,6 +28,10 @@ public class MongoDB extends ProgramsDataBase {
         this.database = mongoClient.getDatabase("DojoHepia");
         database.getCollection("Programs").createIndex(Indexes.ascending("title"));
 
+        if (!doUserExists("shodai")) {
+            createUser(new MockUser("0", "shodai", "shodai", "d033e22ae348aeb5660fc2140aec35850c4da997"));
+        }
+
     }
 
     public void createProgram(Program prg) {
@@ -258,12 +262,31 @@ public class MongoDB extends ProgramsDataBase {
         database.getCollection("Programs", Program.class).deleteMany(eq("_id", programid));
         database.getCollection("ProgramsSubscription", ProgramSubscription.class).deleteMany(eq("idprogram", programid));
     }
-/*
-    public void deletekatas(String kataid, String programid){
 
-        database.getCollection("ProgramsSubscription",ProgramSubscription.class).deleteMany();//
-        database.getCollection("Programs",Program.class).deleteMany(eq("_id",programid));
+    /*
+        public void deletekatas(String kataid, String programid){
+
+            database.getCollection("ProgramsSubscription",ProgramSubscription.class).deleteMany();//
+            database.getCollection("Programs",Program.class).deleteMany(eq("_id",programid));
+        }
+    */
+
+    public void createUser(MockUser u) {
+        database.getCollection("Users", MockUser.class).insertOne(u);
     }
-*/
+
+    public MockUser checkUser(String username, String password) {
+        MockUser u = database.getCollection("Users", MockUser.class).find(combine(eq("username", username), eq("password", password))).first();
+        if (u == null)
+            return null;
+        return u;
+    }
+
+    public boolean doUserExists(String username) {
+        MockUser u = database.getCollection("Users", MockUser.class).find(eq("username", username)).first();
+        if (u == null)
+            return false;
+        return true;
+    }
 
 }

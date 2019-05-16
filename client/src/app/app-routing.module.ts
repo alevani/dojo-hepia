@@ -11,12 +11,16 @@ import {SearchbyComponent} from './component/searchby/searchby.component';
 import {Role} from './_helper/_models/roles';
 import {SubscriptionComponent} from './component/subscription/subscription.component';
 import {MineComponent} from './component/mine/mine.component';
+import {SigninComponent} from './component/signin/signin.component';
+import {TokenComponent} from './component/token/token.component';
 
 const routes: Routes = [
-  {path: '', component: ProgramDisplayerComponent, canActivate: [AuthGuard]},
+  {path: '', component: ProgramDisplayerComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
 
   {path: 'user/login', component: LoginComponent},
-  {path: 'program', component: ProgramDisplayerComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
+  {path: 'user/signin', component: SigninComponent},
+  {path: 'program/all', component: ProgramDisplayerComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
+  {path: 'token', component: TokenComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
   {path: 'program/subscriptions', component: SubscriptionComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
   {path: 'program/mine', component: MineComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
   {path: 'program/search', component: SearchbyComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},

@@ -2,6 +2,8 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTCreator;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
+import com.auth0.jwt.exceptions.JWTVerificationException;
+import com.auth0.jwt.interfaces.DecodedJWT;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.javalin.Context;
 import io.javalin.Handler;
@@ -18,6 +20,7 @@ import java.net.ConnectException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,6 +52,7 @@ public class app {
 
     /**
      * Entry point of the gateway, no args needed
+     *
      * @param args - Not needed
      */
     public static void main(String[] args) {
@@ -60,18 +64,20 @@ public class app {
         // It generates a token based on user's name and his level
         JWTGenerator<MockUser> generator = (user, alg) -> {
             JWTCreator.Builder token = JWT.create()
-                    .withClaim("username", user.name)
-                    .withClaim("level", user.level);
+                    .withClaim("username", user.getUsername())
+                    .withClaim("level", user.getLevel())
+                    .withClaim("exp", new Date());
             return token.sign(alg);
         };
 
-        JWTVerifier verifier = JWT.require(algorithm).build();
+        // Make the token expire after six days
+        JWTVerifier verifier = JWT.require(algorithm).acceptExpiresAt(518400).build();
         JWTProvider provider = new JWTProvider(algorithm, generator, verifier);
 
         // Mock list of users - Temporary
-        users.add(new MockUser(0, "monji", "monji", "monji"));
+        /*users.add(new MockUser(0, "monji", "monji", "monji"));
         users.add(new MockUser(1, "shodai", "shodai", "shodai"));
-        users.add(new MockUser(2, "sensei", "sensei", "sensei"));
+        users.add(new MockUser(2, "sensei", "sensei", "sensei"));*/
 
         // Decoder Handler
         Handler decodeHandler = JavalinJWT.createHeaderDecodeHandler(provider);
@@ -176,10 +182,10 @@ public class app {
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
-        app.post("program/delete",ctx -> {
+        app.post("program/delete", ctx -> {
             db.deleteProgram(new JSONObject(ctx.body()).getString("programid"));
             ctx.status(200);
-        },roles(Roles.SHODAI, Roles.SENSEI));
+        }, roles(Roles.SHODAI, Roles.SENSEI));
 
         /******************/
 
@@ -187,7 +193,7 @@ public class app {
         /** KATAS **/
 
         app.get("/program/getkatas/details/:id/:userid", ctx -> {
-            ArrayList<KataShowCase> ktsc = db.getProgramKatasDetails(ctx.pathParam("id"),ctx.pathParam("userid"));
+            ArrayList<KataShowCase> ktsc = db.getProgramKatasDetails(ctx.pathParam("id"), ctx.pathParam("userid"));
             ctx.json(ktsc);
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
@@ -205,16 +211,17 @@ public class app {
         /** USER **/
 
         app.post("jwt/request/", ctx -> {
-            MockUser u = checkUser(ctx);
+            JSONObject ids = new JSONObject(ctx.body());
+            MockUser u = db.checkUser(ids.getString("username"), ids.getString("password"));
 
             if (!(u == null)) {
                 String token = provider.generateToken(u);
 
                 HashMap<String, String> p = new HashMap<>();
-                p.put("id", String.valueOf(u.id));
-                p.put("username", u.name);
+                p.put("id", String.valueOf(u.getId()));
+                p.put("username", u.getUsername());
                 p.put("token", token);
-                p.put("role", u.level);
+                p.put("role", u.getLevel());
 
                 ctx.json(p);
             } else {
@@ -318,14 +325,54 @@ public class app {
 
         app.post("kata/update/subscription", ctx -> {
             JSONObject obj = new JSONObject(ctx.body());
-            db.updateKataSubscription(obj.getString("kataid"), obj.getString("programid"), obj.getString("userid"), obj.getString("sol"),obj.getString("status"));
+            db.updateKataSubscription(obj.getString("kataid"), obj.getString("programid"), obj.getString("userid"), obj.getString("sol"), obj.getString("status"));
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         /******************/
+
+        /** SIGN IN **/
+
+        app.get("token/generate", ctx -> {
+            Algorithm algotoken = Algorithm.HMAC256("tochange");
+            String token = JWT.create()
+                    .withClaim("exp", new Date())
+                    .sign(algotoken);
+            ctx.json(token);
+        }, roles(Roles.SHODAI, Roles.SENSEI));
+
+        app.post("user/signin", ctx -> {
+            JSONObject input = new JSONObject(ctx.body());
+            String username = input.getString("username");
+            String password = input.getString("password");
+            String id = input.getString("id");
+            if (db.doUserExists(username)) {
+                ctx.status(400).json("Username '" + username + "' already exists");
+            } else {
+                if (!input.get("token").equals("")) {
+                    try {
+                        Algorithm algotoken = Algorithm.HMAC256("tochange");
+                        JWTVerifier checker = JWT.require(algotoken)
+                                .acceptExpiresAt(600)
+                                .build(); //Reusable verifier instance
+
+                        checker.verify(input.getString("token"));
+                        db.createUser(new MockUser(id, username, "sensei", password));
+                        ctx.status(200);
+                    } catch (JWTVerificationException exception) {
+                        ctx.status(400).json("Bad token");
+                    }
+                } else {
+                    db.createUser(new MockUser(id, username, "monji", password));
+                    ctx.status(200);
+                }
+
+            }
+        }, roles(Roles.ANYONE));
+        /******************/
     }
 
-
+/*
     public static MockUser checkUser(Context ctx) {
         JSONObject ids = new JSONObject(ctx.body());
 
@@ -333,5 +380,5 @@ public class app {
             if (u.name.equals(ids.get("username")) && u.password.equals(ids.get("password")))
                 return u;
         return null;
-    }
+    }*/
 }
