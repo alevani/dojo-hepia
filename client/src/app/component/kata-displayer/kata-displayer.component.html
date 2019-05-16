@@ -8,7 +8,8 @@
       <button mat-button style="margin:0 3rem 0 0;float:right;" *ngIf="isOwner"
               routerLink="/kata_create/{{idProgram}}/{{programLanguage}}">Create a new kata
       </button>
-      <button mat-button style="margin:0 3rem 0 0;float:right" *ngIf="isOwner" (click)="deleteProgram(idProgram)">Delete this
+      <button mat-button style="margin:0 3rem 0 0;float:right" *ngIf="isOwner" (click)="deleteProgram(idProgram)">Delete
+        this
         program
       </button>
       <button mat-button style="margin:0 3rem 0 0;float:right" *ngIf="!isOwner"
@@ -22,7 +23,7 @@
 
     <div class="d-flex flex-wrap justify-content-start">
     <span *ngFor="let kata of katas">
-        <div class="card" routerLink="/kata/{{idProgram}}/{{kata.id}}" >
+        <div class="card" routerLink="/kata/{{idProgram}}/{{kata.id}}">
           <div class="card-body">
             <h5 class="card-title"><a class="title"
                                       routerLink="/kata/{{idProgram}}/{{kata.id}}">{{kata.title}}</a>
@@ -30,8 +31,8 @@
                   [ngClass]="{'TODO':kata.status==='TODO','ON-GOING':kata.status==='ON-GOING','RESOLVED':kata.status==='RESOLVED','FAILED': kata.status==='FAILED'}">{{kata.status}}</span></h5>
             <br/>
             <h6 class="card-subtitle mb-2 text-muted">{{kata.difficulty}}</h6>
-            <button mat-button *ngIf="isOwner" (click)="deleteKata(kata.id)" class="card-link">Delete kata</button>
-            <button mat-button *ngIf="isOwner" routerLink="#">Statistics</button>
+            <!-- <button mat-button *ngIf="isOwner" (click)="deleteKata(kata.id)" class="card-link">Delete kata</button>-->
+            <!--<button mat-button *ngIf="isOwner" routerLink="#">Statistics</button>-->
             <!--<p class="card-text">{{kata.description}}</p>-->
           </div>
         </div>

@@ -74,11 +74,6 @@ public class app {
         JWTVerifier verifier = JWT.require(algorithm).acceptExpiresAt(518400).build();
         JWTProvider provider = new JWTProvider(algorithm, generator, verifier);
 
-        // Mock list of users - Temporary
-        /*users.add(new MockUser(0, "monji", "monji", "monji"));
-        users.add(new MockUser(1, "shodai", "shodai", "shodai"));
-        users.add(new MockUser(2, "sensei", "sensei", "sensei"));*/
-
         // Decoder Handler
         Handler decodeHandler = JavalinJWT.createHeaderDecodeHandler(provider);
 
@@ -372,13 +367,4 @@ public class app {
         /******************/
     }
 
-/*
-    public static MockUser checkUser(Context ctx) {
-        JSONObject ids = new JSONObject(ctx.body());
-
-        for (MockUser u : users)
-            if (u.name.equals(ids.get("username")) && u.password.equals(ids.get("password")))
-                return u;
-        return null;
-    }*/
 }

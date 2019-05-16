@@ -9,63 +9,28 @@
 <p>DOCKER-COMPOSE</p>
 <p>ANGULAR CLI</p>
 
-### Temporary users ids :
+### Temporary user ids :
 
 | Username | Password | Privileges |
 |----------|----------|------------|
 | shodai   | admin   | shodai     |
 
-<p>When connected to shodai account, you can generate tokens to create further sensei</p>
-
+<p>When connected to shodai account, you can generate tokens to create further sensei in "Sponsorship" (location : left nav bar)</p>
+<p>All created account without token will automatically be ranked as "monji"</p>
 <b>Users privileges hierarchy</b>
+
 <p>shodai>sensei>monji</p>
 
-#### Client
+#### 1. Mongo Database
 
->./client/
-```
-npm install
-ng serve --open
-```
-
-#### Gateway
->./gateway/
-```
-mvn package
-mvn exec:java
-```
-
-#### Compilateur
->./compilation/
-```
-mvn package
-mvn exec:java
-```
-
-##### Create java container
-
->./compilation/docker/java
-```
-docker build . -t java:1.0
-```
-
-##### Create python container
-
->./compilation/docker/python
-```
-docker build . -t python:1.0
-```
-
-#### MongoDB
-
-##### Create container
+##### 1.2 Create container
 
 >./mongodb/
 ```
 docker-compose up -d
 ```
 
-##### Create user
+##### 1.3 Create user
 
 >./mongodb/
 ```
@@ -76,6 +41,8 @@ password : example
 insert the following command :
 
 ```
+use DojoHepia
+
 db.createUser(
   {
     user: "shodai",
@@ -87,7 +54,7 @@ db.createUser(
 )
 ```
 
-##### Importing data
+##### (optional) Importing data
 <p>If you want to popularize the database with programs and katas, you can insert the following files in the mongo db database</p>
 
 >./mongodb/data/programs
@@ -107,6 +74,38 @@ db.Programs.insertMany(<programs-copied-data>);
 db.ProgramsSubscription.insertMany(<programsSubscription-copied-data>);
 ```
 
+#### 2. Gateway
+>./gateway/
+```
+mvn package
+mvn exec:java
+```
+#### 3. Client
+
+>./client/
+```
+npm install
+ng serve --open
+```
+
+#### 4. Compilateur
+>./compilation/
+```
+mvn package
+mvn exec:java
+```
+
+##### 4.1 Pull java container
+
+```
+docker pull freakency/java:1.0
+```
+
+##### 4.2 Pull python container
+
+```
+docker pull freakency/python:1.0
+```
 
 ## Vocabulaire
 | Art - Martial | Dojo Hepia       |

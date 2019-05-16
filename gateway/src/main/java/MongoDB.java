@@ -263,14 +263,6 @@ public class MongoDB extends ProgramsDataBase {
         database.getCollection("ProgramsSubscription", ProgramSubscription.class).deleteMany(eq("idprogram", programid));
     }
 
-    /*
-        public void deletekatas(String kataid, String programid){
-
-            database.getCollection("ProgramsSubscription",ProgramSubscription.class).deleteMany();//
-            database.getCollection("Programs",Program.class).deleteMany(eq("_id",programid));
-        }
-    */
-
     public void createUser(MockUser u) {
         database.getCollection("Users", MockUser.class).insertOne(u);
     }
@@ -288,7 +280,5 @@ public class MongoDB extends ProgramsDataBase {
             return false;
         return true;
     }
-
-    //§public void deleteKata()
 
 }
