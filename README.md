@@ -15,8 +15,8 @@
 |----------|----------|------------|
 | shodai   | admin   | shodai     |
 
-<aside class="warning">
-<p>When connected to shodai account, you can generate tokens to create further sensei in "Sponsorship" (location : left nav bar)</p></aside>
+
+<p>When connected to shodai account, you can generate tokens to create further sensei in "Sponsorship" (location : left nav bar)</p>
 
 <p>All created account without token will automatically be ranked as "monji"</p>
 <b>Users privileges hierarchy</b>
@@ -73,7 +73,6 @@ password : example
 ```
 use DojoHepia
 db.Programs.insertMany(<programs-copied-data>);
-db.ProgramsSubscription.insertMany(<programsSubscription-copied-data>);
 ```
 
 #### 2. Gateway
@@ -91,23 +90,26 @@ ng serve --open
 ```
 
 #### 4. Compilateur
->./compilation/
-```
-mvn package
-mvn exec:java
-```
 
 ##### 4.1 Pull java container
 
 ```
 docker pull freakency/java:1.0
 ```
-
 ##### 4.2 Pull python container
 
 ```
 docker pull freakency/python:1.0
 ```
+##### 4.3 Compile and run
+
+>./compilation/
+```
+mvn package
+mvn exec:java
+```
+
+
 
 ## Vocabulaire
 | Art - Martial | Dojo Hepia       |
