@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6a1f2e5-4f60-4227-82bb-83eb10fa94a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../compilation/share_docker_file/Kata.class" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/share_docker_file/Kata.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LiveDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LiveDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MockUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MockUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MongoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgramsDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgramsDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -38,13 +32,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/app.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="355" column="52" selection-start-line="355" selection-start-column="52" selection-end-line="355" selection-end-column="52" />
+            <state relative-caret-position="161">
+              <caret line="300" column="36" selection-start-line="300" selection-start-column="36" selection-end-line="300" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/MongoDB.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2958">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+              <folding>
+                <element signature="e#12528#12529#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -97,18 +103,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/KataSubscription.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="26" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Program.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
+            <state relative-caret-position="-490">
               <caret line="3" column="47" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="47" />
               <folding>
                 <element signature="e#1540#1541#0" expanded="true" />
@@ -164,8 +161,8 @@
         <option value="$PROJECT_DIR$/src/main/java/ProgramsDataBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/LiveDB.java" />
         <option value="$PROJECT_DIR$/src/main/java/MockUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MongoDB.java" />
         <option value="$PROJECT_DIR$/src/main/java/app.java" />
+        <option value="$PROJECT_DIR$/src/main/java/MongoDB.java" />
       </list>
     </option>
   </component>
@@ -324,12 +321,12 @@
       <workItem from="1557842011080" duration="239000" />
       <workItem from="1557902516521" duration="5257000" />
       <workItem from="1557931164526" duration="197000" />
-      <workItem from="1557988857639" duration="5726000" />
+      <workItem from="1557988857639" duration="10485000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131932000" />
+    <option name="totallyTimeSpent" value="136691000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -344,7 +341,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49924126" visible="true" weight="0.18025751" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49924126" weight="0.18025751" />
       <window_info id="Structure" order="1" sideWeight="0.5007587" side_tool="true" weight="0.20127796" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -383,72 +380,68 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/MongoDB.java</url>
-          <line>257</line>
+          <line>213</line>
           <properties />
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/MongoDB.java</url>
+          <line>201</line>
+          <properties />
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression=" database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid))).first()" language="JAVA" />
-        <watch expression="database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid))).projection(include(&quot;katas&quot;)).first()" language="JAVA" />
-        <watch expression="programs.updateOne(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid)), inc(&quot;nbKataDone&quot;, 1))" />
-        <watch expression="programs.find(combine(eq(&quot;iduser&quot;,userid),eq(&quot;idprogram&quot;,programid))).first().getNbKataDone()" language="JAVA" />
-        <watch expression="programs.find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid))).first()" />
-        <watch expression="x.getNbKataDone()" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
-        <expression-string>programs.find(combine(eq(&quot;iduser&quot;,userid),eq(&quot;idprogram&quot;,programid))).first().getNbKataDone()</expression-string>
+        <expression-string>p.getKatas().contains(kataid)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>programs.find(combine(eq(&quot;iduser&quot;,userid),eq(&quot;idprogram&quot;,programid)))</expression-string>
+        <expression-string>p.getKatas().get(&quot;id&quot;,&quot;0&quot;);</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid))).projection(include(&quot;katas&quot;)).first()</expression-string>
+        <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid), eq(&quot;status&quot;, true),elemMatch(&quot;katas&quot;,Do) ))).first()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid), eq(&quot;status&quot;, true),elemMatch(&quot;katas&quot;,Document.parse(kataid) ))).first()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid), eq(&quot;status&quot;, true),elemMatch(&quot;katas._id&quot;,kataid ))).first()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid), eq(&quot;status&quot;, true),eq(&quot;katas.1._id&quot;,kataid ))).first()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid), eq(&quot;status&quot;, true),eq(&quot;katas.0._id&quot;,kataid ))).first()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid), eq(&quot;status&quot;, true),eq(&quot;katas._id&quot;,kataid ))).first()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid), eq(&quot;status&quot;, true),eq(&quot;katas.id&quot;,kataid ))).first()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
         <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid))).first()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid))).firs</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid))).first().getKatas()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid))).first().getKatas();</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid))).projection(include(&quot;katas&quot;)).first();</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid))).projection(include(&quot;idprogram&quot;)).first()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;status&quot;, true))).projection(include(&quot;idprogram&quot;)).first()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -532,30 +525,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Program.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="47" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="47" />
-          <folding>
-            <element signature="e#1540#1541#0" expanded="true" />
-            <element signature="e#1571#1572#0" expanded="true" />
-            <element signature="e#1619#1620#0" expanded="true" />
-            <element signature="e#1659#1660#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ProgramsDataBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/KataSubscription.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -569,6 +542,13 @@
             <element signature="e#3898#3899#0" expanded="true" />
             <element signature="e#3926#3927#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/KataSubscription.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -601,23 +581,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MongoDB.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Program.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3520">
-          <caret line="31" column="102" selection-start-line="31" selection-start-column="102" selection-end-line="31" selection-end-column="102" />
+        <state relative-caret-position="-490">
+          <caret line="3" column="47" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="47" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#12370#12371#0" expanded="true" />
+            <element signature="e#1540#1541#0" expanded="true" />
+            <element signature="e#1571#1572#0" expanded="true" />
+            <element signature="e#1619#1620#0" expanded="true" />
+            <element signature="e#1659#1660#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/app.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="355" column="52" selection-start-line="355" selection-start-column="52" selection-end-line="355" selection-end-column="52" />
+        <state relative-caret-position="161">
+          <caret line="300" column="36" selection-start-line="300" selection-start-column="36" selection-end-line="300" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MongoDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2958">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#12528#12529#0" expanded="true" />
           </folding>
         </state>
       </provider>

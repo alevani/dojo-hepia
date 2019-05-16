@@ -14,7 +14,14 @@ import {
   MatIconModule,
   MatListModule,
   MatCardModule,
-  MatInputModule, MatFormFieldModule, MatExpansionModule, MatGridListModule, MatSnackBarModule, MatCheckboxModule
+  MatInputModule,
+  MatFormFieldModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatSnackBarModule,
+  MatCheckboxModule,
+  MatBadgeModule,
+  MatProgressSpinnerModule
 } from '@angular/material';
 import {AppRoutingModule} from './app-routing.module';
 import {RouterModule} from '@angular/router';
@@ -88,7 +95,9 @@ import { TokenComponent } from './component/token/token.component';
     NgxUiLoaderModule,
     AlertModule.forRoot({maxMessages: 5, timeout: 5000, position: 'right'}),
     ReactiveFormsModule,
-    MatCardModule
+    MatCardModule,
+    MatBadgeModule,
+    MatProgressSpinnerModule
 
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}, {

@@ -13,9 +13,9 @@
 
 | Username | Password | Privileges |
 |----------|----------|------------|
-| shodai   | shodai   | shodai     |
-| sensei   | sensei   | sensei     |
-| monji    | monji    | monji      |
+| shodai   | admin   | shodai     |
+
+<p>When connected to shodai account, you can generate tokens to create further sensei</p>
 
 <b>Users privileges hierarchy</b>
 <p>shodai>sensei>monji</p>

@@ -22,6 +22,10 @@ export class SubscriptionComponent implements OnInit {
     this.ngxLoader.start();
     this.programSubscription.getSubscription(this.auth.currentUserValue.id).subscribe((data: Program[]) => {
       this.programs = data.filter((x) => x.sensei !== this.auth.currentUserValue.username);
+
+      if (this.programs.length === 0) {
+        this.programReceivedFailed = true;
+      }
       this.ngxLoader.stop();
     }, error1 => {
       if (error1.status === 404) {

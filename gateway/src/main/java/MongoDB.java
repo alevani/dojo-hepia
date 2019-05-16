@@ -50,12 +50,9 @@ public class MongoDB extends ProgramsDataBase {
     public ArrayList<ProgramShowCase> getProgramsDetails() {
         ArrayList<ProgramShowCase> p = new ArrayList<>();
         MongoCollection<Program> programs = database.getCollection("Programs", Program.class);
-        MongoCollection<ProgramSubscription> programSubs = database.getCollection("ProgramsSubscription", ProgramSubscription.class);
 
-        for (Program prg : programs.find()) {
-
+        for (Program prg : programs.find())
             p.add(new ProgramShowCase(prg.getTitle(), prg.getSensei(), prg.getLanguage(), prg.getDescription(), prg.getNbKata(), prg.getTags(), prg.getId()));
-        }
 
         return p;
     }
@@ -197,13 +194,16 @@ public class MongoDB extends ProgramsDataBase {
     }
 
     public KataSubscription getKataSubscriptionByID(String kataid, String programid, String userid) {
-
+/*
+        ProgramSubscription p = database.getCollection("ProgramsSubscription", ProgramSubscription.class).find(combine(eq("iduser", userid), eq("idprogram", programid), eq("status", true),eq("katas._id",kataid ))).filter(();
+        return p == null ? new KataSubscription() : p.getKatas().get(0);
+  */
         ProgramSubscription s = database.getCollection("ProgramsSubscription", ProgramSubscription.class).find(combine(eq("iduser", userid), eq("idprogram", programid), eq("status", true))).projection(include("katas")).first();
-
         if (s == null) {
             return new KataSubscription();
         } else
             for (KataSubscription k : s.getKatas()) {
+
                 if (k.getId().equals(kataid))
                     return k;
             }
@@ -288,5 +288,7 @@ public class MongoDB extends ProgramsDataBase {
             return false;
         return true;
     }
+
+    //§public void deleteKata()
 
 }
