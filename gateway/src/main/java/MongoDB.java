@@ -28,6 +28,10 @@ public class MongoDB extends ProgramsDataBase {
         this.database = mongoClient.getDatabase("DojoHepia");
         database.getCollection("Programs").createIndex(Indexes.ascending("title"));
 
+        if (!doUserExists("shodai")) {
+            createUser(new MockUser("0", "shodai", "shodai", "d033e22ae348aeb5660fc2140aec35850c4da997"));
+        }
+
     }
 
     public void createProgram(Program prg) {
@@ -46,12 +50,9 @@ public class MongoDB extends ProgramsDataBase {
     public ArrayList<ProgramShowCase> getProgramsDetails() {
         ArrayList<ProgramShowCase> p = new ArrayList<>();
         MongoCollection<Program> programs = database.getCollection("Programs", Program.class);
-        MongoCollection<ProgramSubscription> programSubs = database.getCollection("ProgramsSubscription", ProgramSubscription.class);
 
-        for (Program prg : programs.find()) {
-
+        for (Program prg : programs.find())
             p.add(new ProgramShowCase(prg.getTitle(), prg.getSensei(), prg.getLanguage(), prg.getDescription(), prg.getNbKata(), prg.getTags(), prg.getId()));
-        }
 
         return p;
     }
@@ -193,13 +194,16 @@ public class MongoDB extends ProgramsDataBase {
     }
 
     public KataSubscription getKataSubscriptionByID(String kataid, String programid, String userid) {
-
+/*
+        ProgramSubscription p = database.getCollection("ProgramsSubscription", ProgramSubscription.class).find(combine(eq("iduser", userid), eq("idprogram", programid), eq("status", true),eq("katas._id",kataid ))).filter(();
+        return p == null ? new KataSubscription() : p.getKatas().get(0);
+  */
         ProgramSubscription s = database.getCollection("ProgramsSubscription", ProgramSubscription.class).find(combine(eq("iduser", userid), eq("idprogram", programid), eq("status", true))).projection(include("katas")).first();
-
         if (s == null) {
             return new KataSubscription();
         } else
             for (KataSubscription k : s.getKatas()) {
+
                 if (k.getId().equals(kataid))
                     return k;
             }
@@ -258,12 +262,23 @@ public class MongoDB extends ProgramsDataBase {
         database.getCollection("Programs", Program.class).deleteMany(eq("_id", programid));
         database.getCollection("ProgramsSubscription", ProgramSubscription.class).deleteMany(eq("idprogram", programid));
     }
-/*
-    public void deletekatas(String kataid, String programid){
 
-        database.getCollection("ProgramsSubscription",ProgramSubscription.class).deleteMany();//
-        database.getCollection("Programs",Program.class).deleteMany(eq("_id",programid));
+    public void createUser(MockUser u) {
+        database.getCollection("Users", MockUser.class).insertOne(u);
     }
-*/
+
+    public MockUser checkUser(String username, String password) {
+        MockUser u = database.getCollection("Users", MockUser.class).find(combine(eq("username", username), eq("password", password))).first();
+        if (u == null)
+            return null;
+        return u;
+    }
+
+    public boolean doUserExists(String username) {
+        MockUser u = database.getCollection("Users", MockUser.class).find(eq("username", username)).first();
+        if (u == null)
+            return false;
+        return true;
+    }
 
 }

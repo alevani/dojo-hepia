@@ -1,0 +1,6 @@
+.container{
+  text-align: center;
+  font-family: "Helvetica Neue";
+  margin-top:5%;
+  color:var(--color-cloud);
+}

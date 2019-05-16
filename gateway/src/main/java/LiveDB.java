@@ -133,5 +133,20 @@ public class LiveDB extends ProgramsDataBase {
 
     }
 
+    @Override
+    public void createUser(MockUser u) {
+
+    }
+
+    @Override
+    public MockUser checkUser(String username, String password) {
+        return null;
+    }
+
+    @Override
+    public boolean doUserExists(String username) {
+        return false;
+    }
+
 
 }

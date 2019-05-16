@@ -53,6 +53,10 @@ export class KataDisplayerComponent implements OnInit {
   ) {
   }
 
+  deleteKata(kataid: string){
+
+  }
+
   getIsOwner() {
     if (this.currentUser.id === this.programSenseiID) {
       this.isOwner = true;
@@ -113,7 +117,7 @@ export class KataDisplayerComponent implements OnInit {
     });
   }
 
-  delete(id: string) {
+  deleteProgram(id: string) {
     if (confirm('Are you sure you want to delete this program ? all katas and users datas regarding this katas will be deleted as well.')) {
       this.programService.deleteProgram(id).subscribe(() => {
         this.router.navigate(['program/mine']);

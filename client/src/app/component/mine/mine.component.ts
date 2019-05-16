@@ -23,6 +23,9 @@ export class MineComponent implements OnInit {
     this.ngxLoader.start();
     this.programSubscription.getMine(this.auth.currentUserValue.id).subscribe((data: Program[]) => {
       this.programs = data;
+      if (this.programs.length === 0) {
+        this.programReceivedFailed = true;
+      }
       this.ngxLoader.stop();
     }, error1 => {
       if (error1.status === 404) {

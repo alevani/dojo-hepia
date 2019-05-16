@@ -3,6 +3,7 @@ import {AuthenticationService} from '../../services/auth/authentication.service'
 import {first} from 'rxjs/operators';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import * as sha1 from 'js-sha1';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,6 @@ export class LoginComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private auth: AuthenticationService,
               private formBuilder: FormBuilder,
               private authenticationService: AuthenticationService) {
     if (this.authenticationService.currentUserValue) {
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
     }
 
     this.loading = true;
-    this.auth.login(this.f.username.value, this.f.password.value)
+    this.authenticationService.login(this.f.username.value, sha1(this.f.password.value))
       .pipe(first())
       .subscribe(
         data => {

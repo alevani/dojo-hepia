@@ -24,3 +24,15 @@
 *{
   color : var(--color-cloud);
 }
+
+.active-list-item {
+  background-color: var(--color-light-blue);
+}
+.title{
+  color : var(--color-cloud);
+  text-decoration: none;
+}
+.title:hover{
+  color: var(--color-dark-grey);
+  transition: .2s;
+}
