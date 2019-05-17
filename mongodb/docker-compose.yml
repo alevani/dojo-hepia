@@ -10,10 +10,7 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
-      MONGO_INITDB_DATABASE: DojoHepia
-      MONGODB_USER: shodai
-      MONGODB_DATABASE: DojoHepia
-      MONGODB_PASS: shodai
+      
     
   mongo-express:
     image: mongo-express
