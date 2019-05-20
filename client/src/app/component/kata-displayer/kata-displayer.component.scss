@@ -28,14 +28,19 @@
   margin: 2rem;
   background-color: var(--color-dark-blue);
 }
-a {
-  text-decoration: none;
+
+a{
+  color: var(--color-cloud);
 }
+
+a:hover{
+  color: var(--color-cloud);
+}
+
 
 .card:hover{
   background-color: var(--color-electro);
   border:1px solid var(--color-electro);
-  cursor: pointer;
 }
 
 .TODO {
@@ -53,3 +58,4 @@ a {
 .FAILED{
   color:rgba(231, 76, 60,1.0);
 }
+

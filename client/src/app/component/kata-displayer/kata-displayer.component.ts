@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {KataShowCase} from './kataShowCase';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Location} from '@angular/common';
@@ -10,7 +10,10 @@ import {v4 as uuid} from 'uuid';
 import {ProgramSubscriptionService} from '../../services/program/subs/program-subscription.service';
 import {ProgramService} from '../../services/program/program.service';
 import {KataService} from '../../services/kata/kata.service';
-import {MatSnackBar} from '@angular/material';
+import {MAT_DIALOG_DATA, MatBottomSheet, MatSnackBar} from '@angular/material';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {BottomSheetComponent} from './bottom-sheet/bottom-sheet.component';
+
 
 
 @Component({
@@ -18,6 +21,11 @@ import {MatSnackBar} from '@angular/material';
   templateUrl: './kata-displayer.component.html',
   styleUrls: ['./kata-displayer.component.scss']
 })
+
+
+
+
+
 export class KataDisplayerComponent implements OnInit {
 
   katas: KataShowCase[];
@@ -49,12 +57,29 @@ export class KataDisplayerComponent implements OnInit {
     private auth: AuthenticationService,
     private programSubscription: ProgramSubscriptionService,
     private router: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    public dialog: MatDialog,
+    private bottomSheet: MatBottomSheet
   ) {
   }
 
-  deleteKata(kataid: string){
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DeleteProgramDialogComponent, {
+      width: '400px',
+      data: this.programTitle
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.programService.deleteProgram(this.idProgram).subscribe(() => this.router.navigate(['program/mine']));
+      }
+    });
+  }
+
+  openBottomSheet(kataTitle: string, kataId: string): void {
+    this.bottomSheet.open(BottomSheetComponent, {
+      data: {title: kataTitle, id: kataId}
+    });
   }
 
   getIsOwner() {
@@ -85,12 +110,12 @@ export class KataDisplayerComponent implements OnInit {
       this.programSubscription.toggle(JSON.stringify({programid: this.idProgram, userid: this.currentUser.id})).subscribe(() => {
         if (this.isSubscribed) {
           this.subvalue = 'Unsubscribe';
-          this.snackBar.open('Subscribed to ' + this.programTitle,'', {
+          this.snackBar.open('Subscribed to ' + this.programTitle, '', {
             duration: 2000
           });
         } else {
           this.subvalue = 'Subscribe';
-          this.snackBar.open('Unsubscribed from ' + this.programTitle,'', {
+          this.snackBar.open('Unsubscribed from ' + this.programTitle, '', {
             duration: 2000
           });
         }
@@ -101,7 +126,6 @@ export class KataDisplayerComponent implements OnInit {
   getSubs() {
     this.programSubscription.getSubs(this.idProgram, this.currentUser.id).subscribe((data: ProgramSubscription) => {
       this.subscription = data;
-      console.log(data);
       this.isSubscribed = this.subscription.status;
       if (!this.isSubscribed) {
         this.subvalue = 'Subscribe';
@@ -115,14 +139,6 @@ export class KataDisplayerComponent implements OnInit {
       }
 
     });
-  }
-
-  deleteProgram(id: string) {
-    if (confirm('Are you sure you want to delete this program ? all katas and users datas regarding this katas will be deleted as well.')) {
-      this.programService.deleteProgram(id).subscribe(() => {
-        this.router.navigate(['program/mine']);
-      });
-    }
   }
 
   getKatas() {
@@ -155,6 +171,23 @@ export class KataDisplayerComponent implements OnInit {
     this.idProgram = this.route.snapshot.paramMap.get('id');
     this.currentUser = this.auth.currentUserValue;
     this.getKatas();
+  }
+
+}
+
+@Component({
+  selector: 'dialog-overview-example-dialog',
+  templateUrl: 'program-dialog-delete.html',
+})
+export class DeleteProgramDialogComponent {
+
+  constructor(
+    public dialogRef: MatDialogRef<DeleteProgramDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: string) {
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
 }

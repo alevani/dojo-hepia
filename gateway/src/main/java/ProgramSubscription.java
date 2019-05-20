@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class ProgramSubscription {// [iduser, idprogram : 234, status : 1 , katas [{id:1,status:"resolved",mysol:".."}],done : 1]
+public class ProgramSubscription {
 
     private String _id,id, iduser, idprogram;
     private boolean status;

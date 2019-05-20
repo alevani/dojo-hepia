@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Location} from '@angular/common';
 import {Kata} from './kata';
@@ -13,6 +13,8 @@ import {v4 as uuid} from 'uuid';
 import {KataSubscriptionService} from '../../services/kata/kata-subscription.service';
 import {ProgramService} from '../../services/program/program.service';
 import {KataService} from '../../services/kata/kata.service';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
+
 
 @Component({
   selector: 'app-kata',
@@ -55,7 +57,8 @@ export class KataComponent implements OnInit {
     private alertService: AlertService,
     private kataSubscriptionService: KataSubscriptionService,
     private auth: AuthenticationService,
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog
   ) {
   }
 
@@ -99,23 +102,29 @@ export class KataComponent implements OnInit {
     this.alertService.info('This won\'t affect your overall score');
   }
 
-  Surrender() {
+  openDialog(): void {
     if (this.nbAttempt >= this.nbAttemptBeforeSurreding) {
-      if (confirm('Are you sure you want to surrender ? the solution will be displayed but you won\'t be able to make xp on this kata again.')) {
-        this.kataSubscriptionService.update(JSON.stringify({
-          kataid: this.idKata,
-          programid: this.programID,
-          userid: this.auth.currentUserValue.id,
-          sol: this.kata.solution,
-          status: 'FAILED'
-        })).subscribe(() => {
-          this.kata.canva = this.kata.solution;
-          this.kataStatus = 'FAILED';
-          this.isResolved = true;
-        });
-      }
+      const dialogRef = this.dialog.open(KataSurrenderDialogComponent, {
+        width: '400px'
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          this.kataSubscriptionService.update(JSON.stringify({
+            kataid: this.idKata,
+            programid: this.programID,
+            userid: this.auth.currentUserValue.id,
+            sol: this.kata.solution,
+            status: 'FAILED'
+          })).subscribe(() => {
+            this.kata.canva = this.kata.solution;
+            this.kataStatus = 'FAILED';
+            this.isResolved = true;
+          });
+        }
+      });
     } else {
-      this.alertService.warning('Oh.. Looks like you did not try enough !\nThe surrender options is unlock at ' + this.nbAttemptBeforeSurreding + ' tries for this kata.');
+      this.alertService.warning('Oh.. Looks like you did not try enough !\nThe surrender options is unlocked at ' + this.nbAttemptBeforeSurreding + ' tries for this kata.');
     }
   }
 
@@ -216,3 +225,21 @@ export class KataComponent implements OnInit {
     this.getKata();
   }
 }
+
+@Component({
+  selector: 'dialog-overview-example-dialog',
+  templateUrl: 'kata-dialog-surrender.html',
+})
+export class KataSurrenderDialogComponent {
+
+  constructor(
+    public dialogRef: MatDialogRef<KataSurrenderDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: string) {
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+}
+

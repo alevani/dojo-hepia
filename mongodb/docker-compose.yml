@@ -10,7 +10,11 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
-      
+  
+  mongo-seed:
+    build: ./mongo-seed/
+    links:
+      - mongo    
     
   mongo-express:
     image: mongo-express

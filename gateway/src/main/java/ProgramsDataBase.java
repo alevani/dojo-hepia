@@ -1,46 +1,45 @@
 import java.util.ArrayList;
+import java.util.Optional;
 
 public abstract class ProgramsDataBase {
-    public abstract void createProgram(Program prg);
+    public abstract void create(Program program);
 
-    public abstract void createKata(Kata kata);
+    public abstract void create(Kata kata);
 
-    public abstract ArrayList<ProgramShowCase> getProgramsDetails();
+    public abstract ArrayList<ProgramShowCase> programsDetails();
 
-    public abstract Kata getProgramKata(String programID, String kataID);
+    public abstract Kata kata(String programID, String kataID);
 
-    public abstract ArrayList<KataShowCase> getProgramKatasDetails(String programID, String userid);
+    public abstract ArrayList<KataShowCase> kataDetails(String programID, String userid);
 
-    public abstract ArrayList<String> getProgramDetailsByID(String id);
+    public abstract ArrayList<String> programDetailsById(String id);
 
-    public abstract ArrayList<ProgramShowCase> getProgramDetailsByResource(String type, String resource);
+    public abstract ArrayList<ProgramShowCase> programDetailsFiltered(String type, String resource);
 
-    public abstract ProgramSubscription getSubscriptionByID(String userid, String idrogram);
+    public abstract ProgramSubscription subscriptionByID(String userid, String idrogram);
 
-    public abstract void createProgramSubscritpion(ProgramSubscription p);
+    public abstract void create(ProgramSubscription p);
 
     public abstract void toggleSubscription(String userid, String idrogram);
 
-    public abstract ArrayList<ProgramShowCase> getUserSubscription(String userid);
+    public abstract ArrayList<ProgramShowCase> userSubscriptions(String userid);
 
-    public abstract ArrayList<ProgramShowCase> getUserProgram(String userid);
+    public abstract ArrayList<ProgramShowCase> userPrograms(String userid);
 
-    public abstract ArrayList<KataSubscription> getKataSubscription(String programid, String userid);
-
-    public abstract KataSubscription getKataSubscriptionByID(String kataid, String programid, String userid);
+    public abstract KataSubscription kataSubscriptionById(String kataid, String programid, String userid);
 
     public abstract void createKataSubscription(String kataid, String programid, String userid);
 
-    public abstract void incKataSubscriptionAttempt(String kataid, String programid, String userid);
+    public abstract void incrementKataSubscriptionAttempt(String kataid, String programid, String userid);
 
     public abstract void updateKataSubscription(String kataid, String programid, String userid, String sol, String status);
 
     public abstract void deleteProgram(String programid);
 
-    public abstract void createUser(MockUser u);
+    public abstract void create(MockUser u);
 
-    public abstract MockUser checkUser(String username, String password);
+    public abstract Optional<MockUser> checkUserCredentials(String username, String password);
 
-    public abstract boolean doUserExists(String username);
+    public abstract boolean isExisting(String username);
 
 }
