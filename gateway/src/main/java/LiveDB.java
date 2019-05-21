@@ -134,12 +134,12 @@ public class LiveDB extends ProgramsDataBase {
     }
 
     @Override
-    public void createUser(MockUser u) {
+    public void createUser(User u) {
 
     }
 
     @Override
-    public MockUser checkUser(String username, String password) {
+    public User checkUser(String username, String password) {
         return null;
     }
 

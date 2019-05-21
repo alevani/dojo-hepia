@@ -54,7 +54,7 @@ public class app {
 
         // Every time a user is requesting a token, it passes trough here
         // It generates a token based on user's name and his level
-        JWTGenerator<MockUser> generator = (user, alg) -> {
+        JWTGenerator<User> generator = (user, alg) -> {
             JWTCreator.Builder token = JWT.create()
                     .withClaim("username", user.getUsername())
                     .withClaim("level", user.getLevel())
@@ -97,7 +97,7 @@ public class app {
         /**
          * Compilation route - body must contain data to compile
          */
-        app.post("/run/", ctx -> {
+        app.post("/kata/run/", ctx -> {
 
             HttpURLConnection connection = null;
 
@@ -144,23 +144,24 @@ public class app {
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
-        app.get("/program/getdetails", ctx -> {
-            ArrayList<ProgramShowCase> prgsc = db.programsDetails();
-            if (prgsc != null)
-                if (prgsc.size() == 0)
-                    ctx.status(404);
-                else
-                    ctx.json(prgsc);
+        app.get("/program/details", ctx -> {
+            Optional<List<ProgramShowCase>> prgsc = db.programsDetails();
+
+            if (prgsc.isPresent())
+                ctx.json(prgsc.get());
             else
                 ctx.status(404);
+
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.get("program/getdetails/:id", ctx -> {
-            ArrayList<String> s = db.programDetailsById(ctx.pathParam("id"));
-            if (s.size() == 0)
-                ctx.status(404);
+        app.get("program/details/:id", ctx -> {
+            Optional<List<String>> s = db.programDetailsById(ctx.pathParam("id"));
+
+            if (s.isPresent())
+                ctx.json(s.get());
             else
-                ctx.json(s);
+                ctx.status(404);
+
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.post("/kata/create", ctx -> {
@@ -179,18 +180,19 @@ public class app {
 
         /** KATAS **/
 
-        app.get("/program/getkatas/details/:id/:userid", ctx -> {
-            ArrayList<KataShowCase> ktsc = db.kataDetails(ctx.pathParam("id"), ctx.pathParam("userid"));
-            ctx.json(ktsc);
+        app.get("/kata/details/:programid/:userid", ctx -> {
+            Optional<List<KataShowCase>> ktsc = db.kataDetails(ctx.pathParam("programid"), ctx.pathParam("userid"));
+            ctx.json(ktsc.get());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.get("/program/getkata/:prid/:id", ctx -> {
+        app.get("/kata/:kataid", ctx -> {
 
-            Kata kata = db.kata(ctx.pathParam("prid"), ctx.pathParam("id"));
-            if (kata.getId() == null)
-                ctx.status(404);
+            Optional<Kata> kata = db.kata(ctx.pathParam("kataid"));
+            if (kata.isPresent())
+                ctx.json(kata.get());
             else
-                ctx.json(kata);
+                ctx.status(404);
+
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         /******************/
@@ -200,10 +202,10 @@ public class app {
         app.post("jwt/request/", ctx -> {
             JSONObject ids = new JSONObject(ctx.body());
 
-            Optional<MockUser> user = db.checkUserCredentials(ids.getString("username"), ids.getString("password"));
+            Optional<User> user = db.checkUserCredentials(ids.getString("username"), ids.getString("password"));
 
-            if(user.isPresent()) {
-                MockUser u = user.get();
+            if (user.isPresent()) {
+                User u = user.get();
                 String token = provider.generateToken(u);
 
                 HashMap<String, String> p = new HashMap<>();
@@ -222,16 +224,13 @@ public class app {
         /******************/
 
         /** PROGRAM SEARCH **/
-        app.get("search/:type/:resource", ctx -> {
-            ArrayList<ProgramShowCase> p = db.programDetailsFiltered(ctx.pathParam("type"), ctx.pathParam("resource"));
-
-            if (p != null)
-                if (p.size() == 0)
-                    ctx.status(404).json("No program matched the specified query");
-                else
-                    ctx.json(p);
+        app.get("program/search/:type/:resource", ctx -> {
+            Optional<List<ProgramShowCase>> p = db.programDetailsFiltered(ctx.pathParam("type"), ctx.pathParam("resource"));
+            if (p.isPresent())
+                ctx.json(p.get());
             else
                 ctx.status(404).json("No program matched the specified query");
+
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         /******************/
@@ -239,40 +238,37 @@ public class app {
 
         /** PROGRAM SUBSCRIPTION **/
 
-        app.get("program/getsubscription/:programid/:userid", ctx -> {
-            ProgramSubscription p = db.subscriptionByID(ctx.pathParam("userid"), ctx.pathParam("programid"));
-            if (!(p == null))
-                ctx.json(p);
+        app.get("program/subscription/:programid/:userid", ctx -> {
+            Optional<ProgramSubscription> p = db.subscriptionByID(ctx.pathParam("userid"), ctx.pathParam("programid"));
+            if (p.isPresent())
+                ctx.json(p.get());
             else {
                 ctx.status(404);
             }
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.get("/subscription/get/:userid", ctx -> {
-            ArrayList<ProgramShowCase> prgsc = db.userSubscriptions(ctx.pathParam("userid"));
-            if (prgsc != null)
-                if (prgsc.size() == 0)
-                    ctx.status(404);
-                else
-                    ctx.json(prgsc);
+        app.get("program/subscription/:userid", ctx -> {
+            Optional<List<ProgramShowCase>> prgsc = db.userSubscriptions(ctx.pathParam("userid"));
+            if (prgsc.isPresent())
+                ctx.json(prgsc.get());
             else
                 ctx.status(404);
+
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.get("/subscription/mine/:userid", ctx -> {
-            ArrayList<ProgramShowCase> prgsc = db.userPrograms(ctx.pathParam("userid"));
-            if (prgsc != null)
-                if (prgsc.size() == 0)
-                    ctx.status(404);
-                else
-                    ctx.json(prgsc);
+        app.get("/program/:userid", ctx -> {
+            Optional<List<ProgramShowCase>> prgsc = db.userPrograms(ctx.pathParam("userid"));
+
+            if (prgsc.isPresent())
+                ctx.json(prgsc.get());
             else
                 ctx.status(404);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
         app.post("program/createsubscription", ctx -> {
-            ProgramSubscription programSubscription = objectMapper.readValue(ctx.body(), ProgramSubscription.class);
-            db.create(programSubscription);
+            JSONObject obj = new JSONObject(ctx.body());
+            ProgramSubscription programSubscription = objectMapper.readValue(obj.getString("obj"), ProgramSubscription.class);
+            db.create(obj.getString("userid"),programSubscription);
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
@@ -346,13 +342,13 @@ public class app {
                                 .build(); //Reusable verifier instance
 
                         checker.verify(input.getString("token"));
-                        db.create(new MockUser(id, username, "sensei", password));
+                        db.create(new User(id, username, "sensei", password));
                         ctx.status(200);
                     } catch (JWTVerificationException exception) {
                         ctx.status(400).json("Bad token");
                     }
                 } else {
-                    db.create(new MockUser(id, username, "monji", password));
+                    db.create(new User(id, username, "monji", password));
                     ctx.status(200);
                 }
 

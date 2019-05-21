@@ -1,7 +1,7 @@
 public class Kata {
     private String _id, id,title, canva, cassert, solution, rules,programID,difficulty,language;
     private boolean keepAssert;
-    private int nbAttempt;
+    private double nbAttempt;
 
 
 
@@ -54,11 +54,11 @@ public class Kata {
         this.rules = rules;
     }
 
-    public int getNbAttempt() {
+    public double getNbAttempt() {
         return nbAttempt;
     }
 
-    public void setNbAttempt(int nbAttempt) {
+    public void setNbAttempt(double nbAttempt) {
         this.nbAttempt = nbAttempt;
     }
 

@@ -1,14 +1,17 @@
-public class MockUser {
-    private String id, _id, username, password, level;
+import java.util.ArrayList;
 
-    public MockUser(String id, String username, String level,String password) {
+public class User {
+    private String id, _id, username, password, level;
+    private ArrayList<ProgramSubscription> programSubscriptions;
+
+    public User(String id, String username, String level, String password) {
         this.id = id;
         this.username = username;
         this.level = level;
         this.password = password;
     }
 
-    public MockUser(){}
+    public User(){}
 
     public String getId() {
         return id;
@@ -51,4 +54,11 @@ public class MockUser {
     }
 
 
+    public ArrayList<ProgramSubscription> getProgramSubscriptions() {
+        return programSubscriptions;
+    }
+
+    public void setProgramSubscriptions(ArrayList<ProgramSubscription> programSubscriptions) {
+        this.programSubscriptions = programSubscriptions;
+    }
 }

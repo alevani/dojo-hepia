@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 @Injectable({
@@ -6,20 +6,20 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ProgramSubscriptionService {
 
-  createSubscription(obj: string) {
-    return this.http.post('http://localhost:7000/program/createsubscription', obj);
+  createSubscription(userid: string, obj: string) {
+    return this.http.post('http://localhost:7000/program/createsubscription', {userid, obj});
   }
 
   getMine(userid: string) {
-    return this.http.get('http://localhost:7000/subscription/mine/' + userid + '');
+    return this.http.get('http://localhost:7000/program/' + userid + '');
   }
 
   getSubscription(userid: string) {
-    return this.http.get('http://localhost:7000/subscription/get/' + userid);
+    return this.http.get('http://localhost:7000/program/subscription/' + userid);
   }
 
   getSubs(programid: string, userid: string) {
-    return this.http.get('http://localhost:7000/program/getsubscription/' + programid + '/' + userid + '');
+    return this.http.get('http://localhost:7000/program/subscription/' + programid + '/' + userid + '');
   }
 
   toggle(obj: string) {

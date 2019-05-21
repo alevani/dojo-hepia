@@ -50,9 +50,8 @@ export class ProgramCreateComponent implements OnInit {
       idsensei: this.currentUser.id,
       katas: []
     })).subscribe(() => {
-      this.programSubscription.createSubscription(JSON.stringify({
+      this.programSubscription.createSubscription(this.currentUser.id, JSON.stringify({
         id: uuid(),
-        iduser: this.currentUser.id,
         idprogram: this.programToKata,
         status: true,
         nbKataDone: 0,

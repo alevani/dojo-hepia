@@ -7,7 +7,7 @@ import {HttpClient} from '@angular/common/http';
 export class CompilationService {
 
   compilationServer(obj: string) {
-    return this.http.post('http://localhost:7000/run/', obj);
+    return this.http.post('http://localhost:7000/kata/run/', obj);
   }
 
   constructor(private http: HttpClient) {

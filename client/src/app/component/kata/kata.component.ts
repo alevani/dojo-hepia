@@ -74,7 +74,7 @@ export class KataComponent implements OnInit {
     this.programService.getDetails(this.programID).subscribe((data: string[]) => {
       this.programSensei = data[2];
       this.programTitle = data[0];
-      this.kataService.getKata(this.programID, this.idKata).subscribe((datas: Kata) => {
+      this.kataService.getKata(this.idKata).subscribe((datas: Kata) => {
           this.kata = datas;
           this.assert = !datas.keepAssert;
           this.nbAttemptBeforeSurreding = datas.nbAttempt;

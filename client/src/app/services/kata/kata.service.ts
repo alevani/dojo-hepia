@@ -11,11 +11,11 @@ export class KataService {
   }
 
   getKatasDetails(program: string, userid: string) {
-    return this.http.get('http://localhost:7000/program/getkatas/details/' + program + '/' + userid);
+    return this.http.get('http://localhost:7000/kata/details/' + program + '/' + userid);
   }
 
-  getKata(programID: string, kataID: string) {
-    return this.http.get('http://localhost:7000/program/getkata/' + programID + '/' + kataID + '');
+  getKata(kataid: string) {
+    return this.http.get('http://localhost:7000/kata/' + kataid + '');
   }
 
   constructor(private http: HttpClient) {

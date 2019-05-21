@@ -15,15 +15,11 @@ import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {BottomSheetComponent} from './bottom-sheet/bottom-sheet.component';
 
 
-
 @Component({
   selector: 'app-kata-displayer',
   templateUrl: './kata-displayer.component.html',
   styleUrls: ['./kata-displayer.component.scss']
 })
-
-
-
 
 
 export class KataDisplayerComponent implements OnInit {
@@ -92,9 +88,8 @@ export class KataDisplayerComponent implements OnInit {
   subscribe() {
 
     if (this.nullsubs) {
-      this.programSubscription.createSubscription(JSON.stringify({
+      this.programSubscription.createSubscription(this.currentUser.id, JSON.stringify({
         id: uuid(),
-        iduser: this.currentUser.id,
         idprogram: this.idProgram,
         status: true,
         nbKataDone: 0,

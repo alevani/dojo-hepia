@@ -11,11 +11,11 @@ export class ProgramService {
   }
 
   getPrograms() {
-    return this.http.get('http://localhost:7000/program/getdetails');
+    return this.http.get('http://localhost:7000/program/details');
   }
 
   getDetails(id: string) {
-    return this.http.get('http://localhost:7000/program/getdetails/' + id + '');
+    return this.http.get('http://localhost:7000/program/details/' + id + '');
   }
 
   deleteProgram(id: string) {
