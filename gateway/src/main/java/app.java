@@ -195,6 +195,12 @@ public class app {
 
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
+
+        app.post("/kata/delete/", ctx -> {
+            db.deleteKata(ctx.body());
+            ctx.status(200);
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
+
         /******************/
 
         /** USER **/
@@ -273,7 +279,7 @@ public class app {
         app.post("program/createsubscription", ctx -> {
             JSONObject obj = new JSONObject(ctx.body());
             ProgramSubscription programSubscription = objectMapper.readValue(obj.getString("obj"), ProgramSubscription.class);
-            db.create(obj.getString("userid"),programSubscription);
+            db.create(obj.getString("userid"), programSubscription);
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
@@ -290,7 +296,7 @@ public class app {
         app.get("kata/get/subscriptioninfos/:userid/:programid/:kataid", ctx -> {
             Optional<KataSubscription> k = db.kataSubscriptionById(ctx.pathParam("kataid"), ctx.pathParam("programid"), ctx.pathParam("userid"));
 
-            if(k.isPresent())
+            if (k.isPresent())
                 ctx.status(200).json(k.get());
             else
                 ctx.status(404);

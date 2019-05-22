@@ -18,6 +18,10 @@ export class KataService {
     return this.http.get('http://localhost:7000/kata/' + kataid + '');
   }
 
+  delete(kataid: string) {
+    return this.http.post('http://localhost:7000/kata/delete/', kataid);
+  }
+
   constructor(private http: HttpClient) {
   }
 }

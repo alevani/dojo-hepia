@@ -284,14 +284,10 @@ public class MongoDB implements ProgramsDataBase {
 
     public void updateKataSubscription(String kataid, String programid, String userid, String sol, String status) {
 
-        int inc = 1;
-        if (!status.equals("RESOLVED"))
-            inc = 0;
-
         database.getCollection("Users").updateOne(eq("_id", userid), combine(
                 set("programSubscriptions.$[i].katas.$[j].mysol", sol),
                 set("programSubscriptions.$[i].katas.$[j].status", status),
-                inc("programSubscriptions.$[i].nbKataDone", inc)
+                inc("programSubscriptions.$[i].nbKataDone", 1)
         ), new UpdateOptions().arrayFilters(Arrays.asList(
                 eq("i.idprogram", programid),
                 eq("j._id", kataid)
@@ -300,7 +296,7 @@ public class MongoDB implements ProgramsDataBase {
 
     public void deleteProgram(String programid) {
         database.getCollection("Users").updateMany(eq("programSubscriptions.idprogram", programid), pull("programSubscriptions", new BasicDBObject("idprogram", programid)));
-        database.getCollection("Programs").deleteMany(eq("_id", programid));
+        database.getCollection("Programs").deleteOne(eq("_id", programid));
     }
 
     public void create(User u) {
@@ -314,6 +310,16 @@ public class MongoDB implements ProgramsDataBase {
             return Optional.empty();
         else
             return Optional.of(u);
+    }
+
+    public void deleteKata(String kataid) {
+        database.getCollection("Users").updateMany(eq("programSubscriptions.katas._id", kataid), pull("programSubscriptions.$[].katas", new BasicDBObject("_id", kataid)));
+
+        // TODO not working
+        /*database.getCollection("Users").updateMany(eq("programSubscriptions.katas._id", kataid), inc("programSubscriptions.$[i].nbKataDone", -1),new UpdateOptions().arrayFilters(Arrays.asList(
+                eq("i.$[].katas.status","RESOLVED")
+        )));*/
+        database.getCollection("Programs").updateOne(eq("katas._id", kataid), pull("katas", new BasicDBObject("_id", kataid)));
     }
 
     public boolean isExisting(String username) {

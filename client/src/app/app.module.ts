@@ -27,7 +27,11 @@ import {
 import {MatDialogModule} from '@angular/material/dialog';
 import {AppRoutingModule} from './app-routing.module';
 import {RouterModule} from '@angular/router';
-import {DeleteProgramDialogComponent, KataDisplayerComponent} from './component/kata-displayer/kata-displayer.component';
+import {
+  DeleteProgramDialogComponent,
+  KataDisplayerComponent,
+  MoreActionKataDialogComponent
+} from './component/kata-displayer/kata-displayer.component';
 import {ProgramDisplayerComponent} from './component/program-displayer/program-displayer.component';
 import {KataComponent, KataSurrenderDialogComponent} from './component/kata/kata.component';
 import {AceEditorModule} from 'ng2-ace-editor';
@@ -49,7 +53,7 @@ import {MineComponent} from './component/mine/mine.component';
 import {CardNoneallDisplayerComponent} from './component/program-displayer/card-noneall-displayer/card-noneall-displayer.component';
 import {SigninComponent} from './component/signin/signin.component';
 import {TokenComponent} from './component/token/token.component';
-import {BottomSheetComponent} from './component/kata-displayer/bottom-sheet/bottom-sheet.component';
+
 
 
 @NgModule({
@@ -73,7 +77,7 @@ import {BottomSheetComponent} from './component/kata-displayer/bottom-sheet/bott
     CardNoneallDisplayerComponent,
     SigninComponent,
     TokenComponent,
-    BottomSheetComponent,
+    MoreActionKataDialogComponent,
     DeleteProgramDialogComponent,
     KataSurrenderDialogComponent,
 
@@ -108,7 +112,7 @@ import {BottomSheetComponent} from './component/kata-displayer/bottom-sheet/bott
     MatDialogModule,
     MatBottomSheetModule
   ],
-  entryComponents: [DeleteProgramDialogComponent, KataSurrenderDialogComponent, BottomSheetComponent],
+  entryComponents: [DeleteProgramDialogComponent, KataSurrenderDialogComponent, MoreActionKataDialogComponent],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}, {
     provide: HTTP_INTERCEPTORS,
     useClass: ErrorInterceptor,

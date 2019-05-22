@@ -2,10 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6a1f2e5-4f60-4227-82bb-83eb10fa94a5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-dialog-moreactions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/bottom-sheet/bottom-sheet.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/bottom-sheet/bottom-sheet.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/bottom-sheet/bottom-sheet.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/bottom-sheet/bottom-sheet.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/program-dialog-delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/program-dialog-delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/subscription/subscription.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/subscription/subscription.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/services/kata/kata.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/services/kata/kata.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MongoDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ProgramsDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgramsDataBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MongoDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MongoDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ProgramsDataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ProgramsDataBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -37,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/app.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-372">
-              <caret line="297" column="7" selection-start-line="297" selection-start-column="7" selection-end-line="297" selection-end-column="7" />
+            <state relative-caret-position="-297">
+              <caret line="199" column="37" selection-start-line="199" selection-start-column="37" selection-end-line="199" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -46,11 +61,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/MongoDB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="96" column="4" selection-start-line="96" selection-start-column="4" selection-end-line="96" selection-end-column="4" />
+            <state relative-caret-position="-237">
+              <caret line="277" column="98" lean-forward="true" selection-start-line="277" selection-start-column="98" selection-end-line="277" selection-end-column="98" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#13099#13100#0" expanded="true" />
+                <element signature="e#13013#13014#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -59,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ProgramsDataBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+            <state relative-caret-position="528">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -97,8 +112,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>slee</find>
-      <find>thread</find>
       <find>out</find>
       <find>println</find>
       <find>programid</find>
@@ -127,6 +140,8 @@
       <find>json</find>
       <find>402</find>
       <find>subc</find>
+      <find>dele</find>
+      <find>push</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -318,12 +333,12 @@
       <workItem from="1558367436433" duration="1864000" />
       <workItem from="1558371763230" duration="910000" />
       <workItem from="1558420148058" duration="25396000" />
-      <workItem from="1558506364520" duration="18280000" />
+      <workItem from="1558506364520" duration="21018000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188559000" />
+    <option name="totallyTimeSpent" value="191297000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -335,7 +350,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1090" height="1200" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49924126" weight="0.17784877" />
@@ -347,8 +362,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32920355" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.35840708" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39823008" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35840708" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39823008" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
@@ -373,15 +388,31 @@
     <option name="version" value="1" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/app.java</url>
+          <line>199</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="kata.iterator().next()" language="JAVA" />
         <watch expression="database.getCollection(&quot;Users&quot;, KataSubscription.class).aggregate(Arrays.asList(&#10;                    match(combine(eq(&quot;_id&quot;, userid), eq(&quot;programSubscriptions.katas._id&quot;, kataid))),&#10;                    unwind(&quot;$programSubscriptions&quot;),&#10;                    replaceRoot(&quot;$programSubscriptions&quot;),&#10;                    unwind(&quot;$katas&quot;),&#10;                    match(eq(&quot;katas._id&quot;, kataid)),&#10;                    replaceRoot(&quot;$katas&quot;),&#10;                    project(fields(excludeId(), include(&quot;status&quot;)))&#10;            )).iterator().next().getStatus()" language="JAVA" />
+        <watch expression="ctx.body()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>ctx.body()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>database.getCollection(&quot;Users&quot;, KataSubscription.class).aggregate(Arrays.asList(
                     match(combine(eq(&quot;_id&quot;, userid), eq(&quot;programSubscriptions.katas._id&quot;, kataid))),
@@ -458,12 +489,6 @@
                 match(eq(&quot;_id&quot;, kataid)),
                 replaceRoot(&quot;$katas&quot;)</expression-string>
         <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>!status.getBoolean(&quot;status&quot;)</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>com.sun.org.apache.xpath.internal.operations.Bool</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
@@ -596,16 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ProgramsDataBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.10.2/mongo-java-driver-3.10.2.jar!/com/mongodb/client/model/Aggregates.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
@@ -613,20 +628,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ProgramsDataBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/app.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-372">
-          <caret line="297" column="7" selection-start-line="297" selection-start-column="7" selection-end-line="297" selection-end-column="7" />
+        <state relative-caret-position="-297">
+          <caret line="199" column="37" selection-start-line="199" selection-start-column="37" selection-end-line="199" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MongoDB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="96" column="4" selection-start-line="96" selection-start-column="4" selection-end-line="96" selection-end-column="4" />
+        <state relative-caret-position="-237">
+          <caret line="277" column="98" lean-forward="true" selection-start-line="277" selection-start-column="98" selection-end-line="277" selection-end-column="98" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#13099#13100#0" expanded="true" />
+            <element signature="e#13013#13014#0" expanded="true" />
           </folding>
         </state>
       </provider>

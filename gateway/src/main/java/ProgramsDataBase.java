@@ -44,4 +44,6 @@ public interface ProgramsDataBase {
 
     boolean isSubscribed(String userid, String programid);
 
+    void deleteKata(String kataid);
+
 }
