@@ -2,36 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d8fb2c1-8426-4933-8193-ee68625cf8de" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-create/program-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-create/program-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/interfaces/subscriptions/ProgramSubscription.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/interfaces/subscriptions/ProgramSubscription.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/services/compilation/compilation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/services/compilation/compilation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/services/kata/kata.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/services/kata/kata.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/services/program/program.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/services/program/program.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/services/program/search/fetch-program-by-type.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/services/program/search/fetch-program-by-type.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/services/program/subs/program-subscription.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/services/program/subs/program-subscription.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/Kata.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/Kata.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/KataShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/KataShowCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/LiveDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/LiveDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/MockUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/MongoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ProgramShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ProgramShowCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ProgramSubscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ProgramSubscription.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ProgramsDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ProgramsDataBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/app.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/Kata.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/Kata.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/KataShowCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/KataShowCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/MockUser.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/target/classes/MongoDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/MongoDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ProgramShowCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/ProgramShowCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ProgramSubscription.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/ProgramSubscription.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ProgramsDataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/ProgramsDataBase.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/app.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mongodb/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../mongodb/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mongodb/mongo-seed/untitled.js" beforeDir="false" afterPath="$PROJECT_DIR$/../mongodb/mongo-seed/untitled.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -90,8 +67,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -108,6 +83,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -215,11 +192,12 @@
       <workItem from="1558333722642" duration="2241000" />
       <workItem from="1558371760302" duration="207000" />
       <workItem from="1558420145734" duration="2681000" />
+      <workItem from="1558506362151" duration="1507000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47590000" />
+    <option name="totallyTimeSpent" value="49097000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -234,7 +212,7 @@
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.371672" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.37539935" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -243,7 +221,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.41061947" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.41061947" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3987952" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />

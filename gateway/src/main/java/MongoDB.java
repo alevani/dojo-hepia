@@ -4,6 +4,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Indexes;
 
+import com.mongodb.client.model.UpdateOptions;
 import org.bson.Document;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
@@ -93,31 +94,28 @@ public class MongoDB implements ProgramsDataBase {
         return Optional.of(ktsc);
     }
 
-    /**
-     * TODO Vraiment très couteux........
-     *
-     * @param kataid
-     * @param programid
-     * @param userid
-     * @return
-     */
-
     private String getKataStatus(String kataid, String programid, String userid) {
-        MongoCollection<ProgramSubscription> programs = database.getCollection("ProgramsSubscription", ProgramSubscription.class);
-        ProgramSubscription subscription = programs.find(combine(eq("iduser", userid), eq("idprogram", programid))).first();
 
-        if (subscription == null)
+        if (isSubscribed(userid, programid)) {
+            AggregateIterable<KataSubscription> kata = database.getCollection("Users", KataSubscription.class).aggregate(Arrays.asList(
+                    match(combine(eq("_id", userid), eq("programSubscriptions.katas._id", kataid))),
+                    unwind("$programSubscriptions"),
+                    replaceRoot("$programSubscriptions"),
+                    unwind("$katas"),
+                    match(eq("katas._id", kataid)),
+                    replaceRoot("$katas"),
+                    project(fields(excludeId(), include("status")))
+            ));
+
+            try {
+                return kata.iterator().next().getStatus();
+            }catch (NoSuchElementException e){
+                return "TODO";
+            }
+
+
+        } else
             return "TODO";
-
-        ArrayList<KataSubscription> k = subscription.katas;
-
-        for (KataSubscription ks : k) {
-            if (ks.getId().equals(kataid))
-                return ks.getStatus();
-        }
-        return "TODO";
-
-
     }
 
     public Optional<List<String>> programDetailsById(String id) {
@@ -188,16 +186,21 @@ public class MongoDB implements ProgramsDataBase {
                         fields(excludeId(), include("status")))
         )).iterator().next();
 
-        database.getCollection("Users").updateOne(combine(eq("programSubscriptions.idprogram", idprogram), eq("_id", userid)), set("programSubscriptions.0.status", !status.getBoolean("status")));
+        database.getCollection("Users").updateOne(eq("_id", userid), set("programSubscriptions.$[i].status", !status.getBoolean("status")), new UpdateOptions().arrayFilters(Arrays.asList(
+                eq("i.idprogram", idprogram)
+        )));
     }
 
     public Optional<List<ProgramShowCase>> userSubscriptions(String userid) {
 
         AggregateIterable<ProgramSubscription> programids = database.getCollection("Users", ProgramSubscription.class).aggregate(Arrays.asList(
-                match(combine(eq("_id", userid), eq("programSubscriptions.status", true))),
+                match(eq("_id", userid)),
+                project(
+                        fields(excludeId(), include("programSubscriptions"))),
                 unwind("$programSubscriptions"),
                 project(
                         fields(excludeId(), exclude("katas"))),
+                match(eq("programSubscriptions.status", true)),
                 replaceRoot("$programSubscriptions")
         ));
 
@@ -228,68 +231,76 @@ public class MongoDB implements ProgramsDataBase {
             return Optional.empty();
         else return Optional.of(prgsc);
     }
-// TODO
-    public KataSubscription kataSubscriptionById(String kataid, String programid, String userid) {
 
-        ProgramSubscription s = database.getCollection("ProgramsSubscription", ProgramSubscription.class).find(combine(eq("iduser", userid), eq("idprogram", programid), eq("status", true))).projection(include("katas")).first();
-        if (s == null) {
-            return new KataSubscription();
-        } else
-            for (KataSubscription k : s.katas) {
-
-                if (k.getId().equals(kataid))
-                    return k;
-            }
-        return null;
+    public boolean isSubscribed(String userid, String programid) {
+        try{
+            return database.getCollection("Users").aggregate(Arrays.asList(
+                    match(eq("_id", userid)),
+                    unwind("$programSubscriptions"),
+                    project(
+                            fields(excludeId(), include("programSubscriptions"))),
+                    match(eq("programSubscriptions.idprogram", programid)),
+                    replaceRoot("$programSubscriptions"),
+                    project(
+                            fields(excludeId(), include("status")))
+            )).iterator().next().getBoolean("status");
+        }catch (NoSuchElementException e){
+            return false;
+        }
     }
-// TODO
+
+    public Optional<KataSubscription> kataSubscriptionById(String kataid, String programid, String userid) {
+
+        AggregateIterable<KataSubscription> kata = database.getCollection("Users", KataSubscription.class).aggregate(Arrays.asList(
+                match(combine(eq("_id", userid), eq("programSubscriptions.katas._id", kataid))),
+                unwind("$programSubscriptions"),
+                replaceRoot("$programSubscriptions"),
+                project(fields(excludeId(), include("katas"))),
+                unwind("$katas"),
+                match(eq("katas._id", kataid)),
+                replaceRoot("$katas")
+
+        ));
+
+        if (kata.iterator().hasNext())
+            return Optional.of(kata.iterator().next());
+        else
+            return Optional.empty();
+    }
+
+
     public void createKataSubscription(String kataid, String programid, String userid) {
-        database.getCollection("ProgramsSubscription").updateOne(combine(eq("iduser", userid), eq("idprogram", programid)), push("katas", new KataSubscription(kataid, "ON-GOING", "", 0)));
+        database.getCollection("Users").updateOne(eq("_id", userid), push("programSubscriptions.$[index].katas", new KataSubscription(kataid, "ON-GOING", "", 0)), new UpdateOptions().arrayFilters(Arrays.asList(
+                eq("index.idprogram", programid)
+        )));
     }
 
-    /**
-     * TODO trouver un moyen simple de rentrer dans la liste de kata avec mongo db, parce que la c'est vraiment très couteu à chaque appel.
-     * TODO voir si je peux pas transformer kataSubrription en une mongo collection dans ProgramSub.. et pourquoi pas
-     * TODO si 4a marche changer Arraylist kata en Mongo collection kata dans Program
-     *
-     * @param kataid
-     * @param programid
-     * @param userid
-     */
     public void incrementKataSubscriptionAttempt(String kataid, String programid, String userid) {
-        ArrayList<KataSubscription> katas = database.getCollection("ProgramsSubscription", ProgramSubscription.class).find(combine(eq("iduser", userid), eq("idprogram", programid))).first().katas;
-
-        for (KataSubscription k : katas) {
-            if (k.getId().equals(kataid)) {
-                k.setNbAttempt(k.getNbAttempt() + 1);
-                break;
-            }
-        }
-
-        MongoCollection<ProgramSubscription> programs = database.getCollection("ProgramsSubscription", ProgramSubscription.class);
-        programs.updateOne(combine(eq("iduser", userid), eq("idprogram", programid)), set("katas", katas));
+        database.getCollection("Users").updateOne(eq("_id", userid), inc("programSubscriptions.$[i].katas.$[j].nbAttempt", 1), new UpdateOptions().arrayFilters(Arrays.asList(
+                eq("i.idprogram", programid),
+                eq("j._id", kataid)
+        )));
     }
-// TODO
+
     public void updateKataSubscription(String kataid, String programid, String userid, String sol, String status) {
-        ArrayList<KataSubscription> katas = database.getCollection("ProgramsSubscription", ProgramSubscription.class).find(combine(eq("iduser", userid), eq("idprogram", programid))).first().katas;
 
-        for (KataSubscription k : katas) {
-            if (k.getId().equals(kataid)) {
-                k.setStatus(status);
-                k.setMysol(sol);
-                break;
-            }
-        }
+        int inc = 1;
+        if (!status.equals("RESOLVED"))
+            inc = 0;
 
-        MongoCollection<ProgramSubscription> programs = database.getCollection("ProgramsSubscription", ProgramSubscription.class);
-        programs.updateOne(combine(eq("iduser", userid), eq("idprogram", programid)), set("katas", katas));
-        if (status.equals("RESOLVED"))
-            programs.updateOne(combine(eq("iduser", userid), eq("idprogram", programid)), inc("nbKataDone", 1));
+        database.getCollection("Users").updateOne(eq("_id", userid), combine(
+                set("programSubscriptions.$[i].katas.$[j].mysol", sol),
+                set("programSubscriptions.$[i].katas.$[j].status", status),
+                inc("programSubscriptions.$[i].nbKataDone", inc)
+        ), new UpdateOptions().arrayFilters(Arrays.asList(
+                eq("i.idprogram", programid),
+                eq("j._id", kataid)
+        )));
     }
-// TODO
+
     public void deleteProgram(String programid) {
+        database.getCollection("Users").updateMany(eq("programSubscriptions.idprogram", programid), pull("programSubscriptions", new BasicDBObject("idprogram", programid)));
         database.getCollection("Programs").deleteMany(eq("_id", programid));
-        database.getCollection("ProgramsSubscription").deleteMany(eq("idprogram", programid));
     }
 
     public void create(User u) {

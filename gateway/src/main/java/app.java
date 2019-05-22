@@ -238,6 +238,11 @@ public class app {
 
         /** PROGRAM SUBSCRIPTION **/
 
+        app.get("/program/issubscribed/:userid/:programid", ctx -> {
+            boolean isSubscribed = db.isSubscribed(ctx.pathParam("userid"), ctx.pathParam("programid"));
+            ctx.status(200).json(isSubscribed);
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
+
         app.get("program/subscription/:programid/:userid", ctx -> {
             Optional<ProgramSubscription> p = db.subscriptionByID(ctx.pathParam("userid"), ctx.pathParam("programid"));
             if (p.isPresent())
@@ -283,16 +288,12 @@ public class app {
         /** KATA SUBSCRIPTION **/
 
         app.get("kata/get/subscriptioninfos/:userid/:programid/:kataid", ctx -> {
-            KataSubscription k = db.kataSubscriptionById(ctx.pathParam("kataid"), ctx.pathParam("programid"), ctx.pathParam("userid"));
+            Optional<KataSubscription> k = db.kataSubscriptionById(ctx.pathParam("kataid"), ctx.pathParam("programid"), ctx.pathParam("userid"));
 
-            if (!(k == null))
-                if (k.getId() == null)
-                    ctx.status(402);
-                else
-                    ctx.status(200).json(k);
-            else if (k == null)
+            if(k.isPresent())
+                ctx.status(200).json(k.get());
+            else
                 ctx.status(404);
-
 
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 

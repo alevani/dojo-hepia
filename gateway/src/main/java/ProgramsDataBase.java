@@ -26,7 +26,7 @@ public interface ProgramsDataBase {
 
     Optional<List<ProgramShowCase>> userPrograms(String userid);
 
-    KataSubscription kataSubscriptionById(String kataid, String programid, String userid);
+    Optional<KataSubscription> kataSubscriptionById(String kataid, String programid, String userid);
 
     void createKataSubscription(String kataid, String programid, String userid);
 
@@ -41,5 +41,7 @@ public interface ProgramsDataBase {
     Optional<User> checkUserCredentials(String username, String password);
 
     boolean isExisting(String username);
+
+    boolean isSubscribed(String userid, String programid);
 
 }

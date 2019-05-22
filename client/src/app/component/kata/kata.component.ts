@@ -62,7 +62,6 @@ export class KataComponent implements OnInit {
   ) {
   }
 
-
   getLANG(id: string): void {
     this.LANG = this.langservice.getLANG(id)[0];
     this.assertname = this.LANG.assertname;
@@ -169,7 +168,7 @@ export class KataComponent implements OnInit {
             this.status = 1;
             this.result = response.error;
             this.alertService.danger('Run failed !');
-            if (this.nbAttempt >= this.nbAttemptBeforeSurreding) {
+            if (this.nbAttempt == this.nbAttemptBeforeSurreding) {
               this.alertService.info('Solution unlocked ! you can now surrender peasant.');
             }
           }
@@ -193,30 +192,35 @@ export class KataComponent implements OnInit {
   }
 
   getSubscription() {
-    this.kataSubscriptionService.get(this.idKata, this.programID, this.auth.currentUserValue.id).subscribe((data: KataSubscription) => {
-      this.kataInfo = data;
-      this.nbAttempt = this.kataInfo.nbAttempt;
-      this.kataStatus = this.kataInfo.status;
-      if (this.kataInfo.status === 'RESOLVED' || this.kataInfo.status === 'FAILED') {
-        this.isResolved = true;
-        this.kata.canva = this.kataInfo.mysol;
-      }
-    }, error1 => {
-      if (error1.status === 404) {
-        this.kataSubscriptionService.create(JSON.stringify({
-          id: uuid(),
-          kataid: this.idKata,
-          programid: this.programID,
-          userid: this.auth.currentUserValue.id
-        })).subscribe(() => {
-          this.nbAttempt = 0;
-          this.kataStatus = 'ON-GOING';
-        });
-      } else {
-        this.router.navigate([/kata-displayer/ + this.programID]);
-      }
 
+    this.kataSubscriptionService.isSubscribed(this.auth.currentUserValue.id, this.programID).subscribe((isSubsribed: boolean) => {
+      if (!isSubsribed) {
+        this.router.navigate([/kata-displayer/ + this.programID]);
+      } else {
+        this.kataSubscriptionService.get(this.idKata, this.programID, this.auth.currentUserValue.id).subscribe((data: KataSubscription) => {
+          this.kataInfo = data;
+          this.nbAttempt = this.kataInfo.nbAttempt;
+          this.kataStatus = this.kataInfo.status;
+          if (this.kataInfo.status === 'RESOLVED' || this.kataInfo.status === 'FAILED') {
+            this.isResolved = true;
+            this.kata.canva = this.kataInfo.mysol;
+          }
+        }, error1 => {
+          if (error1.status === 404) {
+            this.kataSubscriptionService.create(JSON.stringify({
+              id: uuid(),
+              kataid: this.idKata,
+              programid: this.programID,
+              userid: this.auth.currentUserValue.id
+            })).subscribe(() => {
+              this.nbAttempt = 0;
+              this.kataStatus = 'ON-GOING';
+            });
+          }
+        });
+      }
     });
+
   }
 
   ngOnInit() {
