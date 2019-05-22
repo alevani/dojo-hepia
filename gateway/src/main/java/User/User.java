@@ -1,3 +1,7 @@
+package User;
+
+import Program.ProgramSubscription;
+
 import java.util.ArrayList;
 
 public class User {

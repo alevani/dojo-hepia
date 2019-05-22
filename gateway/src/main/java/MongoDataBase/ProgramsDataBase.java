@@ -1,3 +1,10 @@
+package MongoDataBase;
+
+import Kata.*;
+import Program.*;
+import User.User;
+
+
 import java.util.List;
 import java.util.Optional;
 
@@ -18,7 +25,7 @@ public interface ProgramsDataBase {
 
     Optional<ProgramSubscription> subscriptionByID(String userid, String idrogram);
 
-    void create(String userid,ProgramSubscription p);
+    void create(String userid, ProgramSubscription p);
 
     void toggleSubscription(String userid, String idprogram);
 

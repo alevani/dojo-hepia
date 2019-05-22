@@ -1,3 +1,5 @@
+package Kata;
+
 public class KataSubscription {
     //katas [{id:1,status:"resolved",mysol:".."}]
 

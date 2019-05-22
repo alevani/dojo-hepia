@@ -1,3 +1,9 @@
+import Kata.*;
+
+import MongoDataBase.MongoDB;
+import MongoDataBase.ProgramsDataBase;
+import Program.*;
+import User.User;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTCreator;
 import com.auth0.jwt.JWTVerifier;
@@ -26,7 +32,7 @@ import static io.javalin.security.SecurityUtil.roles;
  * Created by Alexandre Vanini for Hepia © HEPIA 2019 (Bachelor Thesis project)
  * Purpose : Http Server
  */
-public class app {
+public class App {
 
     // Roles of the routes
     enum Roles implements Role {
@@ -36,7 +42,7 @@ public class app {
         ANYONE    // null user role
     }
 
-    // Data base object, can be changed if your object extends "ProgramsDataBase"
+    // Data base object, can be changed if your object extends "MongoDataBase.ProgramsDataBase"
     private static ProgramsDataBase db = new MongoDB();
 
     // Jackson Object mapper, convert received stream into Java Designed Object
@@ -136,7 +142,7 @@ public class app {
         /** PROGRAM **/
 
         /**
-         *  Create a program -> Expect complete object like Program in body
+         *  Create a program -> Expect complete object like Program.Program in body
          */
         app.post("/program/create", ctx -> {
             Program program = objectMapper.readValue(ctx.body(), Program.class);

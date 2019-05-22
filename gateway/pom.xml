@@ -20,7 +20,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>app</mainClass>
+                    <mainClass>App</mainClass>
                     <cleanupDaemonThreads>false</cleanupDaemonThreads>
                 </configuration>
             </plugin>

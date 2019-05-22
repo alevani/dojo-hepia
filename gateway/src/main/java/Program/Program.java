@@ -1,3 +1,7 @@
+package Program;
+
+import Kata.Kata;
+
 import java.util.ArrayList;
 
 public class Program {
@@ -88,11 +92,11 @@ public class Program {
         this.idsensei = idsensei;
     }
 /*
-    public ArrayList<Kata> getKata() {
+    public ArrayList<Kata.Kata> getKata() {
         return kata;
     }
 
-    public void setKata(ArrayList<Kata> kata) {
+    public void setKata(ArrayList<Kata.Kata> kata) {
         this.kata = kata;
     }*/
 }

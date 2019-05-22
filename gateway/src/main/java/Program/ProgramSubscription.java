@@ -1,3 +1,7 @@
+package Program;
+
+import Kata.KataSubscription;
+
 import java.util.ArrayList;
 
 public class ProgramSubscription {

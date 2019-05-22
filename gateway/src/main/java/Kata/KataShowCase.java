@@ -1,3 +1,5 @@
+package Kata;
+
 public class KataShowCase {
     public String title,difficulty,id,status;
 
