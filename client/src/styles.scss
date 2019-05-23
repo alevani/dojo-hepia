@@ -69,3 +69,13 @@ hr{
 }
 
 
+.markdown-output {
+background-color: var(--color-dark-blue);
+  border: 2px solid rgba(44, 62, 80, 1.0);
+  overflow: scroll;
+  height: 680px;
+  width:500px;
+  max-height: 680px;
+  border-radius: 6px;
+  padding: 10px;
+}

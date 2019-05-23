@@ -54,7 +54,7 @@ import {CardNoneallDisplayerComponent} from './component/program-displayer/card-
 import {SigninComponent} from './component/signin/signin.component';
 import {TokenComponent} from './component/token/token.component';
 import { ProgramEditComponent } from './component/program-edit/program-edit.component';
-
+import { MarkdownModule } from 'ngx-markdown';
 
 
 @NgModule({
@@ -107,6 +107,7 @@ import { ProgramEditComponent } from './component/program-edit/program-edit.comp
     HttpClientModule,
     NgxUiLoaderModule,
     AlertModule.forRoot({maxMessages: 5, timeout: 5000, position: 'right'}),
+    MarkdownModule.forRoot(),
     ReactiveFormsModule,
     MatCardModule,
     MatBadgeModule,

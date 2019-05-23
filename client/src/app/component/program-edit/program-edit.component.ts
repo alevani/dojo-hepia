@@ -34,8 +34,6 @@ export class ProgramEditComponent implements OnInit {
     this.program.description = this.f.description.value;
     this.program.title = this.f.title.value;
     this.program.tags = this.f.tags.value.toString().split(',');
-    alert(typeof (this.program.tags));
-
     this.programService.update(this.programid, this.program).subscribe(() => this.router.navigate(['/kata-displayer/' + this.programid + '']));
   }
 

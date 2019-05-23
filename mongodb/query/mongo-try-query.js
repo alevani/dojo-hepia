@@ -223,6 +223,28 @@ db.Users.updateMany({},
 
 
 
+ db.Users.update(
+        {"_id":"0"},    
+        {$inc: {"programSubscriptions.$[i].katas.$[j].nbAttempt": 1.0}},
+        {arrayFilters: [{"i.idprogram" : { $eq:"2ce48559-404a-481a-9664-e05a23de66f8"}},{"j._id" : {$eq:"6d33e758-adf6-4f1b-a089-30543dce9e3b"}}]}
+        );
+
+
+
+/*database.getCollection("Users").updateMany(eq("programSubscriptions.katas._id", kataid), inc("programSubscriptions.$[i].nbKataDone", -1),new UpdateOptions().arrayFilters(Arrays.asList(
+                eq("i.$[].katas.status","RESOLVED")
+        )));*/
+
+
+        db.Users.updateMany(
+            {"programSubscriptions.katas._id": "c10f7aec-3417-49fb-a87b-7f227a5b5bb4"},
+            {$inc:{"programSubscriptions.$[i].nbKataDone":-1}},
+            {arrayFilters: [{"i.katas.status" : { $eq:"RESOLVED"}}]}  
+            );
+            
+
+
+
 
 
 

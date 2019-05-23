@@ -12,7 +12,9 @@
     <div class="p-2 "><label class="header">rules :</label><label style="margin-left: 20px;"
                                                                   class="header">{{this.filename}}</label></div>
     <div class="p-2 ">
-      <textarea disabled style="text-align: justify">{{kata.rules}}</textarea>
+      <div style="height: 300px;" class="markdown-output" [data]="kata.rules" markdown ngPreserveWhitespaces>
+
+              </div>
       <app-terminal-code style="margin-left: 20px;" [code]="kata.canva" [type]="kata.language"
                          (new)="OnNewEvent($event)"></app-terminal-code>
     </div>

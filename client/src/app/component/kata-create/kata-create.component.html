@@ -44,16 +44,31 @@
         <mat-expansion-panel>
           <mat-expansion-panel-header>
             <mat-panel-title>
-              Kata's instruction
+              Kata's instruction (Markdown supported)
             </mat-panel-title>
           </mat-expansion-panel-header>
-          <div class="form-group">
-            <textarea class="form-control" style="width:100%" formControlName="instruction"
+
+
+          <mat-grid-list cols="2" rowHeight="700px">
+            <mat-grid-tile>
+              <div class="form-group">
+            <textarea style="margin-top: 10px;height: 680px" class="form-control"  formControlName="instruction"
                       [ngClass]="{ 'is-invalid': submitted && f.instruction.errors }"></textarea>
-            <div *ngIf="submitted && f.instruction.errors" class="invalid-feedback">
-              <div *ngIf="f.instruction.errors.required">Kata needs instructions</div>
-            </div>
-          </div>
+                <div *ngIf="submitted && f.instruction.errors" class="invalid-feedback">
+                  <div *ngIf="f.instruction.errors.required">Kata needs instructions</div>
+                </div>
+
+              </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div class="markdown-output" [data]="f.instruction.value" markdown ngPreserveWhitespaces>
+
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+
+
+
         </mat-expansion-panel>
 
         <mat-expansion-panel>
