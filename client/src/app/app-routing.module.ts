@@ -13,6 +13,7 @@ import {SubscriptionComponent} from './component/subscription/subscription.compo
 import {MineComponent} from './component/mine/mine.component';
 import {SigninComponent} from './component/signin/signin.component';
 import {TokenComponent} from './component/token/token.component';
+import {ProgramEditComponent} from './component/program-edit/program-edit.component';
 
 const routes: Routes = [
   {path: '', component: ProgramDisplayerComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path: 'kata-displayer/:id', component: KataDisplayerComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
   {path: 'kata/:prid/:id', component: KataComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
   {path: 'program/create', component: ProgramCreateComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
+  {path: 'program/edit/:id', component: ProgramEditComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
   {path: 'kata_create/:id/:language', component: KataCreateComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
   {path: '**', redirectTo: ''}
 ];

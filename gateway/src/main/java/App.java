@@ -161,8 +161,7 @@ public class App {
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.get("program/details/:id", ctx -> {
-            Optional<List<String>> s = db.programDetailsById(ctx.pathParam("id"));
-
+            Optional<ProgramShowCase> s = db.programDetailsById(ctx.pathParam("id"));
             if (s.isPresent())
                 ctx.json(s.get());
             else
@@ -170,9 +169,10 @@ public class App {
 
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.post("/kata/create", ctx -> {
-            Kata kata = objectMapper.readValue(ctx.body(), Kata.class);
-            db.create(kata);
+        app.post("/program/update", ctx -> {
+            JSONObject input = new JSONObject(ctx.body());
+            ProgramShowCase program = objectMapper.readValue(input.get("program").toString(), ProgramShowCase.class);
+            db.update(input.getString("programid"),program);
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
@@ -185,6 +185,12 @@ public class App {
 
 
         /** KATAS **/
+
+        app.post("/kata/create", ctx -> {
+            Kata kata = objectMapper.readValue(ctx.body(), Kata.class);
+            db.create(kata);
+            ctx.status(200);
+        }, roles(Roles.SHODAI, Roles.SENSEI));
 
         app.get("/kata/details/:programid/:userid", ctx -> {
             Optional<List<KataShowCase>> ktsc = db.kataDetails(ctx.pathParam("programid"), ctx.pathParam("userid"));
@@ -253,6 +259,11 @@ public class App {
         app.get("/program/issubscribed/:userid/:programid", ctx -> {
             boolean isSubscribed = db.isSubscribed(ctx.pathParam("userid"), ctx.pathParam("programid"));
             ctx.status(200).json(isSubscribed);
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
+
+        app.get("/program/isowner/:userid/:programid", ctx -> {
+            boolean isOwner = db.isOwner(ctx.pathParam("userid"), ctx.pathParam("programid"));
+            ctx.status(200).json(isOwner);
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.get("program/subscription/:programid/:userid", ctx -> {

@@ -12,6 +12,7 @@ import {ProgramService} from '../../services/program/program.service';
 import {KataService} from '../../services/kata/kata.service';
 import {MAT_DIALOG_DATA, MatBottomSheet, MatSnackBar} from '@angular/material';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {Program} from '../program-displayer/program';
 
 
 export interface MoreActionsKata {
@@ -29,11 +30,10 @@ export interface MoreActionsKata {
 export class KataDisplayerComponent implements OnInit {
 
   katas: KataShowCase[];
-  idProgram: string;
-  programTitle: string;
-  programLanguage: string;
-  programSensei: string;
-  programSenseiID: string;
+  programid: string;
+
+  program: Program;
+
   error = false;
   isSubscribed = false;
   currentUser: User;
@@ -58,20 +58,19 @@ export class KataDisplayerComponent implements OnInit {
     private programSubscription: ProgramSubscriptionService,
     private router: Router,
     private snackBar: MatSnackBar,
-    public dialog: MatDialog,
-    private bottomSheet: MatBottomSheet
+    public dialog: MatDialog
   ) {
   }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DeleteProgramDialogComponent, {
       width: '400px',
-      data: this.programTitle
+      data: this.program.title
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.programService.deleteProgram(this.idProgram).subscribe(() => this.router.navigate(['program/mine']));
+        this.programService.deleteProgram(this.programid).subscribe(() => this.router.navigate(['program/mine']));
       }
     });
   }
@@ -82,7 +81,7 @@ export class KataDisplayerComponent implements OnInit {
       data: {title: kataTitle, id: kataId}
     });
     dialogRef.componentInstance.reloadKata.subscribe(() => {
-      this.kataService.getKatasDetails(this.idProgram, this.auth.currentUserValue.id).subscribe((datas: KataShowCase[]) => {
+      this.kataService.getKatasDetails(this.programid, this.auth.currentUserValue.id).subscribe((datas: KataShowCase[]) => {
         this.katas = datas;
       });
     });
@@ -94,10 +93,12 @@ export class KataDisplayerComponent implements OnInit {
   }
 
   getIsOwner() {
-    if (this.currentUser.id === this.programSenseiID) {
-      this.isOwner = true;
-      this.isSubscribed = true;
-    }
+    this.programService.isOwner(this.programid, this.currentUser.id).subscribe((data: boolean) => {
+      if (data) {
+        this.isOwner = true;
+        this.isSubscribed = true;
+      }
+    });
   }
 
   subscribe() {
@@ -105,7 +106,7 @@ export class KataDisplayerComponent implements OnInit {
     if (this.nullsubs) {
       this.programSubscription.createSubscription(this.currentUser.id, JSON.stringify({
         id: uuid(),
-        idprogram: this.idProgram,
+        idprogram: this.programid,
         status: true,
         nbKataDone: 0,
         katas: []
@@ -113,23 +114,23 @@ export class KataDisplayerComponent implements OnInit {
         this.isSubscribed = true;
         this.nullsubs = false;
         this.subvalue = 'Unsubscribe';
-        this.snackBar.open('Unsubscribed from ' + this.programTitle, '', {
+        this.snackBar.open('Subscribed from ' + this.program.title, '', {
           duration: 2000
         });
         // tslint:disable-next-line:max-line-length
-        this.programSubscription.getSubs(this.idProgram, this.currentUser.id).subscribe((data: ProgramSubscription) => this.subscription = data);
+        this.programSubscription.getSubs(this.programid, this.currentUser.id).subscribe((data: ProgramSubscription) => this.subscription = data);
       });
     } else {
       this.isSubscribed = !this.isSubscribed;
-      this.programSubscription.toggle(JSON.stringify({programid: this.idProgram, userid: this.currentUser.id})).subscribe(() => {
+      this.programSubscription.toggle(JSON.stringify({programid: this.programid, userid: this.currentUser.id})).subscribe(() => {
         if (this.isSubscribed) {
           this.subvalue = 'Unsubscribe';
-          this.snackBar.open('Subscribed to ' + this.programTitle, '', {
+          this.snackBar.open('Subscribed to ' + this.program.title, '', {
             duration: 2000
           });
         } else {
           this.subvalue = 'Subscribe';
-          this.snackBar.open('Unsubscribed from ' + this.programTitle, '', {
+          this.snackBar.open('Unsubscribed from ' + this.program.title, '', {
             duration: 2000
           });
         }
@@ -138,7 +139,7 @@ export class KataDisplayerComponent implements OnInit {
   }
 
   getSubs() {
-    this.programSubscription.getSubs(this.idProgram, this.currentUser.id).subscribe((data: ProgramSubscription) => {
+    this.programSubscription.getSubs(this.programid, this.currentUser.id).subscribe((data: ProgramSubscription) => {
       this.subscription = data;
       this.isSubscribed = this.subscription.status;
       if (!this.isSubscribed) {
@@ -158,18 +159,14 @@ export class KataDisplayerComponent implements OnInit {
   getKatas() {
 
     this.ngxLoader.start();
-    this.programService.getDetails(this.idProgram).subscribe((data: string[]) => {
-      this.programTitle = data[0];
-      this.programLanguage = data[1];
-      this.programSensei = data[2];
-      console.log(data[3]);
-      this.programSenseiID = data[3];
+    this.programService.getDetails(this.programid).subscribe((data: Program) => {
 
+      this.program = data;
       this.getIsOwner();
       this.getSubs();
 
       this.inforreceived = true;
-      this.kataService.getKatasDetails(this.idProgram, this.auth.currentUserValue.id).subscribe((datas: KataShowCase[]) => {
+      this.kataService.getKatasDetails(this.programid, this.auth.currentUserValue.id).subscribe((datas: KataShowCase[]) => {
         this.katas = datas;
         this.ngxLoader.stop();
       });
@@ -183,7 +180,7 @@ export class KataDisplayerComponent implements OnInit {
 
 
   ngOnInit() {
-    this.idProgram = this.route.snapshot.paramMap.get('id');
+    this.programid = this.route.snapshot.paramMap.get('id');
     this.currentUser = this.auth.currentUserValue;
     this.getKatas();
   }

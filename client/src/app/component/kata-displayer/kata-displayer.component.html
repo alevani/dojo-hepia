@@ -1,32 +1,38 @@
 <div class="container" *ngIf="!error">
   <div *ngIf="inforreceived">
-    <h1 class="title" style="margin:2rem 0 0 2rem;">{{programTitle}}
+    <h1 class="title" style="margin:2rem 0 0 0;">{{program.title}}
       <br/>
-      <span class="subtitle">{{programSensei}} <span class="language"> {{programLanguage}}</span>
+      <span class="subtitle">{{program.sensei}} <span class="language"> {{program.language}}</span>
     </span>
 
-      <button mat-button style="margin:0 3rem 0 0;float:right;" *ngIf="isOwner"
-              routerLink="/kata_create/{{idProgram}}/{{programLanguage}}">Create a new kata
-      </button>
-      <button mat-button style="margin:0 3rem 0 0;float:right" *ngIf="isOwner" (click)="openDialog()">Delete
-        this
-        program
-      </button>
+      <div *ngIf="isOwner">
+        <button mat-button style="margin:0 3rem 0 0;float:right;"
+                routerLink="/kata_create/{{programid}}/{{program.language}}">Add Kata
+        </button>
+        <button mat-button style="margin:0 3rem 0 0;float:right" routerLink="/program/edit/{{programid}}">Edit</button>
+        <button mat-button style="margin:0 3rem 0 0;float:right" (click)="openDialog()">Delete</button>
+      </div>
+
       <button mat-button style="margin:0 3rem 0 0;float:right" *ngIf="!isOwner"
               (click)="subscribe()">{{subvalue}}</button>
     </h1>
 
+
   </div>
   <br/>
+  <span class="subtitle">{{program.description}}</span>
+  <hr/>
+  <span style="margin:2rem 0 0 0;" *ngFor="let tag of program.tags">
+       <span class="tag">{{tag}}</span>
+    </span>
 
   <div *ngIf="katas" disabled [ngClass]="isSubscribed ? '' : 'notsub'">
-
-    <div class="d-flex flex-wrap justify-content-start">
+   <div class="d-flex flex-wrap justify-content-start">
     <span *ngFor="let kata of katas">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title"><a class="title"
-                                      routerLink="/kata/{{idProgram}}/{{kata.id}}">{{kata.title}}</a>
+                                      routerLink="/kata/{{programid}}/{{kata.id}}">{{kata.title}}</a>
             <span style="float:right;"
                   [ngClass]="{'TODO':kata.status==='TODO','ON-GOING':kata.status==='ON-GOING','RESOLVED':kata.status==='RESOLVED','FAILED': kata.status==='FAILED'}">{{kata.status}}</span></h5>
             <br/>

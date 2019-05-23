@@ -202,16 +202,20 @@ db.Users.updateMany({"programSubscriptions.idprogram":"c4f038b3-1f8f-412c-a13f-d
 
 db.Users.aggregate(
 	{$match: {"_id":"0","programSubscriptions.katas._id":"c8f2535c-6731-46fb-a933-06ce578cd6e2"}},
-	{$project: {"_id":false,"programSubscriptions":true}},
 	{$unwind: "$programSubscriptions"},
 	{$replaceRoot: {newRoot:"$programSubscriptions"}},
 	{$unwind: "$katas"},
 	{$match: {"katas._id":"c8f2535c-6731-46fb-a933-06ce578cd6e2"}},
-	{$replaceRoot: {newRoot:"$katas"}}
+	{$replaceRoot: {newRoot:"$katas"}},
 	{$project: {"_id":false,"status":true}}
 	).pretty();
 
 
+
+
+db.Users.updateMany({},
+	{$pull: {"programSubscriptions.$[].katas":{"_id":"c8f2535c-6731-46fb-a933-06ce578cd6e2"}}}
+	);
 
 
 

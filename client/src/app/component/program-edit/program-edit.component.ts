@@ -1,0 +1,63 @@
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ProgramService} from '../../services/program/program.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Program} from '../program-displayer/program';
+import {AuthenticationService} from '../../services/auth/authentication.service';
+import {NgxUiLoaderService} from 'ngx-ui-loader';
+
+@Component({
+  selector: 'app-program-edit',
+  templateUrl: './program-edit.component.html',
+  styleUrls: ['../program-create/program-create.component.scss']
+})
+export class ProgramEditComponent implements OnInit {
+
+  constructor(private formBuilder: FormBuilder,
+              private programService: ProgramService,
+              private router: Router,
+              private auth: AuthenticationService,
+              private route: ActivatedRoute,
+              private ngxLoader: NgxUiLoaderService) {
+  }
+
+  UpdateForm: FormGroup;
+  program: Program;
+  submitted = false;
+  programid: string;
+
+  get f() {
+    return this.UpdateForm.controls;
+  }
+
+  save() {
+    this.program.description = this.f.description.value;
+    this.program.title = this.f.title.value;
+    this.program.tags = this.f.tags.value.toString().split(',');
+    alert(typeof (this.program.tags));
+
+    this.programService.update(this.programid, this.program).subscribe(() => this.router.navigate(['/kata-displayer/' + this.programid + '']));
+  }
+
+  ngOnInit() {
+    this.ngxLoader.start();
+    this.programid = this.route.snapshot.paramMap.get('id');
+    this.programService.isOwner(this.programid, this.auth.currentUserValue.id).subscribe((data: boolean) => {
+      if (!data) {
+        this.router.navigate(['/']);
+      } else {
+        this.programService.getDetails(this.programid).subscribe((program: Program) => {
+          this.program = program;
+          this.ngxLoader.stop();
+        });
+      }
+    });
+
+    this.UpdateForm = this.formBuilder.group({
+      title: ['', Validators.required],
+      description: ['', Validators.required],
+      tags: ['', Validators.required],
+    });
+  }
+
+}

@@ -31,4 +31,6 @@ public class ProgramShowCase {
         this.tags = tags;
         this.programID = programID;
     }
+
+    public ProgramShowCase(){};
 }

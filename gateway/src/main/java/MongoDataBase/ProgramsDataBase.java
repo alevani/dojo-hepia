@@ -19,7 +19,7 @@ public interface ProgramsDataBase {
 
     Optional<List<KataShowCase>> kataDetails(String programID, String userid);
 
-    Optional<List<String>> programDetailsById(String id);
+    Optional<ProgramShowCase> programDetailsById(String id);
 
     Optional<List<ProgramShowCase>> programDetailsFiltered(String type, String resource);
 
@@ -52,5 +52,9 @@ public interface ProgramsDataBase {
     boolean isSubscribed(String userid, String programid);
 
     void deleteKata(String kataid);
+
+    boolean isOwner(String userid, String programid);
+
+    void update(String programid, ProgramShowCase p);
 
 }

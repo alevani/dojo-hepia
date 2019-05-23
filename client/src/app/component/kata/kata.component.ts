@@ -14,6 +14,7 @@ import {KataSubscriptionService} from '../../services/kata/kata-subscription.ser
 import {ProgramService} from '../../services/program/program.service';
 import {KataService} from '../../services/kata/kata.service';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
+import {Program} from '../program-displayer/program';
 
 
 @Component({
@@ -24,25 +25,26 @@ import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
 export class KataComponent implements OnInit {
 
   kata: Kata;
-  idKata: string;
+  kataid: string;
   status = 2;
   result = '';
-  programID: string;
-  programTitle: string;
-  programSensei: string;
+  programid: string;
+  program: Program;
+
+
   error = false;
   nbAttempt = 0;
+
   kataStatus = '';
   kataInfo: KataSubscription;
   compiling = false;
   isResolved = false;
   filename = '';
   assertname = '';
-  nbAttemptBeforeSurreding: number;
-  newTry = false;
 
+  newTry = false;
   katareceived = false;
-  assert = true;
+
 
   LANG: Canva;
 
@@ -70,13 +72,12 @@ export class KataComponent implements OnInit {
 
   getKata(): void {
     this.ngxLoader.start();
-    this.programService.getDetails(this.programID).subscribe((data: string[]) => {
-      this.programSensei = data[2];
-      this.programTitle = data[0];
-      this.kataService.getKata(this.idKata).subscribe((datas: Kata) => {
+    this.programService.getDetails(this.programid).subscribe((data: Program) => {
+      this.program = data;
+      this.kataService.getKata(this.kataid).subscribe((datas: Kata) => {
           this.kata = datas;
-          this.assert = !datas.keepAssert;
-          this.nbAttemptBeforeSurreding = datas.nbAttempt;
+          this.kata.keepAssert = !datas.keepAssert;
+
           this.getLANG(this.kata.language);
           this.ngxLoader.stop();
           this.getSubscription();
@@ -102,7 +103,7 @@ export class KataComponent implements OnInit {
   }
 
   openDialog(): void {
-    if (this.nbAttempt >= this.nbAttemptBeforeSurreding) {
+    if (this.nbAttempt >= this.kata.nbAttempt) {
       const dialogRef = this.dialog.open(KataSurrenderDialogComponent, {
         width: '400px'
       });
@@ -110,8 +111,8 @@ export class KataComponent implements OnInit {
       dialogRef.afterClosed().subscribe(result => {
         if (result) {
           this.kataSubscriptionService.update(JSON.stringify({
-            kataid: this.idKata,
-            programid: this.programID,
+            kataid: this.kataid,
+            programid: this.programid,
             userid: this.auth.currentUserValue.id,
             sol: this.kata.solution,
             status: 'FAILED'
@@ -123,7 +124,7 @@ export class KataComponent implements OnInit {
         }
       });
     } else {
-      this.alertService.warning('Oh.. Looks like you did not try enough !\nThe surrender options is unlocked at ' + this.nbAttemptBeforeSurreding + ' tries for this kata.');
+      this.alertService.warning('Oh.. Looks like you did not try enough !\nThe surrender options is unlocked at ' + this.kata.nbAttempt + ' tries for this kata.');
     }
   }
 
@@ -145,16 +146,16 @@ export class KataComponent implements OnInit {
       if (!this.isResolved && !this.newTry) {
         this.nbAttempt++;
         this.kataSubscriptionService.increment(JSON.stringify({
-          kataid: this.idKata,
-          programid: this.programID,
+          kataid: this.kataid,
+          programid: this.programid,
           userid: this.auth.currentUserValue.id
         })).subscribe(() => {
 
           if (response.exit === 0) {
             this.kataStatus = 'RESOLVED';
             this.kataSubscriptionService.update(JSON.stringify({
-              kataid: this.idKata,
-              programid: this.programID,
+              kataid: this.kataid,
+              programid: this.programid,
               userid: this.auth.currentUserValue.id,
               sol: stream,
               status: this.kataStatus
@@ -168,7 +169,7 @@ export class KataComponent implements OnInit {
             this.status = 1;
             this.result = response.error;
             this.alertService.danger('Run failed !');
-            if (this.nbAttempt == this.nbAttemptBeforeSurreding) {
+            if (this.nbAttempt === this.kata.nbAttempt) {
               this.alertService.info('Solution unlocked ! you can now surrender peasant.');
             }
           }
@@ -193,11 +194,11 @@ export class KataComponent implements OnInit {
 
   getSubscription() {
 
-    this.kataSubscriptionService.isSubscribed(this.auth.currentUserValue.id, this.programID).subscribe((isSubsribed: boolean) => {
-      if (!isSubsribed) {
-        this.router.navigate([/kata-displayer/ + this.programID]);
+    this.kataSubscriptionService.isSubscribed(this.auth.currentUserValue.id, this.programid).subscribe((isSubscribed: boolean) => {
+      if (!isSubscribed) {
+        this.router.navigate([/kata-displayer/ + this.programid]);
       } else {
-        this.kataSubscriptionService.get(this.idKata, this.programID, this.auth.currentUserValue.id).subscribe((data: KataSubscription) => {
+        this.kataSubscriptionService.get(this.kataid, this.programid, this.auth.currentUserValue.id).subscribe((data: KataSubscription) => {
           this.kataInfo = data;
           this.nbAttempt = this.kataInfo.nbAttempt;
           this.kataStatus = this.kataInfo.status;
@@ -209,8 +210,8 @@ export class KataComponent implements OnInit {
           if (error1.status === 404) {
             this.kataSubscriptionService.create(JSON.stringify({
               id: uuid(),
-              kataid: this.idKata,
-              programid: this.programID,
+              kataid: this.kataid,
+              programid: this.programid,
               userid: this.auth.currentUserValue.id
             })).subscribe(() => {
               this.nbAttempt = 0;
@@ -224,8 +225,8 @@ export class KataComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.programID = this.route.snapshot.paramMap.get('prid');
-    this.idKata = this.route.snapshot.paramMap.get('id');
+    this.programid = this.route.snapshot.paramMap.get('prid');
+    this.kataid = this.route.snapshot.paramMap.get('id');
     this.getKata();
   }
 }

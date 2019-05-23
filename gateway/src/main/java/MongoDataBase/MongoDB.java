@@ -115,7 +115,7 @@ public class MongoDB implements ProgramsDataBase {
 
             try {
                 return kata.iterator().next().getStatus();
-            }catch (NoSuchElementException e){
+            } catch (NoSuchElementException e) {
                 return "TODO";
             }
 
@@ -124,16 +124,14 @@ public class MongoDB implements ProgramsDataBase {
             return "TODO";
     }
 
-    public Optional<List<String>> programDetailsById(String id) {
-        ArrayList<String> infos = new ArrayList<>();
+    public Optional<ProgramShowCase> programDetailsById(String id) {
+        ProgramShowCase p;
 
         try {
             Program program = database.getCollection("Programs", Program.class).aggregate(Arrays.asList(match(eq("_id", id)))).iterator().next();
-            infos.add(program.getTitle());
-            infos.add(program.getLanguage());
-            infos.add(program.getSensei());
-            infos.add(program.getIdsensei());
-            return Optional.of(infos);
+            p = new ProgramShowCase(program.getTitle(), program.getSensei(), program.getLanguage(), program.getDescription(), program.getNbKata(), program.getTags(), program.getId());
+
+            return Optional.of(p);
         } catch (NoSuchElementException e) {
             return Optional.empty();
         }
@@ -238,8 +236,17 @@ public class MongoDB implements ProgramsDataBase {
         else return Optional.of(prgsc);
     }
 
+    public boolean isOwner(String userid, String programid) {
+        try {
+            database.getCollection("Programs", Program.class).find(combine(eq("idsensei", userid), eq("_id", programid))).first().getId();
+            return true;
+        } catch (NullPointerException e) {
+            return false;
+        }
+    }
+
     public boolean isSubscribed(String userid, String programid) {
-        try{
+        try {
             return database.getCollection("Users").aggregate(Arrays.asList(
                     match(eq("_id", userid)),
                     unwind("$programSubscriptions"),
@@ -250,7 +257,7 @@ public class MongoDB implements ProgramsDataBase {
                     project(
                             fields(excludeId(), include("status")))
             )).iterator().next().getBoolean("status");
-        }catch (NoSuchElementException e){
+        } catch (NoSuchElementException e) {
             return false;
         }
     }
@@ -305,6 +312,15 @@ public class MongoDB implements ProgramsDataBase {
         database.getCollection("Programs").deleteOne(eq("_id", programid));
     }
 
+    public void update(String programid, ProgramShowCase p) {
+        database.getCollection("Programs").updateOne(eq("_id",programid), combine(
+                set("title", p.title),
+                set("description", p.description),
+                set("tags", p.tags)
+
+                ));
+    }
+
     public void create(User u) {
         database.getCollection("Users", User.class).insertOne(u);
     }
@@ -319,12 +335,10 @@ public class MongoDB implements ProgramsDataBase {
     }
 
     public void deleteKata(String kataid) {
+        database.getCollection("Users").updateMany(eq("programSubscriptions.katas._id", kataid), inc("programSubscriptions.$[i].nbKataDone", -1), new UpdateOptions().arrayFilters(Arrays.asList(
+                eq("i.katas.status", "RESOLVED")
+        )));
         database.getCollection("Users").updateMany(eq("programSubscriptions.katas._id", kataid), pull("programSubscriptions.$[].katas", new BasicDBObject("_id", kataid)));
-
-        // TODO not working
-        /*database.getCollection("Users").updateMany(eq("programSubscriptions.katas._id", kataid), inc("programSubscriptions.$[i].nbKataDone", -1),new UpdateOptions().arrayFilters(Arrays.asList(
-                eq("i.$[].katas.status","RESOLVED")
-        )));*/
         database.getCollection("Programs").updateOne(eq("katas._id", kataid), pull("katas", new BasicDBObject("_id", kataid)));
     }
 

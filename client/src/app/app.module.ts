@@ -53,6 +53,7 @@ import {MineComponent} from './component/mine/mine.component';
 import {CardNoneallDisplayerComponent} from './component/program-displayer/card-noneall-displayer/card-noneall-displayer.component';
 import {SigninComponent} from './component/signin/signin.component';
 import {TokenComponent} from './component/token/token.component';
+import { ProgramEditComponent } from './component/program-edit/program-edit.component';
 
 
 
@@ -80,6 +81,7 @@ import {TokenComponent} from './component/token/token.component';
     MoreActionKataDialogComponent,
     DeleteProgramDialogComponent,
     KataSurrenderDialogComponent,
+    ProgramEditComponent,
 
   ],
   imports: [

@@ -2,8 +2,8 @@
   <span *ngIf="katareceived">
   <div class="d-flex flex-column">
     <div class="p-2 title">
-      {{kata.title}} <a routerLink="/kata-displayer/{{programID}}">- {{programTitle}}</a>
-      <br><span class="subtitle">{{programSensei}} <span class="language"> {{kata.language}}</span></span>
+      {{kata.title}} <a routerLink="/kata-displayer/{{programid}}">- {{program.title}}</a>
+      <br><span class="subtitle">{{program.sensei}} <span class="language"> {{kata.language}}</span></span>
       <span style="float:right"><span
         [ngClass]="{'TODO':kataStatus==='TODO','ON-GOING':kataStatus==='ON-GOING','RESOLVED':kataStatus==='RESOLVED','FAILED': kataStatus==='FAILED'}">{{kataStatus}}</span> | ATTEMPTS : {{nbAttempt}}</span>
     </div>
@@ -16,11 +16,11 @@
       <app-terminal-code style="margin-left: 20px;" [code]="kata.canva" [type]="kata.language"
                          (new)="OnNewEvent($event)"></app-terminal-code>
     </div>
-<div class="p-2 "><label [hidden]="assert" style="margin-right: 20px;" class="header">{{assertname}}</label><label
-  [ngClass]="{'header':true,'no-assert':assert===true}">output :</label></div>
+<div class="p-2 "><label [hidden]="kata.keepAssert" style="margin-right: 20px;" class="header">{{assertname}}</label><label
+  [ngClass]="{'header':true,'no-assert':kata.keepAssert===true}">output :</label></div>
     <div class="p-2">
-      <app-terminal-assert [hidden]="assert" [code]="kata.cassert" [type]="kata.language"></app-terminal-assert>
-      <textarea [ngClass]="{'success':status === 0,'error':status === 1,'':status === 2,'no-assert':assert===true}"
+      <app-terminal-assert [hidden]="kata.keepAssert" [code]="kata.cassert" [type]="kata.language"></app-terminal-assert>
+      <textarea [ngClass]="{'success':status === 0,'error':status === 1,'':status === 2,'no-assert':kata.keepAssert===true}"
                 style="white-space: pre-wrap;"
                 disabled>{{result}}</textarea>
     </div>

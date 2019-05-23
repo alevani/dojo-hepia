@@ -2,31 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6a1f2e5-4f60-4227-82bb-83eb10fa94a5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-dialog-moreactions.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-dialog-moreactions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Kata.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Kata/Kata.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/KataShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Kata/KataShowCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/KataSubscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Kata/KataSubscription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LiveDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MongoDataBase/MongoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgramShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/ProgramShowCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgramSubscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/ProgramSubscription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgramsDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MongoDataBase/ProgramsDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Kata.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/KataShowCase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/KataSubscription.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MongoDB.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Program.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ProgramShowCase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ProgramSubscription.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ProgramsDataBase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app$Roles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app$Roles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MongoDataBase/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MongoDataBase/MongoDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MongoDataBase/ProgramsDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MongoDataBase/ProgramsDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Program/ProgramShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/ProgramShowCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MongoDataBase/MongoDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MongoDataBase/MongoDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongodb/mongo-try-query.js" beforeDir="false" afterPath="$PROJECT_DIR$/../mongodb/mongo-try-query.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -55,14 +41,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+            <state relative-caret-position="-445">
+              <caret line="173" column="61" selection-start-line="173" selection-start-column="61" selection-end-line="173" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Program/ProgramShowCase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -70,20 +65,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MongoDataBase/MongoDB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+            <state relative-caret-position="504">
+              <caret line="315" column="71" selection-start-line="315" selection-start-column="71" selection-end-line="315" selection-end-column="71" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#13698#13699#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MongoDataBase/ProgramsDataBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+            <state relative-caret-position="558">
+              <caret line="57" column="16" lean-forward="true" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,12 +90,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/User/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="180">
               <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1148#1149#0" expanded="true" />
-                <element signature="e#1191#1192#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -116,9 +110,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>out</find>
-      <find>println</find>
-      <find>programid</find>
       <find>idprogram</find>
       <find>programID</find>
       <find>sea</find>
@@ -138,7 +129,6 @@
       <find>prog</find>
       <find>program/subscr</find>
       <find>subscriptionByID</find>
-      <find>upd</find>
       <find>updateOne</find>
       <find>subscr</find>
       <find>json</find>
@@ -146,6 +136,10 @@
       <find>subc</find>
       <find>dele</find>
       <find>push</find>
+      <find>issub</find>
+      <find>isSubs</find>
+      <find>upd</find>
+      <find>details</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -173,8 +167,10 @@
         <option value="$PROJECT_DIR$/src/main/java/MongoDB.java" />
         <option value="$PROJECT_DIR$/src/main/java/ProgramsDataBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/User/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/MongoDataBase/ProgramsDataBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/MongoDataBase/MongoDB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Program/ProgramShowCase.java" />
       </list>
     </option>
   </component>
@@ -204,7 +200,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="954" />
     <option name="height" value="1200" />
   </component>
@@ -216,8 +212,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -261,6 +257,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -292,7 +289,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.app" />
+        <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
   </component>
@@ -349,11 +346,12 @@
       <workItem from="1558371763230" duration="910000" />
       <workItem from="1558420148058" duration="25396000" />
       <workItem from="1558506364520" duration="21575000" />
+      <workItem from="1558594362546" duration="8510000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191854000" />
+    <option name="totallyTimeSpent" value="200364000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -365,9 +363,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1200" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49924126" visible="true" weight="0.17784877" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49924126" visible="true" weight="0.17944622" />
       <window_info id="Structure" order="1" sideWeight="0.5007587" side_tool="true" weight="0.20127796" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -406,102 +404,74 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/App.java</url>
-          <line>203</line>
+          <line>209</line>
           <properties />
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/App.java</url>
+          <line>174</line>
+          <properties />
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="kata.iterator().next()" language="JAVA" />
-        <watch expression="database.getCollection(&quot;Users&quot;, KataSubscription.class).aggregate(Arrays.asList(&#10;                    match(combine(eq(&quot;_id&quot;, userid), eq(&quot;programSubscriptions.katas._id&quot;, kataid))),&#10;                    unwind(&quot;$programSubscriptions&quot;),&#10;                    replaceRoot(&quot;$programSubscriptions&quot;),&#10;                    unwind(&quot;$katas&quot;),&#10;                    match(eq(&quot;katas._id&quot;, kataid)),&#10;                    replaceRoot(&quot;$katas&quot;),&#10;                    project(fields(excludeId(), include(&quot;status&quot;)))&#10;            )).iterator().next().getStatus()" language="JAVA" />
-        <watch expression="ctx.body()" language="JAVA" />
+        <watch expression="input.get(&quot;programid&quot;)" language="JAVA" />
+        <watch expression="input.get(&quot;program&quot;).toString()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
-        <expression-string>ctx.body()</expression-string>
+        <expression-string>input.get(&quot;program&quot;).toString()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>database.getCollection(&quot;Users&quot;, KataSubscription.class).aggregate(Arrays.asList(
-                    match(combine(eq(&quot;_id&quot;, userid), eq(&quot;programSubscriptions.katas._id&quot;, kataid))),
-                    unwind(&quot;$programSubscriptions&quot;),
-                    replaceRoot(&quot;$programSubscriptions&quot;),
-                    unwind(&quot;$katas&quot;),
-                    match(eq(&quot;katas._id&quot;, kataid)),
-                    replaceRoot(&quot;$katas&quot;),
-                    project(fields(excludeId(), include(&quot;status&quot;)))
-            )).iterator().next().getStatus()</expression-string>
+        <expression-string>input.getString(&quot;program&quot;).toString()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>database.getCollection(&quot;Users&quot;, KataSubscription.class).aggregate(Arrays.asList(
-                    match(combine(eq(&quot;_id&quot;, userid), eq(&quot;programSubscriptions.katas._id&quot;, kataid))),
-                    unwind(&quot;$programSubscriptions&quot;),
-                    replaceRoot(&quot;$programSubscriptions&quot;),
-                    unwind(&quot;$katas&quot;),
-                    match(eq(&quot;katas._id&quot;, kataid)),
-                    replaceRoot(&quot;$katas&quot;),
-                    project(fields(excludeId(), include(&quot;status&quot;)))
-            )).iterator().next()</expression-string>
+        <expression-string>input.getString(&quot;program&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>database.getCollection(&quot;Users&quot;, KataSubscription.class).aggregate(Arrays.asList(
-                    match(combine(eq(&quot;_id&quot;, userid), eq(&quot;programSubscriptions.katas._id&quot;, kataid))),
-                    unwind(&quot;$programSubscriptions&quot;),
-                    replaceRoot(&quot;$programSubscriptions&quot;),
-                    unwind(&quot;$katas&quot;),
-                    match(eq(&quot;katas._id&quot;, kataid)),
-                    replaceRoot(&quot;$katas&quot;),
-                    project(fields(excludeId(), include(&quot;status&quot;)))
-            ))</expression-string>
+        <expression-string>input.getString(&quot;progrma&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>kata.iterator().next()</expression-string>
+        <expression-string>input.getClass()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>x.idprogram</expression-string>
+        <expression-string>input.getClass(&quot;program&quot;,ProgramShowCase.class)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>database.getCollection(&quot;Users&quot;, KataSubscription.class).aggregate(Arrays.asList(                 match(combine(eq(&quot;_id&quot;, userid), eq(&quot;programSubscriptions.katas._id&quot;, kataid))),                 unwind(&quot;$programSubscriptions&quot;),                 replaceRoot(&quot;$programSubscriptions&quot;),                 project(                         fields(excludeId(), include(&quot;katas&quot;))),                  unwind(&quot;$katas&quot;),                 match(eq(&quot;_id&quot;, kataid)),                 replaceRoot(&quot;$katas&quot;)          )).iterator().next()</expression-string>
+        <expression-string>input.get(&quot;program&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>database.getCollection(&quot;Users&quot;, KataSubscription.class).aggregate(Arrays.asList(                 match(combine(eq(&quot;_id&quot;, userid), eq(&quot;programSubscriptions.katas._id&quot;, kataid))),                 unwind(&quot;$programSubscriptions&quot;),                 replaceRoot(&quot;$programSubscriptions&quot;),                 project(                         fields(excludeId(), include(&quot;katas&quot;))),                  unwind(&quot;$katas&quot;),                 match(eq(&quot;_id&quot;, kataid)),                 replaceRoot(&quot;$katas&quot;)          )).iterator()</expression-string>
+        <expression-string>int</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>AggregateIterable&lt;KataSubscription&gt; kata = database.getCollection(&quot;Users&quot;, KataSubscription.class).aggregate(Arrays.asList(                 match(combine(eq(&quot;_id&quot;, userid), eq(&quot;programSubscriptions.katas._id&quot;, kataid))),                 unwind(&quot;$programSubscriptions&quot;),                 replaceRoot(&quot;$programSubscriptions&quot;),                 project(                         fields(excludeId(), include(&quot;katas&quot;))),                  unwind(&quot;$katas&quot;),                 match(eq(&quot;_id&quot;, kataid)),                 replaceRoot(&quot;$katas&quot;)          )).iterator()</expression-string>
+        <expression-string>input.get(&quot;programid&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>database.getCollection(&quot;Users&quot;, KataSubscription.class).aggregate(Arrays.asList(
-                match(combine(eq(&quot;_id&quot;, userid), eq(&quot;programSubscriptions.katas._id&quot;, kataid))),
-                unwind(&quot;$programSubscriptions&quot;),
-                replaceRoot(&quot;$programSubscriptions&quot;),
-                project(
-                        fields(excludeId(), include(&quot;katas&quot;))),
-
-                unwind(&quot;$katas&quot;),
-                match(eq(&quot;_id&quot;, kataid)),
-                replaceRoot(&quot;$katas&quot;)</expression-string>
+        <expression-string>ctx.body().</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -583,13 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Program/ProgramShowCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Kata/Kata.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -614,18 +577,6 @@
     <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/jetty-server/9.4.15.v20190215/jetty-server-9.4.15.v20190215.jar!/org/eclipse/jetty/server/HttpChannel.class">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/User/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1148#1149#0" expanded="true" />
-            <element signature="e#1191#1192#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1245">
@@ -633,17 +584,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/LiveDB.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/LiveDB.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/User/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="151" column="3" selection-start-line="151" selection-start-column="3" selection-end-line="151" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        <state relative-caret-position="180">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -652,18 +597,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MongoDataBase/MongoDB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        <state relative-caret-position="504">
+          <caret line="315" column="71" selection-start-line="315" selection-start-column="71" selection-end-line="315" selection-end-column="71" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#13698#13699#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MongoDataBase/ProgramsDataBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        <state relative-caret-position="558">
+          <caret line="57" column="16" lean-forward="true" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Program/ProgramShowCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-445">
+          <caret line="173" column="61" selection-start-line="173" selection-start-column="61" selection-end-line="173" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
