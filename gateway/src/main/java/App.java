@@ -186,6 +186,12 @@ public class App {
 
         /** KATAS **/
 
+        app.post("/kata/update", ctx -> {
+            Kata kata = objectMapper.readValue(ctx.body(), Kata.class);
+            db.update(kata);
+            ctx.status(200);
+        }, roles(Roles.SHODAI, Roles.SENSEI));
+
         app.post("kata/toggleactivation", ctx -> {
             db.toggleKataActivation(ctx.body());
             ctx.status(200);
@@ -213,11 +219,16 @@ public class App {
 
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
+        app.get("/kata/isowner/:kataid/:userid", ctx -> {
+            boolean isOwner = db.isKataOwner(ctx.pathParam("userid"), ctx.pathParam("kataid"));
+            ctx.status(200).json(isOwner);
+        }, roles(Roles.SHODAI, Roles.SENSEI));
+
 
         app.post("/kata/delete/", ctx -> {
             db.deleteKata(ctx.body());
             ctx.status(200);
-        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
+        }, roles(Roles.SHODAI, Roles.SENSEI));
 
         /******************/
 
@@ -268,9 +279,9 @@ public class App {
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.get("/program/isowner/:userid/:programid", ctx -> {
-            boolean isOwner = db.isOwner(ctx.pathParam("userid"), ctx.pathParam("programid"));
+            boolean isOwner = db.isProgramOwner(ctx.pathParam("userid"), ctx.pathParam("programid"));
             ctx.status(200).json(isOwner);
-        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
+        }, roles(Roles.SHODAI, Roles.SENSEI));
 
         app.get("program/subscription/:programid/:userid", ctx -> {
             Optional<ProgramSubscription> p = db.subscriptionByID(ctx.pathParam("userid"), ctx.pathParam("programid"));

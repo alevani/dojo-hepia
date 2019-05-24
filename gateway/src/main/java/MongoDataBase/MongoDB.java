@@ -75,7 +75,7 @@ public class MongoDB implements ProgramsDataBase {
                 unwind("$katas"),
                 project(
                         fields(excludeId(), include("katas"))),
-                match(eq("katas._id", kataid)),
+                match(combine(eq("katas._id", kataid), eq("katas.activated", true))),
                 replaceRoot("$katas")
         ));
 
@@ -208,6 +208,7 @@ public class MongoDB implements ProgramsDataBase {
     }
 
     public void toggleKataActivation(String kataid) {
+        int number;
         boolean isActivated = database.getCollection("Programs", Kata.class).aggregate(Arrays.asList(
                 project(fields(excludeId(), include("katas"))),
                 unwind("$katas"),
@@ -216,12 +217,15 @@ public class MongoDB implements ProgramsDataBase {
 
         )).first().isActivated();
 
-        if (isActivated)
+        if (isActivated) {
             decrementResolvedKata(kataid);
-        else
+            number = -1;
+        } else {
+            number = 1;
             incrementResolvedKata(kataid);
-        // TODO dec nbKata
-        database.getCollection("Programs").updateOne(eq("katas._id", kataid), set("katas.$[i].activated", !isActivated), new UpdateOptions().arrayFilters(Arrays.asList(
+        }
+
+        database.getCollection("Programs").updateOne(eq("katas._id", kataid), combine(inc("nbKata", number), set("katas.$[i].activated", !isActivated)), new UpdateOptions().arrayFilters(Arrays.asList(
                 eq("i._id", kataid)
         )));
     }
@@ -267,9 +271,19 @@ public class MongoDB implements ProgramsDataBase {
         else return Optional.of(prgsc);
     }
 
-    public boolean isOwner(String userid, String programid) {
+
+    public boolean isProgramOwner(String userid, String programid) {
         try {
             database.getCollection("Programs", Program.class).find(combine(eq("idsensei", userid), eq("_id", programid))).first().getId();
+            return true;
+        } catch (NullPointerException e) {
+            return false;
+        }
+    }
+
+    public boolean isKataOwner(String userid, String kataid) {
+        try {
+            database.getCollection("Programs", Program.class).find(combine(eq("idsensei", userid), eq("katas._id", kataid))).first().getId();
             return true;
         } catch (NullPointerException e) {
             return false;
@@ -352,6 +366,13 @@ public class MongoDB implements ProgramsDataBase {
         ));
     }
 
+    public void update(Kata k) {
+        String programid = database.getCollection("Programs",Program.class).find(eq("katas._id", k.getId())).first().getId();
+        deleteKata(k.getId());
+        database.getCollection("Programs").updateOne(eq("_id", programid), push("katas", k));
+    }
+
+
     public void create(User u) {
         database.getCollection("Users", User.class).insertOne(u);
     }
@@ -368,7 +389,8 @@ public class MongoDB implements ProgramsDataBase {
     public void deleteKata(String kataid) {
         decrementResolvedKata(kataid);
         database.getCollection("Users").updateMany(eq("programSubscriptions.katas._id", kataid), pull("programSubscriptions.$[].katas", new BasicDBObject("_id", kataid)));
-        database.getCollection("Programs").updateOne(eq("katas._id", kataid), combine(inc("nbKata", -1), pull("katas", new BasicDBObject("_id", kataid))));
+        database.getCollection("Programs").updateOne(eq("katas._id", kataid), pull("katas", new BasicDBObject("_id", kataid)));
+        database.getCollection("Programs").updateOne(combine(eq("katas._id", kataid),eq("katas.activated","true")), inc("nbKata", -1));
 
     }
 

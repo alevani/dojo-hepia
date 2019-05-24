@@ -2,7 +2,7 @@ package Kata;
 
 public class KataShowCase {
     public String title,difficulty,id,status;
-    boolean activated;
+    public boolean activated;
 
     public KataShowCase(String title, String difficulty, String id, String status, boolean activated){
      this.difficulty = difficulty;

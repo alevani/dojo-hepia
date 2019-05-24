@@ -74,7 +74,7 @@ export class ProgramCreateComponent implements OnInit {
 
     this.CreateForm = this.formBuilder.group({
       title: ['', Validators.required],
-      language: ['', Validators.required],
+      language: ['', null],
       description: ['', Validators.required],
       tags: ['', Validators.required],
     });

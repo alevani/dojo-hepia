@@ -18,6 +18,8 @@ import {Program} from '../program-displayer/program';
 export interface MoreActionsKata {
   title: string;
   id: string;
+  isActivated: boolean;
+  language: string;
 }
 
 @Component({
@@ -75,15 +77,14 @@ export class KataDisplayerComponent implements OnInit {
     });
   }
 
-  openDialogMoreActions(kataTitle: string, kataId: string): void {
+  openDialogMoreActions(kataTitle: string, kataId: string, activated: boolean): void {
     const dialogRef = this.dialog.open(MoreActionKataDialogComponent, {
       width: '600px',
-      data: {title: kataTitle, id: kataId}
+      data: {title: kataTitle, id: kataId, isActivated: activated, language: this.program.language}
     });
     dialogRef.componentInstance.reloadKata.subscribe(() => {
       this.kataService.getKatasDetails(this.programid, this.auth.currentUserValue.id).subscribe((datas: KataShowCase[]) => {
         this.katas = datas;
-        console.log(this.katas);
       });
     });
     dialogRef.afterClosed().subscribe(result => {
@@ -169,7 +170,6 @@ export class KataDisplayerComponent implements OnInit {
       this.inforreceived = true;
       this.kataService.getKatasDetails(this.programid, this.auth.currentUserValue.id).subscribe((datas: KataShowCase[]) => {
         this.katas = datas;
-        console.log(this.katas);
         this.ngxLoader.stop();
       });
     }, (error1 => {
@@ -215,7 +215,8 @@ export class MoreActionKataDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<MoreActionKataDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: MoreActionsKata,
-    private kataService: KataService) {
+    private kataService: KataService,
+    private router: Router) {
   }
 
   reloadKata = new EventEmitter<any>();
@@ -232,6 +233,11 @@ export class MoreActionKataDialogComponent {
       this.reloadKata.emit();
       this.dialogRef.close();
     });
+  }
+
+  edit(): void {
+    this.router.navigate(['kata/edit/' + this.data.id + '/' + this.data.language]);
+    this.dialogRef.close();
   }
 
   onNoClick(): void {

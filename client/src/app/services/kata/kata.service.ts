@@ -22,8 +22,16 @@ export class KataService {
     return this.http.post('http://localhost:7000/kata/delete/', kataid);
   }
 
-  deactivate(kataid: string){
+  deactivate(kataid: string) {
     return this.http.post('http://localhost:7000/kata/toggleactivation', kataid);
+  }
+
+  isOwner(kataid: string, userid: string) {
+    return this.http.get('http://localhost:7000/kata/isowner/' + kataid + '/' + userid);
+  }
+
+  update(obj: string) {
+    return this.http.post('http://localhost:7000/kata/update', obj);
   }
 
   constructor(private http: HttpClient) {

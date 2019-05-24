@@ -1,6 +1,6 @@
-<div class="d-flex justify-content-center" style="margin-top:2%">
+<div class="d-flex justify-content-center" *ngIf="kata" style="margin-top:2%">
   <div class="d-flex flex-column">
-    <form [formGroup]="CreateForm">
+    <form [formGroup]="EditForm">
 
       <mat-accordion>
         <mat-expansion-panel expanded="true">
@@ -12,7 +12,7 @@
 
           <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" formControlName="title" class="form-control"
+            <input type="text" [(ngModel)]="kata.title" formControlName="title" class="form-control"
                    [ngClass]="{ 'is-invalid': submitted && f.title.errors }"/>
             <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
               <div *ngIf="f.title.errors.required">Kata needs a title</div>
@@ -20,14 +20,14 @@
           </div>
           <div class="form-group">
             <label for="assert">Display assert box</label>
-            <select class="form-control" formControlName="assert" [value]="'yes'">
-              <option value="true">yes</option>
+            <select class="form-control" formControlName="assert" [value]="kata.keepAssert">
+            <option value="true">yes</option>
               <option value="false">no</option>
             </select>
-         </div>
+          </div>
           <div class="form-group">
             <label for="number">Unlock solution at (> -1)</label>
-            <input type="number" formControlName="number" value="1" class="form-control"
+            <input [(ngModel)]="kata.nbAttempt" type="number" formControlName="number" value="1" class="form-control"
                    [ngClass]="{ 'is-invalid': submitted && f.assert.errors}"/>
             <div *ngIf="submitted && f.number.errors" class="invalid-feedback">
               <div *ngIf="f.number.errors.required">Please choose the number of tries before unlocking the "surrender
@@ -48,7 +48,7 @@
           <mat-grid-list cols="2" rowHeight="700px">
             <mat-grid-tile>
               <div class="form-group">
-            <textarea style="margin-top: 10px;height: 680px" class="form-control"  formControlName="instruction"
+            <textarea [(ngModel)]="kata.rules" style="margin-top: 10px;height: 680px" class="form-control"  formControlName="instruction"
                       [ngClass]="{ 'is-invalid': submitted && f.instruction.errors }"></textarea>
                 <div *ngIf="submitted && f.instruction.errors" class="invalid-feedback">
                   <div *ngIf="f.instruction.errors.required">Kata needs instructions</div>
@@ -76,16 +76,16 @@
 
           <mat-grid-list cols="2" rowHeight="310px">
             <mat-grid-tile>
-              <app-terminal-code [code]="solution" [type]="language"
+              <app-terminal-code [code]="kata.solution" [type]="language"
                                  (new)="OnNewEventSolution($event)"></app-terminal-code>
             </mat-grid-tile>
             <mat-grid-tile>
-              <app-terminal-code [code]="assert" [type]="language"
+              <app-terminal-code [code]="kata.cassert" [type]="language"
                                  (new)="OnNewEventAssert($event)"></app-terminal-code>
             </mat-grid-tile>
 
             <mat-grid-tile>
-              <app-terminal-code [code]="canva" [type]="language" (new)="OnNewEventCanva($event)"></app-terminal-code>
+              <app-terminal-code [code]="kata.canva" [type]="language" (new)="OnNewEventCanva($event)"></app-terminal-code>
             </mat-grid-tile>
             <mat-grid-tile>
                         <textarea [ngClass]="{'success':status === 0,'error':status === 1,'':status === 2}"
@@ -96,7 +96,7 @@
           <br/>
 
           <button mat-button [disabled]="compiling" (click)="try()">Try my solution</button>
-          <button mat-button [disabled]="compiling" (click)="publish()" style="float:right">Create kata</button>
+          <button mat-button [disabled]="compiling" (click)="save()" style="float:right">Save kata</button>
 
         </mat-expansion-panel>
       </mat-accordion>
@@ -105,4 +105,4 @@
   </div>
 </div>
 
-
+<span *ngIf="!kata"><ngx-ui-loader></ngx-ui-loader></span>

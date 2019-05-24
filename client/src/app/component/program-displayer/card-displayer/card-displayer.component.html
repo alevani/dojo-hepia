@@ -4,7 +4,7 @@
   <div *ngFor="let program of programs">
     <div class="card">
       <div class="card-body">
-        <a routerLink="/kata-displayer/{{program.programID}}"><h5 class="card-title">{{program.title}}</h5></a>
+        <a routerLink="/kata-displayer/{{program.id}}"><h5 class="card-title">{{program.title}}</h5></a>
         <h6 class="card-subtitle mb-2 text-muted"><a><span (click)="querySearch('sensei',program.sensei)"
                                                            class="sensei">{{program.sensei}}</span> </a>
           <a><span (click)="querySearch('language',program.language)" class="language">{{program.language}}</span></a>

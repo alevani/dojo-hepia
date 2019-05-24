@@ -1,5 +1,5 @@
 export interface Program {
-  programID: string;
+  id: string;
   title: string;
   language: string;
   sensei: string;

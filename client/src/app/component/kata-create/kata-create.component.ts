@@ -126,7 +126,7 @@ export class KataCreateComponent implements OnInit {
 
     this.CreateForm = this.formBuilder.group({
       title: ['', Validators.required],
-      assert: ['', Validators.required],
+      assert: ['', null],
       number: ['', Validators.required],
       instruction: ['', Validators.required],
     });

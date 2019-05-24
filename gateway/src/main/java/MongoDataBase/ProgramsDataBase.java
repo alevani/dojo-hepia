@@ -53,9 +53,12 @@ public interface ProgramsDataBase {
 
     void deleteKata(String kataid);
 
-    boolean isOwner(String userid, String programid);
+    boolean isProgramOwner(String userid, String programid);
+
+    boolean isKataOwner(String userid, String kataid);
 
     void update(String programid, ProgramShowCase p);
+    void update(Kata k);
 
     void toggleKataActivation(String kataid);
 

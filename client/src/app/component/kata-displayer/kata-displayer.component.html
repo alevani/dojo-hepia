@@ -27,18 +27,17 @@
     </span>
 
   <div *ngIf="katas" disabled [ngClass]="isSubscribed ? '' : 'deactivated'">
-   <div class="d-flex flex-wrap justify-content-start">
+    <div class="d-flex flex-wrap justify-content-start">
     <span *ngFor="let kata of katas">
-        <div class="card" [ngClass]="!kata.activated ? '' : 'deactivated'">
+        <div *ngIf="kata.activated || isOwner" class="card" >
           <div class="card-body">
-            <h5 class="card-title"><a class="title"
+            <h5 class="card-title"  [ngClass]="kata.activated ? '' : 'deactivatedcard'"><a class="title"
                                       routerLink="/kata/{{programid}}/{{kata.id}}">{{kata.title}}</a>
-            <span style="float:right;"
-                  [ngClass]="{'TODO':kata.status==='TODO','ON-GOING':kata.status==='ON-GOING','RESOLVED':kata.status==='RESOLVED','FAILED': kata.status==='FAILED'}">{{kata.status}}</span></h5>
+            <span style="float:right;" *ngIf="kata.activated" [ngClass]="{'TODO':kata.status==='TODO','ON-GOING':kata.status==='ON-GOING','RESOLVED':kata.status==='RESOLVED','FAILED': kata.status==='FAILED'}">{{kata.status}}</span>
+            <span style="float:right;" *ngIf="!kata.activated" class="DISABLED">DISABLED</span></h5>
             <br/>
             <h6 class="card-subtitle mb-2 text-muted">{{kata.difficulty}}</h6>
-            <button mat-button *ngIf="isOwner" (click)="openDialogMoreActions(kata.title,kata.id)"
-                    class="card-link"> + </button>
+            <a *ngIf="isOwner" (click)="openDialogMoreActions(kata.title,kata.id,kata.activated)" class="card-link">More..</a>
           </div>
         </div>
       </span>

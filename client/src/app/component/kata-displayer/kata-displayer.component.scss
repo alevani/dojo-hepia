@@ -20,6 +20,14 @@
   opacity: 0.5;
   background: var(--color-dark-blue);
 }
+.deactivatedcard{
+  pointer-events: none;
+  /* for "disabled" effect */
+  opacity: 0.5;
+  background: var(--color-dark-blue);
+}
+
+
 * {
   font-family: "Helvetica Neue";
 
@@ -60,10 +68,20 @@ a:hover{
   color:rgba(231, 76, 60,1.0);
 }
 
+.DISABLED{
+  color: rgba(9, 132, 227, 1.0);
+}
+
 
 .tag {
   background-color: rgba(99, 110, 114, 0.4);
   color: rgba(9, 132, 227, 1.0);
   padding: 3px;
   margin-right: 3px;
+}
+
+.card-link{
+  border-bottom: 1px solid var(--color-language-hover);
+  cursor: pointer;
+  float:right;
 }
