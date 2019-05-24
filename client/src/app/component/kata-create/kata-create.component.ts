@@ -91,9 +91,10 @@ export class KataCreateComponent implements OnInit {
       rules: this.f.instruction.value,
       keepAssert: this.f.assert.value,
       nbAttempt: this.f.number.value,
-      programID: this.programId,
-      difficulty: 'Ceinture blanche'
-    })).subscribe(data => this.router.navigate(['/kata-displayer/' + this.programId + '']));
+      difficulty: 'Ceinture blanche',
+      activated: true
+
+    }), this.programId).subscribe(data => this.router.navigate(['/kata-displayer/' + this.programId + '']));
   }
 
   try(): void {

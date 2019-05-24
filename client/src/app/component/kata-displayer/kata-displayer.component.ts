@@ -70,7 +70,7 @@ export class KataDisplayerComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.programService.deleteProgram(this.programid).subscribe(() => this.router.navigate(['program/mine']));
+        this.programService.delete(this.programid).subscribe(() => this.router.navigate(['program/mine']));
       }
     });
   }
@@ -83,6 +83,7 @@ export class KataDisplayerComponent implements OnInit {
     dialogRef.componentInstance.reloadKata.subscribe(() => {
       this.kataService.getKatasDetails(this.programid, this.auth.currentUserValue.id).subscribe((datas: KataShowCase[]) => {
         this.katas = datas;
+        console.log(this.katas);
       });
     });
     dialogRef.afterClosed().subscribe(result => {
@@ -104,7 +105,7 @@ export class KataDisplayerComponent implements OnInit {
   subscribe() {
 
     if (this.nullsubs) {
-      this.programSubscription.createSubscription(this.currentUser.id, JSON.stringify({
+      this.programSubscription.create(this.currentUser.id, JSON.stringify({
         id: uuid(),
         idprogram: this.programid,
         status: true,
@@ -159,7 +160,7 @@ export class KataDisplayerComponent implements OnInit {
   getKatas() {
 
     this.ngxLoader.start();
-    this.programService.getDetails(this.programid).subscribe((data: Program) => {
+    this.programService.getById(this.programid).subscribe((data: Program) => {
 
       this.program = data;
       this.getIsOwner();
@@ -168,6 +169,7 @@ export class KataDisplayerComponent implements OnInit {
       this.inforreceived = true;
       this.kataService.getKatasDetails(this.programid, this.auth.currentUserValue.id).subscribe((datas: KataShowCase[]) => {
         this.katas = datas;
+        console.log(this.katas);
         this.ngxLoader.stop();
       });
     }, (error1 => {
@@ -219,8 +221,10 @@ export class MoreActionKataDialogComponent {
   reloadKata = new EventEmitter<any>();
 
   deactivate(): void {
-    alert('deactivate touched');
-    this.dialogRef.close();
+    this.kataService.deactivate(this.data.id).subscribe(() => {
+      this.reloadKata.emit();
+      this.dialogRef.close();
+    });
   }
 
   delete(): void {

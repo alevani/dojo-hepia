@@ -7,19 +7,19 @@ import {Program} from '../../component/program-displayer/program';
 })
 export class ProgramService {
 
-  createProgram(obj: string) {
+  create(obj: string) {
     return this.http.post('http://localhost:7000/program/create', obj);
   }
 
-  getPrograms() {
+  get() {
     return this.http.get('http://localhost:7000/program/details');
   }
 
-  getDetails(id: string) {
+  getById(id: string) {
     return this.http.get('http://localhost:7000/program/details/' + id + '');
   }
 
-  deleteProgram(id: string) {
+  delete(id: string) {
     return this.http.post('http://localhost:7000/program/delete', JSON.stringify({programid: id}));
   }
 

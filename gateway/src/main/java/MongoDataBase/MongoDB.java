@@ -50,8 +50,8 @@ public class MongoDB implements ProgramsDataBase {
         database.getCollection("Programs", Program.class).insertOne(program);
     }
 
-    public void create(Kata kata) {
-        database.getCollection("Programs").updateOne(eq("_id", kata.getProgramID()), combine(inc("nbKata", 1), push("katas", kata)));
+    public void create(Kata kata, String programid) {
+        database.getCollection("Programs").updateOne(eq("_id", programid), combine(inc("nbKata", 1), push("katas", kata)));
     }
 
     public Optional<List<ProgramShowCase>> programsDetails() {
@@ -95,9 +95,21 @@ public class MongoDB implements ProgramsDataBase {
 
         ArrayList<KataShowCase> ktsc = new ArrayList<>();
         for (Kata x : kata)
-            ktsc.add(new KataShowCase(x.getTitle(), x.getDifficulty(), x.getId(), getKataStatus(x.getId(), programid, userid)));
+            ktsc.add(new KataShowCase(x.getTitle(), x.getDifficulty(), x.getId(), getKataStatus(x.getId(), programid, userid), x.isActivated()));
 
         return Optional.of(ktsc);
+    }
+
+    private void decrementResolvedKata(String kataid) {
+        database.getCollection("Users").updateMany(eq("programSubscriptions.katas._id", kataid), inc("programSubscriptions.$[i].nbKataDone", -1), new UpdateOptions().arrayFilters(Arrays.asList(
+                eq("i.katas.status", "RESOLVED")
+        )));
+    }
+
+    private void incrementResolvedKata(String kataid) {
+        database.getCollection("Users").updateMany(eq("programSubscriptions.katas._id", kataid), inc("programSubscriptions.$[i].nbKataDone", 1), new UpdateOptions().arrayFilters(Arrays.asList(
+                eq("i.katas.status", "RESOLVED")
+        )));
     }
 
     private String getKataStatus(String kataid, String programid, String userid) {
@@ -192,6 +204,25 @@ public class MongoDB implements ProgramsDataBase {
 
         database.getCollection("Users").updateOne(eq("_id", userid), set("programSubscriptions.$[i].status", !status.getBoolean("status")), new UpdateOptions().arrayFilters(Arrays.asList(
                 eq("i.idprogram", idprogram)
+        )));
+    }
+
+    public void toggleKataActivation(String kataid) {
+        boolean isActivated = database.getCollection("Programs", Kata.class).aggregate(Arrays.asList(
+                project(fields(excludeId(), include("katas"))),
+                unwind("$katas"),
+                replaceRoot("$katas"),
+                match(eq("_id", kataid))
+
+        )).first().isActivated();
+
+        if (isActivated)
+            decrementResolvedKata(kataid);
+        else
+            incrementResolvedKata(kataid);
+        // TODO dec nbKata
+        database.getCollection("Programs").updateOne(eq("katas._id", kataid), set("katas.$[i].activated", !isActivated), new UpdateOptions().arrayFilters(Arrays.asList(
+                eq("i._id", kataid)
         )));
     }
 
@@ -313,12 +344,12 @@ public class MongoDB implements ProgramsDataBase {
     }
 
     public void update(String programid, ProgramShowCase p) {
-        database.getCollection("Programs").updateOne(eq("_id",programid), combine(
+        database.getCollection("Programs").updateOne(eq("_id", programid), combine(
                 set("title", p.title),
                 set("description", p.description),
                 set("tags", p.tags)
 
-                ));
+        ));
     }
 
     public void create(User u) {
@@ -335,11 +366,10 @@ public class MongoDB implements ProgramsDataBase {
     }
 
     public void deleteKata(String kataid) {
-        database.getCollection("Users").updateMany(eq("programSubscriptions.katas._id", kataid), inc("programSubscriptions.$[i].nbKataDone", -1), new UpdateOptions().arrayFilters(Arrays.asList(
-                eq("i.katas.status", "RESOLVED")
-        )));
+        decrementResolvedKata(kataid);
         database.getCollection("Users").updateMany(eq("programSubscriptions.katas._id", kataid), pull("programSubscriptions.$[].katas", new BasicDBObject("_id", kataid)));
-        database.getCollection("Programs").updateOne(eq("katas._id", kataid), pull("katas", new BasicDBObject("_id", kataid)));
+        database.getCollection("Programs").updateOne(eq("katas._id", kataid), combine(inc("nbKata", -1), pull("katas", new BasicDBObject("_id", kataid))));
+
     }
 
     public boolean isExisting(String username) {

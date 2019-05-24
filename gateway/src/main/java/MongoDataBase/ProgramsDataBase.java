@@ -11,7 +11,7 @@ import java.util.Optional;
 public interface ProgramsDataBase {
     void create(Program program);
 
-    void create(Kata kata);
+    void create(Kata kata, String programid);
 
     Optional<List<ProgramShowCase>> programsDetails();
 
@@ -56,5 +56,7 @@ public interface ProgramsDataBase {
     boolean isOwner(String userid, String programid);
 
     void update(String programid, ProgramShowCase p);
+
+    void toggleKataActivation(String kataid);
 
 }

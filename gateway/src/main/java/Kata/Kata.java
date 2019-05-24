@@ -1,8 +1,8 @@
 package Kata;
 
 public class Kata {
-    private String _id, id,title, canva, cassert, solution, rules,programID,difficulty,language;
-    private boolean keepAssert;
+    private String _id, id,title, canva, cassert, solution, rules,difficulty,language;
+    private boolean keepAssert,activated;
     private double nbAttempt;
 
 
@@ -65,14 +65,6 @@ public class Kata {
     }
 
 
-    public String getProgramID() {
-        return programID;
-    }
-
-    public void setProgramID(String programID) {
-        this.programID = programID;
-    }
-
     public String getDifficulty() {
         return difficulty;
     }
@@ -103,5 +95,13 @@ public class Kata {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public boolean isActivated() {
+        return activated;
+    }
+
+    public void setActivated(boolean activated) {
+        this.activated = activated;
     }
 }

@@ -6,7 +6,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ProgramSubscriptionService {
 
-  createSubscription(userid: string, obj: string) {
+  create(userid: string, obj: string) {
     return this.http.post('http://localhost:7000/program/createsubscription', {userid, obj});
   }
 

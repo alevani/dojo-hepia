@@ -1,6 +1,6 @@
 <div class="container" *ngIf="!error">
   <div *ngIf="inforreceived">
-    <h1 class="title" style="margin:2rem 0 0 0;">{{program.title}}
+    <h1 class="title" style="margin:2rem 0 0 2rem;">{{program.title}}
       <br/>
       <span class="subtitle">{{program.sensei}} <span class="language"> {{program.language}}</span>
     </span>
@@ -20,16 +20,16 @@
 
   </div>
   <br/>
-  <span class="subtitle">{{program.description}}</span>
+  <span style="margin:0 0 0 2rem;" class="subtitle">{{program.description}}</span>
   <hr/>
-  <span style="margin:2rem 0 0 0;" *ngFor="let tag of program.tags">
+  <span style="margin:2rem 0 0 2rem;" *ngFor="let tag of program.tags">
        <span class="tag">{{tag}}</span>
     </span>
 
-  <div *ngIf="katas" disabled [ngClass]="isSubscribed ? '' : 'notsub'">
+  <div *ngIf="katas" disabled [ngClass]="isSubscribed ? '' : 'deactivated'">
    <div class="d-flex flex-wrap justify-content-start">
     <span *ngFor="let kata of katas">
-        <div class="card">
+        <div class="card" [ngClass]="!kata.activated ? '' : 'deactivated'">
           <div class="card-body">
             <h5 class="card-title"><a class="title"
                                       routerLink="/kata/{{programid}}/{{kata.id}}">{{kata.title}}</a>

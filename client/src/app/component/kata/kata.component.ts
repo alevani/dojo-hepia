@@ -72,7 +72,7 @@ export class KataComponent implements OnInit {
 
   getKata(): void {
     this.ngxLoader.start();
-    this.programService.getDetails(this.programid).subscribe((data: Program) => {
+    this.programService.getById(this.programid).subscribe((data: Program) => {
       this.program = data;
       this.kataService.getKata(this.kataid).subscribe((datas: Kata) => {
           this.kata = datas;

@@ -6,8 +6,8 @@ import {HttpClient} from '@angular/common/http';
 })
 export class KataService {
 
-  publish(obj: string) {
-    return this.http.post('http://localhost:7000/kata/create', obj);
+  publish(kata: string, programid: string) {
+    return this.http.post('http://localhost:7000/kata/create', {kata, programid});
   }
 
   getKatasDetails(program: string, userid: string) {
@@ -20,6 +20,10 @@ export class KataService {
 
   delete(kataid: string) {
     return this.http.post('http://localhost:7000/kata/delete/', kataid);
+  }
+
+  deactivate(kataid: string){
+    return this.http.post('http://localhost:7000/kata/toggleactivation', kataid);
   }
 
   constructor(private http: HttpClient) {

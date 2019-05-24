@@ -8,6 +8,6 @@ export interface Kata {
   cassert: string;
   keepAssert: boolean;
   nbAttempt: number;
-  programID: string;
   difficulty: string;
+  activated: boolean;
 }

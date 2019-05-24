@@ -44,7 +44,7 @@ export class ProgramEditComponent implements OnInit {
       if (!data) {
         this.router.navigate(['/']);
       } else {
-        this.programService.getDetails(this.programid).subscribe((program: Program) => {
+        this.programService.getById(this.programid).subscribe((program: Program) => {
           this.program = program;
           this.ngxLoader.stop();
         });

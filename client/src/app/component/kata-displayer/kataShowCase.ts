@@ -3,6 +3,7 @@ export interface KataShowCase {
   difficulty: string;
   id: string;
   status: string;
+  activated: boolean;
 }
 
 

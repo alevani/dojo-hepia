@@ -39,7 +39,7 @@ export class ProgramCreateComponent implements OnInit {
       return;
     }
 
-    this.programService.createProgram(JSON.stringify({
+    this.programService.create(JSON.stringify({
       id: this.programToKata,
       sensei: this.currentUser.username,
       language: this.f.language.value,
@@ -50,7 +50,7 @@ export class ProgramCreateComponent implements OnInit {
       idsensei: this.currentUser.id,
       katas: []
     })).subscribe(() => {
-      this.programSubscription.createSubscription(this.currentUser.id, JSON.stringify({
+      this.programSubscription.create(this.currentUser.id, JSON.stringify({
         id: uuid(),
         idprogram: this.programToKata,
         status: true,

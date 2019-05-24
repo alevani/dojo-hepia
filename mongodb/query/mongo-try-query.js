@@ -243,6 +243,13 @@ db.Users.updateMany({},
             );
             
 
+            db.Programs.aggregate( 
+                {$project: {"_id":false,"katas":true}},
+                {$unwind: "$katas"},
+                {$replaceRoot: {newRoot:"$katas"}},
+                {$match:{"katas._id":"6654cca8-6c5b-4dd8-8a7f-ad73daead8f6"}}
+                ).pretty()
+
 
 
 

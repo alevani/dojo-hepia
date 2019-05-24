@@ -186,9 +186,15 @@ public class App {
 
         /** KATAS **/
 
+        app.post("kata/toggleactivation", ctx -> {
+            db.toggleKataActivation(ctx.body());
+            ctx.status(200);
+        }, roles(Roles.SHODAI, Roles.SENSEI));
+
         app.post("/kata/create", ctx -> {
-            Kata kata = objectMapper.readValue(ctx.body(), Kata.class);
-            db.create(kata);
+            JSONObject input = new JSONObject(ctx.body());
+            Kata kata = objectMapper.readValue(input.getString("kata"), Kata.class);
+            db.create(kata,input.getString("programid"));
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
