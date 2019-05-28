@@ -25,7 +25,7 @@ export class CardNoneallDisplayerComponent implements OnInit {
     this.filter = true;
     this.programs = this.programs.filter((x) => {
       if (type === 'tags') {
-        return x[type].filter((t) => t === res);
+        return x[type].filter((t) => t === res)[0] === res;
       }
       return x[type] === res;
     });

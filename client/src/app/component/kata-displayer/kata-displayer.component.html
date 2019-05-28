@@ -7,7 +7,7 @@
 
       <div *ngIf="isOwner">
         <button mat-button style="margin:0 3rem 0 0;float:right;"
-                routerLink="/kata_create/{{programid}}/{{program.language}}">Add Kata
+                routerLink="/kata/create/{{programid}}/{{program.language}}">Add Kata
         </button>
         <button mat-button style="margin:0 3rem 0 0;float:right" routerLink="/program/edit/{{programid}}">Edit</button>
         <button mat-button style="margin:0 3rem 0 0;float:right" (click)="openDialog()">Delete</button>
@@ -33,7 +33,7 @@
           <div class="card-body">
             <h5 class="card-title"  [ngClass]="kata.activated ? '' : 'deactivatedcard'"><a class="title"
                                       routerLink="/kata/{{programid}}/{{kata.id}}">{{kata.title}}</a>
-            <span style="float:right;" *ngIf="kata.activated" [ngClass]="{'TODO':kata.status==='TODO','ON-GOING':kata.status==='ON-GOING','RESOLVED':kata.status==='RESOLVED','FAILED': kata.status==='FAILED'}">{{kata.status}}</span>
+            <span style="float:right;" *ngIf="kata.activated" [ngClass]="{'TODO':kata.status==='TODO','ONGOING':kata.status==='ONGOING','RESOLVED':kata.status==='RESOLVED','FAILED': kata.status==='FAILED'}">{{kata.status}}</span>
             <span style="float:right;" *ngIf="!kata.activated" class="DISABLED">DISABLED</span></h5>
             <br/>
             <h6 class="card-subtitle mb-2 text-muted">{{kata.difficulty}}</h6>

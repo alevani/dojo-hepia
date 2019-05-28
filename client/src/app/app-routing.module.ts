@@ -31,7 +31,7 @@ const routes: Routes = [
   {path: 'kata/:prid/:id', component: KataComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
   {path: 'program/create', component: ProgramCreateComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
   {path: 'program/edit/:id', component: ProgramEditComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
-  {path: 'kata_create/:id/:language', component: KataCreateComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
+  {path: 'kata/create/:id/:language', component: KataCreateComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
   {path: '**', redirectTo: ''}
 ];
 

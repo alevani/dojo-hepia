@@ -195,31 +195,33 @@ export class KataComponent implements OnInit {
   getSubscription() {
 
     this.kataSubscriptionService.isSubscribed(this.auth.currentUserValue.id, this.programid).subscribe((isSubscribed: boolean) => {
-      if (!isSubscribed) {
-        this.router.navigate([/kata-displayer/ + this.programid]);
-      } else {
-        this.kataSubscriptionService.get(this.kataid, this.programid, this.auth.currentUserValue.id).subscribe((data: KataSubscription) => {
-          this.kataInfo = data;
-          this.nbAttempt = this.kataInfo.nbAttempt;
-          this.kataStatus = this.kataInfo.status;
-          if (this.kataInfo.status === 'RESOLVED' || this.kataInfo.status === 'FAILED') {
-            this.isResolved = true;
-            this.kata.canva = this.kataInfo.mysol;
-          }
-        }, error1 => {
-          if (error1.status === 404) {
-            this.kataSubscriptionService.create(JSON.stringify({
-              id: uuid(),
-              kataid: this.kataid,
-              programid: this.programid,
-              userid: this.auth.currentUserValue.id
-            })).subscribe(() => {
-              this.nbAttempt = 0;
-              this.kataStatus = 'ON-GOING';
-            });
-          }
-        });
-      }
+      this.kataService.isActivated(this.kataid).subscribe((data: boolean) => {
+        if (!isSubscribed || !data) {
+          this.router.navigate([/kata-displayer/ + this.programid]);
+        } else {
+          this.kataSubscriptionService.get(this.kataid, this.programid, this.auth.currentUserValue.id).subscribe((data: KataSubscription) => {
+            this.kataInfo = data;
+            this.nbAttempt = this.kataInfo.nbAttempt;
+            this.kataStatus = this.kataInfo.status;
+            if (this.kataInfo.status === 'RESOLVED' || this.kataInfo.status === 'FAILED') {
+              this.isResolved = true;
+              this.kata.canva = this.kataInfo.mysol;
+            }
+          }, error1 => {
+            if (error1.status === 404) {
+              this.kataSubscriptionService.create(JSON.stringify({
+                id: uuid(),
+                kataid: this.kataid,
+                programid: this.programid,
+                userid: this.auth.currentUserValue.id
+              })).subscribe(() => {
+                this.nbAttempt = 0;
+                this.kataStatus = 'ONGOING';
+              });
+            }
+          });
+        }
+      });
     });
 
   }

@@ -20,18 +20,23 @@
           </div>
           <div class="form-group">
             <label for="assert">Display assert box</label>
-            <select class="form-control" formControlName="assert" [value]="'yes'">
+            <select class="form-control" formControlName="assert"
+                    [ngClass]="{ 'is-invalid': submitted && f.assert.errors}">
               <option value="true">yes</option>
               <option value="false">no</option>
             </select>
-         </div>
+            <div *ngIf="submitted && f.assert.errors" class="invalid-feedback">
+              <div *ngIf="f.assert.errors.required">Please choose an option</div>
+            </div>
+
+          </div>
           <div class="form-group">
             <label for="number">Unlock solution at (> -1)</label>
             <input type="number" formControlName="number" value="1" class="form-control"
                    [ngClass]="{ 'is-invalid': submitted && f.assert.errors}"/>
             <div *ngIf="submitted && f.number.errors" class="invalid-feedback">
-              <div *ngIf="f.number.errors.required">Please choose the number of tries before unlocking the "surrender
-                option"
+              <div *ngIf="f.number.errors.min">Please choose the number of tries before unlocking the "surrender"
+                option (min : 0)
               </div>
             </div>
           </div>

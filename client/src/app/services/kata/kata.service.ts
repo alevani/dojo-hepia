@@ -34,6 +34,10 @@ export class KataService {
     return this.http.post('http://localhost:7000/kata/update', obj);
   }
 
+  isActivated(kataid: string) {
+    return this.http.get('http://localhost:7000/kata/isactivated/' + kataid);
+  }
+
   constructor(private http: HttpClient) {
   }
 }

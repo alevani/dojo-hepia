@@ -58,7 +58,7 @@ export class ProgramCreateComponent implements OnInit {
         katas: []
       })).subscribe(() => {
           if (newkata) {
-            this.router.navigate(['/kata_create/' + this.programToKata + '/' + this.f.language.value + '']);
+            this.router.navigate(['/kata/create/' + this.programToKata + '/' + this.f.language.value + '']);
           } else {
             this.router.navigate(['/program/mine']);
           }
@@ -74,7 +74,7 @@ export class ProgramCreateComponent implements OnInit {
 
     this.CreateForm = this.formBuilder.group({
       title: ['', Validators.required],
-      language: ['', null],
+      language: ['', Validators.required],
       description: ['', Validators.required],
       tags: ['', Validators.required],
     });

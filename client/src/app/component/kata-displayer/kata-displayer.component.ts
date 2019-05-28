@@ -166,7 +166,6 @@ export class KataDisplayerComponent implements OnInit {
       this.program = data;
       this.getIsOwner();
       this.getSubs();
-
       this.inforreceived = true;
       this.kataService.getKatasDetails(this.programid, this.auth.currentUserValue.id).subscribe((datas: KataShowCase[]) => {
         this.katas = datas;

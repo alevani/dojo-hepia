@@ -5,7 +5,7 @@
       {{kata.title}} <a routerLink="/kata-displayer/{{programid}}">- {{program.title}}</a>
       <br><span class="subtitle">{{program.sensei}} <span class="language"> {{kata.language}}</span></span>
       <span style="float:right"><span
-        [ngClass]="{'TODO':kataStatus==='TODO','ON-GOING':kataStatus==='ON-GOING','RESOLVED':kataStatus==='RESOLVED','FAILED': kataStatus==='FAILED'}">{{kataStatus}}</span> | ATTEMPTS : {{nbAttempt}}</span>
+        [ngClass]="{'TODO':kataStatus==='TODO','ONGOING':kataStatus==='ONGOING','RESOLVED':kataStatus==='RESOLVED','FAILED': kataStatus==='FAILED'}">{{kataStatus}}</span> | ATTEMPTS : {{nbAttempt}}</span>
     </div>
 
 

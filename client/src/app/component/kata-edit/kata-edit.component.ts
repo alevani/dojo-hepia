@@ -32,8 +32,6 @@ export class KataEditComponent implements OnInit {
   kataid: string;
   language: string;
 
-  returnUrl: string;
-
   status = 2;
   result: string;
 
@@ -110,8 +108,8 @@ export class KataEditComponent implements OnInit {
       nbAttempt: this.f.number.value,
       difficulty: 'Ceinture blanche',
       activated: this.kata.activated
-    })).subscribe(() => {
-      this.router.navigate([this.returnUrl]);
+    })).subscribe((data: string) => {
+      this.router.navigate(['kata-displayer/' + data]);
     });
 
   }
@@ -121,11 +119,10 @@ export class KataEditComponent implements OnInit {
     this.language = this.route.snapshot.paramMap.get('language');
 
     this.getKata();
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     this.EditForm = this.formBuilder.group({
       title: ['', Validators.required],
-      assert: ['', null],
-      number: ['', Validators.required],
+      assert: ['', Validators.required],
+      number: ['', Validators.min(0)],
       instruction: ['', Validators.required],
     });
   }

@@ -13,10 +13,15 @@
         </div>
         <div class="form-group">
           <label for="language">Targeted language</label>
-          <select class="form-control" formControlName="language" [value]="'python'">
+          <select class="form-control" formControlName="language"
+                  [ngClass]="{ 'is-invalid': submitted && f.language.errors}">
             <option value="python">python</option>
             <option value="java">java</option>
           </select>
+          <div *ngIf="submitted && f.language.errors" class="invalid-feedback">
+            <div *ngIf="f.language.errors.required">Program needs a language</div>
+          </div>
+
         </div>
         <div class="form-group">
           <label for="description">Description</label>
