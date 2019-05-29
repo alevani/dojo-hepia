@@ -1,4 +1,4 @@
-package ch.hepia.repository.modal.kata;
+package ch.hepia.repository.modals.kata;
 
 public class KataShowCase {
     public String title,difficulty,id,status;

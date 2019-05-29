@@ -1,4 +1,4 @@
-package ch.hepia.repository.modal.kata;
+package ch.hepia.repository.modals.kata;
 
 public class Kata {
     private String _id, id,title, canva, cassert, solution, rules,difficulty,language;

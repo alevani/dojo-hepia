@@ -1,5 +1,22 @@
 # Dojo Hepia
 
+## DojoHepia-v0.5 update
+- A sensei is now able to 
+	- Kata 
+		- Disable
+		- Edit
+		- Delete
+	- Program
+		- Delete
+		- Edit
+
+- Users can see theirs done and ongoing katas
+- Markdown support added for kata instructions
+- Database improvement
+- Bug fixed
+	- Click tag
+
+
 ## RUN ME - DojoHepia
 
 ### prerequisites
@@ -14,7 +31,7 @@
 | Username | Password | Privileges |
 |----------|----------|------------|
 | shodai   | admin   | shodai     |
-
+| noob   | noob   | monji     |
 
 <p>When connected to shodai account, you can generate tokens to create further sensei in "Sponsorship" (location : left nav bar)</p>
 
@@ -28,8 +45,15 @@
 ##### 1.1 Create container
 
 >./mongodb/
+
 ```
 docker-compose up -d
+```
+
+`If en error occurs, please log into docker hub`
+
+```
+docker login
 ```
 
 #### 2. Gateway

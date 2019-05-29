@@ -1,6 +1,6 @@
-package ch.hepia.repository.modal.program;
+package ch.hepia.repository.modals.program;
 
-import ch.hepia.repository.modal.kata.Kata;
+import ch.hepia.repository.modals.kata.Kata;
 
 import java.util.ArrayList;
 

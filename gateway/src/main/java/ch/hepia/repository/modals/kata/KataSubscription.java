@@ -1,4 +1,4 @@
-package ch.hepia.repository.modal.kata;
+package ch.hepia.repository.modals.kata;
 
 public class KataSubscription {
     //katas [{id:1,status:"resolved",mysol:".."}]

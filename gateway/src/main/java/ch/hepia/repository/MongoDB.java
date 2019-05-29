@@ -112,13 +112,13 @@ public class MongoDB implements ProgramsDataBase {
     }
 
     private void decrementResolvedKata(String kataid) {
-        database.getCollection("ch.hepia.repository.modals.interfaces.Users").updateMany(eq("programSubscriptions.katas._id", kataid), inc("programSubscriptions.$[i].nbKataDone", -1), new UpdateOptions().arrayFilters(Arrays.asList(
+        database.getCollection("Users").updateMany(eq("programSubscriptions.katas._id", kataid), inc("programSubscriptions.$[i].nbKataDone", -1), new UpdateOptions().arrayFilters(Arrays.asList(
                 eq("i.katas.status", "RESOLVED")
         )));
     }
 
     private void incrementResolvedKata(String kataid) {
-        database.getCollection("ch.hepia.repository.modals.interfaces.Users").updateMany(eq("programSubscriptions.katas._id", kataid), inc("programSubscriptions.$[i].nbKataDone", 1), new UpdateOptions().arrayFilters(Arrays.asList(
+        database.getCollection("Users").updateMany(eq("programSubscriptions.katas._id", kataid), inc("programSubscriptions.$[i].nbKataDone", 1), new UpdateOptions().arrayFilters(Arrays.asList(
                 eq("i.katas.status", "RESOLVED")
         )));
     }
@@ -126,7 +126,7 @@ public class MongoDB implements ProgramsDataBase {
     private String getKataStatus(String kataid, String programid, String userid) {
 
         if (isSubscribed(userid, programid) || hasBeenSubscribed(userid, programid)) {
-            AggregateIterable<KataSubscription> kata = database.getCollection("ch.hepia.repository.modals.interfaces.Users", KataSubscription.class).aggregate(Arrays.asList(
+            AggregateIterable<KataSubscription> kata = database.getCollection("Users", KataSubscription.class).aggregate(Arrays.asList(
                     match(combine(eq("_id", userid), eq("programSubscriptions.katas._id", kataid))),
                     unwind("$programSubscriptions"),
                     replaceRoot("$programSubscriptions"),
@@ -180,7 +180,7 @@ public class MongoDB implements ProgramsDataBase {
     }
 
     public Optional<ProgramSubscription> subscriptionByID(String userid, String idrogram) {
-        AggregateIterable<ProgramSubscription> prgsub = database.getCollection("ch.hepia.repository.modals.interfaces.Users", ProgramSubscription.class).aggregate(Arrays.asList(
+        AggregateIterable<ProgramSubscription> prgsub = database.getCollection("Users", ProgramSubscription.class).aggregate(Arrays.asList(
                 match(eq("_id", userid)),
                 unwind("$programSubscriptions"),
                 project(
@@ -198,11 +198,11 @@ public class MongoDB implements ProgramsDataBase {
 
 
     public void create(String userid, ProgramSubscription p) {
-        database.getCollection("ch.hepia.repository.modals.interfaces.Users").updateOne(eq("_id", userid), push("programSubscriptions", p));
+        database.getCollection("Users").updateOne(eq("_id", userid), push("programSubscriptions", p));
     }
 
     public void toggleSubscription(String userid, String idprogram) {
-        Document status = database.getCollection("ch.hepia.repository.modals.interfaces.Users").aggregate(Arrays.asList(
+        Document status = database.getCollection("Users").aggregate(Arrays.asList(
                 match(eq("_id", userid)),
                 unwind("$programSubscriptions"),
                 project(
@@ -213,7 +213,7 @@ public class MongoDB implements ProgramsDataBase {
                         fields(excludeId(), include("status")))
         )).iterator().next();
 
-        database.getCollection("ch.hepia.repository.modals.interfaces.Users").updateOne(eq("_id", userid), set("programSubscriptions.$[i].status", !status.getBoolean("status")), new UpdateOptions().arrayFilters(Arrays.asList(
+        database.getCollection("Users").updateOne(eq("_id", userid), set("programSubscriptions.$[i].status", !status.getBoolean("status")), new UpdateOptions().arrayFilters(Arrays.asList(
                 eq("i.idprogram", idprogram)
         )));
     }
@@ -243,7 +243,7 @@ public class MongoDB implements ProgramsDataBase {
 
     public Optional<List<ProgramShowCase>> userSubscriptions(String userid) {
 
-        AggregateIterable<ProgramSubscription> programids = database.getCollection("ch.hepia.repository.modals.interfaces.Users", ProgramSubscription.class).aggregate(Arrays.asList(
+        AggregateIterable<ProgramSubscription> programids = database.getCollection("Users", ProgramSubscription.class).aggregate(Arrays.asList(
                 match(eq("_id", userid)),
                 project(
                         fields(excludeId(), include("programSubscriptions"))),
@@ -304,7 +304,7 @@ public class MongoDB implements ProgramsDataBase {
 
     private boolean hasBeenSubscribed(String userid, String programid) {
         try {
-            database.getCollection("ch.hepia.repository.modals.interfaces.Users").aggregate(Arrays.asList(
+            database.getCollection("Users").aggregate(Arrays.asList(
                     match(eq("_id", userid)),
                     unwind("$programSubscriptions"),
                     project(
@@ -322,7 +322,7 @@ public class MongoDB implements ProgramsDataBase {
 
     public boolean isSubscribed(String userid, String programid) {
         try {
-            return database.getCollection("ch.hepia.repository.modals.interfaces.Users").aggregate(Arrays.asList(
+            return database.getCollection("Users").aggregate(Arrays.asList(
                     match(eq("_id", userid)),
                     unwind("$programSubscriptions"),
                     project(
@@ -339,7 +339,7 @@ public class MongoDB implements ProgramsDataBase {
 
     public Optional<KataSubscription> kataSubscriptionById(String kataid, String programid, String userid) {
 
-        AggregateIterable<KataSubscription> kata = database.getCollection("ch.hepia.repository.modals.interfaces.Users", KataSubscription.class).aggregate(Arrays.asList(
+        AggregateIterable<KataSubscription> kata = database.getCollection("Users", KataSubscription.class).aggregate(Arrays.asList(
                 match(combine(eq("_id", userid), eq("programSubscriptions.katas._id", kataid))),
                 unwind("$programSubscriptions"),
                 replaceRoot("$programSubscriptions"),
@@ -358,13 +358,13 @@ public class MongoDB implements ProgramsDataBase {
 
 
     public void createKataSubscription(String kataid, String programid, String userid) {
-        database.getCollection("ch.hepia.repository.modals.interfaces.Users").updateOne(eq("_id", userid), push("programSubscriptions.$[index].katas", new KataSubscription(kataid, "ONGOING", "", 0)), new UpdateOptions().arrayFilters(Arrays.asList(
+        database.getCollection("Users").updateOne(eq("_id", userid), push("programSubscriptions.$[index].katas", new KataSubscription(kataid, "ONGOING", "", 0)), new UpdateOptions().arrayFilters(Arrays.asList(
                 eq("index.idprogram", programid)
         )));
     }
 
     public void incrementKataSubscriptionAttempt(String kataid, String programid, String userid) {
-        database.getCollection("ch.hepia.repository.modals.interfaces.Users").updateOne(eq("_id", userid), inc("programSubscriptions.$[i].katas.$[j].nbAttempt", 1), new UpdateOptions().arrayFilters(Arrays.asList(
+        database.getCollection("Users").updateOne(eq("_id", userid), inc("programSubscriptions.$[i].katas.$[j].nbAttempt", 1), new UpdateOptions().arrayFilters(Arrays.asList(
                 eq("i.idprogram", programid),
                 eq("j._id", kataid)
         )));
@@ -372,7 +372,7 @@ public class MongoDB implements ProgramsDataBase {
 
     public void updateKataSubscription(String kataid, String programid, String userid, String sol, String status) {
 
-        database.getCollection("ch.hepia.repository.modals.interfaces.Users").updateOne(eq("_id", userid), combine(
+        database.getCollection("Users").updateOne(eq("_id", userid), combine(
                 set("programSubscriptions.$[i].katas.$[j].mysol", sol),
                 set("programSubscriptions.$[i].katas.$[j].status", status),
                 inc("programSubscriptions.$[i].nbKataDone", 1)
@@ -383,7 +383,7 @@ public class MongoDB implements ProgramsDataBase {
     }
 
     public void deleteProgram(String programid) {
-        database.getCollection("ch.hepia.repository.modals.interfaces.Users").updateMany(eq("programSubscriptions.idprogram", programid), pull("programSubscriptions", new BasicDBObject("idprogram", programid)));
+        database.getCollection("Users").updateMany(eq("programSubscriptions.idprogram", programid), pull("programSubscriptions", new BasicDBObject("idprogram", programid)));
         database.getCollection("Programs").deleteOne(eq("_id", programid));
     }
 
@@ -405,11 +405,11 @@ public class MongoDB implements ProgramsDataBase {
 
 
     public void create(User u) {
-        database.getCollection("ch.hepia.repository.modals.interfaces.Users", User.class).insertOne(u);
+        database.getCollection("Users", User.class).insertOne(u);
     }
 
     public Optional<User> checkUserCredentials(String username, String password) {
-        User u = database.getCollection("ch.hepia.repository.modals.interfaces.Users", User.class).find(combine(eq("username", username), eq("password", password))).first();
+        User u = database.getCollection("Users", User.class).find(combine(eq("username", username), eq("password", password))).first();
 
         if (u == null)
             return Optional.empty();
@@ -419,14 +419,14 @@ public class MongoDB implements ProgramsDataBase {
 
     public void deleteKata(String kataid) {
         decrementResolvedKata(kataid);
-        database.getCollection("ch.hepia.repository.modals.interfaces.Users").updateMany(eq("programSubscriptions.katas._id", kataid), pull("programSubscriptions.$[].katas", new BasicDBObject("_id", kataid)));
+        database.getCollection("Users").updateMany(eq("programSubscriptions.katas._id", kataid), pull("programSubscriptions.$[].katas", new BasicDBObject("_id", kataid)));
         database.getCollection("Programs").updateOne(eq("katas._id", kataid), pull("katas", new BasicDBObject("_id", kataid)));
         database.getCollection("Programs").updateOne(combine(eq("katas._id", kataid), eq("katas.activated", "true")), inc("nbKata", -1));
 
     }
 
     public boolean isExisting(String username) {
-        User u = database.getCollection("ch.hepia.repository.modals.interfaces.Users", User.class).find(eq("username", username)).first();
+        User u = database.getCollection("Users", User.class).find(eq("username", username)).first();
         if (u == null)
             return false;
         return true;

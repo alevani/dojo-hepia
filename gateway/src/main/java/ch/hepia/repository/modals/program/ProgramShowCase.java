@@ -1,4 +1,4 @@
-package ch.hepia.repository.modal.program;
+package ch.hepia.repository.modals.program;
 
 import java.util.ArrayList;
 

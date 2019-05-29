@@ -1,6 +1,6 @@
-package ch.hepia.repository.modal.user;
+package ch.hepia.repository.modals.user;
 
-import ch.hepia.repository.modal.program.ProgramSubscription;
+import ch.hepia.repository.modals.program.ProgramSubscription;
 
 import java.util.ArrayList;
 

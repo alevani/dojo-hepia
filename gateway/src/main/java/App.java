@@ -103,7 +103,7 @@ public class App {
         /**
          * Compilation route - body must contain data to compile
          */
-        app.post("/ch/hepia/repository/modals/kata/run/", ctx -> {
+        app.post("/kata/run/", ctx -> {
 
             HttpURLConnection connection = null;
 
@@ -144,13 +144,13 @@ public class App {
         /**
          *  Create a ch.hepia.database.modal.program -> Expect complete object like Program.Program in body
          */
-        app.post("/ch/hepia/repository/modals/program/create", ctx -> {
+        app.post("/program/create", ctx -> {
             Program program = objectMapper.readValue(ctx.body(), Program.class);
             db.create(program);
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
-        app.get("/ch/hepia/repository/modals/program/details", ctx -> {
+        app.get("/program/details", ctx -> {
             Optional<List<ProgramShowCase>> prgsc = db.programsDetails();
 
             if (prgsc.isPresent())
@@ -160,7 +160,7 @@ public class App {
 
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.get("ch/hepia/repository/modals/program/details/:id", ctx -> {
+        app.get("program/details/:id", ctx -> {
             Optional<ProgramShowCase> s = db.programDetailsById(ctx.pathParam("id"));
             if (s.isPresent())
                 ctx.json(s.get());
@@ -169,14 +169,14 @@ public class App {
 
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.post("/ch/hepia/repository/modals/program/update", ctx -> {
+        app.post("/program/update", ctx -> {
             JSONObject input = new JSONObject(ctx.body());
-            ProgramShowCase program = objectMapper.readValue(input.get("ch/hepia/repository/modals/program").toString(), ProgramShowCase.class);
+            ProgramShowCase program = objectMapper.readValue(input.get("program").toString(), ProgramShowCase.class);
             db.update(input.getString("programid"),program);
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
-        app.post("ch/hepia/repository/modals/program/delete", ctx -> {
+        app.post("program/delete", ctx -> {
             db.deleteProgram(new JSONObject(ctx.body()).getString("programid"));
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI));
@@ -186,35 +186,35 @@ public class App {
 
         /** KATAS **/
 
-        app.get("/ch/hepia/repository/modals/kata/isactivated/:kataid", ctx -> {
+        app.get("/kata/isactivated/:kataid", ctx -> {
             boolean isActivated = db.isKataActivated(ctx.pathParam("kataid"));
             ctx.status(200).json(isActivated);
         }, roles(Roles.SHODAI, Roles.SENSEI,Roles.MONJI));
 
-        app.post("/ch/hepia/repository/modals/kata/update", ctx -> {
+        app.post("/kata/update", ctx -> {
             Kata kata = objectMapper.readValue(ctx.body(), Kata.class);
             String programid = db.update(kata);
             ctx.status(200).json(programid);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
-        app.post("ch/hepia/repository/modals/kata/toggleactivation", ctx -> {
+        app.post("kata/toggleactivation", ctx -> {
             db.toggleKataActivation(ctx.body());
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
-        app.post("/ch/hepia/repository/modals/kata/create", ctx -> {
+        app.post("/kata/create", ctx -> {
             JSONObject input = new JSONObject(ctx.body());
-            Kata kata = objectMapper.readValue(input.getString("ch/hepia/repository/modals/kata"), Kata.class);
+            Kata kata = objectMapper.readValue(input.getString("kata"), Kata.class);
             db.create(kata,input.getString("programid"));
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
-        app.get("/ch/hepia/repository/modals/kata/details/:programid/:userid", ctx -> {
+        app.get("/kata/details/:programid/:userid", ctx -> {
             Optional<List<KataShowCase>> ktsc = db.kataDetails(ctx.pathParam("programid"), ctx.pathParam("userid"));
             ctx.json(ktsc.get());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.get("/ch/hepia/repository/modals/kata/:kataid", ctx -> {
+        app.get("/kata/:kataid", ctx -> {
 
             Optional<Kata> kata = db.kata(ctx.pathParam("kataid"));
             if (kata.isPresent())
@@ -224,13 +224,13 @@ public class App {
 
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.get("/ch/hepia/repository/modals/kata/isowner/:kataid/:userid", ctx -> {
+        app.get("/kata/isowner/:kataid/:userid", ctx -> {
             boolean isOwner = db.isKataOwner(ctx.pathParam("userid"), ctx.pathParam("kataid"));
             ctx.status(200).json(isOwner);
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
 
-        app.post("/ch/hepia/repository/modals/kata/delete/", ctx -> {
+        app.post("/kata/delete/", ctx -> {
             db.deleteKata(ctx.body());
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI));
@@ -239,7 +239,7 @@ public class App {
 
         /** USER **/
 
-        app.post("/ch/hepia/repository/modals/user/tokenrequest/", ctx -> {
+        app.post("/user/tokenrequest/", ctx -> {
             JSONObject ids = new JSONObject(ctx.body());
 
             Optional<User> user = db.checkUserCredentials(ids.getString("username"), ids.getString("password"));
@@ -264,7 +264,7 @@ public class App {
         /******************/
 
         /** PROGRAM SEARCH **/
-        app.get("ch/hepia/repository/modals/program/search/:type/:resource", ctx -> {
+        app.get("program/search/:type/:resource", ctx -> {
             Optional<List<ProgramShowCase>> p = db.programDetailsFiltered(ctx.pathParam("type"), ctx.pathParam("resource"));
             if (p.isPresent())
                 ctx.json(p.get());
@@ -278,17 +278,17 @@ public class App {
 
         /** PROGRAM SUBSCRIPTION **/
 
-        app.get("/ch/hepia/repository/modals/program/issubscribed/:userid/:programid", ctx -> {
+        app.get("/program/issubscribed/:userid/:programid", ctx -> {
             boolean isSubscribed = db.isSubscribed(ctx.pathParam("userid"), ctx.pathParam("programid"));
             ctx.status(200).json(isSubscribed);
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.get("/ch/hepia/repository/modals/program/isowner/:userid/:programid", ctx -> {
+        app.get("/program/isowner/:userid/:programid", ctx -> {
             boolean isOwner = db.isProgramOwner(ctx.pathParam("userid"), ctx.pathParam("programid"));
             ctx.status(200).json(isOwner);
         }, roles(Roles.SHODAI, Roles.SENSEI,Roles.MONJI));
 
-        app.get("ch/hepia/repository/modals/program/subscription/:programid/:userid", ctx -> {
+        app.get("program/subscription/:programid/:userid", ctx -> {
             Optional<ProgramSubscription> p = db.subscriptionByID(ctx.pathParam("userid"), ctx.pathParam("programid"));
             if (p.isPresent())
                 ctx.json(p.get());
@@ -297,7 +297,7 @@ public class App {
             }
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.get("ch/hepia/repository/modals/program/subscription/:userid", ctx -> {
+        app.get("program/subscription/:userid", ctx -> {
             Optional<List<ProgramShowCase>> prgsc = db.userSubscriptions(ctx.pathParam("userid"));
             if (prgsc.isPresent())
                 ctx.json(prgsc.get());
@@ -306,7 +306,7 @@ public class App {
 
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.get("/ch/hepia/repository/modals/program/:userid", ctx -> {
+        app.get("/program/:userid", ctx -> {
             Optional<List<ProgramShowCase>> prgsc = db.userPrograms(ctx.pathParam("userid"));
 
             if (prgsc.isPresent())
@@ -315,14 +315,14 @@ public class App {
                 ctx.status(404);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
-        app.post("ch/hepia/repository/modals/program/createsubscription", ctx -> {
+        app.post("program/createsubscription", ctx -> {
             JSONObject obj = new JSONObject(ctx.body());
             ProgramSubscription programSubscription = objectMapper.readValue(obj.getString("obj"), ProgramSubscription.class);
             db.create(obj.getString("userid"), programSubscription);
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.post("ch/hepia/repository/modals/program/togglesubscription", ctx -> {
+        app.post("program/togglesubscription", ctx -> {
             JSONObject input = new JSONObject(ctx.body());
             db.toggleSubscription(input.getString("userid"), input.getString("programid"));
             ctx.status(200);
@@ -332,7 +332,7 @@ public class App {
 
         /** KATA SUBSCRIPTION **/
 
-        app.get("ch/hepia/repository/modals/kata/get/subscriptioninfos/:userid/:programid/:kataid", ctx -> {
+        app.get("kata/get/subscriptioninfos/:userid/:programid/:kataid", ctx -> {
             Optional<KataSubscription> k = db.kataSubscriptionById(ctx.pathParam("kataid"), ctx.pathParam("programid"), ctx.pathParam("userid"));
 
             if (k.isPresent())
@@ -342,19 +342,19 @@ public class App {
 
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.post("ch/hepia/repository/modals/kata/create/subscription", ctx -> {
+        app.post("kata/create/subscription", ctx -> {
             JSONObject obj = new JSONObject(ctx.body());
             db.createKataSubscription(obj.getString("kataid"), obj.getString("programid"), obj.getString("userid"));
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.post("ch/hepia/repository/modals/kata/inc/subscription", ctx -> {
+        app.post("kata/inc/subscription", ctx -> {
             JSONObject obj = new JSONObject(ctx.body());
             db.incrementKataSubscriptionAttempt(obj.getString("kataid"), obj.getString("programid"), obj.getString("userid"));
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.post("ch/hepia/repository/modals/kata/update/subscription", ctx -> {
+        app.post("kata/update/subscription", ctx -> {
             JSONObject obj = new JSONObject(ctx.body());
             db.updateKataSubscription(obj.getString("kataid"), obj.getString("programid"), obj.getString("userid"), obj.getString("sol"), obj.getString("status"));
             ctx.status(200);
@@ -372,7 +372,7 @@ public class App {
             ctx.json(token);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
-        app.post("ch/hepia/repository/modals/user/signin", ctx -> {
+        app.post("/signin", ctx -> {
             JSONObject input = new JSONObject(ctx.body());
             String username = input.getString("username");
             String password = input.getString("password");
