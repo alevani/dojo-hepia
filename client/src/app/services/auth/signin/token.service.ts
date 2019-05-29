@@ -6,8 +6,8 @@ import {HttpClient} from '@angular/common/http';
 })
 export class TokenService {
 
-  getToken() {
-    return this.http.get('http://localhost:7000/token/generate');
+  getToken(level: string, time: string) {
+    return this.http.get('http://localhost:7000/token/generate/' + level + '/' + time);
   }
 
   constructor(private http: HttpClient) {

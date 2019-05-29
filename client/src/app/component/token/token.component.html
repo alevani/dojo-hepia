@@ -2,7 +2,13 @@
   <p>Hey ! If you're here, it's because you're trusted by Dojo Hepia.</p>
   <p>If you want to let one of your friend become a Sensei by sponsoring him, you can generate a special token</p>
   <p>(token will be up 10 minutes)</p>
-  <button mat-button (click)="generate()">Generate token</button>
+  Token Validity : <select [(ngModel)]="selectedOption">
+    <option value="10">10</option>
+    <option value="30">30</option>
+    <option value="60">60</option>
+  </select> min
+  <button mat-button (click)="generate('monji')">Generate a Monji token</button>
+  <button mat-button (click)="generate('sensei')">Generate a Sensei token</button>
   <br/>
   <br/>
   <p style="color:rgba(231, 76, 60,1.0);">{{token}}</p>

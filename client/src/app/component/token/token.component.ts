@@ -12,9 +12,10 @@ export class TokenComponent implements OnInit {
   }
 
   token = '';
+  selectedOption = '10';
 
-  generate() {
-    this.tokenService.getToken().subscribe((data: string) => {
+  generate(level: string) {
+    this.tokenService.getToken(level, this.selectedOption).subscribe((data: string) => {
       this.token = data;
     });
   }

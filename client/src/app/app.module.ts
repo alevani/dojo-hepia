@@ -28,7 +28,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {AppRoutingModule} from './app-routing.module';
 import {RouterModule} from '@angular/router';
 import {
-  DeleteProgramDialogComponent,
+  DeleteProgramDialogComponent, DuplicateProgramDialogComponent,
   KataDisplayerComponent,
   MoreActionKataDialogComponent
 } from './component/kata-displayer/kata-displayer.component';
@@ -82,6 +82,7 @@ import { KataEditComponent } from './component/kata-edit/kata-edit.component';
     MoreActionKataDialogComponent,
     DeleteProgramDialogComponent,
     KataSurrenderDialogComponent,
+    DuplicateProgramDialogComponent,
     ProgramEditComponent,
     KataEditComponent,
 
@@ -117,7 +118,7 @@ import { KataEditComponent } from './component/kata-edit/kata-edit.component';
     MatDialogModule,
     MatBottomSheetModule
   ],
-  entryComponents: [DeleteProgramDialogComponent, KataSurrenderDialogComponent, MoreActionKataDialogComponent],
+  entryComponents: [DeleteProgramDialogComponent, KataSurrenderDialogComponent, MoreActionKataDialogComponent,DuplicateProgramDialogComponent],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}, {
     provide: HTTP_INTERCEPTORS,
     useClass: ErrorInterceptor,

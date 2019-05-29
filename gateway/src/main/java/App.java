@@ -8,7 +8,9 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTCreator;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
+import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
+import com.auth0.jwt.interfaces.DecodedJWT;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.javalin.Handler;
 import io.javalin.Javalin;
@@ -172,7 +174,7 @@ public class App {
         app.post("/program/update", ctx -> {
             JSONObject input = new JSONObject(ctx.body());
             ProgramShowCase program = objectMapper.readValue(input.get("program").toString(), ProgramShowCase.class);
-            db.update(input.getString("programid"),program);
+            db.update(input.getString("programid"), program);
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
@@ -181,31 +183,39 @@ public class App {
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
+        app.post("program/duplicate", ctx -> {
+            JSONObject input = new JSONObject(ctx.body());
+            db.duplicateProgram(input.getString("programid"),input.getString("newprogramid"),input.getString("newtitle"));
+            ctx.status(200);
+        }, roles(Roles.SHODAI, Roles.SENSEI));
+
         /******************/
 
 
         /** KATAS **/
 
-        app.get("/kata/isactivated/:kataid", ctx -> {
-            boolean isActivated = db.isKataActivated(ctx.pathParam("kataid"));
+        app.get("/kata/isactivated/:kataid/:programid", ctx -> {
+            boolean isActivated = db.isKataActivated(ctx.pathParam("kataid"),ctx.pathParam("programid"));
             ctx.status(200).json(isActivated);
-        }, roles(Roles.SHODAI, Roles.SENSEI,Roles.MONJI));
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.post("/kata/update", ctx -> {
-            Kata kata = objectMapper.readValue(ctx.body(), Kata.class);
-            String programid = db.update(kata);
+            JSONObject input = new JSONObject(ctx.body());
+            Kata kata = objectMapper.readValue(input.getString("kata"), Kata.class);
+            String programid = db.update(kata,input.getString("programid"));
             ctx.status(200).json(programid);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
         app.post("kata/toggleactivation", ctx -> {
-            db.toggleKataActivation(ctx.body());
+            JSONObject input = new JSONObject(ctx.body());
+            db.toggleKataActivation(input.getString("kid"),input.getString("pid"));
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
         app.post("/kata/create", ctx -> {
             JSONObject input = new JSONObject(ctx.body());
             Kata kata = objectMapper.readValue(input.getString("kata"), Kata.class);
-            db.create(kata,input.getString("programid"));
+            db.create(kata, input.getString("programid"));
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
@@ -214,9 +224,9 @@ public class App {
             ctx.json(ktsc.get());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.get("/kata/:kataid", ctx -> {
+        app.get("/kata/:kataid/:programid", ctx -> {
 
-            Optional<Kata> kata = db.kata(ctx.pathParam("kataid"));
+            Optional<Kata> kata = db.kata(ctx.pathParam("kataid"),ctx.pathParam("programid"));
             if (kata.isPresent())
                 ctx.json(kata.get());
             else
@@ -224,14 +234,15 @@ public class App {
 
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.get("/kata/isowner/:kataid/:userid", ctx -> {
-            boolean isOwner = db.isKataOwner(ctx.pathParam("userid"), ctx.pathParam("kataid"));
+        app.get("/kata/isowner/:programid/:kataid/:userid", ctx -> {
+            boolean isOwner = db.isKataOwner(ctx.pathParam("userid"), ctx.pathParam("kataid"),ctx.pathParam("programid"));
             ctx.status(200).json(isOwner);
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
 
         app.post("/kata/delete/", ctx -> {
-            db.deleteKata(ctx.body());
+            JSONObject input = new JSONObject(ctx.body());
+            db.deleteKata(input.getString("kid"),input.getString("pid"));
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
@@ -286,7 +297,7 @@ public class App {
         app.get("/program/isowner/:userid/:programid", ctx -> {
             boolean isOwner = db.isProgramOwner(ctx.pathParam("userid"), ctx.pathParam("programid"));
             ctx.status(200).json(isOwner);
-        }, roles(Roles.SHODAI, Roles.SENSEI,Roles.MONJI));
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.get("program/subscription/:programid/:userid", ctx -> {
             Optional<ProgramSubscription> p = db.subscriptionByID(ctx.pathParam("userid"), ctx.pathParam("programid"));
@@ -364,15 +375,18 @@ public class App {
 
         /** SIGN IN **/
 
-        app.get("token/generate", ctx -> {
+        app.get("token/generate/:level/:time", ctx -> {
+
             Algorithm algotoken = Algorithm.HMAC256("tochange");
             String token = JWT.create()
                     .withClaim("exp", new Date())
+                    .withClaim("level", ctx.pathParam("level"))
+                    .withClaim("selectedExp", Integer.valueOf(ctx.pathParam("time")) * 60)
                     .sign(algotoken);
             ctx.json(token);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
-        app.post("/signin", ctx -> {
+        app.post("user/signin", ctx -> {
             JSONObject input = new JSONObject(ctx.body());
             String username = input.getString("username");
             String password = input.getString("password");
@@ -380,24 +394,24 @@ public class App {
             if (db.isExisting(username)) {
                 ctx.status(400).json("Username '" + username + "' already exists");
             } else {
-                if (!input.get("token").equals("")) {
-                    try {
-                        Algorithm algotoken = Algorithm.HMAC256("tochange");
-                        JWTVerifier checker = JWT.require(algotoken)
-                                .acceptExpiresAt(600)
-                                .build(); //Reusable verifier instance
 
-                        checker.verify(input.getString("token"));
-                        db.create(new User(id, username, "sensei", password));
-                        ctx.status(200);
-                    } catch (JWTVerificationException exception) {
-                        ctx.status(400).json("Bad token");
-                    }
-                } else {
-                    db.create(new User(id, username, "monji", password));
+                try {
+                    DecodedJWT decodedJWT = JWT.decode(input.getString("token"));
+
+                    int time = decodedJWT.getClaim("selectedExp").asInt();
+                    String level = decodedJWT.getClaim("level").asString();
+
+                    Algorithm algotoken = Algorithm.HMAC256("tochange");
+                    JWTVerifier checker = JWT.require(algotoken)
+                            .acceptExpiresAt(time)
+                            .build(); //Reusable verifier instance
+
+                    checker.verify(input.getString("token"));
+                    db.create(new User(id, username, level, password));
                     ctx.status(200);
+                } catch (JWTVerificationException exception) {
+                    ctx.status(400).json("Bad token");
                 }
-
             }
         }, roles(Roles.ANYONE));
         /******************/

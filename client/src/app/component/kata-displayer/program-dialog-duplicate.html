@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Duplicating {{data.title}}</h1>
+<div mat-dialog-content>
+
+  <form [formGroup]="DuplicateForm">
+    <div class="form-group">
+      <label>Duplicated program name</label>
+      <input type="text" formControlName="title" class="form-control"
+             [ngClass]="{ 'is-invalid': submitted && f.title.errors }"/>
+      <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+        <div *ngIf="f.title.errors.required">Program needs a title</div>
+      </div>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()" cdkFocusInital>Cancel</button>
+  <button mat-button (click)="duplicate()">Duplicate</button>
+</div>

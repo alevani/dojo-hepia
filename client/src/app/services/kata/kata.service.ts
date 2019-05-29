@@ -14,28 +14,28 @@ export class KataService {
     return this.http.get('http://localhost:7000/kata/details/' + program + '/' + userid);
   }
 
-  getKata(kataid: string) {
-    return this.http.get('http://localhost:7000/kata/' + kataid + '');
+  getKata(kataid: string, programid: string) {
+    return this.http.get('http://localhost:7000/kata/' + kataid + '/' + programid);
   }
 
-  delete(kataid: string) {
-    return this.http.post('http://localhost:7000/kata/delete/', kataid);
+  delete(kataid: string, programid: string) {
+    return this.http.post('http://localhost:7000/kata/delete/', {kid: kataid, pid: programid});
   }
 
-  deactivate(kataid: string) {
-    return this.http.post('http://localhost:7000/kata/toggleactivation', kataid);
+  toggleActivation(kataid: string, programid: string) {
+    return this.http.post('http://localhost:7000/kata/toggleactivation', {kid: kataid, pid: programid});
   }
 
-  isOwner(kataid: string, userid: string) {
-    return this.http.get('http://localhost:7000/kata/isowner/' + kataid + '/' + userid);
+  isOwner(kataid: string, userid: string, programid: string) {
+    return this.http.get('http://localhost:7000/kata/isowner/' + programid + '/' + kataid + '/' + userid);
   }
 
-  update(obj: string) {
-    return this.http.post('http://localhost:7000/kata/update', obj);
+  update(obj: string, progid: string) {
+    return this.http.post('http://localhost:7000/kata/update', {kata: obj, programid: progid});
   }
 
-  isActivated(kataid: string) {
-    return this.http.get('http://localhost:7000/kata/isactivated/' + kataid);
+  isActivated(kataid: string, programid: string) {
+    return this.http.get('http://localhost:7000/kata/isactivated/' + kataid + '/' + programid);
   }
 
   constructor(private http: HttpClient) {

@@ -13,19 +13,27 @@ import {KataService} from '../../services/kata/kata.service';
 import {MAT_DIALOG_DATA, MatBottomSheet, MatSnackBar} from '@angular/material';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {Program} from '../program-displayer/program';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 
 export interface MoreActionsKata {
   title: string;
   id: string;
+  programid: string;
   isActivated: boolean;
   language: string;
 }
 
+export interface DuplicateProgram {
+  title: string;
+  programid: string;
+  currentUser: User;
+}
+
 @Component({
   selector: 'app-kata-displayer',
-  templateUrl: './kata-displayer.component.html',
-  styleUrls: ['./kata-displayer.component.scss']
+  styleUrls: ['./kata-displayer.component.scss'],
+  templateUrl: './kata-displayer.component.html'
 })
 
 
@@ -64,6 +72,13 @@ export class KataDisplayerComponent implements OnInit {
   ) {
   }
 
+  openDialogDuplicate(): void {
+    this.dialog.open(DuplicateProgramDialogComponent, {
+      width: '400px',
+      data: {title: this.program.title, currentUser: this.currentUser, programid: this.programid}
+    });
+}
+
   openDialog(): void {
     const dialogRef = this.dialog.open(DeleteProgramDialogComponent, {
       width: '400px',
@@ -80,17 +95,12 @@ export class KataDisplayerComponent implements OnInit {
   openDialogMoreActions(kataTitle: string, kataId: string, activated: boolean): void {
     const dialogRef = this.dialog.open(MoreActionKataDialogComponent, {
       width: '600px',
-      data: {title: kataTitle, id: kataId, isActivated: activated, language: this.program.language}
+      data: {title: kataTitle, id: kataId, isActivated: activated, language: this.program.language, programid: this.programid}
     });
     dialogRef.componentInstance.reloadKata.subscribe(() => {
       this.kataService.getKatasDetails(this.programid, this.auth.currentUserValue.id).subscribe((datas: KataShowCase[]) => {
         this.katas = datas;
       });
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-
-      }
     });
   }
 
@@ -221,26 +231,87 @@ export class MoreActionKataDialogComponent {
   reloadKata = new EventEmitter<any>();
 
   deactivate(): void {
-    this.kataService.deactivate(this.data.id).subscribe(() => {
+    this.kataService.toggleActivation(this.data.id, this.data.programid).subscribe(() => {
       this.reloadKata.emit();
       this.dialogRef.close();
     });
   }
 
   delete(): void {
-    this.kataService.delete(this.data.id).subscribe(() => {
+    this.kataService.delete(this.data.id, this.data.programid).subscribe(() => {
       this.reloadKata.emit();
       this.dialogRef.close();
     });
   }
 
   edit(): void {
-    this.router.navigate(['kata/edit/' + this.data.id + '/' + this.data.language]);
+    this.router.navigate(['kata/edit/' + this.data.programid + '/' + this.data.id + '/' + this.data.language]);
     this.dialogRef.close();
   }
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+}
+
+
+@Component({
+  selector: 'dialog-overview-example-dialog',
+  styleUrls: ['../program-create/program-create.component.scss'],
+  templateUrl: 'program-dialog-duplicate.html',
+})
+export class DuplicateProgramDialogComponent implements OnInit {
+
+  constructor(
+    public dialogRef: MatDialogRef<DeleteProgramDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DuplicateProgram,
+    private formBuilder: FormBuilder,
+    private programService: ProgramService,
+    private programSubscription: ProgramSubscriptionService,
+    private router: Router) {
+  }
+
+  submitted = false;
+
+  DuplicateForm: FormGroup;
+
+  get f() {
+    return this.DuplicateForm.controls;
+  }
+
+  duplicate() {
+    this.submitted = true;
+
+    if (this.DuplicateForm.invalid) {
+      return;
+    }
+
+    const newId = uuid();
+    this.programService.duplicate(this.data.programid, newId, this.f.title.value).subscribe(() => {
+      this.programSubscription.create(this.data.currentUser.id, JSON.stringify({
+        id: uuid(),
+        idprogram: newId,
+        status: true,
+        nbKataDone: 0,
+        katas: []
+      })).subscribe(() => {
+        this.router.navigate(['program/mine']);
+        this.dialogRef.close();
+      });
+    });
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+  ngOnInit() {
+
+
+    this.DuplicateForm = this.formBuilder.group({
+      title: ['', Validators.required],
+    });
   }
 
 }

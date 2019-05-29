@@ -74,7 +74,7 @@ export class KataComponent implements OnInit {
     this.ngxLoader.start();
     this.programService.getById(this.programid).subscribe((data: Program) => {
       this.program = data;
-      this.kataService.getKata(this.kataid).subscribe((datas: Kata) => {
+      this.kataService.getKata(this.kataid,this.programid).subscribe((datas: Kata) => {
           this.kata = datas;
           this.kata.keepAssert = !datas.keepAssert;
 
@@ -195,7 +195,7 @@ export class KataComponent implements OnInit {
   getSubscription() {
 
     this.kataSubscriptionService.isSubscribed(this.auth.currentUserValue.id, this.programid).subscribe((isSubscribed: boolean) => {
-      this.kataService.isActivated(this.kataid).subscribe((data: boolean) => {
+      this.kataService.isActivated(this.kataid,this.programid).subscribe((data: boolean) => {
         if (!isSubscribed || !data) {
           this.router.navigate([/kata-displayer/ + this.programid]);
         } else {

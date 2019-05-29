@@ -23,22 +23,10 @@ export class SigninComponent implements OnInit {
   }
 
   signinForm: FormGroup;
-
+  password = '';
   loading = false;
   submitted = false;
   error = '';
-  checked = false;
-
-
-  toggleChecked() {
-    const token = this.signinForm.get('token');
-    this.checked = !this.checked;
-    if (!this.checked) {
-      token.setValidators([null]);
-    } else {
-      token.setValidators([Validators.required]);
-    }
-  }
 
   get f() {
     return this.signinForm.controls;
@@ -69,11 +57,10 @@ export class SigninComponent implements OnInit {
 
   ngOnInit() {
     this.signinForm = this.formBuilder.group({
-      // firstname: ['', Validators.required],
-      // lastname: ['', Validators.required],
       username: ['', Validators.required, Validators.pattern('[A-Za-z0-9-]*')],
-      token: ['', null],
-      password: ['', Validators.required]
+      token: ['', Validators.required],
+      password: ['', Validators.required],
+      passwordconf: ['', Validators.required]
     });
 
   }

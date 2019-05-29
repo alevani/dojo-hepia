@@ -31,6 +31,10 @@ export class ProgramService {
     return this.http.post('http://localhost:7000/program/update', {programid, program});
   }
 
+  duplicate(id: string, newId: string, title: string) {
+    return this.http.post('http://localhost:7000/program/duplicate', JSON.stringify({programid: id, newprogramid: newId, newtitle: title}));
+  }
+
   constructor(private http: HttpClient) {
   }
 }

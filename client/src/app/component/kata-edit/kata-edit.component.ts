@@ -30,6 +30,7 @@ export class KataEditComponent implements OnInit {
 
   compiling = false;
   kataid: string;
+  programid: string;
   language: string;
 
   status = 2;
@@ -52,9 +53,9 @@ export class KataEditComponent implements OnInit {
   }
 
   getKata(): void {
-    this.kataService.isOwner(this.kataid, this.auth.currentUserValue.id).subscribe((data: boolean) => {
+    this.kataService.isOwner(this.kataid, this.auth.currentUserValue.id, this.programid).subscribe((data: boolean) => {
       if (data) {
-        this.kataService.getKata(this.kataid).subscribe((kata: Kata) => {
+        this.kataService.getKata(this.kataid, this.programid).subscribe((kata: Kata) => {
           this.kata = kata;
         });
       } else {
@@ -108,7 +109,7 @@ export class KataEditComponent implements OnInit {
       nbAttempt: this.f.number.value,
       difficulty: 'Ceinture blanche',
       activated: this.kata.activated
-    })).subscribe((data: string) => {
+    }), this.programid).subscribe((data: string) => {
       this.router.navigate(['kata-displayer/' + data]);
     });
 
@@ -116,6 +117,7 @@ export class KataEditComponent implements OnInit {
 
   ngOnInit() {
     this.kataid = this.route.snapshot.paramMap.get('id');
+    this.programid = this.route.snapshot.paramMap.get('programid');
     this.language = this.route.snapshot.paramMap.get('language');
 
     this.getKata();

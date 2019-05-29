@@ -27,7 +27,7 @@ const routes: Routes = [
   {path: 'program/mine', component: MineComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
   {path: 'program/search', component: SearchbyComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
   {path: 'kata-displayer/:id', component: KataDisplayerComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
-  {path: 'kata/edit/:id/:language', component: KataEditComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
+  {path: 'kata/edit/:programid/:id/:language', component: KataEditComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
   {path: 'kata/:prid/:id', component: KataComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
   {path: 'program/create', component: ProgramCreateComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
   {path: 'program/edit/:id', component: ProgramEditComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
