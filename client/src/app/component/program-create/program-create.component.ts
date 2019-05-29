@@ -39,7 +39,7 @@ export class ProgramCreateComponent implements OnInit {
       return;
     }
 
-    this.programService.createProgram(JSON.stringify({
+    this.programService.create(JSON.stringify({
       id: this.programToKata,
       sensei: this.currentUser.username,
       language: this.f.language.value,
@@ -50,16 +50,15 @@ export class ProgramCreateComponent implements OnInit {
       idsensei: this.currentUser.id,
       katas: []
     })).subscribe(() => {
-      this.programSubscription.createSubscription(JSON.stringify({
+      this.programSubscription.create(this.currentUser.id, JSON.stringify({
         id: uuid(),
-        iduser: this.currentUser.id,
         idprogram: this.programToKata,
         status: true,
         nbKataDone: 0,
         katas: []
       })).subscribe(() => {
           if (newkata) {
-            this.router.navigate(['/kata_create/' + this.programToKata + '/' + this.f.language.value + '']);
+            this.router.navigate(['/kata/create/' + this.programToKata + '/' + this.f.language.value + '']);
           } else {
             this.router.navigate(['/program/mine']);
           }

@@ -1,0 +1,24 @@
+<mat-nav-list>
+  <h2>Actions on {{data.title}}</h2>
+  <div mat-dialog-actions>
+  <a mat-list-item  (click)="delete()">
+
+    <span mat-line>Delete</span>
+    <span mat-line>delete the kata, cannot be undone</span>
+  </a>
+  </div>
+  <a mat-list-item *ngIf="data.isActivated" (click)="deactivate()">
+    <span mat-line>Disable</span>
+    <span mat-line>the kata will be disabled, users won't be able to accomplish it anymore</span>
+  </a>
+  <a mat-list-item *ngIf="!data.isActivated" (click)="deactivate()">
+    <span mat-line>Enable</span>
+    <span mat-line>the kata will be enabled, users will be able to accomplish it</span>
+  </a>
+
+  <a mat-list-item (click)="edit()">
+    <span mat-line>Edit</span>
+    <span mat-line>edit kata</span>
+  </a>
+  <button mat-button style="float:right" (click)="onNoClick()" cdkFocusInital>Cancel</button>
+</mat-nav-list>

@@ -1,10 +1,22 @@
 # Dojo Hepia
 
-## 2.5.0 update :
+## DojoHepia-v0.5 update
+- A sensei is now able to 
+	- Kata 
+		- Disable
+		- Edit
+		- Delete
+	- Program
+		- Delete
+		- Edit
 
-- Now users can create their own account
-- Already trusted sensei can generate token, this token can be used by someone who wants to create a Sensei account
-- Auth token and Sponsorship token have now expiration date (six day and ten minutes each respectively).
+- Users can see theirs done and ongoing katas
+- Markdown support added for kata instructions
+- New display in kata-displayer
+- Database improvement
+- Bug fixed
+	- Click tag
+
 
 ## RUN ME - DojoHepia
 
@@ -15,71 +27,23 @@
 <p>DOCKER-COMPOSE</p>
 <p>ANGULAR CLI</p>
 
-### Temporary user ids :
-
-| Username | Password | Privileges |
-|----------|----------|------------|
-| shodai   | admin   | shodai     |
-
-
-<p>When connected to shodai account, you can generate tokens to create further sensei in "Sponsorship" (location : left nav bar)</p>
-
-<p>All created account without token will automatically be ranked as "monji"</p>
-<b>Users privileges hierarchy</b>
-
-<p>shodai>sensei>monji</p>
-
 #### 1. Mongo Database
 
-##### 1.2 Create container
+##### 1.1 Create the database container
 
 >./mongodb/
+
 ```
 docker-compose up -d
 ```
 
-##### 1.3 Create user
-
->./mongodb/
-```
-docker-compose exec mongo mongo admin -u root
-password : example
-```
-
-insert the following command :
+`If en error occurs, please log  into docker hub (should not happen)`
 
 ```
-use DojoHepia
-
-db.createUser(
-  {
-    user: "shodai",
-    pwd: "shodai",
-    roles: [
-       { role: "readWrite", db: "DojoHepia" }
-    ]
-  }
-)
+docker login
 ```
 
-##### (optional) Importing data
-<p>If you want to popularize the database with programs,katas and subscription, you can insert the following files in the mongo db database</p>
-
->./mongodb/data/programs
->./mongodb/data/programssubscription
-
-<p>to import the datas, copy them and to the following steps :</p>
-
->./mongodb/
-```
-docker-compose exec mongo mongo admin -u root
-password : example
-```
-```
-use DojoHepia
-db.Programs.insertMany(<programs-copied-data>);
-db.ProgramsSubscription.insertMany(<programs-subscription-copied-data>);
-```
+> **PLEASE NOTE**: The database will initialize itself with data
 
 #### 2. Gateway
 >./gateway/
@@ -95,7 +59,7 @@ npm install
 ng serve --open
 ```
 
-#### 4. Compilateur
+#### 4. Compiler
 
 ##### 4.1 Pull java container
 
@@ -115,7 +79,30 @@ mvn package
 mvn exec:java
 ```
 
+### Already registered users :
 
+| Username | Password | Privileges |
+|----------|----------|------------|
+| shodai   | admin   | shodai     |
+| noob   | noob   | monji     |
+
+<b>Users privileges hierarchy</b>
+<p>shodai>sensei>monji</p>
+
+#### Create a Sensei account
+
+If you want to generate an account with Sensei privileges, please do the following steps
+
+1. Login with the 'shodai' account
+2. Go to Subscription (on the side navigation menu)
+3. Hit 'Generate a token', and copy it
+4. Logout from your current account
+5. Click on 'Create a account'
+6. Check the 'I have a token' box
+7. Past the copied token into the newly generated input box
+8. A new account with Sensei has been created, you can now use it
+
+> **PLEASE NOTE**: All created account without token will automatically be ranked as "monji"
 
 ## Vocabulaire
 | Art - Martial | Dojo Hepia       |

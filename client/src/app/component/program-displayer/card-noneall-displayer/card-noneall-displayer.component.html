@@ -4,7 +4,7 @@
   <div *ngFor="let program of programs">
     <div class="card">
       <div class="card-body">
-        <a routerLink="/kata-displayer/{{program.programID}}"><h5 class="card-title">{{program.title}}<span
+        <a routerLink="/kata-displayer/{{program.id}}"><h5 class="card-title">{{program.title}}<span
           style="float:right" [hidden]="program.nbKataDone == -1">{{+program.nbKataDone / +program.nbKata * 100}}
           %</span></h5></a>
         <h6 class="card-subtitle mb-2 text-muted"><a><span (click)="querySearch('sensei',program.sensei)" class="sensei">{{program.sensei}}</span> </a>

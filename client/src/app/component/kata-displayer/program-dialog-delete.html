@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Are you sure you want to delete '{{data}}' ?</h1>
+<div mat-dialog-content>
+  <p>All kata will be destroyed, cannot be undone.</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()" cdkFocusInital>No</button>
+  <button mat-button [mat-dialog-close]="true">Yes</button>
+</div>

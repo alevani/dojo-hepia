@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d8fb2c1-8426-4933-8193-ee68625cf8de" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DockerCompilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DockerCompilation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/MongoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/app.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/MongoDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/MongoDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/app.class" afterDir="false" />
-    </list>
+    <list default="true" id="8d8fb2c1-8426-4933-8193-ee68625cf8de" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,17 +14,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/DockerCompilation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="20" column="114" selection-start-line="20" selection-start-column="114" selection-end-line="20" selection-end-column="114" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -68,10 +49,9 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1121" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="954" />
+    <option name="height" value="1200" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -79,7 +59,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -92,11 +72,35 @@
               <item name="compilation" type="462c0819:PsiDirectoryNode" />
               <item name="share_docker_file" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="compilation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="compilation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="compilation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="compilation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="compilation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="compilation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="compilation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="compilation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -199,11 +203,28 @@
       <workItem from="1557931166779" duration="192000" />
       <workItem from="1557988860203" duration="849000" />
       <workItem from="1558017128365" duration="97000" />
+      <workItem from="1558030078148" duration="202000" />
+      <workItem from="1558084475254" duration="208000" />
+      <workItem from="1558333722642" duration="2241000" />
+      <workItem from="1558371760302" duration="207000" />
+      <workItem from="1558420145734" duration="2681000" />
+      <workItem from="1558506362151" duration="2227000" />
+      <workItem from="1558594362417" duration="2527000" />
+      <workItem from="1558618819750" duration="404000" />
+      <workItem from="1558678823354" duration="477000" />
+      <workItem from="1558686906594" duration="593000" />
+      <workItem from="1558688532907" duration="1316000" />
+      <workItem from="1558704495966" duration="1103000" />
+      <workItem from="1558939614514" duration="553000" />
+      <workItem from="1558958789221" duration="925000" />
+      <workItem from="1559024581666" duration="529000" />
+      <workItem from="1559030399057" duration="613000" />
+      <workItem from="1559111518428" duration="363000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42051000" />
+    <option name="totallyTimeSpent" value="59220000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -215,9 +236,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3490701" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.4084132" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -226,7 +248,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.21927711" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.41061947" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3987952" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -296,16 +318,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/share_docker_file/test.txt" />
     <entry file="file://$PROJECT_DIR$/docker/java/files/java_test.sh" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/HostCompilation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="42" column="40" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docker/java/dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -322,13 +334,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/share_docker_file/sample.py" />
     <entry file="file://$PROJECT_DIR$/share_docker_file/assert.py" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/app.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -348,10 +353,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/share_docker_file/kata.java" />
     <entry file="file://$PROJECT_DIR$/share_docker_file/Main.java" />
+    <entry file="file://$PROJECT_DIR$/share_docker_file/Main.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DockerCompilation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
+        <state relative-caret-position="255">
           <caret line="20" column="114" selection-start-line="20" selection-start-column="114" selection-end-line="20" selection-end-column="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/HostCompilation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

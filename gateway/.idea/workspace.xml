@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e6a1f2e5-4f60-4227-82bb-83eb10fa94a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../compilation/src/main/java/DockerCompilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/src/main/java/DockerCompilation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MongoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app.java" afterDir="false" />
-    </list>
+    <list default="true" id="e6a1f2e5-4f60-4227-82bb-83eb10fa94a5" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,60 +29,78 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/app.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/cursors/Programs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="30" column="79" lean-forward="true" selection-start-line="30" selection-start-column="79" selection-end-line="30" selection-end-column="79" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MongoDB.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/cursors/UserInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="678">
-              <caret line="283" selection-start-line="283" selection-end-line="283" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#12452#12453#0" expanded="true" />
-                <element signature="e#12528#12529#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/LiveDB.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="46" selection-start-line="46" selection-end-line="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MockUser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Program.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/cursors/ProgramInterface.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="3" column="47" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="47" />
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramsDataBase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="813">
+              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
               <folding>
-                <element signature="e#1540#1541#0" expanded="true" />
-                <element signature="e#1571#1572#0" expanded="true" />
-                <element signature="e#1619#1620#0" expanded="true" />
-                <element signature="e#1659#1660#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/cursors/Users.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5265">
+              <caret line="351" column="21" selection-start-line="351" selection-start-column="21" selection-end-line="351" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/MongoDB.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="607">
+              <caret line="384" column="49" selection-start-line="384" selection-start-column="49" selection-end-line="384" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#17136#17137#0" expanded="true" />
+                <element signature="e#17208#17209#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -107,18 +117,43 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>handler</find>
-      <find>get_id</find>
-      <find>slee</find>
-      <find>thread</find>
-      <find>out</find>
-      <find>println</find>
-      <find>programid</find>
-      <find>idprogram</find>
+      <find>402</find>
+      <find>subc</find>
+      <find>dele</find>
+      <find>push</find>
+      <find>isSubs</find>
+      <find>upd</find>
+      <find>details</find>
       <find>programID</find>
-      <find>sea</find>
-      <find>dou</find>
+      <find>getProgramID</find>
+      <find>katashowcase</find>
+      <find>togg</find>
+      <find>increment</find>
+      <find>decre</find>
+      <find>decrement</find>
+      <find>tog</find>
+      <find>toggle</find>
+      <find>isOw</find>
+      <find>kata</find>
+      <find>kata/up</find>
+      <find>program/upda</find>
+      <find>ON-G</find>
+      <find>update</find>
+      <find>ac</find>
+      <find>activated</find>
+      <find>issu</find>
+      <find>subscr</find>
+      <find>issub</find>
+      <find>status</find>
+      <find>ch.hepia.repository.modals.interfaces.Users</find>
+      <find>ch/hepia/repository/modals/</find>
     </findStrings>
+    <replaceStrings>
+      <replace>Users</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/.idea</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -128,20 +163,37 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/programManagement.java" />
         <option value="$PROJECT_DIR$/src/main/java/liveDB.java" />
-        <option value="$PROJECT_DIR$/src/main/java/KataShowCase.java" />
         <option value="$PROJECT_DIR$/src/main/java/JWT.java" />
         <option value="$PROJECT_DIR$/src/main/java/JWToken.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Program.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Kata.java" />
         <option value="$PROJECT_DIR$/src/main/java/KataSubscription.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ProgramSubscription.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ProgramShowCase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ProgramsDataBase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/LiveDB.java" />
         <option value="$PROJECT_DIR$/src/main/java/MockUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MongoDB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/LiveDB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Katatest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Kata.java" />
+        <option value="$PROJECT_DIR$/src/main/java/KataShowCase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ProgramShowCase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ProgramSubscription.java" />
+        <option value="$PROJECT_DIR$/src/main/java/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/app.java" />
+        <option value="$PROJECT_DIR$/src/main/java/MongoDB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ProgramsDataBase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/User/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Kata/Kata.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Kata/KataShowCase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Program/ProgramShowCase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/MongoDataBase/MongoDB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/MongoDataBase/ProgramsDataBase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/database/ProgramsDataBase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Users.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/MongoDB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/cursors/Users.java" />
+        <option value="$PROJECT_DIR$/src/main/java/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/interfaces/Users.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/cursors/UserInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/cursors/ProgramInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramsDataBase.java" />
       </list>
     </option>
   </component>
@@ -172,9 +224,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1121" />
+    <option name="width" value="954" />
+    <option name="height" value="1200" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -183,7 +234,56 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gateway" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+              <item name="modals" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -197,6 +297,16 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ch.hepia.repository.cursors" />
+      <recent name="ch.hepia.repository.modals.interfaces" />
+      <recent name="ch.hepia.database.modal" />
+      <recent name="MongoDataBase" />
+      <recent name="User" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -211,8 +321,8 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="app" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="app" />
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="App" />
       <module name="09" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -220,7 +330,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.app" />
+        <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
   </component>
@@ -270,11 +380,29 @@
       <workItem from="1557931164526" duration="197000" />
       <workItem from="1557988857639" duration="10612000" />
       <workItem from="1558017000960" duration="198000" />
+      <workItem from="1558030075300" duration="204000" />
+      <workItem from="1558084470968" duration="444000" />
+      <workItem from="1558333721373" duration="4445000" />
+      <workItem from="1558367436433" duration="1864000" />
+      <workItem from="1558371763230" duration="910000" />
+      <workItem from="1558420148058" duration="25396000" />
+      <workItem from="1558506364520" duration="21575000" />
+      <workItem from="1558594362546" duration="8510000" />
+      <workItem from="1558618825113" duration="758000" />
+      <workItem from="1558678826979" duration="6207000" />
+      <workItem from="1558686907517" duration="1426000" />
+      <workItem from="1558688549265" duration="3224000" />
+      <workItem from="1558704498663" duration="1560000" />
+      <workItem from="1558939613389" duration="2910000" />
+      <workItem from="1558958791114" duration="4133000" />
+      <workItem from="1559024582648" duration="477000" />
+      <workItem from="1559030400602" duration="2688000" />
+      <workItem from="1559111520857" duration="1592000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137016000" />
+    <option name="totallyTimeSpent" value="225339000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -286,10 +414,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49924126" weight="0.18025751" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49924126" visible="true" weight="0.1970181" />
       <window_info id="Structure" order="1" sideWeight="0.5007587" side_tool="true" weight="0.20127796" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -298,17 +426,17 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32920355" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.35903615" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3987952" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3460177" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39823008" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32891566" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32891566" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3283186" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3253012" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32477877" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -327,69 +455,90 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/MongoDB.java</url>
-          <line>213</line>
+          <url>file://$PROJECT_DIR$/src/main/java/App.java</url>
+          <line>231</line>
           <properties />
-          <option name="timeStamp" value="8" />
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/MongoDB.java</url>
-          <line>201</line>
+          <url>file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/MongoDB.java</url>
+          <line>200</line>
           <properties />
-          <option name="timeStamp" value="9" />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/MongoDB.java</url>
+          <line>399</line>
+          <properties />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/MongoDB.java</url>
+          <line>139</line>
+          <properties />
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="input.get(&quot;programid&quot;)" language="JAVA" />
+        <watch expression="input.get(&quot;program&quot;).toString()" language="JAVA" />
+        <watch expression="k.getId()" language="JAVA" />
+        <watch expression="database.getCollection(&quot;Programs&quot;,Program.class).find(eq(&quot;katas._id&quot;, k.getId())).first().getId()" language="JAVA" />
+        <watch expression="kata.iterator().next().getStatus();" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
-        <expression-string>p.getKatas().contains(kataid)</expression-string>
+        <expression-string>database.getCollection(&quot;Programs&quot;,Program.class).find(eq(&quot;katas._id&quot;, k.getId())).first().getId()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>p.getKatas().get(&quot;id&quot;,&quot;0&quot;);</expression-string>
+        <expression-string>database.getCollection(&quot;Programs&quot;,Program.class).find(eq(&quot;katas._id&quot;, k.getId())).first()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid), eq(&quot;status&quot;, true),elemMatch(&quot;katas&quot;,Do) ))).first()</expression-string>
+        <expression-string>database.getCollection(&quot;Programs&quot;,Program.class).find(eq(&quot;programSubscriptions.katas._id&quot;, k.getId())).first()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid), eq(&quot;status&quot;, true),elemMatch(&quot;katas&quot;,Document.parse(kataid) ))).first()</expression-string>
+        <expression-string>database.getCollection(&quot;Programs&quot;,Program.class).find(eq(&quot;programSubscriptions.katas._id&quot;, k.getId())).first().getId();</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid), eq(&quot;status&quot;, true),elemMatch(&quot;katas._id&quot;,kataid ))).first()</expression-string>
+        <expression-string>k.getId()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid), eq(&quot;status&quot;, true),eq(&quot;katas.1._id&quot;,kataid ))).first()</expression-string>
+        <expression-string>input.get(&quot;program&quot;).toString()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid), eq(&quot;status&quot;, true),eq(&quot;katas.0._id&quot;,kataid ))).first()</expression-string>
+        <expression-string>input.getString(&quot;program&quot;).toString()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid), eq(&quot;status&quot;, true),eq(&quot;katas._id&quot;,kataid ))).first()</expression-string>
+        <expression-string>input.getString(&quot;program&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid), eq(&quot;status&quot;, true),eq(&quot;katas.id&quot;,kataid ))).first()</expression-string>
+        <expression-string>input.getString(&quot;progrma&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>database.getCollection(&quot;ProgramsSubscription&quot;, ProgramSubscription.class).find(combine(eq(&quot;iduser&quot;, userid), eq(&quot;idprogram&quot;, programid))).first()</expression-string>
+        <expression-string>input.getClass()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -412,13 +561,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/JWToken.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="83" column="4" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/io/javalin/javalin/2.8.0/javalin-2.8.0.jar!/io/javalin/Context.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
@@ -429,129 +571,166 @@
     <entry file="jar://$MAVEN_REPOSITORY$/io/javalin/javalin/2.8.0/javalin-2.8.0.jar!/io/javalin/core/util/ContextUtil.class">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/KataShowCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="25" />
-          <folding>
-            <element signature="e#443#444#0" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#737#738#0" expanded="true" />
-            <element signature="e#766#767#0" expanded="true" />
-            <element signature="e#810#811#0" expanded="true" />
-            <element signature="e#846#847#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ProgramSubscription.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-          <folding>
-            <element signature="e#401#402#0" expanded="true" />
-            <element signature="e#431#432#0" expanded="true" />
-            <element signature="e#1246#1247#0" expanded="true" />
-            <element signature="e#1271#1272#0" expanded="true" />
-            <element signature="e#1307#1308#0" expanded="true" />
-            <element signature="e#1335#1336#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Kata.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ProgramShowCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="27" lean-forward="true" selection-start-column="27" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ProgramsDataBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/KataSubscription.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.10.2/mongo-java-driver-3.10.2.jar!/com/mongodb/client/AggregateIterable.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="26" />
+          <caret line="6" column="43" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/LiveDB.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.10.2/mongo-java-driver-3.10.2.jar!/org/bson/Document.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        <state relative-caret-position="-774">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MockUser.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Katatest.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.10.2/mongo-java-driver-3.10.2.jar!/com/mongodb/Function.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding>
-            <element signature="e#98#99#0" expanded="true" />
-            <element signature="e#123#124#0" expanded="true" />
-            <element signature="e#159#160#0" expanded="true" />
-            <element signature="e#187#188#0" expanded="true" />
-            <element signature="e#217#218#0" expanded="true" />
-            <element signature="e#243#244#0" expanded="true" />
-            <element signature="e#281#282#0" expanded="true" />
-            <element signature="e#311#312#0" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#507#508#0" expanded="true" />
-            <element signature="e#555#556#0" expanded="true" />
-            <element signature="e#595#596#0" expanded="true" />
-            <element signature="e#627#628#0" expanded="true" />
-            <element signature="e#655#656#0" expanded="true" />
-            <element signature="e#697#698#0" expanded="true" />
-            <element signature="e#731#732#0" expanded="true" />
-            <element signature="e#646#647#0" expanded="true" />
-            <element signature="e#677#678#0" expanded="true" />
-            <element signature="e#725#726#0" expanded="true" />
-            <element signature="e#765#766#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Program.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/program/ProgramSubscription.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="47" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="47" />
-          <folding>
-            <element signature="e#1540#1541#0" expanded="true" />
-            <element signature="e#1571#1572#0" expanded="true" />
-            <element signature="e#1619#1620#0" expanded="true" />
-            <element signature="e#1659#1660#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MongoDB.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.10.2/mongo-java-driver-3.10.2.jar!/com/mongodb/client/model/Aggregates.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="678">
-          <caret line="283" selection-start-line="283" selection-end-line="283" />
+        <state relative-caret-position="263">
+          <caret line="25" column="44" lean-forward="true" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/jetty-server/9.4.15.v20190215/jetty-server-9.4.15.v20190215.jar!/org/eclipse/jetty/server/HttpChannel.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1245">
+          <caret line="83" column="4" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/LiveDB.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/kata/KataSubscription.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/program/ProgramShowCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/program/Program.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/kata/KataShowCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/kata/Kata.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/user/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#12452#12453#0" expanded="true" />
-            <element signature="e#12528#12529#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/cursors/Katas.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/MongoDB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="30" column="79" lean-forward="true" selection-start-line="30" selection-start-column="79" selection-end-line="30" selection-end-column="79" />
+        <state relative-caret-position="607">
+          <caret line="384" column="49" selection-start-line="384" selection-start-column="49" selection-end-line="384" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#17136#17137#0" expanded="true" />
+            <element signature="e#17208#17209#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/cursors/Users.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5265">
+          <caret line="351" column="21" selection-start-line="351" selection-start-column="21" selection-end-line="351" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/interfaces/Users.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/cursors/Programs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/cursors/UserInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/cursors/ProgramInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramsDataBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="813">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

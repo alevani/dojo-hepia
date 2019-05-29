@@ -1,0 +1,114 @@
+<div class="d-flex justify-content-center" *ngIf="kata" style="margin-top:2%">
+  <div class="d-flex flex-column">
+    <form [formGroup]="EditForm">
+
+      <mat-accordion>
+        <mat-expansion-panel expanded="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Kata's informations
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" [(ngModel)]="kata.title" formControlName="title" class="form-control"
+                   [ngClass]="{ 'is-invalid': submitted && f.title.errors }"/>
+            <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+              <div *ngIf="f.title.errors.required">Kata needs a title</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="assert">Display assert box</label>
+            <select class="form-control" formControlName="assert"
+                    [ngClass]="{ 'is-invalid': submitted && f.assert.errors}">
+              <option value="true">yes</option>
+              <option value="false">no</option>
+            </select>
+            <div *ngIf="submitted && f.assert.errors" class="invalid-feedback">
+              <div *ngIf="f.assert.errors.required">Please choose an option</div>
+            </div>
+
+          </div>
+
+           <div class="form-group">
+            <label for="number">Unlock solution at (> -1)</label>
+            <input [(ngModel)]="kata.nbAttempt" type="number" formControlName="number" class="form-control"
+                   [ngClass]="{ 'is-invalid': submitted && f.number.errors}"/>
+            <div *ngIf="submitted && f.number.errors" class="invalid-feedback">
+              <div *ngIf="f.number.errors.min">Please choose the number of tries before unlocking the "surrender"
+                option (min : 0)
+              </div>
+            </div>
+          </div>
+
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Kata's instruction (Markdown supported)
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+
+          <mat-grid-list cols="2" rowHeight="700px">
+            <mat-grid-tile>
+              <div class="form-group">
+            <textarea [(ngModel)]="kata.rules" style="margin-top: 10px;height: 680px" class="form-control"  formControlName="instruction"
+                      [ngClass]="{ 'is-invalid': submitted && f.instruction.errors }"></textarea>
+                <div *ngIf="submitted && f.instruction.errors" class="invalid-feedback">
+                  <div *ngIf="f.instruction.errors.required">Kata needs instructions</div>
+                </div>
+
+              </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div class="markdown-output" [data]="f.instruction.value" markdown ngPreserveWhitespaces>
+
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+
+
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Kata
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <mat-grid-list cols="2" rowHeight="310px">
+            <mat-grid-tile>
+              <app-terminal-code [code]="kata.solution" [type]="language"
+                                 (new)="OnNewEventSolution($event)"></app-terminal-code>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <app-terminal-code [code]="kata.cassert" [type]="language"
+                                 (new)="OnNewEventAssert($event)"></app-terminal-code>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <app-terminal-code [code]="kata.canva" [type]="language" (new)="OnNewEventCanva($event)"></app-terminal-code>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                        <textarea [ngClass]="{'success':status === 0,'error':status === 1,'':status === 2}"
+                                  style="white-space: pre-wrap;" disabled>{{result}}</textarea>
+            </mat-grid-tile>
+          </mat-grid-list>
+
+          <br/>
+
+          <button mat-button [disabled]="compiling" (click)="try()">Try my solution</button>
+          <button mat-button [disabled]="compiling" (click)="save()" style="float:right">Save kata</button>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+
+    </form>
+  </div>
+</div>
+
+<span *ngIf="!kata"><ngx-ui-loader></ngx-ui-loader></span>

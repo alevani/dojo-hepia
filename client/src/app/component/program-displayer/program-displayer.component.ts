@@ -20,7 +20,7 @@ export class ProgramDisplayerComponent implements OnInit {
   getProgram(): void {
 
     this.ngxLoader.start();
-    this.programService.getPrograms().subscribe((data: Program[]) => {
+    this.programService.get().subscribe((data: Program[]) => {
       this.programs = data;
       this.ngxLoader.stop();
     }, error1 => {

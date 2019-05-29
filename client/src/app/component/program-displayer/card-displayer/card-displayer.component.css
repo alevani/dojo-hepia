@@ -9,6 +9,10 @@
   cursor: pointer;
 }
 
+a{
+  color: var(--color-cloud);
+}
+
 a:hover{
   color: var(--color-cloud);
 }

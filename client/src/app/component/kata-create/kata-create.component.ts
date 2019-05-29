@@ -91,9 +91,10 @@ export class KataCreateComponent implements OnInit {
       rules: this.f.instruction.value,
       keepAssert: this.f.assert.value,
       nbAttempt: this.f.number.value,
-      programID: this.programId,
-      difficulty: 'Ceinture blanche'
-    })).subscribe(data => this.router.navigate(['/kata-displayer/' + this.programId + '']));
+      difficulty: 'Ceinture blanche',
+      activated: true
+
+    }), this.programId).subscribe(data => this.router.navigate(['/kata-displayer/' + this.programId + '']));
   }
 
   try(): void {
@@ -126,7 +127,7 @@ export class KataCreateComponent implements OnInit {
     this.CreateForm = this.formBuilder.group({
       title: ['', Validators.required],
       assert: ['', Validators.required],
-      number: ['', Validators.required],
+      number: ['', Validators.min(0)],
       instruction: ['', Validators.required],
     });
 

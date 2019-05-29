@@ -23,6 +23,10 @@ export class KataSubscriptionService {
     return this.http.post('http://localhost:7000/kata/update/subscription', obj);
   }
 
+  isSubscribed(userid: string, programid: string) {
+    return this.http.get('http://localhost:7000/program/issubscribed/' + userid + '/' + programid);
+  }
+
   constructor(private http: HttpClient) {
   }
 }

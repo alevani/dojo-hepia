@@ -71,7 +71,7 @@ export class SigninComponent implements OnInit {
     this.signinForm = this.formBuilder.group({
       // firstname: ['', Validators.required],
       // lastname: ['', Validators.required],
-      username: ['', Validators.required],
+      username: ['', Validators.required, Validators.pattern('[A-Za-z0-9-]*')],
       token: ['', null],
       password: ['', Validators.required]
     });

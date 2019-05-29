@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Inject, OnInit} from '@angular/core';
 import {KataShowCase} from './kataShowCase';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Location} from '@angular/common';
@@ -10,22 +10,32 @@ import {v4 as uuid} from 'uuid';
 import {ProgramSubscriptionService} from '../../services/program/subs/program-subscription.service';
 import {ProgramService} from '../../services/program/program.service';
 import {KataService} from '../../services/kata/kata.service';
-import {MatSnackBar} from '@angular/material';
+import {MAT_DIALOG_DATA, MatBottomSheet, MatSnackBar} from '@angular/material';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {Program} from '../program-displayer/program';
 
+
+export interface MoreActionsKata {
+  title: string;
+  id: string;
+  isActivated: boolean;
+  language: string;
+}
 
 @Component({
   selector: 'app-kata-displayer',
   templateUrl: './kata-displayer.component.html',
   styleUrls: ['./kata-displayer.component.scss']
 })
+
+
 export class KataDisplayerComponent implements OnInit {
 
   katas: KataShowCase[];
-  idProgram: string;
-  programTitle: string;
-  programLanguage: string;
-  programSensei: string;
-  programSenseiID: string;
+  programid: string;
+
+  program: Program;
+
   error = false;
   isSubscribed = false;
   currentUser: User;
@@ -49,28 +59,56 @@ export class KataDisplayerComponent implements OnInit {
     private auth: AuthenticationService,
     private programSubscription: ProgramSubscriptionService,
     private router: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    public dialog: MatDialog
   ) {
   }
 
-  deleteKata(kataid: string){
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DeleteProgramDialogComponent, {
+      width: '400px',
+      data: this.program.title
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.programService.delete(this.programid).subscribe(() => this.router.navigate(['program/mine']));
+      }
+    });
+  }
+
+  openDialogMoreActions(kataTitle: string, kataId: string, activated: boolean): void {
+    const dialogRef = this.dialog.open(MoreActionKataDialogComponent, {
+      width: '600px',
+      data: {title: kataTitle, id: kataId, isActivated: activated, language: this.program.language}
+    });
+    dialogRef.componentInstance.reloadKata.subscribe(() => {
+      this.kataService.getKatasDetails(this.programid, this.auth.currentUserValue.id).subscribe((datas: KataShowCase[]) => {
+        this.katas = datas;
+      });
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+
+      }
+    });
   }
 
   getIsOwner() {
-    if (this.currentUser.id === this.programSenseiID) {
-      this.isOwner = true;
-      this.isSubscribed = true;
-    }
+    this.programService.isOwner(this.programid, this.currentUser.id).subscribe((data: boolean) => {
+      if (data) {
+        this.isOwner = true;
+        this.isSubscribed = true;
+      }
+    });
   }
 
   subscribe() {
 
     if (this.nullsubs) {
-      this.programSubscription.createSubscription(JSON.stringify({
+      this.programSubscription.create(this.currentUser.id, JSON.stringify({
         id: uuid(),
-        iduser: this.currentUser.id,
-        idprogram: this.idProgram,
+        idprogram: this.programid,
         status: true,
         nbKataDone: 0,
         katas: []
@@ -78,19 +116,23 @@ export class KataDisplayerComponent implements OnInit {
         this.isSubscribed = true;
         this.nullsubs = false;
         this.subvalue = 'Unsubscribe';
-        this.programSubscription.getSubs(this.idProgram, this.currentUser.id).subscribe((data: ProgramSubscription) => this.subscription = data);
+        this.snackBar.open('Subscribed from ' + this.program.title, '', {
+          duration: 2000
+        });
+        // tslint:disable-next-line:max-line-length
+        this.programSubscription.getSubs(this.programid, this.currentUser.id).subscribe((data: ProgramSubscription) => this.subscription = data);
       });
     } else {
       this.isSubscribed = !this.isSubscribed;
-      this.programSubscription.toggle(JSON.stringify({programid: this.idProgram, userid: this.currentUser.id})).subscribe(() => {
+      this.programSubscription.toggle(JSON.stringify({programid: this.programid, userid: this.currentUser.id})).subscribe(() => {
         if (this.isSubscribed) {
           this.subvalue = 'Unsubscribe';
-          this.snackBar.open('Subscribed to ' + this.programTitle,'', {
+          this.snackBar.open('Subscribed to ' + this.program.title, '', {
             duration: 2000
           });
         } else {
           this.subvalue = 'Subscribe';
-          this.snackBar.open('Unsubscribed from ' + this.programTitle,'', {
+          this.snackBar.open('Unsubscribed from ' + this.program.title, '', {
             duration: 2000
           });
         }
@@ -99,9 +141,8 @@ export class KataDisplayerComponent implements OnInit {
   }
 
   getSubs() {
-    this.programSubscription.getSubs(this.idProgram, this.currentUser.id).subscribe((data: ProgramSubscription) => {
+    this.programSubscription.getSubs(this.programid, this.currentUser.id).subscribe((data: ProgramSubscription) => {
       this.subscription = data;
-      console.log(data);
       this.isSubscribed = this.subscription.status;
       if (!this.isSubscribed) {
         this.subvalue = 'Subscribe';
@@ -117,29 +158,16 @@ export class KataDisplayerComponent implements OnInit {
     });
   }
 
-  deleteProgram(id: string) {
-    if (confirm('Are you sure you want to delete this program ? all katas and users datas regarding this katas will be deleted as well.')) {
-      this.programService.deleteProgram(id).subscribe(() => {
-        this.router.navigate(['program/mine']);
-      });
-    }
-  }
-
   getKatas() {
 
     this.ngxLoader.start();
-    this.programService.getDetails(this.idProgram).subscribe((data: string[]) => {
-      this.programTitle = data[0];
-      this.programLanguage = data[1];
-      this.programSensei = data[2];
-      console.log(data[3]);
-      this.programSenseiID = data[3];
+    this.programService.getById(this.programid).subscribe((data: Program) => {
 
+      this.program = data;
       this.getIsOwner();
       this.getSubs();
-
       this.inforreceived = true;
-      this.kataService.getKatasDetails(this.idProgram, this.auth.currentUserValue.id).subscribe((datas: KataShowCase[]) => {
+      this.kataService.getKatasDetails(this.programid, this.auth.currentUserValue.id).subscribe((datas: KataShowCase[]) => {
         this.katas = datas;
         this.ngxLoader.stop();
       });
@@ -151,10 +179,68 @@ export class KataDisplayerComponent implements OnInit {
     }));
   }
 
+
   ngOnInit() {
-    this.idProgram = this.route.snapshot.paramMap.get('id');
+    this.programid = this.route.snapshot.paramMap.get('id');
     this.currentUser = this.auth.currentUserValue;
     this.getKatas();
+  }
+
+}
+
+@Component({
+  selector: 'dialog-overview-example-dialog',
+  templateUrl: 'program-dialog-delete.html',
+})
+export class DeleteProgramDialogComponent {
+
+  constructor(
+    public dialogRef: MatDialogRef<DeleteProgramDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: string) {
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+}
+
+@Component({
+  selector: 'dialog-overview-example-dialog',
+  templateUrl: 'kata-dialog-moreactions.html',
+})
+export class MoreActionKataDialogComponent {
+
+  constructor(
+    public dialogRef: MatDialogRef<MoreActionKataDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: MoreActionsKata,
+    private kataService: KataService,
+    private router: Router) {
+  }
+
+  reloadKata = new EventEmitter<any>();
+
+  deactivate(): void {
+    this.kataService.deactivate(this.data.id).subscribe(() => {
+      this.reloadKata.emit();
+      this.dialogRef.close();
+    });
+  }
+
+  delete(): void {
+    this.kataService.delete(this.data.id).subscribe(() => {
+      this.reloadKata.emit();
+      this.dialogRef.close();
+    });
+  }
+
+  edit(): void {
+    this.router.navigate(['kata/edit/' + this.data.id + '/' + this.data.language]);
+    this.dialogRef.close();
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
 }

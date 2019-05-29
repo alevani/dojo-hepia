@@ -12,6 +12,8 @@ import {ProgramSubscriptionService} from '../../services/program/subs/program-su
 export class SubscriptionComponent implements OnInit {
 
   programs: Program[];
+  programsDone: Program[];
+  programsOngoing: Program[];
   programReceivedFailed = false;
 
   constructor(private programSubscription: ProgramSubscriptionService, private ngxLoader: NgxUiLoaderService, private auth: AuthenticationService) {
@@ -21,11 +23,14 @@ export class SubscriptionComponent implements OnInit {
 
     this.ngxLoader.start();
     this.programSubscription.getSubscription(this.auth.currentUserValue.id).subscribe((data: Program[]) => {
-      this.programs = data.filter((x) => x.sensei !== this.auth.currentUserValue.username);
+      this.programs = data;
 
       if (this.programs.length === 0) {
         this.programReceivedFailed = true;
       }
+      this.programsDone = this.programs.filter((x) => x.nbKataDone === x.nbKata);
+      this.programsOngoing = this.programs.filter((x) => x.nbKataDone !== x.nbKata);
+
       this.ngxLoader.stop();
     }, error1 => {
       if (error1.status === 404) {

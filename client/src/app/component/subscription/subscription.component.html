@@ -1,8 +1,14 @@
 <div class="container" *ngIf="programs">
   <h1 style="margin:2rem 0 0 2rem;text-align: center">My subscription</h1>
 <hr>
-  <app-card-noneall-displayer [programs]="programs"></app-card-noneall-displayer>
-
+  <div *ngIf="programsOngoing.length != 0">
+    <h4 style="margin:2rem 0 0 2rem">Ongoing programs</h4>
+    <app-card-noneall-displayer [programs]="programsOngoing"></app-card-noneall-displayer>
+  </div>
+  <div *ngIf="programsDone.length != 0">
+    <h4 style="margin:2rem 0 0 2rem">Done programs</h4>
+    <app-card-noneall-displayer [programs]="programsDone"></app-card-noneall-displayer>
+  </div>
 </div>
 
 <div *ngIf="programReceivedFailed">
