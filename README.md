@@ -12,6 +12,7 @@
 
 - Users can see theirs done and ongoing katas
 - Markdown support added for kata instructions
+- New display in kata-displayer
 - Database improvement
 - Bug fixed
 	- Click tag
@@ -28,7 +29,7 @@
 
 #### 1. Mongo Database
 
-##### 1.1 Create container
+##### 1.1 Create the database container
 
 >./mongodb/
 
@@ -58,7 +59,7 @@ npm install
 ng serve --open
 ```
 
-#### 4. Compilateur
+#### 4. Compiler
 
 ##### 4.1 Pull java container
 
@@ -94,7 +95,7 @@ If you want to generate an account with Sensei privileges, please do the followi
 
 1. Login with the 'shodai' account
 2. Go to Subscription (on the side navigation menu)
-3. Hit 'Generate a token'
+3. Hit 'Generate a token', and copy it
 4. Logout from your current account
 5. Click on 'Create a account'
 6. Check the 'I have a token' box

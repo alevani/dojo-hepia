@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6a1f2e5-4f60-4227-82bb-83eb10fa94a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/MongoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/cursors/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/cursors/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/kata/Kata.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/kata/Kata.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/kata/KataShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/kata/KataShowCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/kata/KataSubscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/kata/KataSubscription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/program/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/program/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/program/ProgramShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/program/ProgramShowCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/program/ProgramSubscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/program/ProgramSubscription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/MongoDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ch/hepia/repository/MongoDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/cursors/Katas.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/cursors/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ch/hepia/repository/cursors/Users.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -81,7 +67,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2259">
+            <state relative-caret-position="289">
               <caret line="351" column="21" selection-start-line="351" selection-start-column="21" selection-end-line="351" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -411,12 +397,12 @@
       <workItem from="1558958791114" duration="4133000" />
       <workItem from="1559024582648" duration="477000" />
       <workItem from="1559030400602" duration="2688000" />
-      <workItem from="1559111520857" duration="590000" />
+      <workItem from="1559111520857" duration="798000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224337000" />
+    <option name="totallyTimeSpent" value="224545000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -429,9 +415,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49924126" visible="true" weight="0.1970181" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49924126" visible="true" weight="0.1970181" />
       <window_info id="Structure" order="1" sideWeight="0.5007587" side_tool="true" weight="0.20127796" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -440,7 +425,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32920355" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.026548672" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3460177" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39823008" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -729,7 +714,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2259">
+        <state relative-caret-position="289">
           <caret line="351" column="21" selection-start-line="351" selection-start-column="21" selection-end-line="351" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />

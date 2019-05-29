@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d8fb2c1-8426-4933-8193-ee68625cf8de" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/MongoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/cursors/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/cursors/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/kata/Kata.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/kata/Kata.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/kata/KataShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/kata/KataShowCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/kata/KataSubscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/kata/KataSubscription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/program/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/program/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/program/ProgramShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/program/ProgramShowCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/program/ProgramSubscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/program/ProgramSubscription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/MongoDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/MongoDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/cursors/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/cursors/Users.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -252,7 +240,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.4084132" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
