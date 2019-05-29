@@ -29,27 +29,14 @@ public interface ProgramsDataBase {
 
     void toggleSubscription(String userid, String idprogram);
 
-    Optional<List<ProgramShowCase>> userSubscriptions(String userid);
-
-    Optional<List<ProgramShowCase>> userPrograms(String userid);
 
     Optional<KataSubscription> kataSubscriptionById(String kataid, String programid, String userid);
 
     void createKataSubscription(String kataid, String programid, String userid);
 
-    void incrementKataSubscriptionAttempt(String kataid, String programid, String userid);
-
-    void updateKataSubscription(String kataid, String programid, String userid, String sol, String status);
 
     void deleteProgram(String programid);
 
-    void create(User u);
-
-    Optional<User> checkUserCredentials(String username, String password);
-
-    boolean isExisting(String username);
-
-    boolean isSubscribed(String userid, String programid);
 
     void deleteKata(String kataid);
 
@@ -64,5 +51,24 @@ public interface ProgramsDataBase {
     void toggleKataActivation(String kataid);
 
     boolean isKataActivated(String kataid);
+
+
+
+
+    void incrementKataSubscriptionAttempt(String kataid, String programid, String userid);
+
+    void updateKataSubscription(String kataid, String programid, String userid, String sol, String status);
+
+    boolean isSubscribed(String userid, String programid);
+
+    Optional<List<ProgramShowCase>> userSubscriptions(String userid);
+
+    Optional<List<ProgramShowCase>> userPrograms(String userid);
+
+    void create(User u);
+
+    boolean isExisting(String username);
+
+    Optional<User> checkUserCredentials(String username, String password);
 
 }
