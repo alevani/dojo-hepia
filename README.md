@@ -26,20 +26,6 @@
 <p>DOCKER-COMPOSE</p>
 <p>ANGULAR CLI</p>
 
-### Temporary user ids :
-
-| Username | Password | Privileges |
-|----------|----------|------------|
-| shodai   | admin   | shodai     |
-| noob   | noob   | monji     |
-
-<p>When connected to shodai account, you can generate tokens to create further sensei in "Sponsorship" (location : left nav bar)</p>
-
-<p>All created account without token will automatically be ranked as "monji"</p>
-<b>Users privileges hierarchy</b>
-
-<p>shodai>sensei>monji</p>
-
 #### 1. Mongo Database
 
 ##### 1.1 Create container
@@ -50,11 +36,13 @@
 docker-compose up -d
 ```
 
-`If en error occurs, please log into docker hub`
+`If en error occurs, please log  into docker hub (should not happen)`
 
 ```
 docker login
 ```
+
+> **PLEASE NOTE**: The database will initialize itself with data
 
 #### 2. Gateway
 >./gateway/
@@ -90,7 +78,30 @@ mvn package
 mvn exec:java
 ```
 
+### Already registered users :
 
+| Username | Password | Privileges |
+|----------|----------|------------|
+| shodai   | admin   | shodai     |
+| noob   | noob   | monji     |
+
+<b>Users privileges hierarchy</b>
+<p>shodai>sensei>monji</p>
+
+#### Create a Sensei account
+
+If you want to generate an account with Sensei privileges, please do the following steps
+
+1. Login with the 'shodai' account
+2. Go to Subscription (on the side navigation menu)
+3. Hit 'Generate a token'
+4. Logout from your current account
+5. Click on 'Create a account'
+6. Check the 'I have a token' box
+7. Past the copied token into the newly generated input box
+8. A new account with Sensei has been created, you can now use it
+
+> **PLEASE NOTE**: All created account without token will automatically be ranked as "monji"
 
 ## Vocabulaire
 | Art - Martial | Dojo Hepia       |
