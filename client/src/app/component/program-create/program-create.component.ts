@@ -22,7 +22,7 @@ export class ProgramCreateComponent implements OnInit {
               private formBuilder: FormBuilder) {
     this.currentUser = this.auth.currentUserValue;
   }
-
+  checked = false;
   CreateForm: FormGroup;
 
   submitted = false;
@@ -30,6 +30,16 @@ export class ProgramCreateComponent implements OnInit {
 
   get f() {
     return this.CreateForm.controls;
+  }
+
+  toggleChecked() {
+    const password = this.CreateForm.get('password');
+    this.checked = !this.checked;
+    if (!this.checked) {
+      password.setValidators([null]);
+    } else {
+      password.setValidators([Validators.required]);
+    }
   }
 
   createProgram(newkata: boolean): void {
@@ -41,6 +51,7 @@ export class ProgramCreateComponent implements OnInit {
 
     this.programService.create(JSON.stringify({
       id: this.programToKata,
+      password: this.f.password.value,
       sensei: this.currentUser.username,
       language: this.f.language.value,
       nbKata: 0,
@@ -58,7 +69,7 @@ export class ProgramCreateComponent implements OnInit {
         katas: []
       })).subscribe(() => {
           if (newkata) {
-            this.router.navigate(['/kata/create/' + this.programToKata + '/' + this.f.language.value + '']);
+            this.router.navigate(['/kata-create/' + this.programToKata]);
           } else {
             this.router.navigate(['/program/mine']);
           }
@@ -76,6 +87,7 @@ export class ProgramCreateComponent implements OnInit {
       title: ['', Validators.required],
       language: ['', Validators.required],
       description: ['', Validators.required],
+      password: ['', null],
       tags: ['', Validators.required],
     });
   }

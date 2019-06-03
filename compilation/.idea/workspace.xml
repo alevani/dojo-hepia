@@ -2,27 +2,57 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d8fb2c1-8426-4933-8193-ee68625cf8de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/program-dialog-duplicate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/program-dialog-prompt-password.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-dialog-moreactions.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/signin/signin.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/signin/signin.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/signin/signin.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/signin/signin.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/token/token.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/token/token.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/token/token.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/token/token.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/services/auth/signin/token.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/services/auth/signin/token.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/services/jwt-request/request-jwt.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/services/jwt-request/request-jwt.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-create/program-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-create/program-create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-create/program-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-create/program-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-displayer/program.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-displayer/program.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-edit/program-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-edit/program-edit.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-edit/program-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-edit/program-edit.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/services/kata/kata.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/services/kata/kata.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/app/services/program/program.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/services/program/program.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/styles.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/share_docker_file/Kata.class" beforeDir="false" afterPath="$PROJECT_DIR$/share_docker_file/Kata.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/share_docker_file/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/share_docker_file/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/MongoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/ProgramsDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/ProgramsDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/app$Roles.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/app$Roles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/Programs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/ProgramsDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/ProgramInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/cursors/ProgramInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/cursors/Programs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/cursors/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/UserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/cursors/Users.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/kata/Kata.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/kata/Kata.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/kata/KataShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/kata/KataShowCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/kata/KataSubscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/kata/KataSubscription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/program/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/program/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/program/ProgramShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/program/ProgramShowCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/program/ProgramSubscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/program/ProgramSubscription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/user/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/app.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/MongoDB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/ProgramsDataBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/cursors/ProgramInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/cursors/Programs.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/cursors/UserInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/cursors/Users.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/modals/kata/Kata.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/modals/kata/KataShowCase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/modals/kata/KataSubscription.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/modals/program/Program.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/modals/program/ProgramShowCase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/modals/program/ProgramSubscription.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/modals/user/User.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -72,7 +102,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="954" />
+    <option name="width" value="1920" />
     <option name="height" value="1200" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -81,6 +111,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -122,7 +153,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -243,11 +273,16 @@
       <workItem from="1559030399057" duration="613000" />
       <workItem from="1559111518428" duration="363000" />
       <workItem from="1559122036625" duration="1150000" />
+      <workItem from="1559200854411" duration="953000" />
+      <workItem from="1559285311295" duration="1758000" />
+      <workItem from="1559546417893" duration="480000" />
+      <workItem from="1559549547547" duration="292000" />
+      <workItem from="1559560575232" duration="227000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60370000" />
+    <option name="totallyTimeSpent" value="64080000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -262,7 +297,7 @@
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.4084132" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.42119277" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />

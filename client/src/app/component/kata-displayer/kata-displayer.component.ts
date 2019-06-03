@@ -22,12 +22,18 @@ export interface MoreActionsKata {
   programid: string;
   isActivated: boolean;
   language: string;
+  goal: boolean;
 }
 
 export interface DuplicateProgram {
   title: string;
   programid: string;
   currentUser: User;
+}
+
+export interface PromptPassword {
+  title: string;
+  programid: string;
 }
 
 @Component({
@@ -77,7 +83,7 @@ export class KataDisplayerComponent implements OnInit {
       width: '400px',
       data: {title: this.program.title, currentUser: this.currentUser, programid: this.programid}
     });
-}
+  }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DeleteProgramDialogComponent, {
@@ -92,15 +98,9 @@ export class KataDisplayerComponent implements OnInit {
     });
   }
 
-  openDialogMoreActions(kataTitle: string, kataId: string, activated: boolean): void {
-    const dialogRef = this.dialog.open(MoreActionKataDialogComponent, {
-      width: '600px',
-      data: {title: kataTitle, id: kataId, isActivated: activated, language: this.program.language, programid: this.programid}
-    });
-    dialogRef.componentInstance.reloadKata.subscribe(() => {
-      this.kataService.getKatasDetails(this.programid, this.auth.currentUserValue.id).subscribe((datas: KataShowCase[]) => {
-        this.katas = datas;
-      });
+  reloadKatas() {
+    this.kataService.getKatasDetails(this.programid, this.auth.currentUserValue.id).subscribe((datas: KataShowCase[]) => {
+      this.katas = datas;
     });
   }
 
@@ -113,8 +113,7 @@ export class KataDisplayerComponent implements OnInit {
     });
   }
 
-  subscribe() {
-
+  subscriptionWorkflow(): void {
     if (this.nullsubs) {
       this.programSubscription.create(this.currentUser.id, JSON.stringify({
         id: uuid(),
@@ -148,6 +147,49 @@ export class KataDisplayerComponent implements OnInit {
         }
       });
     }
+  }
+
+  subscribe() {
+
+    if (this.nullsubs || !this.isSubscribed) {
+      if (this.program.password !== '') {
+        const dialogRef = this.dialog.open(PromptPasswordDialogComponent, {
+          width: '400px',
+          data: {title: this.program.title, programid: this.programid}
+        });
+
+        dialogRef.afterClosed().subscribe(result => {
+
+          if (dialogRef.componentInstance.istrue) {
+            this.subscriptionWorkflow();
+
+          }
+        });
+      } else {
+        this.subscriptionWorkflow();
+      }
+    } else {
+      this.subscriptionWorkflow();
+    }
+
+
+  }
+
+  deactivate(id: string): void {
+    this.kataService.toggleActivation(id, this.programid).subscribe(() => {
+      this.reloadKatas();
+
+    });
+  }
+
+  delete(id: string): void {
+    this.kataService.delete(id, this.programid).subscribe(() => {
+      this.reloadKatas();
+    });
+  }
+
+  edit(id: string): void {
+    this.router.navigate(['kata/edit/' + this.programid + '/' + id + '/' + this.program.language]);
   }
 
   getSubs() {
@@ -215,51 +257,11 @@ export class DeleteProgramDialogComponent {
 
 }
 
-@Component({
-  selector: 'dialog-overview-example-dialog',
-  templateUrl: 'kata-dialog-moreactions.html',
-})
-export class MoreActionKataDialogComponent {
-
-  constructor(
-    public dialogRef: MatDialogRef<MoreActionKataDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: MoreActionsKata,
-    private kataService: KataService,
-    private router: Router) {
-  }
-
-  reloadKata = new EventEmitter<any>();
-
-  deactivate(): void {
-    this.kataService.toggleActivation(this.data.id, this.data.programid).subscribe(() => {
-      this.reloadKata.emit();
-      this.dialogRef.close();
-    });
-  }
-
-  delete(): void {
-    this.kataService.delete(this.data.id, this.data.programid).subscribe(() => {
-      this.reloadKata.emit();
-      this.dialogRef.close();
-    });
-  }
-
-  edit(): void {
-    this.router.navigate(['kata/edit/' + this.data.programid + '/' + this.data.id + '/' + this.data.language]);
-    this.dialogRef.close();
-  }
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-
-}
-
 
 @Component({
   selector: 'dialog-overview-example-dialog',
   styleUrls: ['../program-create/program-create.component.scss'],
-  templateUrl: 'program-dialog-duplicate.html',
+  templateUrl: 'program-dialog-duplicate.html'
 })
 export class DuplicateProgramDialogComponent implements OnInit {
 
@@ -311,6 +313,70 @@ export class DuplicateProgramDialogComponent implements OnInit {
 
     this.DuplicateForm = this.formBuilder.group({
       title: ['', Validators.required],
+    });
+  }
+
+}
+
+
+@Component({
+  selector: 'dialog-overview-example-dialog',
+  templateUrl: 'program-dialog-prompt-password.html',
+  styleUrls: ['../program-create/program-create.component.scss']
+})
+export class PromptPasswordDialogComponent implements OnInit {
+
+  constructor(
+    public dialogRef: MatDialogRef<PromptPasswordDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: PromptPassword,
+    private programService: ProgramService,
+    private formBuilder: FormBuilder) {
+  }
+
+  error = false;
+  loading = false;
+  istrue = false;
+
+  submitted = false;
+
+  PromptPassword: FormGroup;
+
+  get f() {
+    return this.PromptPassword.controls;
+  }
+
+  check(): void {
+
+    this.submitted = true;
+    if (this.PromptPassword.invalid) {
+      return;
+    }
+
+    this.loading = true;
+
+    this.programService.check(this.data.programid, this.f.password.value).subscribe((data: boolean) => {
+      if (data) {
+        this.error = false;
+        this.loading = false;
+        this.istrue = true;
+        this.dialogRef.close();
+      } else {
+        this.loading = false;
+        this.error = true;
+      }
+    });
+
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+  ngOnInit() {
+
+
+    this.PromptPassword = this.formBuilder.group({
+      password: ['', Validators.required],
     });
   }
 

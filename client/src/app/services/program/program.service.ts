@@ -35,6 +35,10 @@ export class ProgramService {
     return this.http.post('http://localhost:7000/program/duplicate', JSON.stringify({programid: id, newprogramid: newId, newtitle: title}));
   }
 
+  check(programid: string, password: string) {
+    return this.http.get('http://localhost:7000/program/checkpassword/' + programid + '/' + password);
+  }
+
   constructor(private http: HttpClient) {
   }
 }

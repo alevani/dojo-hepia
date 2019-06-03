@@ -27,7 +27,24 @@
   background: var(--color-dark-blue);
 }
 
+.mat-menu-item {
+  color: var(--color-cloud) !important;
+}
 
+.mat-menu-content{
+  background: var(--color-dark-blue) !important;
+}
+
+button.mat-menu-item{
+  background-color: var(--color-dark-blue);
+}
+
+.mat-menu-panel {
+  background: var(--color-dark-blue) !important;
+}
+button.mat-menu-item:hover {
+  background-color: var(--color-light-blue);
+}
 * {
   font-family: "Helvetica Neue";
 
@@ -72,6 +89,10 @@ a:hover{
   color: rgba(9, 132, 227, 1.0);
 }
 
+.README{
+  color:#ea8685;
+}
+
 
 .tag {
   background-color: rgba(99, 110, 114, 0.4);
@@ -81,7 +102,12 @@ a:hover{
 }
 
 .card-link{
+
+  float:right;
+}
+
+.card-link:hover{
   border-bottom: 1px solid var(--color-language-hover);
   cursor: pointer;
-  float:right;
+
 }

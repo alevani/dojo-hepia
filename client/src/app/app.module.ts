@@ -21,7 +21,7 @@ import {
   MatSnackBarModule,
   MatCheckboxModule,
   MatBadgeModule,
-  MatProgressSpinnerModule, MatBottomSheetModule
+  MatProgressSpinnerModule, MatBottomSheetModule, MatMenuModule
 } from '@angular/material';
 
 import {MatDialogModule} from '@angular/material/dialog';
@@ -29,8 +29,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {RouterModule} from '@angular/router';
 import {
   DeleteProgramDialogComponent, DuplicateProgramDialogComponent,
-  KataDisplayerComponent,
-  MoreActionKataDialogComponent
+  KataDisplayerComponent, PromptPasswordDialogComponent
 } from './component/kata-displayer/kata-displayer.component';
 import {ProgramDisplayerComponent} from './component/program-displayer/program-displayer.component';
 import {KataComponent, KataSurrenderDialogComponent} from './component/kata/kata.component';
@@ -53,10 +52,10 @@ import {MineComponent} from './component/mine/mine.component';
 import {CardNoneallDisplayerComponent} from './component/program-displayer/card-noneall-displayer/card-noneall-displayer.component';
 import {SigninComponent} from './component/signin/signin.component';
 import {TokenComponent} from './component/token/token.component';
-import { ProgramEditComponent } from './component/program-edit/program-edit.component';
-import { MarkdownModule } from 'ngx-markdown';
-import { KataEditComponent } from './component/kata-edit/kata-edit.component';
-
+import {ProgramEditComponent} from './component/program-edit/program-edit.component';
+import {MarkdownModule} from 'ngx-markdown';
+import {KataEditComponent} from './component/kata-edit/kata-edit.component';
+import {GoalComponent} from './component/kata-create/goal/goal.component';
 
 @NgModule({
   declarations: [
@@ -79,17 +78,19 @@ import { KataEditComponent } from './component/kata-edit/kata-edit.component';
     CardNoneallDisplayerComponent,
     SigninComponent,
     TokenComponent,
-    MoreActionKataDialogComponent,
     DeleteProgramDialogComponent,
     KataSurrenderDialogComponent,
     DuplicateProgramDialogComponent,
+    PromptPasswordDialogComponent,
     ProgramEditComponent,
     KataEditComponent,
+    GoalComponent,
 
   ],
   imports: [
 
     BrowserModule,
+    MatIconModule,
     BrowserAnimationsModule,
     LayoutModule,
     MatToolbarModule,
@@ -116,9 +117,11 @@ import { KataEditComponent } from './component/kata-edit/kata-edit.component';
     MatBadgeModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    MatMenuModule
+
   ],
-  entryComponents: [DeleteProgramDialogComponent, KataSurrenderDialogComponent, MoreActionKataDialogComponent,DuplicateProgramDialogComponent],
+  entryComponents: [DeleteProgramDialogComponent, KataSurrenderDialogComponent, DuplicateProgramDialogComponent, PromptPasswordDialogComponent, KataDisplayerComponent],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}, {
     provide: HTTP_INTERCEPTORS,
     useClass: ErrorInterceptor,

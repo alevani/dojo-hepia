@@ -7,4 +7,5 @@ export interface Program {
   description: string;
   tags: string[];
   nbKataDone: number;
+  password: string;
 }

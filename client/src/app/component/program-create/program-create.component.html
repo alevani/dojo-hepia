@@ -6,7 +6,7 @@
         <div class="form-group">
           <label for="title">Title</label>
           <input type="text" formControlName="title" class="form-control"
-                 [ngClass]="{ 'is-invalid': submitted && f.title.errors }" value="dweksj"/>
+                 [ngClass]="{ 'is-invalid': submitted && f.title.errors }"/>
           <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
             <div *ngIf="f.title.errors.required">Program needs a title</div>
           </div>
@@ -38,6 +38,16 @@
             <div *ngIf="f.tags.errors.required">Program needs one or more tags</div>
           </div>
         </div>
+        <hr>
+        <mat-checkbox style="padding-left:5px" (change)="toggleChecked()">Protect with a password</mat-checkbox>
+        <div *ngIf="checked" class="form-group">
+
+          <input type="text" formControlName="password"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+          </div>
+        </div>
+
         <div class="form-group">
           <button mat-button (click)="createProgram(false)">Create</button>
           <button mat-button (click)="createProgram(true)" class="button" style="float:right">Create with kata</button>

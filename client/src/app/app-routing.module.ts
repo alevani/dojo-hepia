@@ -15,6 +15,7 @@ import {SigninComponent} from './component/signin/signin.component';
 import {TokenComponent} from './component/token/token.component';
 import {ProgramEditComponent} from './component/program-edit/program-edit.component';
 import {KataEditComponent} from './component/kata-edit/kata-edit.component';
+import {GoalComponent} from './component/kata-create/goal/goal.component';
 
 const routes: Routes = [
   {path: '', component: ProgramDisplayerComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
@@ -31,7 +32,8 @@ const routes: Routes = [
   {path: 'kata/:prid/:id', component: KataComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.monji, Role.sensei]}},
   {path: 'program/create', component: ProgramCreateComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
   {path: 'program/edit/:id', component: ProgramEditComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
-  {path: 'kata/create/:id/:language', component: KataCreateComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
+  {path: 'kata-create/:id', component: KataCreateComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
+  {path: 'kata-goal/:id', component: GoalComponent, canActivate: [AuthGuard], data: {roles: [Role.shodai, Role.sensei]}},
   {path: '**', redirectTo: ''}
 ];
 

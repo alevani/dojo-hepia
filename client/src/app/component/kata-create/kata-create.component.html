@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center" style="margin-top:2%">
+<div class="d-flex justify-content-center" *ngIf="inforreceived" style="margin-top:2%">
   <div class="d-flex flex-column">
     <form [formGroup]="CreateForm">
 
@@ -62,7 +62,7 @@
               </div>
             </mat-grid-tile>
             <mat-grid-tile>
-              <div class="markdown-output" [data]="f.instruction.value" markdown ngPreserveWhitespaces>
+              <div class="markdown-output" [data]="f.instruction.value" markdown>
 
               </div>
             </mat-grid-tile>
@@ -110,4 +110,9 @@
   </div>
 </div>
 
+<span *ngIf="!inforreceived"><ngx-ui-loader></ngx-ui-loader></span>
+
+<div *ngIf="error">
+  <app-rnot-found></app-rnot-found>
+</div>
 

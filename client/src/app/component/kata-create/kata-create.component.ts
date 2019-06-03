@@ -7,6 +7,10 @@ import {CompilationService} from '../../services/compilation/compilation.service
 import {v4 as uuid} from 'uuid';
 import {KataService} from '../../services/kata/kata.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Program} from '../program-displayer/program';
+import {ProgramService} from '../../services/program/program.service';
+import {NgxUiLoaderService} from 'ngx-ui-loader';
+import {AuthenticationService} from '../../services/auth/authentication.service';
 
 @Component({
   selector: 'app-kata-create',
@@ -22,6 +26,9 @@ export class KataCreateComponent implements OnInit {
               public router: Router,
               private compilationService: CompilationService,
               private formBuilder: FormBuilder,
+              private programService: ProgramService,
+              private ngxLoader: NgxUiLoaderService,
+              private auth: AuthenticationService
   ) {
   }
 
@@ -43,6 +50,10 @@ export class KataCreateComponent implements OnInit {
   submitted = false;
 
   compiling = false;
+
+  program: Program;
+  inforreceived = false;
+  error = false;
 
 
   get f() {
@@ -91,10 +102,10 @@ export class KataCreateComponent implements OnInit {
       rules: this.f.instruction.value,
       keepAssert: this.f.assert.value,
       nbAttempt: this.f.number.value,
-      difficulty: 'Ceinture blanche',
+      difficulty: 'White belt',
       activated: true
 
-    }), this.programId).subscribe(data => this.router.navigate(['/kata-displayer/' + this.programId + '']));
+    }), this.programId, false).subscribe(data => this.router.navigate(['/kata-displayer/' + this.programId + '']));
   }
 
   try(): void {
@@ -119,11 +130,34 @@ export class KataCreateComponent implements OnInit {
     });
   }
 
+  getProg() {
+
+    this.ngxLoader.start();
+    this.programService.isOwner(this.programId, this.auth.currentUserValue.id).subscribe((data: boolean) => {
+      if (data) {
+        this.programService.getById(this.programId).subscribe((datas: Program) => {
+
+          this.program = datas;
+          this.language = this.program.language;
+          this.getLANG(this.language);
+          this.inforreceived = true;
+        }, (error1 => {
+          if (error1.status === 404) {
+            this.error = true;
+            this.ngxLoader.stop();
+          }
+        }));
+      } else {
+        this.error = true;
+        this.ngxLoader.stop();
+      }
+    });
+
+  }
+
   ngOnInit() {
     this.programId = this.route.snapshot.paramMap.get('id');
-    this.language = this.route.snapshot.paramMap.get('language');
-    this.getLANG(this.language);
-
+    this.getProg();
     this.CreateForm = this.formBuilder.group({
       title: ['', Validators.required],
       assert: ['', Validators.required],

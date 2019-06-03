@@ -44,6 +44,7 @@ export class KataComponent implements OnInit {
 
   newTry = false;
   katareceived = false;
+  isGoal = false;
 
 
   LANG: Canva;
@@ -74,14 +75,19 @@ export class KataComponent implements OnInit {
     this.ngxLoader.start();
     this.programService.getById(this.programid).subscribe((data: Program) => {
       this.program = data;
-      this.kataService.getKata(this.kataid,this.programid).subscribe((datas: Kata) => {
+      this.kataService.getKata(this.kataid, this.programid).subscribe((datas: Kata) => {
           this.kata = datas;
-          this.kata.keepAssert = !datas.keepAssert;
 
-          this.getLANG(this.kata.language);
+          if (!(this.kata.title === 'GOALS')) {
+            this.kata.keepAssert = !datas.keepAssert;
+            this.getLANG(this.kata.language);
+          } else {
+            this.isGoal = true;
+          }
           this.ngxLoader.stop();
           this.getSubscription();
           this.katareceived = true;
+
         },
         (error1 => {
           if (error1.status === 404) {
@@ -195,7 +201,7 @@ export class KataComponent implements OnInit {
   getSubscription() {
 
     this.kataSubscriptionService.isSubscribed(this.auth.currentUserValue.id, this.programid).subscribe((isSubscribed: boolean) => {
-      this.kataService.isActivated(this.kataid,this.programid).subscribe((data: boolean) => {
+      this.kataService.isActivated(this.kataid, this.programid).subscribe((data: boolean) => {
         if (!isSubscribed || !data) {
           this.router.navigate([/kata-displayer/ + this.programid]);
         } else {
@@ -209,8 +215,15 @@ export class KataComponent implements OnInit {
             }
           }, error1 => {
             if (error1.status === 404) {
+              let newStatus = 'ONGOING';
+
+              if (this.isGoal) {
+                newStatus = 'DONE';
+              }
+
               this.kataSubscriptionService.create(JSON.stringify({
                 id: uuid(),
+                status: newStatus,
                 kataid: this.kataid,
                 programid: this.programid,
                 userid: this.auth.currentUserValue.id

@@ -6,8 +6,8 @@ import {HttpClient} from '@angular/common/http';
 })
 export class KataService {
 
-  publish(kata: string, programid: string) {
-    return this.http.post('http://localhost:7000/kata/create', {kata, programid});
+  publish(kata: string, programid: string, goal: boolean) {
+    return this.http.post('http://localhost:7000/kata/create', {kata, programid, goal});
   }
 
   getKatasDetails(program: string, userid: string) {

@@ -25,15 +25,31 @@ export class ProgramEditComponent implements OnInit {
   program: Program;
   submitted = false;
   programid: string;
+  checked = false;
 
   get f() {
     return this.UpdateForm.controls;
+  }
+
+  toggleChecked() {
+    const password = this.UpdateForm.get('password');
+    this.checked = !this.checked;
+    if (!this.checked) {
+      password.setValidators([null]);
+    } else {
+      password.setValidators([Validators.required]);
+    }
   }
 
   save() {
     this.program.description = this.f.description.value;
     this.program.title = this.f.title.value;
     this.program.tags = this.f.tags.value.toString().split(',');
+    if (this.checked) {
+      this.program.password = this.f.password.value;
+    } else {
+      this.program.password = '';
+    }
     this.programService.update(this.programid, this.program).subscribe(() => this.router.navigate(['/kata-displayer/' + this.programid + '']));
   }
 
@@ -46,6 +62,9 @@ export class ProgramEditComponent implements OnInit {
       } else {
         this.programService.getById(this.programid).subscribe((program: Program) => {
           this.program = program;
+          if (this.program.password !== '') {
+            this.checked = true;
+          }
           this.ngxLoader.stop();
         });
       }
@@ -55,6 +74,7 @@ export class ProgramEditComponent implements OnInit {
       title: ['', Validators.required],
       description: ['', Validators.required],
       tags: ['', Validators.required],
+      password: ['', null],
     });
   }
 

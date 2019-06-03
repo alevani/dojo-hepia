@@ -4,22 +4,27 @@
       <br/>
       <span class="subtitle">{{program.sensei}} <span class="language"> {{program.language}}</span>
     </span>
+      <div *ngIf="isOwner" style="margin:0 3rem 0 0;float:right;">
+        <button mat-button [matMenuTriggerFor]="actions">Menu</button>
 
-      <div *ngIf="isOwner">
-       <button mat-button style="margin:0 3rem 0 0;float:right;"
-                routerLink="/kata/create/{{programid}}/{{program.language}}">Add Kata
-        </button>
-        <button mat-button style="margin:0 3rem 0 0;float:right" routerLink="/program/edit/{{programid}}">Edit</button>
-        <button mat-button style="margin:0 3rem 0 0;float:right" (click)="openDialog()">Delete</button>
-        <button mat-button style="margin:0 3rem 0 0;float:right;" (click)="openDialogDuplicate()">Duplicate
-        </button>
+        <mat-menu #actions="matMenu">
+          <button mat-menu-item [matMenuTriggerFor]="program">Program</button>
+          <button mat-menu-item routerLink="/kata-create/{{programid}}">New kata</button>
+          <button mat-menu-item routerLink="/kata-goal/{{programid}}">New goal</button>
+
+        </mat-menu>
+
+        <mat-menu #program="matMenu">
+
+          <button mat-menu-item routerLink="/program/edit/{{programid}}">Edit</button>
+          <button mat-menu-item (click)="openDialog()">Delete</button>
+          <button mat-menu-item (click)="openDialogDuplicate()">Duplicate</button>
+        </mat-menu>
       </div>
 
       <button mat-button style="margin:0 3rem 0 0;float:right" *ngIf="!isOwner"
               (click)="subscribe()">{{subvalue}}</button>
     </h1>
-
-
   </div>
   <br/>
   <span style="margin:0 0 0 2rem;" class="subtitle">{{program.description}}</span>
@@ -28,18 +33,32 @@
        <span class="tag">{{tag}}</span>
     </span>
 
-  <div *ngIf="katas" disabled [ngClass]="isSubscribed ? '' : 'deactivated'">
-    <div class="d-flex flex-wrap justify-content-start">
+  <div *ngIf="katas" [ngClass]="isSubscribed ? '' : 'deactivated'">
+    <div class="d-flex flex-wrap justify-content-center">
     <span *ngFor="let kata of katas">
-        <div *ngIf="kata.activated || isOwner" class="card" >
+        <div *ngIf="kata.activated || isOwner" class="card">
           <div class="card-body">
-            <h5 class="card-title"  [ngClass]="kata.activated ? '' : 'deactivatedcard'"><a class="title"
-                                      routerLink="/kata/{{programid}}/{{kata.id}}">{{kata.title}}</a>
-            <span style="float:right;" *ngIf="kata.activated" [ngClass]="{'TODO':kata.status==='TODO','ONGOING':kata.status==='ONGOING','RESOLVED':kata.status==='RESOLVED','FAILED': kata.status==='FAILED'}">{{kata.status}}</span>
-            <span style="float:right;" *ngIf="!kata.activated" class="DISABLED">DISABLED</span></h5>
+            <h5 class="card-title" [ngClass]="kata.activated ? '' : 'deactivatedcard'"><a class="title"
+                                                                                          routerLink="/kata/{{programid}}/{{kata.id}}">{{kata.title}}</a>
+            <span style="float:right;" *ngIf="kata.activated && !(kata.title ==='GOALS')"
+                  [ngClass]="{'TODO':kata.status==='TODO','ONGOING':kata.status==='ONGOING','RESOLVED':kata.status==='RESOLVED','FAILED': kata.status==='FAILED'}">{{kata.status}}</span>
+            <span style="float:right;" *ngIf="!kata.activated && !(kata.title ==='GOALS')"
+                  class="DISABLED">DISABLED</span>
+            <span style="float:right;" *ngIf="kata.title ==='GOALS'"
+                  class="README"><span *ngIf="kata.status === 'TODO'">READ ME !</span><span
+              *ngIf="!(kata.status === 'TODO')">DONE</span></span></h5>
             <br/>
             <h6 class="card-subtitle mb-2 text-muted">{{kata.difficulty}}</h6>
-            <a *ngIf="isOwner" (click)="openDialogMoreActions(kata.title,kata.id,kata.activated)" class="card-link">More..</a>
+            <div *ngIf="isOwner">
+      <a class="card-link" [matMenuTriggerFor]="kataActions">More</a>
+
+      <mat-menu #kataActions="matMenu">
+        <button *ngIf="kata.title !== 'GOALS'" mat-menu-item (click)="edit(kata.id)">Edit</button>
+        <button *ngIf="kata.title !== 'GOALS' && kata.activated" mat-menu-item (click)="deactivate(kata.id)">Disable</button>
+        <button *ngIf="kata.title !== 'GOALS' && !kata.activated" mat-menu-item (click)="deactivate(kata.id)">Enable</button>
+        <button mat-menu-item (click)="delete(kata.id)">Delete</button>
+      </mat-menu>
+      </div>
           </div>
         </div>
       </span>
