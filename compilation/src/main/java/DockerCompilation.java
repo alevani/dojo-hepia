@@ -39,6 +39,7 @@ public class DockerCompilation {
         }
 
 
+
         long start, elapsed = 0;
         Process cmdProc = null;
 

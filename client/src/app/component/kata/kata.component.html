@@ -11,7 +11,9 @@
     <div class="p-2 "><label class="header">rules :</label><label style="margin-left: 20px;"
                                                                   class="header">{{this.filename}}</label></div>
     <div class="p-2 ">
-      <div style="height: 300px;" class="markdown-output" [data]="kata.rules" markdown ngPreserveWhitespaces>
+      <div *ngIf="!kata.hasfile" style="height: 300px;" class="markdown-output" [data]="kata.rules" markdown
+           ngPreserveWhitespaces></div>
+      <div *ngIf="kata.hasfile" style="height: 300px;"><img [src]="imageBlobUrl">
 
               </div>
       <app-terminal-code style="margin-left: 20px;" [code]="kata.canva" [type]="kata.language"
@@ -59,7 +61,6 @@
 </div>
 
 <span *ngIf="!katareceived"><ngx-ui-loader></ngx-ui-loader></span>
-
 
 
 <div *ngIf="error">

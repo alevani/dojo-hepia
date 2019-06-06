@@ -125,7 +125,7 @@ export class KataDisplayerComponent implements OnInit {
         this.isSubscribed = true;
         this.nullsubs = false;
         this.subvalue = 'Unsubscribe';
-        this.snackBar.open('Subscribed from ' + this.program.title, '', {
+        this.snackBar.open('Subscribed to ' + this.program.title, '', {
           duration: 2000
         });
         // tslint:disable-next-line:max-line-length

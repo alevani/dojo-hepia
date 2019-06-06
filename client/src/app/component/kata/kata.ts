@@ -10,4 +10,6 @@ export interface Kata {
   nbAttempt: number;
   difficulty: string;
   activated: boolean;
+  filename: string;
+  hasfile: boolean;
 }

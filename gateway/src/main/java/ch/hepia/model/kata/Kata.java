@@ -1,8 +1,8 @@
 package ch.hepia.model.kata;
 
 public class Kata {
-    private String _id, id,title, canva, cassert, solution, rules,difficulty,language;
-    private boolean keepAssert,activated;
+    private String _id, id,title, canva, cassert, solution, rules,difficulty,language,filename;
+    private boolean keepAssert,activated,hasfile;
     private double nbAttempt;
 
 
@@ -103,5 +103,21 @@ public class Kata {
 
     public void setActivated(boolean activated) {
         this.activated = activated;
+    }
+
+    public boolean isHasfile() {
+        return hasfile;
+    }
+
+    public void setHasfile(boolean hasfile) {
+        this.hasfile = hasfile;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filepath) {
+        this.filename = filepath;
     }
 }

@@ -21,7 +21,7 @@ import {
   MatSnackBarModule,
   MatCheckboxModule,
   MatBadgeModule,
-  MatProgressSpinnerModule, MatBottomSheetModule, MatMenuModule
+  MatProgressSpinnerModule, MatBottomSheetModule, MatMenuModule, MatRadioModule
 } from '@angular/material';
 
 import {MatDialogModule} from '@angular/material/dialog';
@@ -118,7 +118,8 @@ import {GoalComponent} from './component/kata-create/goal/goal.component';
     MatProgressSpinnerModule,
     MatDialogModule,
     MatBottomSheetModule,
-    MatMenuModule
+    MatMenuModule,
+    MatRadioModule
 
   ],
   entryComponents: [DeleteProgramDialogComponent, KataSurrenderDialogComponent, DuplicateProgramDialogComponent, PromptPasswordDialogComponent, KataDisplayerComponent],

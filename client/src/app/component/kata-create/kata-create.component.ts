@@ -55,9 +55,31 @@ export class KataCreateComponent implements OnInit {
   inforreceived = false;
   error = false;
 
+  choiceMK = true;
+  fileData: File;
 
   get f() {
     return this.CreateForm.controls;
+  }
+
+  onFileChange(event) {
+    if (event.target.files.length > 0) {
+      this.fileData = event.target.files[0];
+    }
+  }
+
+  toggleChoice() {
+    this.choiceMK = !this.choiceMK;
+    const instruction = this.CreateForm.get('instruction');
+    const document = this.CreateForm.get('document');
+
+    if (this.choiceMK) {
+      document.setValidators([null]);
+      instruction.setValidators([Validators.required]);
+    } else {
+      instruction.setValidators([null]);
+      document.setValidators([Validators.required]);
+    }
   }
 
   getLANG(id: string): void {
@@ -91,7 +113,21 @@ export class KataCreateComponent implements OnInit {
     if (this.f.number.value < 0) {
       return;
     }
+    let fpath = '';
 
+    if (!this.choiceMK) {
+      const formData = new FormData();
+      formData.append('file', this.fileData);
+      this.kataService.upload(formData).subscribe((data: string) => {
+        fpath = data;
+        this.pubWorkflow(fpath);
+      });
+    } else {
+      this.pubWorkflow(fpath);
+    }
+  }
+
+  pubWorkflow(fpath: string) {
     this.kataService.publish(JSON.stringify({
       id: uuid(),
       title: this.f.title.value,
@@ -103,9 +139,13 @@ export class KataCreateComponent implements OnInit {
       keepAssert: this.f.assert.value,
       nbAttempt: this.f.number.value,
       difficulty: 'White belt',
-      activated: true
+      activated: true,
+      hasfile: !this.choiceMK,
+      filename: fpath
 
-    }), this.programId, false).subscribe(data => this.router.navigate(['/kata-displayer/' + this.programId + '']));
+    }), this.programId, false).subscribe(() => {
+      this.router.navigate(['/kata-displayer/' + this.programId + '']);
+    });
   }
 
   try(): void {
@@ -162,7 +202,8 @@ export class KataCreateComponent implements OnInit {
       title: ['', Validators.required],
       assert: ['', Validators.required],
       number: ['', Validators.min(0)],
-      instruction: ['', Validators.required],
+      instruction: ['', null],
+      document: ['', null]
     });
 
   }

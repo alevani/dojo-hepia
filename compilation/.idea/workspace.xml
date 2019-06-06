@@ -2,57 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d8fb2c1-8426-4933-8193-ee68625cf8de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/program-dialog-prompt-password.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-dialog-moreactions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-create/program-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-create/program-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-create/program-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-create/program-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-displayer/program.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-displayer/program.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-edit/program-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-edit/program-edit.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-edit/program-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-edit/program-edit.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/services/kata/kata.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/services/kata/kata.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/services/program/program.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/services/program/program.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/styles.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/share_docker_file/Kata.class" beforeDir="false" afterPath="$PROJECT_DIR$/share_docker_file/Kata.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/share_docker_file/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/share_docker_file/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DockerCompilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DockerCompilation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/05-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/05-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/Programs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/ProgramsDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/ProgramInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/cursors/ProgramInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/cursors/Programs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/cursors/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/UserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/cursors/Users.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/kata/Kata.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/kata/Kata.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/kata/KataShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/kata/KataShowCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/kata/KataSubscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/kata/KataSubscription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/program/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/program/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/program/ProgramShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/program/ProgramShowCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/program/ProgramSubscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/program/ProgramSubscription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/modals/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/app.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/MongoDB.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/ProgramsDataBase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/cursors/ProgramInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/cursors/Programs.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/cursors/UserInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/cursors/Users.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/modals/kata/Kata.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/modals/kata/KataShowCase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/modals/kata/KataSubscription.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/modals/program/Program.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/modals/program/ProgramShowCase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/modals/program/ProgramSubscription.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/modals/user/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/09-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/09-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/python/assert_test01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/python/assert_test01/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/python/assert_test01/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/python/assert_test01/test.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -66,7 +29,35 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/DockerCompilation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="93">
+              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docker/python/dockerfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -90,6 +81,8 @@
         <option value="$PROJECT_DIR$/docker/java/dockerfile" />
         <option value="$PROJECT_DIR$/src/main/java/HostCompilation.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/App.java" />
+        <option value="$PROJECT_DIR$/docker/python/dockerfile" />
         <option value="$PROJECT_DIR$/src/main/java/DockerCompilation.java" />
       </list>
     </option>
@@ -101,9 +94,10 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="1920" />
-    <option name="height" value="1200" />
+    <option name="height" value="1119" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -111,14 +105,25 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="compilation" type="b2602c69:ProjectViewProjectNode" />
               <item name="compilation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="compilation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="compilation" type="462c0819:PsiDirectoryNode" />
+              <item name="docker" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="compilation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="compilation" type="462c0819:PsiDirectoryNode" />
+              <item name="docker" type="462c0819:PsiDirectoryNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="compilation" type="b2602c69:ProjectViewProjectNode" />
@@ -169,6 +174,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -193,18 +199,13 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="app" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="app" />
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="App" />
       <module name="05" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.app" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SbtLocalSettings">
     <option name="projectSyncType">
@@ -278,11 +279,13 @@
       <workItem from="1559546417893" duration="480000" />
       <workItem from="1559549547547" duration="292000" />
       <workItem from="1559560575232" duration="227000" />
+      <workItem from="1559648237874" duration="1725000" />
+      <workItem from="1559719410423" duration="287000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64080000" />
+    <option name="totallyTimeSpent" value="66092000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -294,10 +297,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
+    <frame x="0" y="23" width="1920" height="1119" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.42119277" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17838125" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -305,7 +308,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3283186" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.41061947" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3987952" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -336,7 +339,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/DockerCompilation.java</url>
-          <line>86</line>
+          <line>87</line>
           <properties />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
@@ -399,13 +402,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker/python/dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/share_docker_file/java_test.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -414,20 +410,6 @@
     <entry file="file://$PROJECT_DIR$/share_docker_file/Main.class">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DockerCompilation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="114" selection-start-line="20" selection-start-column="114" selection-end-line="20" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/HostCompilation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -435,6 +417,62 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram//Users/freak/Desktop/dojo-hepia/compilation/.idea">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/.idea</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="773.0" y="540.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://MODULES/mdl-05">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MODULES</ID>
+          <OriginalElement>mdl-05</OriginalElement>
+          <nodes>
+            <node x="" y="">mdl-05</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="48.0" y="10.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DockerCompilation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker/python/dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
         </state>
       </provider>
     </entry>

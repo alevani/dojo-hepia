@@ -2,57 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6a1f2e5-4f60-4227-82bb-83eb10fa94a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/program-dialog-prompt-password.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-dialog-moreactions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-create/program-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-create/program-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-create/program-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-create/program-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-displayer/program.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-displayer/program.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-edit/program-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-edit/program-edit.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-edit/program-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-edit/program-edit.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata/kata.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata/kata.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/app/services/kata/kata.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/services/kata/kata.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/services/program/program.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/services/program/program.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/styles.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../compilation/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../compilation/share_docker_file/Kata.class" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/share_docker_file/Kata.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../compilation/share_docker_file/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/share_docker_file/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../compilation/src/main/java/DockerCompilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/src/main/java/DockerCompilation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../compilation/src/main/java/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../compilation/target/05-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/target/05-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../compilation/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/target/classes/app.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../compilation/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramsDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/cursors/ProgramInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/cursors/Programs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/cursors/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/UserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/cursors/Users.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/kata/Kata.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/Kata.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/kata/KataShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/KataShowCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/kata/KataSubscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/KataSubscription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/program/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/program/ProgramShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/ProgramShowCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/program/ProgramSubscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/ProgramSubscription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/model/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/Kata.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/Kata.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/09-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/09-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app$Roles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app$Roles.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/MongoDB.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/ProgramsDataBase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/cursors/ProgramInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/cursors/Programs.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/cursors/UserInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/cursors/Users.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/modals/kata/Kata.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/modals/kata/KataShowCase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/modals/kata/KataSubscription.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/modals/program/Program.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/modals/program/ProgramShowCase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/modals/program/ProgramSubscription.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/modals/user/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/model/kata/Kata.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ch/hepia/model/kata/Kata.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/python/assert_test01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/python/assert_test01/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/python/assert_test01/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/python/assert_test01/test.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -81,13 +61,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/Kata.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="408" column="29" selection-start-line="408" selection-start-column="29" selection-end-line="408" selection-end-column="29" />
+            <state relative-caret-position="498">
+              <caret line="120" column="21" selection-start-line="120" selection-start-column="21" selection-end-line="120" selection-end-column="21" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#2022#2023#0" expanded="true" />
+                <element signature="e#2052#2053#0" expanded="true" />
+                <element signature="e#2099#2100#0" expanded="true" />
+                <element signature="e#2137#2138#0" expanded="true" />
+                <element signature="e#2172#2173#0" expanded="true" />
+                <element signature="e#2203#2204#0" expanded="true" />
+                <element signature="e#2251#2252#0" expanded="true" />
+                <element signature="e#2291#2292#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,8 +83,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="177" column="29" selection-start-line="177" selection-start-column="23" selection-end-line="177" selection-end-column="29" />
+            <state relative-caret-position="160">
+              <caret line="231" column="36" selection-start-line="231" selection-start-column="36" selection-end-line="231" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,32 +92,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/program/Program.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="97" column="39" selection-start-line="97" selection-start-column="39" selection-end-line="97" selection-end-column="39" />
-            </state>
-          </provider>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/kataDocuments/e38c5bd0-2c6f-4af8-a600-b16a5cfcb1c5.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/program/ProgramShowCase.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="61" column="51" selection-start-line="61" selection-start-column="51" selection-end-line="61" selection-end-column="51" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="448">
+              <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -146,8 +117,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>decre</find>
-      <find>tog</find>
       <find>toggle</find>
       <find>isOw</find>
       <find>kata</find>
@@ -165,8 +134,6 @@
       <find>toggleac</find>
       <find>kataid</find>
       <find>&quot;Users&quot;</find>
-      <find>update</find>
-      <find>update(</find>
       <find>increment</find>
       <find>createka</find>
       <find>d</find>
@@ -176,6 +143,10 @@
       <find>delete</find>
       <find>create</find>
       <find>detailsbyid</find>
+      <find>update</find>
+      <find>update(</find>
+      <find>chec</find>
+      <find>uuid</find>
     </findStrings>
     <replaceStrings>
       <replace>Users</replace>
@@ -194,7 +165,6 @@
         <option value="$PROJECT_DIR$/src/main/java/liveDB.java" />
         <option value="$PROJECT_DIR$/src/main/java/JWT.java" />
         <option value="$PROJECT_DIR$/src/main/java/JWToken.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Program.java" />
         <option value="$PROJECT_DIR$/src/main/java/KataSubscription.java" />
         <option value="$PROJECT_DIR$/src/main/java/MockUser.java" />
@@ -227,8 +197,10 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/ProgramShowCase.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/Program.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java" />
-        <option value="$PROJECT_DIR$/src/main/java/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/Kata.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/App.java" />
       </list>
     </option>
   </component>
@@ -270,7 +242,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -281,6 +252,16 @@
             <path>
               <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
               <item name="gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="kataDocuments" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gateway" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -321,22 +302,14 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="hepia" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="program" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hepia" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
+              <item name="kata" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -351,7 +324,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -457,12 +430,15 @@
       <workItem from="1559285311303" duration="6649000" />
       <workItem from="1559546420477" duration="767000" />
       <workItem from="1559549553195" duration="1899000" />
-      <workItem from="1559560580050" duration="276000" />
+      <workItem from="1559560580050" duration="457000" />
+      <workItem from="1559648240653" duration="1779000" />
+      <workItem from="1559719410753" duration="974000" />
+      <workItem from="1559806929260" duration="6394000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="249937000" />
+    <option name="totallyTimeSpent" value="259265000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -477,7 +453,7 @@
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49924126" visible="true" weight="0.20979765" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49924126" visible="true" weight="0.21618743" />
       <window_info id="Structure" order="1" sideWeight="0.5007587" side_tool="true" weight="0.20127796" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -486,7 +462,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32920355" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34513274" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34513274" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39823008" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -516,68 +492,88 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/App.java</url>
-          <line>242</line>
+          <line>271</line>
           <properties />
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java</url>
+          <line>439</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/App.java</url>
+          <line>231</line>
+          <properties />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/ch/hepia/model/program/Program.java</url>
+          <line>101</line>
+          <properties class="ch.hepia.model.program.Program" method="check">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="database.getCollection(&quot;Users&quot;).find(combine(eq(&quot;programSubscriptions.idprogram&quot;,programid),eq(&quot;_id&quot;, userid))).batchSize()" language="JAVA" />
-        <watch expression=" database.getCollection(&quot;Users&quot;).updateOne(eq(&quot;_id&quot;, userid), inc(&quot;programSubscriptions.$[i].katas.$[j].nbAttempt&quot;, 1), new UpdateOptions().arrayFilters(Arrays.asList(&#10;                eq(&quot;i.idprogram&quot;, programid),&#10;                eq(&quot;j._id&quot;, kataid)&#10;        )))" />
+        <watch expression="convertFileContentToBlob(&quot;kataDocuments/e38c5bd0-2c6f-4af8-a600-b16a5cfcb1c5.png&quot;)" language="JAVA" />
+        <watch expression="ctx.pathParam(&quot;did&quot;)" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
+        <expression-string>convertFileContentToBlob(&quot;kataDocuments/e38c5bd0-2c6f-4af8-a600-b16a5cfcb1c5.png&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>ctx.pathParam(&quot;did&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>file.getName()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>ctx.uploadedFile(&quot;document&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>ctx.uploadedFile(&quot;file&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>ctx.body()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>database.getCollection(&quot;Programs&quot;,Program.class).find(eq(&quot;_id&quot;,programid)).first()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>database.getCollection(&quot;Programs&quot;,Program.class).find(eq(&quot;_id&quot;,programid)).first().check(password)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>database.getCollection(&quot;Programs&quot;,Program.class).find(eq(&quot;_id&quot;,programid)).first().check()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>database.getCollection(&quot;Users&quot;).find(combine(eq(&quot;programSubscriptions.idprogram&quot;,programid),eq(&quot;_id&quot;, userid))).batchSize()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>kata.iterator().next().getStatus()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>database.getCollection(&quot;Users&quot;).find(combine(eq(&quot;programSubscriptions.idprogram&quot;,programid),eq(&quot;_id&quot;, userid))).iterator().next()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>database.getCollection(&quot;Users&quot;).find(combine(eq(&quot;programSubscriptions.idprogram&quot;,programid),eq(&quot;_id&quot;, userid))).first()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>database.getCollection(&quot;Users&quot;).find(combine(eq(&quot;programSubscriptions.idprogram&quot;,programid),eq(&quot;_id&quot;, userid)))</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>database.getCollection(&quot;Users&quot;).find()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>database.getCollection(&quot;Programs&quot;,Program.class).find(eq(&quot;katas._id&quot;, k.getId())).first().getId()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>database.getCollection(&quot;Programs&quot;,Program.class).find(eq(&quot;katas._id&quot;, k.getId())).first()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>database.getCollection(&quot;Programs&quot;,Program.class).find(eq(&quot;programSubscriptions.katas._id&quot;, k.getId())).first()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>database.getCollection(&quot;Programs&quot;,Program.class).find(eq(&quot;programSubscriptions.katas._id&quot;, k.getId())).first().getId();</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -649,13 +645,6 @@
     <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/jetty-server/9.4.15.v20190215/jetty-server-9.4.15.v20190215.jar!/org/eclipse/jetty/server/HttpChannel.class">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1245">
-          <caret line="83" column="4" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/LiveDB.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/KataSubscription.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -668,13 +657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/Kata.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -712,10 +694,97 @@
         </state>
       </provider>
     </entry>
+    <entry file="uml://JavaScript-modules-diagram//Users/freak/Desktop/dojo-hepia/gateway">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="740.0" y="540.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram//Users/freak/Desktop/dojo-hepia/gateway/src/main/java">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/src/main/java</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="740.0" y="540.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="" y="">com</node>
+            <node x="" y="">App</node>
+            <node x="" y="">images</node>
+            <node x="" y="">netscape</node>
+            <node x="" y="">ch</node>
+            <node x="" y="">org</node>
+            <node x="" y="">io</node>
+            <node x="" y="">kotlin</node>
+            <node x="" y="">toolbarButtonGraphics</node>
+            <node x="" y="">sun</node>
+            <node x="" y="">jdk</node>
+            <node x="" y="">META-INF</node>
+            <node x="" y="">apple</node>
+            <node x="" y="">groovyjarjarasm</node>
+            <node x="" y="">java</node>
+            <node x="" y="">groovy</node>
+            <node x="" y="">javax</node>
+            <node x="" y="">groovyjarjarcommonscli</node>
+            <node x="" y="">javalinjwt</node>
+            <node x="" y="">groovyjarjarantlr</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="251.0" y="262.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/program/Program.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="97" column="39" selection-start-line="97" selection-start-column="39" selection-end-line="97" selection-end-column="39" />
+        <state relative-caret-position="135">
+          <caret line="11" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="11" />
+          <folding>
+            <element signature="e#1939#1940#0" expanded="true" />
+            <element signature="e#1992#1993#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="439" selection-start-line="439" selection-end-line="439" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -728,7 +797,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
+        <state relative-caret-position="663">
           <caret line="61" column="51" selection-start-line="61" selection-start-column="51" selection-end-line="61" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -736,25 +805,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/readable-stream/doc/wg-meetings/2015-01-30.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload/Capture d’écran 2019-06-05 à 14.08.27.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/Kata.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="120" column="21" selection-start-line="120" selection-start-column="21" selection-end-line="120" selection-end-column="21" />
+          <folding>
+            <element signature="e#2022#2023#0" expanded="true" />
+            <element signature="e#2052#2053#0" expanded="true" />
+            <element signature="e#2099#2100#0" expanded="true" />
+            <element signature="e#2137#2138#0" expanded="true" />
+            <element signature="e#2172#2173#0" expanded="true" />
+            <element signature="e#2203#2204#0" expanded="true" />
+            <element signature="e#2251#2252#0" expanded="true" />
+            <element signature="e#2291#2292#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="177" column="29" selection-start-line="177" selection-start-column="23" selection-end-line="177" selection-end-column="29" />
+        <state relative-caret-position="160">
+          <caret line="231" column="36" selection-start-line="231" selection-start-column="36" selection-end-line="231" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="408" column="29" selection-start-line="408" selection-start-column="29" selection-end-line="408" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/kataDocuments/e38c5bd0-2c6f-4af8-a600-b16a5cfcb1c5.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
   </component>
 </project>

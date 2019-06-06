@@ -2,22 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9effdb46-08d0-4cbd-b283-1a3f84f5311a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../client/src/app/kata-displayer/kataShowCase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../client/src/app/kata-displayer/kataShowCase.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../client/src/app/program-create/program-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../client/src/app/program-create/program-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../client/src/app/program-displayer/program-displayer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../client/src/app/program-displayer/program-displayer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../client/src/app/program-displayer/program.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../client/src/app/program-displayer/program.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../compilation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../compilation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../compilation/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../compilation/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../compilation/share_docker_file/Kata.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../compilation/share_docker_file/Kata.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../compilation/share_docker_file/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../compilation/share_docker_file/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../compilation/src/main/java/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../compilation/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../compilation/target/05-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../../../compilation/target/05-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../compilation/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../compilation/target/classes/app.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../compilation/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../../../compilation/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../gateway/src/main/java/Kata.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/src/main/java/Kata.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../gateway/src/main/java/LiveDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/src/main/java/LiveDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../gateway/src/main/java/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/src/main/java/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../gateway/src/main/java/ProgramShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/src/main/java/ProgramShowCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../gateway/src/main/java/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/src/main/java/app.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../gateway/target/classes/Kata.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/target/classes/Kata.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../gateway/target/classes/LiveDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/target/classes/LiveDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../gateway/target/classes/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/target/classes/Program.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../gateway/target/classes/ProgramShowCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/target/classes/ProgramShowCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../gateway/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/target/classes/app.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../gateway/target/09-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/target/09-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../gateway/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../../../gateway/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,10 +35,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="5" selection-end-column="45" />
+            <state relative-caret-position="105">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
+                <element signature="e#47#79#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -80,7 +76,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -92,6 +87,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -101,6 +97,7 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -156,16 +153,18 @@
       <workItem from="1556636997623" duration="502000" />
       <workItem from="1556696058143" duration="2450000" />
       <workItem from="1557408015513" duration="6000" />
+      <workItem from="1559654257156" duration="499000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2958000" />
+    <option name="totallyTimeSpent" value="3457000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="355" y="87" width="1400" height="1000" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2569956" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26067746" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -211,10 +210,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="5" selection-end-column="45" />
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#47#79#0" expanded="true" />
           </folding>
         </state>
       </provider>

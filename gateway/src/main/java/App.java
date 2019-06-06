@@ -14,11 +14,14 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.javalin.Handler;
 import io.javalin.Javalin;
+import io.javalin.UploadedFile;
+import io.javalin.core.util.FileUtil;
 import io.javalin.security.Role;
 import javalinjwt.JWTAccessManager;
 import javalinjwt.JWTGenerator;
 import javalinjwt.JWTProvider;
 import javalinjwt.JavalinJWT;
+import org.apache.commons.io.FileUtils;
 import org.json.JSONObject;
 
 import java.io.*;
@@ -50,6 +53,16 @@ public class App {
 
     // Jackson Object mapper, convert received stream into Java Designed Object
     private static ObjectMapper objectMapper = new ObjectMapper();
+
+    public static byte[] convertFileContentToBlob(String filePath) throws IOException {
+        byte[] fileContent = null;
+        try {
+            fileContent = FileUtils.readFileToByteArray(new File(filePath));
+        } catch (IOException e) {
+            throw new IOException("Unable to convert file to byte array. " + e.getMessage());
+        }
+        return fileContent;
+    }
 
     /**
      * Entry point of the gateway, no args needed
@@ -206,6 +219,22 @@ public class App {
             String programid = dbPrograms.update(kata, input.getString("programid"));
             ctx.status(200).json(programid);
         }, roles(Roles.SHODAI, Roles.SENSEI));
+
+        app.post("/kata/upload", ctx -> {
+            UploadedFile file = ctx.uploadedFile("file");
+            UUID uuid = UUID.randomUUID();
+            FileUtil.streamToFile(file.getContent(), "kataDocuments/" + uuid + file.getExtension());
+            ctx.status(200).json(uuid + file.getExtension());
+        }, roles(Roles.SHODAI, Roles.SENSEI));
+
+        app.get("/kata/upload/:did", ctx -> {
+            try {
+                ctx.status(200).json(convertFileContentToBlob("kataDocuments/" + ctx.pathParam("did")));
+            } catch (NullPointerException,IOException e) {
+                ctx.status(404);
+            }
+
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.post("kata/toggleactivation", ctx -> {
             JSONObject input = new JSONObject(ctx.body());
@@ -420,7 +449,10 @@ public class App {
                 }
             }
         }, roles(Roles.ANYONE));
+
         /******************/
+
+
     }
 
 }

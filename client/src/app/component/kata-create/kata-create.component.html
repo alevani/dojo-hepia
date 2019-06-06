@@ -49,11 +49,16 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
 
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button (change)="toggleChoice()" value="mk" checked>Markdown</mat-radio-button>
+            <mat-radio-button (change)="toggleChoice()" value="dc">Upload my document</mat-radio-button>
+          </mat-radio-group>
 
-          <mat-grid-list cols="2" rowHeight="700px">
+          <span *ngIf="choiceMK">
+          <mat-grid-list cols="2" rowHeight="440px">
             <mat-grid-tile>
               <div class="form-group">
-            <textarea style="margin-top: 10px;height: 680px" class="form-control"  formControlName="instruction"
+            <textarea style="margin-top: 14px;height: 400px" class="form-control" formControlName="instruction"
                       [ngClass]="{ 'is-invalid': submitted && f.instruction.errors }"></textarea>
                 <div *ngIf="submitted && f.instruction.errors" class="invalid-feedback">
                   <div *ngIf="f.instruction.errors.required">Kata needs instructions</div>
@@ -67,8 +72,17 @@
               </div>
             </mat-grid-tile>
           </mat-grid-list>
+          </span>
 
+          <span *ngIf="!choiceMK">
+                <div class="form-group">
+                    <input type="file" formControlName="document" name="file" (change)="onFileChange($event)" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.document.errors}"/>
 
+            <div *ngIf="submitted && f.document.errors" class="invalid-feedback">
+              <div *ngIf="f.document.errors.required">Please select a file to upload</div>
+            </div>
+                </div>
+          </span>
 
         </mat-expansion-panel>
 

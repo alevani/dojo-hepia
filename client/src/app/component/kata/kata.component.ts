@@ -32,6 +32,7 @@ export class KataComponent implements OnInit {
   program: Program;
 
 
+  imageBlobUrl: string | ArrayBuffer = null;
   error = false;
   nbAttempt = 0;
 
@@ -71,12 +72,29 @@ export class KataComponent implements OnInit {
     this.filename = this.LANG.filename;
   }
 
+  createImageFromBlob(image: Blob) {
+    const reader = new FileReader();
+    reader.addEventListener('load', () => {
+      this.imageBlobUrl = reader.result;
+    }, false);
+    if (image) {
+      reader.readAsDataURL(image as Blob);
+    }
+  }
+
   getKata(): void {
     this.ngxLoader.start();
     this.programService.getById(this.programid).subscribe((data: Program) => {
       this.program = data;
       this.kataService.getKata(this.kataid, this.programid).subscribe((datas: Kata) => {
           this.kata = datas;
+
+          if (this.kata.hasfile) {
+            this.kataService.getDocument(this.kata.filename).subscribe((image: string) => {
+              console.log(btoa(image));
+              console.log(typeof image as Blob);
+            });
+          }
 
           if (!(this.kata.title === 'GOALS')) {
             this.kata.keepAssert = !datas.keepAssert;
