@@ -22,6 +22,7 @@ import javalinjwt.JWTGenerator;
 import javalinjwt.JWTProvider;
 import javalinjwt.JavalinJWT;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 import org.json.JSONObject;
 
 import java.io.*;
@@ -220,17 +221,20 @@ public class App {
             ctx.status(200).json(programid);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
-        app.post("/kata/upload", ctx -> {
+        app.post("/kata/upload/:pid", ctx -> {
             UploadedFile file = ctx.uploadedFile("file");
             UUID uuid = UUID.randomUUID();
-            FileUtil.streamToFile(file.getContent(), "kataDocuments/" + uuid + file.getExtension());
+            FileUtil.streamToFile(file.getContent(), "kataDocuments/" + ctx.pathParam("pid") + "/" + uuid + file.getExtension());
             ctx.status(200).json(uuid + file.getExtension());
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
-        app.get("/kata/upload/:did", ctx -> {
+        app.get("/kata/upload/:pid/:did", ctx -> {
+            String path = "kataDocuments/" + ctx.pathParam("pid") + "/" + ctx.pathParam("did");
             try {
-                ctx.status(200).json(convertFileContentToBlob("kataDocuments/" + ctx.pathParam("did")));
-            } catch (NullPointerException,IOException e) {
+                ctx.status(200).json(convertFileContentToBlob(path));
+            } catch (NullPointerException e) {
+                ctx.status(404);
+            } catch (IOException e) {
                 ctx.status(404);
             }
 

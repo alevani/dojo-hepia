@@ -2,37 +2,57 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6a1f2e5-4f60-4227-82bb-83eb10fa94a5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../client/src/assets/logo/Plan de travail 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/assets/logo/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/locale/messages.fr.xlf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/angular.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-create/goal/goal.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-create/goal/goal.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-create/goal/goal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-create/goal/goal.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata/kata.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata/kata.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/main-left-side-nav/main-left-side-nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/main-left-side-nav/main-left-side-nav.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-displayer/program-displayer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-displayer/program-displayer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/signin/signin.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/signin/signin.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/languages_canvas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/languages_canvas.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/app/services/kata/kata.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/services/kata/kata.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/styles.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../compilation/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../compilation/docker/java/dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/docker/java/dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../compilation/docker/python/dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/docker/python/dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../compilation/share_docker_file/Kata.class" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/share_docker_file/Kata.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../compilation/share_docker_file/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/share_docker_file/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../compilation/src/main/java/DockerCompilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/src/main/java/DockerCompilation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../compilation/src/main/java/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../compilation/target/05-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/target/05-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../compilation/target/classes/DockerCompilation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/target/classes/DockerCompilation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../compilation/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/target/classes/app.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../compilation/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kataDocuments/e38c5bd0-2c6f-4af8-a600-b16a5cfcb1c5.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/Kata.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/Kata.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/09-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/09-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app$Roles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app$Roles.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/model/kata/Kata.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ch/hepia/model/kata/Kata.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests/python/assert_test01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/python/assert_test01/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests/python/assert_test01/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/python/assert_test01/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/Programs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ch/hepia/repository/Programs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/logo/Logo_Dojo_Hepia_v1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/logo/Logo_Dojo_Hepia_v1.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/logo/Logo_Dojo_Hepia_v2-tr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/logo/Logo_Dojo_Hepia_v2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/logo/Logo_Dojo_Hepia_v2.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/logo/MAP.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/mockup/component/kata-tails-details.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/mockup/component/kata-tails-details.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/mockup/pic/7-512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/mockup/pic/Comments-512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/mockup/pic/Java_Logo.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/mockup/pic/MySQL.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/mockup/pic/Python_logo_and_wordmark.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/mockup/pic/check-mark-icon-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/mockup/pic/star-icon.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -64,8 +84,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/Kata.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="120" column="21" selection-start-line="120" selection-start-column="21" selection-end-line="120" selection-end-column="21" />
+            <state>
+              <caret column="8" selection-start-column="8" selection-end-column="8" />
               <folding>
                 <element signature="e#2022#2023#0" expanded="true" />
                 <element signature="e#2052#2053#0" expanded="true" />
@@ -81,27 +101,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="231" column="36" selection-start-line="231" selection-start-column="36" selection-end-line="231" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="345">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/kataDocuments/e38c5bd0-2c6f-4af8-a600-b16a5cfcb1c5.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+            <state relative-caret-position="306">
+              <caret line="225" selection-start-line="225" selection-end-line="225" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,12 +132,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>toggle</find>
-      <find>isOw</find>
-      <find>kata</find>
-      <find>kata/up</find>
-      <find>program/upda</find>
-      <find>ON-G</find>
       <find>ac</find>
       <find>activated</find>
       <find>issu</find>
@@ -140,13 +149,19 @@
       <find>deletek</find>
       <find>decrement</find>
       <find>decrementResolvedKata</find>
-      <find>delete</find>
-      <find>create</find>
       <find>detailsbyid</find>
       <find>update</find>
-      <find>update(</find>
       <find>chec</find>
       <find>uuid</find>
+      <find>goal</find>
+      <find>create</find>
+      <find>upd</find>
+      <find>update(</find>
+      <find>delete</find>
+      <find>deleteP</find>
+      <find>deleteK</find>
+      <find>dup</find>
+      <find>duploc</find>
     </findStrings>
     <replaceStrings>
       <replace>Users</replace>
@@ -197,10 +212,10 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/ProgramShowCase.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/Program.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/Kata.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" />
       </list>
     </option>
   </component>
@@ -231,8 +246,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
     <option name="width" value="1920" />
-    <option name="height" value="1200" />
+    <option name="height" value="1119" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -242,6 +258,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -252,16 +269,32 @@
             <path>
               <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
               <item name="gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="kataDocuments" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gateway" type="462c0819:PsiDirectoryNode" />
               <item name="node_modules" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
               <item name="gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="readable-stream" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="readable-stream" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="readable-stream" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
+              <item name="wg-meetings" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gateway" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -292,23 +325,12 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="hepia" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hepia" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="kata" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -433,12 +455,24 @@
       <workItem from="1559560580050" duration="457000" />
       <workItem from="1559648240653" duration="1779000" />
       <workItem from="1559719410753" duration="974000" />
-      <workItem from="1559806929260" duration="6394000" />
+      <workItem from="1559806929260" duration="6538000" />
+      <workItem from="1559829958354" duration="859000" />
+      <workItem from="1560236861279" duration="2119000" />
+      <workItem from="1560243762046" duration="848000" />
+      <workItem from="1560331428767" duration="415000" />
+      <workItem from="1560337625864" duration="2501000" />
+      <workItem from="1560349348212" duration="831000" />
+      <workItem from="1560409144168" duration="425000" />
+      <workItem from="1560496601678" duration="1851000" />
+      <workItem from="1560512393242" duration="1756000" />
+      <workItem from="1560596549180" duration="116000" />
+      <workItem from="1560691001487" duration="1874000" />
+      <workItem from="1560755028174" duration="6885000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="259265000" />
+    <option name="totallyTimeSpent" value="279889000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -453,7 +487,7 @@
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49924126" visible="true" weight="0.21618743" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49924126" visible="true" weight="0.24440895" />
       <window_info id="Structure" order="1" sideWeight="0.5007587" side_tool="true" weight="0.20127796" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -462,8 +496,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32920355" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34513274" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39823008" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3442478" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39734513" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
@@ -472,7 +506,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3283186" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32389382" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3221239" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -490,24 +524,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/App.java</url>
-          <line>271</line>
-          <properties />
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java</url>
-          <line>439</line>
-          <properties />
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/App.java</url>
-          <line>231</line>
-          <properties />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/ch/hepia/model/program/Program.java</url>
           <line>101</line>
@@ -520,30 +536,14 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="convertFileContentToBlob(&quot;kataDocuments/e38c5bd0-2c6f-4af8-a600-b16a5cfcb1c5.png&quot;)" language="JAVA" />
-        <watch expression="ctx.pathParam(&quot;did&quot;)" language="JAVA" />
+        <watch expression="ctx.pathParam(&quot;pid&quot;)" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
-        <expression-string>convertFileContentToBlob(&quot;kataDocuments/e38c5bd0-2c6f-4af8-a600-b16a5cfcb1c5.png&quot;)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>ctx.pathParam(&quot;did&quot;)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>file.getName()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>ctx.uploadedFile(&quot;document&quot;)</expression-string>
+        <expression-string>ctx.pathParam(&quot;pid&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -553,27 +553,37 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>ctx.body()</expression-string>
+        <expression-string>ctx.uploadedFile(&quot;f&quot;);</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>database.getCollection(&quot;Programs&quot;,Program.class).find(eq(&quot;_id&quot;,programid)).first()</expression-string>
+        <expression-string>new JSONObject(ctx.body()).get(&quot;a&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>database.getCollection(&quot;Programs&quot;,Program.class).find(eq(&quot;_id&quot;,programid)).first().check(password)</expression-string>
+        <expression-string>new JSONObject(ctx.body()).get(&quot;f&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>database.getCollection(&quot;Programs&quot;,Program.class).find(eq(&quot;_id&quot;,programid)).first().check()</expression-string>
+        <expression-string>file.getName()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>database.getCollection(&quot;Users&quot;).find(combine(eq(&quot;programSubscriptions.idprogram&quot;,programid),eq(&quot;_id&quot;, userid))).batchSize()</expression-string>
+        <expression-string>ctx.uploadedFile(&quot;f&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>new JSONObject(ctx.body()).getString()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>ctx.pathParam(&quot;f&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -778,16 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="439" selection-start-line="439" selection-end-line="439" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/program/ProgramShowCase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -805,6 +805,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/upload/Capture d’écran 2019-06-05 à 14.08.27.png" />
+    <entry file="file://$PROJECT_DIR$/kataDocuments/e38c5bd0-2c6f-4af8-a600-b16a5cfcb1c5.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/readable-stream/doc/wg-meetings/2015-01-30.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -813,13 +824,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/upload/Capture d’écran 2019-06-05 à 14.08.27.png">
+    <entry file="file://$PROJECT_DIR$/kataDocuments/6d3f099b-efd9-4ad3-8e03-fbd53f5f7fef/5e1feb9f-f635-4f20-be0a-d9ff42e3f1c3.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kataDocuments/6d3f099b-efd9-4ad3-8e03-fbd53f5f7fef/013b5049-934c-4533-84a1-71c48afe2014.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kataDocuments/6d3f099b-efd9-4ad3-8e03-fbd53f5f7fef/a45b0a6f-1ffa-44d9-9635-8a9851f52327.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/Kata.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="120" column="21" selection-start-line="120" selection-start-column="21" selection-end-line="120" selection-end-column="21" />
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
           <folding>
             <element signature="e#2022#2023#0" expanded="true" />
             <element signature="e#2052#2053#0" expanded="true" />
@@ -833,25 +850,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="231" column="36" selection-start-line="231" selection-start-column="36" selection-end-line="231" selection-end-column="36" />
+        <state relative-caret-position="306">
+          <caret line="225" selection-start-line="225" selection-end-line="225" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kataDocuments/e38c5bd0-2c6f-4af8-a600-b16a5cfcb1c5.png">
-      <provider selected="true" editor-type-id="images" />
     </entry>
   </component>
 </project>

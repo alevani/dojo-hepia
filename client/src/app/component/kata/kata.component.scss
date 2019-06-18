@@ -81,13 +81,23 @@ textarea {
   color: rgba(230, 126, 34, 1.0);
 }
 
-.FAILED{
-  color:rgba(231, 76, 60,1.0);
+.FAILED {
+  color: rgba(231, 76, 60, 1.0);
 }
 
-.no-assert{
+.no-assert {
   width: 100%;
 }
-.README{
-  color:#ea8685;
+
+.README {
+  color: #ea8685;
+}
+
+.obj {
+
+  max-height: 300px;
+  max-width: 500px;
+  height: 300px;
+  width: 500px;
+  overflow: auto;
 }

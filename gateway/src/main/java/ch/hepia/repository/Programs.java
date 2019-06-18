@@ -14,10 +14,13 @@ import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Indexes;
 import com.mongodb.client.model.PushOptions;
 import com.mongodb.client.model.UpdateOptions;
+import org.apache.commons.io.FileUtils;
 import org.bson.Document;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 import java.util.regex.Pattern;
 
@@ -31,7 +34,9 @@ import static com.mongodb.client.model.Updates.pull;
 import static org.bson.codecs.configuration.CodecRegistries.fromProviders;
 import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 
+
 public class Programs implements ProgramInterface {
+
     private MongoClient mongoClient;
     private MongoDatabase database;
 
@@ -45,6 +50,7 @@ public class Programs implements ProgramInterface {
 
         database.getCollection("Programs").createIndex(Indexes.ascending("title"));
     }
+
 
     public void create(Program program) {
         database.getCollection("Programs", Program.class).insertOne(program);
@@ -291,6 +297,17 @@ public class Programs implements ProgramInterface {
 
     public void duplicateProgram(String programid, String newprogramid, String title) {
         Program p = database.getCollection("Programs", Program.class).find(eq("_id", programid)).first();
+
+        File index = new File("kataDocuments/" + programid);
+        if (index.exists()) {
+            try {
+                FileUtils.copyDirectory(index, new File("kataDocuments/" + newprogramid));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+
         p.set_id(newprogramid);
         p.setId(newprogramid);
         p.setTitle(title);
@@ -399,6 +416,17 @@ public class Programs implements ProgramInterface {
     public void deleteProgram(String programid) {
         database.getCollection("Users").updateMany(eq("programSubscriptions.idprogram", programid), pull("programSubscriptions", new BasicDBObject("idprogram", programid)));
         database.getCollection("Programs").deleteOne(eq("_id", programid));
+        File index = new File("kataDocuments/" + programid);
+
+        // CODE COPIED FROM https://stackoverflow.com/questions/20281835/how-to-delete-a-folder-with-files-using-java MOST LIKED ANSWER (EDITED)
+        if (index.exists()) {
+            String[] entries = index.list();
+            for (String s : entries) {
+                File currentFile = new File(index.getPath(), s);
+                currentFile.delete();
+            }
+            index.delete();
+        }
     }
 
     public void update(String programid, ProgramShowCase p) {
@@ -431,13 +459,13 @@ public class Programs implements ProgramInterface {
                 eq("i.idprogram", programid)
         )));
 
+        Optional<Kata> kata = kata(kataid, programid);
+        kata.ifPresent(value -> new File("kataDocuments/" + programid + "/" + value.getFilename()).delete());
         database.getCollection("Programs").updateOne(eq("_id", programid), pull("katas", new BasicDBObject("_id", kataid)));
-
-
     }
 
     public boolean check(String programid, String password) {
-        Program p = database.getCollection("Programs",Program.class).find(eq("_id",programid)).first();
+        Program p = database.getCollection("Programs", Program.class).find(eq("_id", programid)).first();
         return p.check(password);
     }
 

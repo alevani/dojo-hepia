@@ -45,13 +45,13 @@
         <mat-expansion-panel>
           <mat-expansion-panel-header>
             <mat-panel-title>
-              Kata's instruction (Markdown supported)
+              Kata's instruction (Markdown | Document : PDF (preferred), PNG, JPG), Max size : 15 MB
             </mat-panel-title>
           </mat-expansion-panel-header>
 
           <mat-radio-group aria-label="Select an option">
-            <mat-radio-button (change)="toggleChoice()" value="mk" checked>Markdown</mat-radio-button>
-            <mat-radio-button (change)="toggleChoice()" value="dc">Upload my document</mat-radio-button>
+            <mat-radio-button (change)="toggleChoice()" value="mk" checked>Markdown</mat-radio-button> -
+            <mat-radio-button (change)="toggleChoice()" value="dc">Document</mat-radio-button>
           </mat-radio-group>
 
           <span *ngIf="choiceMK">
@@ -67,6 +67,7 @@
               </div>
             </mat-grid-tile>
             <mat-grid-tile>
+
               <div class="markdown-output" [data]="f.instruction.value" markdown>
 
               </div>

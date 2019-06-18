@@ -11,8 +11,8 @@ export class Canva {
 export const LANG: Canva[] = [
   {
     id: 'python',
-    assertCanva: 'from assertpy import assert_that\nimport sample as m' + '\n\n' +
-      '# Example : \n# assert_that(m.yourfunction(someValues)).is_equal_to(targetedValues)',
+    assertCanva: 'from assertpy import assert_that\nfrom sample import *' + '\n\n' +
+      '# Example : \n# assert_that(yourfunction(someValues)).is_equal_to(targetedValues)',
     codeCanva: '# Write your code here',
     filename: 'sample.py',
     assertname: 'assert.py'

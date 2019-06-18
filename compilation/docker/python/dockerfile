@@ -1,12 +1,6 @@
-FROM ubuntu:14.04
+FROM python
 
-ENV DEBIAN_FRONTEND noninteractive
-
-RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y python3-pip python3-dev
 RUN pip3 install assertpy
 
 RUN mkdir /env/
-
-WORKDIR /env/
 

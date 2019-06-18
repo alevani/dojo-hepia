@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="d3d0c56a8f8958d428d11befa3847157717156fc" datatype="html">
+        <source>All available programs</source>
+        <target>Tous les programmes disponibles</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/component/program-displayer/program-displayer.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c3ecdd90af68fdb4d9b60896280bdb8967d1dc6e" datatype="html">
+        <source>Oops.. no program available ..</source>
+        <target>Oh.. aucun programme n'est disponible ..</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/component/program-displayer/program-displayer.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

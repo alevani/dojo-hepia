@@ -11,6 +11,8 @@ import {Program} from '../program-displayer/program';
 import {ProgramService} from '../../services/program/program.service';
 import {NgxUiLoaderService} from 'ngx-ui-loader';
 import {AuthenticationService} from '../../services/auth/authentication.service';
+import {AlertService} from 'ngx-alerts';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-kata-create',
@@ -28,7 +30,8 @@ export class KataCreateComponent implements OnInit {
               private formBuilder: FormBuilder,
               private programService: ProgramService,
               private ngxLoader: NgxUiLoaderService,
-              private auth: AuthenticationService
+              private auth: AuthenticationService,
+              private snackBar: MatSnackBar
   ) {
   }
 
@@ -74,12 +77,14 @@ export class KataCreateComponent implements OnInit {
     const document = this.CreateForm.get('document');
 
     if (this.choiceMK) {
-      document.setValidators([null]);
       instruction.setValidators([Validators.required]);
+      document.setValidators(null);
     } else {
-      instruction.setValidators([null]);
+      instruction.setValidators(null);
       document.setValidators([Validators.required]);
     }
+    instruction.updateValueAndValidity();
+    document.updateValueAndValidity();
   }
 
   getLANG(id: string): void {
@@ -116,9 +121,26 @@ export class KataCreateComponent implements OnInit {
     let fpath = '';
 
     if (!this.choiceMK) {
+
+      const exts = this.fileData.name.split('.');
+      const ext = exts[exts.length - 1];
+
+      if (!(ext === 'pdf' || ext === 'png' || ext === 'jpg')) {
+        this.snackBar.open('ERROR: Document should be PDF (preferred), PNG or JPG', '', {
+          duration: 4000
+        });
+        return;
+      } else if (this.fileData.size > 15000000) {
+        this.snackBar.open('ERROR: Document should be less than 15 MB', '', {
+          duration: 4000
+        });
+        return;
+      }
+
+
       const formData = new FormData();
       formData.append('file', this.fileData);
-      this.kataService.upload(formData).subscribe((data: string) => {
+      this.kataService.upload(formData, this.programId).subscribe((data: string) => {
         fpath = data;
         this.pubWorkflow(fpath);
       });
@@ -196,13 +218,14 @@ export class KataCreateComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.programId = this.route.snapshot.paramMap.get('id');
     this.getProg();
     this.CreateForm = this.formBuilder.group({
       title: ['', Validators.required],
       assert: ['', Validators.required],
       number: ['', Validators.min(0)],
-      instruction: ['', null],
+      instruction: ['', Validators.required],
       document: ['', null]
     });
 

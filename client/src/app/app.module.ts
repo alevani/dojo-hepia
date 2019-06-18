@@ -56,6 +56,7 @@ import {ProgramEditComponent} from './component/program-edit/program-edit.compon
 import {MarkdownModule} from 'ngx-markdown';
 import {KataEditComponent} from './component/kata-edit/kata-edit.component';
 import {GoalComponent} from './component/kata-create/goal/goal.component';
+import {PdfViewerModule} from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -119,8 +120,8 @@ import {GoalComponent} from './component/kata-create/goal/goal.component';
     MatDialogModule,
     MatBottomSheetModule,
     MatMenuModule,
-    MatRadioModule
-
+    MatRadioModule,
+    PdfViewerModule,
   ],
   entryComponents: [DeleteProgramDialogComponent, KataSurrenderDialogComponent, DuplicateProgramDialogComponent, PromptPasswordDialogComponent, KataDisplayerComponent],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}, {

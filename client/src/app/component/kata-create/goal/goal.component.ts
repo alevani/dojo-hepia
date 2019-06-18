@@ -8,6 +8,7 @@ import {NgxUiLoaderService} from 'ngx-ui-loader';
 import {v4 as uuid} from 'uuid';
 import {KataService} from '../../../services/kata/kata.service';
 
+
 @Component({
   selector: 'app-goal',
   templateUrl: './goal.component.html',

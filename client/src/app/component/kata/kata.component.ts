@@ -15,6 +15,7 @@ import {ProgramService} from '../../services/program/program.service';
 import {KataService} from '../../services/kata/kata.service';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
 import {Program} from '../program-displayer/program';
+import {DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 
 
 @Component({
@@ -31,8 +32,10 @@ export class KataComponent implements OnInit {
   programid: string;
   program: Program;
 
+  documentretrieved = false;
 
-  imageBlobUrl: string | ArrayBuffer = null;
+  document: string;
+  documentType: string;
   error = false;
   nbAttempt = 0;
 
@@ -62,7 +65,8 @@ export class KataComponent implements OnInit {
     private kataSubscriptionService: KataSubscriptionService,
     private auth: AuthenticationService,
     private router: Router,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private sanitizer: DomSanitizer
   ) {
   }
 
@@ -72,14 +76,8 @@ export class KataComponent implements OnInit {
     this.filename = this.LANG.filename;
   }
 
-  createImageFromBlob(image: Blob) {
-    const reader = new FileReader();
-    reader.addEventListener('load', () => {
-      this.imageBlobUrl = reader.result;
-    }, false);
-    if (image) {
-      reader.readAsDataURL(image as Blob);
-    }
+  sanitzie(url: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl('data:' + this.documentType + ';base64,' + url);
   }
 
   getKata(): void {
@@ -88,11 +86,26 @@ export class KataComponent implements OnInit {
       this.program = data;
       this.kataService.getKata(this.kataid, this.programid).subscribe((datas: Kata) => {
           this.kata = datas;
-
           if (this.kata.hasfile) {
-            this.kataService.getDocument(this.kata.filename).subscribe((image: string) => {
-              console.log(btoa(image));
-              console.log(typeof image as Blob);
+            this.kataService.getDocument(this.kata.filename, this.programid).subscribe((document: string) => {
+
+              const ext = this.kata.filename.split('.')[1];
+              switch (ext) {
+                case 'png':
+                  this.documentType = 'image/png';
+                  break;
+                case 'jpg':
+                  this.documentType = 'image/jpg';
+                  break;
+                case 'pdf':
+                  this.documentType = 'application/pdf';
+                  break;
+                default:
+                  this.documentType = 'image/png';
+                  break;
+              }
+              this.document = document;
+              this.documentretrieved = true;
             });
           }
 
@@ -223,8 +236,8 @@ export class KataComponent implements OnInit {
         if (!isSubscribed || !data) {
           this.router.navigate([/kata-displayer/ + this.programid]);
         } else {
-          this.kataSubscriptionService.get(this.kataid, this.programid, this.auth.currentUserValue.id).subscribe((data: KataSubscription) => {
-            this.kataInfo = data;
+          this.kataSubscriptionService.get(this.kataid, this.programid, this.auth.currentUserValue.id).subscribe((kata: KataSubscription) => {
+            this.kataInfo = kata;
             this.nbAttempt = this.kataInfo.nbAttempt;
             this.kataStatus = this.kataInfo.status;
             if (this.kataInfo.status === 'RESOLVED' || this.kataInfo.status === 'FAILED') {
@@ -248,6 +261,16 @@ export class KataComponent implements OnInit {
               })).subscribe(() => {
                 this.nbAttempt = 0;
                 this.kataStatus = 'ONGOING';
+                if (this.isGoal) {
+                  this.kataSubscriptionService.update(JSON.stringify({
+                    kataid: this.kataid,
+                    programid: this.programid,
+                    userid: this.auth.currentUserValue.id,
+                    sol: 'read.',
+                    status: newStatus
+                  })).subscribe();
+
+                }
               });
             }
           });

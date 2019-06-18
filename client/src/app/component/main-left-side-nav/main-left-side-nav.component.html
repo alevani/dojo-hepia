@@ -3,7 +3,7 @@
                [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                [mode]="(isHandset$ | async) ? 'over' : 'side'"
                [opened]="!(isHandset$ | async)">
-    <mat-toolbar><a class="title" routerLink="/">DOJO HEPIA</a></mat-toolbar>
+    <mat-toolbar><a class="title" routerLink="/"><img style="width: 100%;margin-top:10px" src="../../../assets/logo/Plan%20de%20travail%201.png"/></a></mat-toolbar>
     <mat-nav-list *ngIf="currentUser">
       <a mat-list-item routerLink="/program/all" routerLinkActive="active-list-item">Programs</a>
       <div *ngIf="currentUser.role != Role.monji">

@@ -38,12 +38,12 @@ export class KataService {
     return this.http.get('http://localhost:7000/kata/isactivated/' + kataid + '/' + programid);
   }
 
-  upload(file: FormData) {
-    return this.http.post('http://localhost:7000/kata/upload', file);
+  upload(file: FormData, pid: string) {
+    return this.http.post('http://localhost:7000/kata/upload/' + pid, file);
   }
 
-  getDocument(did: string) {
-    return this.http.get('http://localhost:7000/kata/upload/' + did);
+  getDocument(did: string, pid: string) {
+    return this.http.get('http://localhost:7000/kata/upload/' + pid + '/' + did);
   }
 
   constructor(private http: HttpClient) {
