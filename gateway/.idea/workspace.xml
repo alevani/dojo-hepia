@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6a1f2e5-4f60-4227-82bb-83eb10fa94a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../assets/document/THESE.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/document/THESE.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assets/document/~$THESE.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/languages_canvas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/languages_canvas.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -57,8 +53,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="80" column="19" selection-start-line="80" selection-start-column="11" selection-end-line="80" selection-end-column="19" />
+            <state relative-caret-position="687">
+              <caret line="82" selection-start-line="82" selection-end-line="82" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -202,10 +198,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="1920" />
     <option name="width" value="1920" />
-    <option name="height" value="1119" />
+    <option name="height" value="1200" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -426,12 +422,12 @@
       <workItem from="1560691001487" duration="1874000" />
       <workItem from="1560755028174" duration="6885000" />
       <workItem from="1560847798754" duration="636000" />
-      <workItem from="1560856465452" duration="150000" />
+      <workItem from="1560856465452" duration="707000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="280675000" />
+    <option name="totallyTimeSpent" value="281232000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -443,7 +439,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1200" extended-state="6" />
+    <frame x="1920" y="0" width="1920" height="1200" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49924126" visible="true" weight="0.24973376" />
@@ -813,8 +809,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="80" column="19" selection-start-line="80" selection-start-column="11" selection-end-line="80" selection-end-column="19" />
+        <state relative-caret-position="687">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

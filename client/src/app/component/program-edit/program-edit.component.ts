@@ -19,12 +19,19 @@ export class ProgramEditComponent implements OnInit {
               private auth: AuthenticationService,
               private route: ActivatedRoute,
               private ngxLoader: NgxUiLoaderService) {
+    this.UpdateForm = this.formBuilder.group({
+      title: ['', Validators.required],
+      description: ['', Validators.required],
+      tags: ['', Validators.required],
+      password: ['', null],
+    });
   }
 
   UpdateForm: FormGroup;
+  // @ts-ignore
   program: Program;
   submitted = false;
-  programid: string;
+  programid = '';
   checked = false;
 
   get f() {
@@ -32,10 +39,10 @@ export class ProgramEditComponent implements OnInit {
   }
 
   toggleChecked() {
-    const password = this.UpdateForm.get('password');
+    const password = this.UpdateForm.get('password') as FormGroup;
     this.checked = !this.checked;
     if (!this.checked) {
-      password.setValidators([null]);
+      password.setValidators(null);
     } else {
       password.setValidators([Validators.required]);
     }
@@ -55,7 +62,7 @@ export class ProgramEditComponent implements OnInit {
 
   ngOnInit() {
     this.ngxLoader.start();
-    this.programid = this.route.snapshot.paramMap.get('id');
+    this.programid = this.route.snapshot.paramMap.get('id') as string;
     this.programService.isOwner(this.programid, this.auth.currentUserValue.id).subscribe((data: boolean) => {
       if (!data) {
         this.router.navigate(['/']);
@@ -68,13 +75,6 @@ export class ProgramEditComponent implements OnInit {
           this.ngxLoader.stop();
         });
       }
-    });
-
-    this.UpdateForm = this.formBuilder.group({
-      title: ['', Validators.required],
-      description: ['', Validators.required],
-      tags: ['', Validators.required],
-      password: ['', null],
     });
   }
 

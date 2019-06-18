@@ -24,11 +24,14 @@ export class GoalComponent implements OnInit {
               private auth: AuthenticationService,
               private ngxLoader: NgxUiLoaderService,
               private kataService: KataService) {
+    this.GoalForm = this.formBuilder.group({
+      instruction: ['', Validators.required]
+    });
   }
 
   GoalForm: FormGroup;
   submitted = false;
-  programid: string;
+  programid = '';
   error = false;
   inforreceived = false;
 
@@ -57,9 +60,8 @@ export class GoalComponent implements OnInit {
 
   ngOnInit() {
 
-    this.programid = this.route.snapshot.paramMap.get('id');
+    this.programid = this.route.snapshot.paramMap.get('id') as string;
     this.programService.isOwner(this.programid, this.auth.currentUserValue.id).subscribe((data: boolean) => {
-
       if (!data) {
         this.error = true;
         this.ngxLoader.stop();
@@ -67,9 +69,7 @@ export class GoalComponent implements OnInit {
         this.inforreceived = true;
       }
     });
-    this.GoalForm = this.formBuilder.group({
-      instruction: ['', Validators.required]
-    });
+
   }
 
 }

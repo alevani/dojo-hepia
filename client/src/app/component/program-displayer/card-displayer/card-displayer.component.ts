@@ -12,10 +12,10 @@ export class CardDisplayerComponent implements OnInit {
   constructor(private FetchProgramByQueryService: FetchProgramByTypeService) {
   }
 
-  @Input() programs;
+  @Input() programs: any;
   filter = false;
-  filterValue: string;
-  filterType: string;
+  filterValue = '';
+  filterType = '';
 
   querySearch(type: string, res: string) {
     this.FetchProgramByQueryService.getPrograms(type, res).subscribe((data: Program[]) => {

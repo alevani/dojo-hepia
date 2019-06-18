@@ -11,8 +11,13 @@ import {ProgramSubscriptionService} from '../../services/program/subs/program-su
 })
 export class SubscriptionComponent implements OnInit {
 
+  // @ts-ignore
   programs: Program[];
+
+  // @ts-ignore
   programsDone: Program[];
+
+  // @ts-ignore
   programsOngoing: Program[];
   programReceivedFailed = false;
 

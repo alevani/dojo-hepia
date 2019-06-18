@@ -10,11 +10,12 @@ export class CardNoneallDisplayerComponent implements OnInit {
   constructor() {
   }
 
-  @Input() programs;
+  @Input() programs: any;
   filter = false;
-  filterValue: string;
-  filterType: string;
+  filterValue = '';
+  filterType = '';
 
+  // @ts-ignore
   programNonFiltered: object;
 
   querySearch(type: string, res: string) {
@@ -23,10 +24,13 @@ export class CardNoneallDisplayerComponent implements OnInit {
     this.filterType = type;
     this.filterValue = res;
     this.filter = true;
-    this.programs = this.programs.filter((x) => {
+    this.programs = this.programs.filter((x: string) => {
       if (type === 'tags') {
-        return x[type].filter((t) => t === res)[0] === res;
+        // @ts-ignore
+        return x[type].filter((t: string) => t === res)[0] === res;
       }
+
+      // @ts-ignore
       return x[type] === res;
     });
   }

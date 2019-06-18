@@ -12,9 +12,9 @@ import 'brace/mode/plain_text';
 })
 export class TerminalAssertComponent implements AfterViewInit {
 
-  @ViewChild('editor') editor;
-  @Input() code: string;
-  @Input() type: string;
+  @ViewChild('editor') editor: any;
+  @Input() code = '';
+  @Input() type = '';
 
   ngAfterViewInit() {
     this.editor.setTheme('dracula');

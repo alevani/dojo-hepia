@@ -22,6 +22,7 @@ import org.bson.codecs.pojo.PojoCodecProvider;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+import java.util.concurrent.ExecutorService;
 import java.util.regex.Pattern;
 
 import static com.mongodb.client.model.Aggregates.*;
@@ -79,6 +80,7 @@ public class Programs implements ProgramInterface {
     }
 
     public Optional<Kata> kata(String kataid, String programid) {
+
         AggregateIterable<Kata> kata = database.getCollection("Programs", Kata.class).aggregate(Arrays.asList(
                 match(eq("_id", programid)),
                 unwind("$katas"),

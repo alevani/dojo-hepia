@@ -1,4 +1,4 @@
-export class Canva {
+export interface Canva {
   id: string;
   assertCanva: string;
   codeCanva: string;

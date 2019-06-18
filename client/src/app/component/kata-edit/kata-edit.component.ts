@@ -6,6 +6,7 @@ import {CompilationService} from '../../services/compilation/compilation.service
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Kata} from '../kata/kata';
 import {AuthenticationService} from '../../services/auth/authentication.service';
+import {CompilationServiceResponse} from '../../services/compilation/compilationServiceResponse';
 
 @Component({
   selector: 'app-kata-edit',
@@ -22,19 +23,27 @@ export class KataEditComponent implements OnInit {
     public router: Router,
     private compilationService: CompilationService,
     private formBuilder: FormBuilder) {
+    this.EditForm = this.formBuilder.group({
+      title: ['', Validators.required],
+      assert: ['', Validators.required],
+      number: ['', Validators.min(0)],
+      instruction: ['', Validators.required],
+    });
   }
 
+
+  // @ts-ignore
   kata: Kata;
   EditForm: FormGroup;
   submitted = false;
 
   compiling = false;
-  kataid: string;
-  programid: string;
-  language: string;
+  kataid = '';
+  programid = '';
+  language = '';
 
   status = 2;
-  result: string;
+  result = '';
 
   get f() {
     return this.EditForm.controls;
@@ -72,7 +81,7 @@ export class KataEditComponent implements OnInit {
       language: this.language,
       stream: this.kata.solution,
       assert: this.kata.cassert
-    })).subscribe((data: string) => {
+    })).subscribe((data: CompilationServiceResponse) => {
       response = data;
       if (response.exit === 0) {
         this.status = 0;
@@ -116,17 +125,11 @@ export class KataEditComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.kataid = this.route.snapshot.paramMap.get('id');
-    this.programid = this.route.snapshot.paramMap.get('programid');
-    this.language = this.route.snapshot.paramMap.get('language');
+    this.kataid = this.route.snapshot.paramMap.get('id') as string;
+    this.programid = this.route.snapshot.paramMap.get('programid') as string ;
+    this.language = this.route.snapshot.paramMap.get('language') as string;
 
     this.getKata();
-    this.EditForm = this.formBuilder.group({
-      title: ['', Validators.required],
-      assert: ['', Validators.required],
-      number: ['', Validators.min(0)],
-      instruction: ['', Validators.required],
-    });
   }
 
 

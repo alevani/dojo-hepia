@@ -11,8 +11,8 @@ import {Program} from '../program-displayer/program';
 import {ProgramService} from '../../services/program/program.service';
 import {NgxUiLoaderService} from 'ngx-ui-loader';
 import {AuthenticationService} from '../../services/auth/authentication.service';
-import {AlertService} from 'ngx-alerts';
 import {MatSnackBar} from '@angular/material';
+import {CompilationServiceResponse} from '../../services/compilation/compilationServiceResponse';
 
 @Component({
   selector: 'app-kata-create',
@@ -33,6 +33,15 @@ export class KataCreateComponent implements OnInit {
               private auth: AuthenticationService,
               private snackBar: MatSnackBar
   ) {
+    this.CreateForm = this.formBuilder.group({
+      title: ['', Validators.required],
+      assert: ['', Validators.required],
+      number: ['', Validators.min(0)],
+      instruction: ['', Validators.required],
+      document: ['', null]
+    });
+    this.program = null;
+    this.fileData = new File([], '');
   }
 
   language = '';
@@ -47,14 +56,12 @@ export class KataCreateComponent implements OnInit {
 
   programId = '';
 
-  LANG: Canva;
-
   CreateForm: FormGroup;
   submitted = false;
 
   compiling = false;
 
-  program: Program;
+  program: Program | null;
   inforreceived = false;
   error = false;
 
@@ -65,7 +72,7 @@ export class KataCreateComponent implements OnInit {
     return this.CreateForm.controls;
   }
 
-  onFileChange(event) {
+  onFileChange(event: any) {
     if (event.target.files.length > 0) {
       this.fileData = event.target.files[0];
     }
@@ -73,8 +80,8 @@ export class KataCreateComponent implements OnInit {
 
   toggleChoice() {
     this.choiceMK = !this.choiceMK;
-    const instruction = this.CreateForm.get('instruction');
-    const document = this.CreateForm.get('document');
+    const instruction = this.CreateForm.get('instruction') as FormGroup;
+    const document = this.CreateForm.get('document') as FormGroup;
 
     if (this.choiceMK) {
       instruction.setValidators([Validators.required]);
@@ -88,10 +95,10 @@ export class KataCreateComponent implements OnInit {
   }
 
   getLANG(id: string): void {
-    this.LANG = this.langservice.getLANG(id)[0];
-    this.assert = this.LANG.assertCanva;
-    this.solution = this.LANG.codeCanva;
-    this.canva = this.LANG.codeCanva;
+    const LANG = this.langservice.getLANG(id)[0] as Canva;
+    this.assert = LANG.assertCanva;
+    this.solution = LANG.codeCanva;
+    this.canva = LANG.codeCanva;
   }
 
   OnNewEventAssert(event: any): void {
@@ -178,7 +185,7 @@ export class KataCreateComponent implements OnInit {
       language: this.language,
       stream: this.solution,
       assert: this.assert
-    })).subscribe((data: string) => {
+    })).subscribe((data: CompilationServiceResponse) => {
       response = data;
       if (response.exit === 0) {
         this.status = 0;
@@ -203,7 +210,7 @@ export class KataCreateComponent implements OnInit {
           this.language = this.program.language;
           this.getLANG(this.language);
           this.inforreceived = true;
-        }, (error1 => {
+        }, ((error1: any) => {
           if (error1.status === 404) {
             this.error = true;
             this.ngxLoader.stop();
@@ -219,16 +226,8 @@ export class KataCreateComponent implements OnInit {
 
   ngOnInit() {
 
-    this.programId = this.route.snapshot.paramMap.get('id');
+    this.programId = this.route.snapshot.paramMap.get('id') as string;
     this.getProg();
-    this.CreateForm = this.formBuilder.group({
-      title: ['', Validators.required],
-      assert: ['', Validators.required],
-      number: ['', Validators.min(0)],
-      instruction: ['', Validators.required],
-      document: ['', null]
-    });
-
   }
 
 }

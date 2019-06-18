@@ -45,25 +45,6 @@ export interface PromptPassword {
 
 export class KataDisplayerComponent implements OnInit {
 
-  katas: KataShowCase[];
-  programid: string;
-
-  program: Program;
-
-  error = false;
-  isSubscribed = false;
-  currentUser: User;
-  inforreceived = false;
-  subscription: ProgramSubscription;
-  subvalue = 'Unsubscribe';
-
-  // Tells if the users has already a registered subscription
-  // The subscription could exist even if the user is un subscribed (it keeps the programs data
-  // if once the user has been subscribe)
-  nullsubs: boolean;
-
-  isOwner = false;
-
   constructor(
     private route: ActivatedRoute,
     private location: Location,
@@ -76,7 +57,29 @@ export class KataDisplayerComponent implements OnInit {
     private snackBar: MatSnackBar,
     public dialog: MatDialog
   ) {
+    this.katas = [] as KataShowCase[];
+    this.currentUser = this.auth.currentUserValue;
+    this.subscription = null;
   }
+
+  katas: KataShowCase[];
+  programid = '';
+
+  // @ts-ignore
+  program: Program;
+
+  error = false;
+  isSubscribed = false;
+  currentUser: User;
+  inforreceived = false;
+  subscription: ProgramSubscription | null;
+  subvalue = 'Unsubscribe';
+
+  // Tells if the users has already a registered subscription
+  // The subscription could exist even if the user is un subscribed (it keeps the programs data
+  // if once the user has been subscribe)
+  nullsubs = false;
+  isOwner = false;
 
   openDialogDuplicate(): void {
     this.dialog.open(DuplicateProgramDialogComponent, {
@@ -99,7 +102,7 @@ export class KataDisplayerComponent implements OnInit {
   }
 
   reloadKatas() {
-    this.kataService.getKatasDetails(this.programid, this.auth.currentUserValue.id).subscribe((datas: KataShowCase[]) => {
+    this.kataService.getKatasDetails(this.programid, this.currentUser.id).subscribe((datas: KataShowCase[]) => {
       this.katas = datas;
     });
   }
@@ -219,7 +222,7 @@ export class KataDisplayerComponent implements OnInit {
       this.getIsOwner();
       this.getSubs();
       this.inforreceived = true;
-      this.kataService.getKatasDetails(this.programid, this.auth.currentUserValue.id).subscribe((datas: KataShowCase[]) => {
+      this.kataService.getKatasDetails(this.programid, this.currentUser.id).subscribe((datas: KataShowCase[]) => {
         this.katas = datas;
         this.ngxLoader.stop();
       });
@@ -233,15 +236,14 @@ export class KataDisplayerComponent implements OnInit {
 
 
   ngOnInit() {
-    this.programid = this.route.snapshot.paramMap.get('id');
-    this.currentUser = this.auth.currentUserValue;
+    this.programid = this.route.snapshot.paramMap.get('id') as string;
     this.getKatas();
   }
 
 }
 
 @Component({
-  selector: 'dialog-overview-example-dialog',
+  selector: 'app-dialog-overview-example-dialog',
   templateUrl: 'program-dialog-delete.html',
 })
 export class DeleteProgramDialogComponent {
@@ -259,11 +261,11 @@ export class DeleteProgramDialogComponent {
 
 
 @Component({
-  selector: 'dialog-overview-example-dialog',
+  selector: 'app-dialog-overview-example-dialog',
   styleUrls: ['../program-create/program-create.component.scss'],
   templateUrl: 'program-dialog-duplicate.html'
 })
-export class DuplicateProgramDialogComponent implements OnInit {
+export class DuplicateProgramDialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<DeleteProgramDialogComponent>,
@@ -272,6 +274,10 @@ export class DuplicateProgramDialogComponent implements OnInit {
     private programService: ProgramService,
     private programSubscription: ProgramSubscriptionService,
     private router: Router) {
+
+    this.DuplicateForm = this.formBuilder.group({
+      title: ['', Validators.required],
+    });
   }
 
   submitted = false;
@@ -307,30 +313,24 @@ export class DuplicateProgramDialogComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
-
-  ngOnInit() {
-
-
-    this.DuplicateForm = this.formBuilder.group({
-      title: ['', Validators.required],
-    });
-  }
-
 }
 
 
 @Component({
-  selector: 'dialog-overview-example-dialog',
+  selector: 'app-dialog-overview-example-dialog',
   templateUrl: 'program-dialog-prompt-password.html',
   styleUrls: ['../program-create/program-create.component.scss']
 })
-export class PromptPasswordDialogComponent implements OnInit {
+export class PromptPasswordDialogComponent{
 
   constructor(
     public dialogRef: MatDialogRef<PromptPasswordDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: PromptPassword,
     private programService: ProgramService,
     private formBuilder: FormBuilder) {
+    this.PromptPassword = this.formBuilder.group({
+      password: ['', Validators.required],
+    });
   }
 
   error = false;
@@ -371,13 +371,4 @@ export class PromptPasswordDialogComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
-
-  ngOnInit() {
-
-
-    this.PromptPassword = this.formBuilder.group({
-      password: ['', Validators.required],
-    });
-  }
-
 }

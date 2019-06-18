@@ -11,6 +11,9 @@ import {Program} from '../program-displayer/program';
 export class SearchbyComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private searchProgramService: FetchProgramByTypeService) {
+    this.SearchForm = this.formBuilder.group({
+      search: ['', Validators.required],
+    });
   }
 
   SearchForm: FormGroup;
@@ -18,7 +21,8 @@ export class SearchbyComponent implements OnInit {
   loading = false;
   submitted = false;
 
-  programs: object;
+  // @ts-ignore
+  programs: Program[];
 
   error = '';
 
@@ -33,8 +37,8 @@ export class SearchbyComponent implements OnInit {
     this.searchProgramService.getPrograms('title', this.f.search.value).subscribe((data: Program[]) => {
       this.programs = data;
       this.error = '';
-    }, error1 => {
-      this.programs = null;
+    }, (error1: any) => {
+      this.programs = [];
       this.error = error1.error;
     });
   }
@@ -44,9 +48,7 @@ export class SearchbyComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.SearchForm = this.formBuilder.group({
-      search: ['', Validators.required],
-    });
+
   }
 
 }

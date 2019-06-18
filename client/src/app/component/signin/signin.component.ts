@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {SignInService} from '../../services/auth/signin/sign-in.service';
 import {v4 as uuid} from 'uuid';
+// @ts-ignore
 import * as sha1 from 'js-sha1';
 
 @Component({
@@ -20,6 +21,12 @@ export class SigninComponent implements OnInit {
     if (this.authenticationService.currentUserValue) {
       this.router.navigate(['/']);
     }
+    this.signinForm = this.formBuilder.group({
+      username: ['', Validators.required, Validators.pattern('[A-Za-z0-9-]*')],
+      token: ['', Validators.required],
+      password: ['', Validators.required],
+      passwordconf: ['', Validators.required]
+    });
   }
 
   signinForm: FormGroup;
@@ -56,13 +63,6 @@ export class SigninComponent implements OnInit {
 
 
   ngOnInit() {
-    this.signinForm = this.formBuilder.group({
-      username: ['', Validators.required, Validators.pattern('[A-Za-z0-9-]*')],
-      token: ['', Validators.required],
-      password: ['', Validators.required],
-      passwordconf: ['', Validators.required]
-    });
-
   }
 
 }

@@ -11,6 +11,7 @@ import {ProgramService} from '../../services/program/program.service';
 export class ProgramDisplayerComponent implements OnInit {
 
 
+  // @ts-ignore
   programs: Program[];
   programReceivedFailed = false;
 
@@ -23,7 +24,7 @@ export class ProgramDisplayerComponent implements OnInit {
     this.programService.get().subscribe((data: Program[]) => {
       this.programs = data;
       this.ngxLoader.stop();
-    }, error1 => {
+    }, (error1: any) => {
       if (error1.status === 404) {
         this.programReceivedFailed = true;
         this.ngxLoader.stop();

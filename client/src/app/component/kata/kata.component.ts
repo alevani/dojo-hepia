@@ -16,6 +16,7 @@ import {KataService} from '../../services/kata/kata.service';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
 import {Program} from '../program-displayer/program';
 import {DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
+import {CompilationServiceResponse} from '../../services/compilation/compilationServiceResponse';
 
 
 @Component({
@@ -25,33 +26,6 @@ import {DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser'
 })
 export class KataComponent implements OnInit {
 
-  kata: Kata;
-  kataid: string;
-  status = 2;
-  result = '';
-  programid: string;
-  program: Program;
-
-  documentretrieved = false;
-
-  document: string;
-  documentType: string;
-  error = false;
-  nbAttempt = 0;
-
-  kataStatus = '';
-  kataInfo: KataSubscription;
-  compiling = false;
-  isResolved = false;
-  filename = '';
-  assertname = '';
-
-  newTry = false;
-  katareceived = false;
-  isGoal = false;
-
-
-  LANG: Canva;
 
   constructor(
     private route: ActivatedRoute,
@@ -70,10 +44,40 @@ export class KataComponent implements OnInit {
   ) {
   }
 
+  // @ts-ignore
+  kata: Kata;
+  kataid = '';
+  status = 2;
+  result = '';
+  programid = '';
+
+  // @ts-ignore
+  program: Program;
+
+  documentretrieved = false;
+
+  document = '';
+  documentType = '';
+  error = false;
+  nbAttempt = 0;
+
+  kataStatus = '';
+
+  // @ts-ignore
+  kataInfo: KataSubscription;
+  compiling = false;
+  isResolved = false;
+  filename = '';
+  assertname = '';
+
+  newTry = false;
+  katareceived = false;
+  isGoal = false;
+
   getLANG(id: string): void {
-    this.LANG = this.langservice.getLANG(id)[0];
-    this.assertname = this.LANG.assertname;
-    this.filename = this.LANG.filename;
+    const LANG = this.langservice.getLANG(id)[0];
+    this.assertname = LANG.assertname;
+    this.filename = LANG.filename;
   }
 
   sanitzie(url: string): SafeResourceUrl {
@@ -171,15 +175,13 @@ export class KataComponent implements OnInit {
 
   compile(language: string, stream: string, assert: string): void {
     this.compiling = true;
-    let response;
+    let response: CompilationServiceResponse;
     this.compilationService.compilationServer(JSON.stringify({
       language: this.kata.language,
       stream,
       assert
-    })).subscribe((data: string) => {
-      console.log(data);
+    })).subscribe((data: CompilationServiceResponse) => {
       response = data;
-
       if (!this.isResolved && !this.newTry) {
         this.nbAttempt++;
         this.kataSubscriptionService.increment(JSON.stringify({
@@ -244,7 +246,7 @@ export class KataComponent implements OnInit {
               this.isResolved = true;
               this.kata.canva = this.kataInfo.mysol;
             }
-          }, error1 => {
+          }, (error1: any) => {
             if (error1.status === 404) {
               let newStatus = 'ONGOING';
 
@@ -281,14 +283,14 @@ export class KataComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.programid = this.route.snapshot.paramMap.get('prid');
-    this.kataid = this.route.snapshot.paramMap.get('id');
+    this.programid = this.route.snapshot.paramMap.get('prid') as string;
+    this.kataid = this.route.snapshot.paramMap.get('id') as string;
     this.getKata();
   }
 }
 
 @Component({
-  selector: 'dialog-overview-example-dialog',
+  selector: 'app-dialog-overview-example-dialog',
   templateUrl: 'kata-dialog-surrender.html',
 })
 export class KataSurrenderDialogComponent {

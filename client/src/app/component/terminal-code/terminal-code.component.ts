@@ -13,12 +13,12 @@ import 'brace/mode/plain_text';
 
 export class TerminalCodeComponent implements AfterViewInit {
 
-  @ViewChild('editor') editor;
-  @Input() code: string;
-  @Input() type: string;
+  @ViewChild('editor') editor: any;
+  @Input() code = '';
+  @Input() type = '';
   @Output() new = new EventEmitter<string>();
 
-  onChange(code) {
+  onChange(code: string) {
     this.new.emit(code);
     this.code = code;
   }

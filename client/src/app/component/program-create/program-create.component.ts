@@ -21,22 +21,29 @@ export class ProgramCreateComponent implements OnInit {
               private programSubscription: ProgramSubscriptionService,
               private formBuilder: FormBuilder) {
     this.currentUser = this.auth.currentUserValue;
+    this.CreateForm = this.formBuilder.group({
+      title: ['', Validators.required],
+      language: ['', Validators.required],
+      description: ['', Validators.required],
+      password: ['', null],
+      tags: ['', Validators.required],
+    });
   }
   checked = false;
   CreateForm: FormGroup;
 
   submitted = false;
-  programToKata = 0;
+  programToKata = '';
 
   get f() {
     return this.CreateForm.controls;
   }
 
   toggleChecked() {
-    const password = this.CreateForm.get('password');
+    const password = this.CreateForm.get('password') as FormGroup;
     this.checked = !this.checked;
     if (!this.checked) {
-      password.setValidators([null]);
+      password.setValidators(null);
     } else {
       password.setValidators([Validators.required]);
     }
@@ -82,14 +89,6 @@ export class ProgramCreateComponent implements OnInit {
 
   ngOnInit() {
     this.programToKata = uuid();
-
-    this.CreateForm = this.formBuilder.group({
-      title: ['', Validators.required],
-      language: ['', Validators.required],
-      description: ['', Validators.required],
-      password: ['', null],
-      tags: ['', Validators.required],
-    });
   }
 
 }
