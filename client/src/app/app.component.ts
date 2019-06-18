@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 })
 export class AppComponent {
   title = 'Dojo Hepia';
-  currentUser: User;
+  currentUser: User | null;
 
   constructor(
     private router: Router,

@@ -7,7 +7,7 @@ export class Canva {
 }
 
 
-// TODO un kata n'a pas besoin de programtitile, ca devrait être passé par la classe d'en dessus (idem pour sensei)
+
 export const LANG: Canva[] = [
   {
     id: 'python',

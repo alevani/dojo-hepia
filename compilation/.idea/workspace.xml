@@ -2,57 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d8fb2c1-8426-4933-8193-ee68625cf8de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../client/src/assets/logo/Plan de travail 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/assets/logo/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/locale/messages.fr.xlf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-create/goal/goal.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-create/goal/goal.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-create/goal/goal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-create/goal/goal.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/main-left-side-nav/main-left-side-nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/main-left-side-nav/main-left-side-nav.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-displayer/program-displayer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-displayer/program-displayer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/signin/signin.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/signin/signin.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/document/THESE.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/document/THESE.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/document/~$THESE.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/app/languages_canvas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/languages_canvas.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/services/kata/kata.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/services/kata/kata.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/java/dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/java/dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/python/dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/python/dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/share_docker_file/Kata.class" beforeDir="false" afterPath="$PROJECT_DIR$/share_docker_file/Kata.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/share_docker_file/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/share_docker_file/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DockerCompilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DockerCompilation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DockerCompilation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DockerCompilation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/kataDocuments/e38c5bd0-2c6f-4af8-a600-b16a5cfcb1c5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/Programs.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/Programs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/app$Roles.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/app$Roles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/app.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/Programs.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/Programs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/logo/Logo_Dojo_Hepia_v1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/logo/Logo_Dojo_Hepia_v1.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/logo/Logo_Dojo_Hepia_v2-tr.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/logo/Logo_Dojo_Hepia_v2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/logo/Logo_Dojo_Hepia_v2.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/logo/MAP.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/mockup/component/kata-tails-details.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/mockup/component/kata-tails-details.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/mockup/pic/7-512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/mockup/pic/Comments-512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/mockup/pic/Java_Logo.svg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/mockup/pic/MySQL.svg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/mockup/pic/Python_logo_and_wordmark.svg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/mockup/pic/check-mark-icon-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/mockup/pic/star-icon.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -76,16 +30,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/DockerCompilation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="17" column="122" selection-start-line="17" selection-start-column="122" selection-end-line="17" selection-end-column="122" />
+            <state relative-caret-position="555">
+              <caret line="42" column="32" lean-forward="true" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docker/java/dockerfile">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
@@ -106,7 +60,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/String.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
+            <state relative-caret-position="1230">
               <caret line="132" column="19" selection-start-line="132" selection-start-column="19" selection-end-line="132" selection-end-column="19" />
             </state>
           </provider>
@@ -137,8 +91,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/App.java" />
         <option value="$PROJECT_DIR$/docker/python/dockerfile" />
-        <option value="$PROJECT_DIR$/src/main/java/DockerCompilation.java" />
         <option value="$PROJECT_DIR$/docker/java/dockerfile" />
+        <option value="$PROJECT_DIR$/src/main/java/DockerCompilation.java" />
       </list>
     </option>
   </component>
@@ -149,7 +103,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="1119" />
@@ -160,6 +114,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -218,7 +173,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -358,11 +312,12 @@
       <workItem from="1560596550940" duration="114000" />
       <workItem from="1560691003657" duration="35000" />
       <workItem from="1560777023947" duration="1999000" />
+      <workItem from="1560847801407" duration="784000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73637000" />
+    <option name="totallyTimeSpent" value="74421000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -374,10 +329,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1200" extended-state="6" />
+    <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19861555" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20074548" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -525,24 +480,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="132" column="19" selection-start-line="132" selection-start-column="19" selection-end-line="132" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DockerCompilation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="17" column="122" selection-start-line="17" selection-start-column="122" selection-end-line="17" selection-end-column="122" />
         </state>
       </provider>
     </entry>
@@ -553,10 +494,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1230">
+          <caret line="132" column="19" selection-start-line="132" selection-start-column="19" selection-end-line="132" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/docker/java/dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DockerCompilation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="42" column="32" lean-forward="true" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
         </state>
       </provider>
     </entry>
