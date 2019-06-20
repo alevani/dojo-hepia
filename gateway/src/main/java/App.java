@@ -30,6 +30,8 @@ import java.net.ConnectException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.*;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Future;
 
 import static io.javalin.security.SecurityUtil.roles;
 
@@ -168,12 +170,12 @@ public class App {
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
         app.get("/program/details", ctx -> {
-            Optional<List<ProgramShowCase>> prgsc = dbPrograms.programsDetails();
-
-            if (prgsc.isPresent())
-                ctx.json(prgsc.get());
-            else
+            List<ProgramShowCase> p = dbPrograms.programsDetails().get();
+            if (p == null)
                 ctx.status(404);
+            else if (p.size() == 0)
+                ctx.status(404);
+            else ctx.json(p);
 
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 

@@ -9,13 +9,14 @@ import ch.hepia.model.program.ProgramSubscription;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.Future;
 
 public interface ProgramInterface {
     void create(Program program);
 
     void create(Kata kata, String programid,boolean goal);
 
-    Optional<List<ProgramShowCase>> programsDetails();
+    Future<List<ProgramShowCase>> programsDetails();
 
     Optional<Kata> kata(String kataid, String programid);
 

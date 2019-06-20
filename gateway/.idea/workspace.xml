@@ -2,6 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6a1f2e5-4f60-4227-82bb-83eb10fa94a5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../assets/document/THESE.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/document/THESE.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../compilation/share_docker_file/Kata.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../compilation/share_docker_file/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kataDocuments/0d0ab75f-711d-405a-8b49-fa563bd8b2ec/25de819e-27bd-4618-960b-035fe0fed1cd.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kataDocuments/0d0ab75f-711d-405a-8b49-fa563bd8b2ec/317f3509-70a9-4ba8-afcd-d6ee93c754f8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kataDocuments/0d0ab75f-711d-405a-8b49-fa563bd8b2ec/c21ce1ed-e32e-4ae5-8622-20e63645df2a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kataDocuments/5f148cf8-bf53-4de9-b368-d10aa40f51a6/25de819e-27bd-4618-960b-035fe0fed1cd.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kataDocuments/5f148cf8-bf53-4de9-b368-d10aa40f51a6/317f3509-70a9-4ba8-afcd-d6ee93c754f8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kataDocuments/5f148cf8-bf53-4de9-b368-d10aa40f51a6/c21ce1ed-e32e-4ae5-8622-20e63645df2a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -53,8 +64,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="687">
-              <caret line="82" selection-start-line="82" selection-end-line="82" />
+            <state relative-caret-position="259">
+              <caret line="80" column="33" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,8 +88,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1843">
-              <caret line="225" selection-start-line="225" selection-end-line="225" />
+            <state relative-caret-position="425">
+              <caret line="175" column="29" selection-start-line="175" selection-start-column="29" selection-end-line="175" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -164,9 +187,9 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Users.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/ProgramShowCase.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/Program.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/Kata.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" />
       </list>
@@ -199,9 +222,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="1920" />
-    <option name="width" value="1920" />
-    <option name="height" value="1200" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -211,7 +233,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -284,6 +305,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -423,11 +445,12 @@
       <workItem from="1560755028174" duration="6885000" />
       <workItem from="1560847798754" duration="636000" />
       <workItem from="1560856465452" duration="707000" />
+      <workItem from="1561038623448" duration="1245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="281232000" />
+    <option name="totallyTimeSpent" value="282477000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -439,10 +462,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="0" width="1920" height="1200" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49924126" visible="true" weight="0.24973376" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49924126" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="1" sideWeight="0.5007587" side_tool="true" weight="0.20127796" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -451,7 +474,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32920355" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3442478" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3433735" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39734513" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -461,7 +484,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3283186" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3221239" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32168674" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -750,16 +773,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="61" column="51" selection-start-line="61" selection-start-column="51" selection-end-line="61" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/upload/Capture d’écran 2019-06-05 à 14.08.27.png" />
     <entry file="file://$PROJECT_DIR$/kataDocuments/e38c5bd0-2c6f-4af8-a600-b16a5cfcb1c5.png" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -780,6 +793,26 @@
     <entry file="file://$PROJECT_DIR$/kataDocuments/6d3f099b-efd9-4ad3-8e03-fbd53f5f7fef/5e1feb9f-f635-4f20-be0a-d9ff42e3f1c3.jpg" />
     <entry file="file://$PROJECT_DIR$/kataDocuments/6d3f099b-efd9-4ad3-8e03-fbd53f5f7fef/013b5049-934c-4533-84a1-71c48afe2014.jpg" />
     <entry file="file://$PROJECT_DIR$/kataDocuments/6d3f099b-efd9-4ad3-8e03-fbd53f5f7fef/a45b0a6f-1ffa-44d9-9635-8a9851f52327.png" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="175" column="29" selection-start-line="175" selection-start-column="29" selection-end-line="175" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/Kata.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -797,20 +830,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1843">
-          <caret line="225" selection-start-line="225" selection-end-line="225" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="687">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
+        <state relative-caret-position="259">
+          <caret line="80" column="33" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -22,7 +22,10 @@ import org.bson.codecs.pojo.PojoCodecProvider;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.regex.Pattern;
 
 import static com.mongodb.client.model.Aggregates.*;
@@ -64,22 +67,30 @@ public class Programs implements ProgramInterface {
             database.getCollection("Programs").updateOne(eq("_id", programid), combine(inc("nbKata", 1), push("katas", kata)));
     }
 
+/*
+ CompletableFuture<> completableFuture
+                = CompletableFuture.supplyAsync(() -> {
 
-    public Optional<List<ProgramShowCase>> programsDetails() {
-        ArrayList<ProgramShowCase> p = new ArrayList<>();
-        MongoCollection<Program> programs = database.getCollection("Programs", Program.class);
+        });
 
-        for (Program prg : programs.find())
-            p.add(new ProgramShowCase(prg.getTitle(), prg.getSensei(), prg.getLanguage(), prg.getDescription(), prg.getNbKata(), prg.getTags(), prg.getId(), ""));
+        return completableFuture;
+ */
+    public Future<List<ProgramShowCase>> programsDetails() {
 
-        if (p == null)
-            return Optional.empty();
-        else if (p.size() == 0)
-            return Optional.empty();
-        else return Optional.of(p);
+        CompletableFuture<List<ProgramShowCase>> completableFuture
+                = CompletableFuture.supplyAsync(() -> {
+            ArrayList<ProgramShowCase> p = new ArrayList<>();
+            MongoCollection<Program> programs = database.getCollection("Programs", Program.class);
+
+            for (Program prg : programs.find())
+                p.add(new ProgramShowCase(prg.getTitle(), prg.getSensei(), prg.getLanguage(), prg.getDescription(), prg.getNbKata(), prg.getTags(), prg.getId(), ""));
+            return p;
+        });
+
+        return completableFuture;
     }
 
-    public Optional<Kata> kata(String kataid, String programid) {
+    public Future<Kata> kata(String kataid, String programid) {
 
         AggregateIterable<Kata> kata = database.getCollection("Programs", Kata.class).aggregate(Arrays.asList(
                 match(eq("_id", programid)),
