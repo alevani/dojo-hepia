@@ -91,20 +91,29 @@ public class Programs implements ProgramInterface {
     }
 
     public Future<Kata> kata(String kataid, String programid) {
+        CompletableFuture<Kata> completableFuture
+                = CompletableFuture.supplyAsync(() -> {
+            AggregateIterable<Kata> kata = database.getCollection("Programs", Kata.class).aggregate(Arrays.asList(
+                    match(eq("_id", programid)),
+                    unwind("$katas"),
+                    project(
+                            fields(excludeId(), include("katas"))),
+                    match(eq("katas._id", kataid)),
+                    replaceRoot("$katas")
+            ));
 
-        AggregateIterable<Kata> kata = database.getCollection("Programs", Kata.class).aggregate(Arrays.asList(
-                match(eq("_id", programid)),
-                unwind("$katas"),
-                project(
-                        fields(excludeId(), include("katas"))),
-                match(eq("katas._id", kataid)),
-                replaceRoot("$katas")
-        ));
+            // TODO risque d'erreur ici
+            return kata.iterator().next();
+        });
 
+        return completableFuture;
+
+
+/*
         if (kata.iterator().hasNext())
             return Optional.of(kata.iterator().next());
         else
-            return Optional.empty();
+            return Optional.empty();*/
     }
 
     public boolean isKataActivated(String kataid, String programid) {
