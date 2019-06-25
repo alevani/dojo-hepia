@@ -4,7 +4,6 @@ import {Location} from '@angular/common';
 import {Kata} from './kata';
 import {CompilationService} from '../../services/compilation/compilation.service';
 import {NgxUiLoaderService} from 'ngx-ui-loader';
-import {Canva} from '../../languages_canvas';
 import {LANGService} from '../../services/LANG/lang.service';
 import {AlertService} from 'ngx-alerts';
 import {AuthenticationService} from '../../services/auth/authentication.service';
@@ -15,7 +14,7 @@ import {ProgramService} from '../../services/program/program.service';
 import {KataService} from '../../services/kata/kata.service';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
 import {Program} from '../program-displayer/program';
-import {DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
+import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 import {CompilationServiceResponse} from '../../services/compilation/compilationServiceResponse';
 
 
@@ -88,53 +87,61 @@ export class KataComponent implements OnInit {
     this.ngxLoader.start();
     this.programService.getById(this.programid).subscribe((data: Program) => {
       this.program = data;
-      this.kataService.getKata(this.kataid, this.programid).subscribe((datas: Kata) => {
-          this.kata = datas;
-          if (this.kata.hasfile) {
-            this.kataService.getDocument(this.kata.filename, this.programid).subscribe((document: string) => {
+      if (this.program) {
+        this.kataService.get(this.kataid, this.programid).subscribe((datas: Kata) => {
+            this.kata = datas;
 
-              const ext = this.kata.filename.split('.')[1];
-              switch (ext) {
-                case 'png':
-                  this.documentType = 'image/png';
-                  break;
-                case 'jpg':
-                  this.documentType = 'image/jpg';
-                  break;
-                case 'pdf':
-                  this.documentType = 'application/pdf';
-                  break;
-                default:
-                  this.documentType = 'image/png';
-                  break;
+            if (this.kata.id !== null) {
+              if (this.kata.hasfile) {
+                this.kataService.getDocument(this.kata.filename, this.programid).subscribe((document: string) => {
+
+                  const ext = this.kata.filename.split('.')[1];
+                  switch (ext) {
+                    case 'png':
+                      this.documentType = 'image/png';
+                      break;
+                    case 'jpg':
+                      this.documentType = 'image/jpg';
+                      break;
+                    case 'pdf':
+                      this.documentType = 'application/pdf';
+                      break;
+                    default:
+                      this.documentType = 'image/png';
+                      break;
+                  }
+                  this.document = document;
+                  this.documentretrieved = true;
+                });
               }
-              this.document = document;
-              this.documentretrieved = true;
-            });
-          }
+              if (!(this.kata.title === 'GOALS')) {
+                this.kata.keepAssert = !datas.keepAssert;
+                this.getLANG(this.kata.language);
+              } else {
+                this.isGoal = true;
+              }
+              this.ngxLoader.stop();
 
-          if (!(this.kata.title === 'GOALS')) {
-            this.kata.keepAssert = !datas.keepAssert;
-            this.getLANG(this.kata.language);
-          } else {
-            this.isGoal = true;
-          }
-          this.ngxLoader.stop();
-          this.getSubscription();
-          this.katareceived = true;
+            } else {
+              this.ngxLoader.stop();
+              this.error = true;
+            }
+          },
+          (error1 => {
 
-        },
-        (error1 => {
-          if (error1.status === 404) {
             this.ngxLoader.stop();
             this.error = true;
-          }
-        }));
-    }, error1 => {
-      if (error1.status === 404) {
+            console.log(error1);
+
+          }));
+      } else {
         this.ngxLoader.stop();
         this.error = true;
       }
+    }, error1 => {
+      console.log(error1);
+      this.ngxLoader.stop();
+      this.error = true;
     });
   }
 
@@ -240,14 +247,7 @@ export class KataComponent implements OnInit {
         } else {
           this.kataSubscriptionService.get(this.kataid, this.programid, this.auth.currentUserValue.id).subscribe((kata: KataSubscription) => {
             this.kataInfo = kata;
-            this.nbAttempt = this.kataInfo.nbAttempt;
-            this.kataStatus = this.kataInfo.status;
-            if (this.kataInfo.status === 'RESOLVED' || this.kataInfo.status === 'FAILED') {
-              this.isResolved = true;
-              this.kata.canva = this.kataInfo.mysol;
-            }
-          }, (error1: any) => {
-            if (error1.status === 404) {
+            if (this.kataInfo.id === null) {
               let newStatus = 'ONGOING';
 
               if (this.isGoal) {
@@ -270,11 +270,23 @@ export class KataComponent implements OnInit {
                     userid: this.auth.currentUserValue.id,
                     sol: 'read.',
                     status: newStatus
-                  })).subscribe();
-
+                  })).subscribe(() => {
+                    this.katareceived = true;
+                  });
                 }
+                this.katareceived = true;
               });
+            } else {
+              this.nbAttempt = this.kataInfo.nbAttempt;
+              this.kataStatus = this.kataInfo.status;
+              if (this.kataInfo.status === 'RESOLVED' || this.kataInfo.status === 'FAILED') {
+                this.isResolved = true;
+                this.kata.canva = this.kataInfo.mysol;
+              }
+              this.katareceived = true;
             }
+          }, (error1: any) => {
+            console.log(error1);
           });
         }
       });
@@ -286,6 +298,7 @@ export class KataComponent implements OnInit {
     this.programid = this.route.snapshot.paramMap.get('prid') as string;
     this.kataid = this.route.snapshot.paramMap.get('id') as string;
     this.getKata();
+    this.getSubscription();
   }
 }
 

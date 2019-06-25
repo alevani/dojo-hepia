@@ -1,4 +1,4 @@
-<div class="container" *ngIf="programs">
+<div class="container" *ngIf="!programReceivedFailed">
   <h1 style="margin:2rem 0 0 2rem;text-align: center" i18n>All available programs</h1>
 <hr/>
     <app-card-displayer [programs]="programs"></app-card-displayer>
@@ -10,4 +10,4 @@
 </div>
 
 
-<span *ngIf="!programs"><ngx-ui-loader></ngx-ui-loader></span>
+<span *ngIf="programReceivedFailed"><ngx-ui-loader></ngx-ui-loader></span>

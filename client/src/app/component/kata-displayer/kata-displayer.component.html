@@ -33,7 +33,7 @@
        <span class="tag">{{tag}}</span>
     </span>
 
-  <div *ngIf="katas" [ngClass]="isSubscribed ? '' : 'deactivated'">
+  <div *ngIf="katas.length !== 0" [ngClass]="isSubscribed ? '' : 'deactivated'">
     <div class="d-flex flex-wrap justify-content-center">
     <span *ngFor="let kata of katas">
         <div *ngIf="kata.activated || isOwner" class="card">

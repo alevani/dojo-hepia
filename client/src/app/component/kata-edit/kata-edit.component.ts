@@ -64,7 +64,7 @@ export class KataEditComponent implements OnInit {
   getKata(): void {
     this.kataService.isOwner(this.kataid, this.auth.currentUserValue.id, this.programid).subscribe((data: boolean) => {
       if (data) {
-        this.kataService.getKata(this.kataid, this.programid).subscribe((kata: Kata) => {
+        this.kataService.get(this.kataid, this.programid).subscribe((kata: Kata) => {
           this.kata = kata;
         });
       } else {
@@ -116,7 +116,7 @@ export class KataEditComponent implements OnInit {
       rules: this.f.instruction.value,
       keepAssert: this.f.assert.value,
       nbAttempt: this.f.number.value,
-      difficulty: 'Ceinture blanche',
+      difficulty: 'White Belt',
       activated: this.kata.activated
     }), this.programid).subscribe((data: string) => {
       this.router.navigate(['kata-displayer/' + data]);

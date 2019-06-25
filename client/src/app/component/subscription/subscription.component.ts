@@ -32,16 +32,14 @@ export class SubscriptionComponent implements OnInit {
 
       if (this.programs.length === 0) {
         this.programReceivedFailed = true;
+      } else {
+        this.programsDone = this.programs.filter((x) => x.nbKataDone === x.nbKata);
+        this.programsOngoing = this.programs.filter((x) => x.nbKataDone !== x.nbKata);
       }
-      this.programsDone = this.programs.filter((x) => x.nbKataDone === x.nbKata);
-      this.programsOngoing = this.programs.filter((x) => x.nbKataDone !== x.nbKata);
 
       this.ngxLoader.stop();
     }, error1 => {
-      if (error1.status === 404) {
-        this.programReceivedFailed = true;
-        this.ngxLoader.stop();
-      }
+      console.log(error1);
     });
   }
 

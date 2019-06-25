@@ -7,6 +7,7 @@ import {AuthenticationService} from '../../../services/auth/authentication.servi
 import {NgxUiLoaderService} from 'ngx-ui-loader';
 import {v4 as uuid} from 'uuid';
 import {KataService} from '../../../services/kata/kata.service';
+import {Program} from '../../program-displayer/program';
 
 
 @Component({
@@ -35,6 +36,9 @@ export class GoalComponent implements OnInit {
   error = false;
   inforreceived = false;
 
+  // @ts-ignore
+  program: Program;
+
   get f() {
     return this.GoalForm.controls;
   }
@@ -58,18 +62,37 @@ export class GoalComponent implements OnInit {
     }), this.programid, true).subscribe(data => this.router.navigate(['/kata-displayer/' + this.programid + '']));
   }
 
-  ngOnInit() {
+  getProg() {
 
-    this.programid = this.route.snapshot.paramMap.get('id') as string;
+    this.ngxLoader.start();
     this.programService.isOwner(this.programid, this.auth.currentUserValue.id).subscribe((data: boolean) => {
-      if (!data) {
+      if (data) {
+        this.programService.getById(this.programid).subscribe((datas: Program) => {
+
+          this.program = datas;
+          if (this.program) {
+            this.inforreceived = true;
+          } else {
+            this.error = true;
+            this.ngxLoader.stop();
+          }
+
+        }, ((error1: any) => {
+          console.log(error1);
+          this.error = true;
+          this.ngxLoader.stop();
+        }));
+      } else {
         this.error = true;
         this.ngxLoader.stop();
-      } else {
-        this.inforreceived = true;
       }
     });
 
+  }
+
+  ngOnInit() {
+    this.programid = this.route.snapshot.paramMap.get('id') as string;
+    this.getProg();
   }
 
 }

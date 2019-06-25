@@ -17,7 +17,7 @@ export class KataService {
     return this.http.get<KataShowCase[]>('http://localhost:7000/kata/details/' + program + '/' + userid);
   }
 
-  getKata(kataid: string, programid: string): Observable<Kata>{
+  get(kataid: string, programid: string): Observable<Kata>{
     return this.http.get<Kata>('http://localhost:7000/kata/' + kataid + '/' + programid);
   }
 

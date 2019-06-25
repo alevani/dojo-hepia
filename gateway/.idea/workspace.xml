@@ -2,7 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6a1f2e5-4f60-4227-82bb-83eb10fa94a5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../assets/document/THESE.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/document/THESE.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-create/goal/goal.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-create/goal/goal.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-create/goal/goal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-create/goal/goal.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-create/kata-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-displayer/kata-displayer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata-edit/kata-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata-edit/kata-edit.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/mine/mine.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/mine/mine.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/mine/mine.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/mine/mine.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-displayer/program-displayer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-displayer/program-displayer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/program-displayer/program-displayer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/program-displayer/program-displayer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/subscription/subscription.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/subscription/subscription.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/component/subscription/subscription.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/subscription/subscription.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/services/kata/kata.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/services/kata/kata.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/09-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/09-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app$Roles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app$Roles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/ProgramInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ch/hepia/repository/ProgramInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/Programs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ch/hepia/repository/Programs.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,32 +56,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/Kata.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="8" selection-start-column="8" selection-end-column="8" />
-              <folding>
-                <element signature="e#2022#2023#0" expanded="true" />
-                <element signature="e#2052#2053#0" expanded="true" />
-                <element signature="e#2099#2100#0" expanded="true" />
-                <element signature="e#2137#2138#0" expanded="true" />
-                <element signature="e#2172#2173#0" expanded="true" />
-                <element signature="e#2203#2204#0" expanded="true" />
-                <element signature="e#2251#2252#0" expanded="true" />
-                <element signature="e#2291#2292#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="115" column="38" selection-start-line="115" selection-start-column="38" selection-end-line="115" selection-end-column="38" />
+            <state relative-caret-position="381">
+              <caret line="500" column="22" selection-start-line="500" selection-start-column="12" selection-end-line="500" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2214#2215#0" expanded="true" />
+                <element signature="e#2298#2299#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -65,20 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="269" lean-forward="true" selection-start-line="269" selection-end-line="269" />
+            <state relative-caret-position="-24">
+              <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -97,15 +93,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ac</find>
-      <find>activated</find>
-      <find>issu</find>
-      <find>subscr</find>
-      <find>issub</find>
-      <find>status</find>
-      <find>ch.hepia.repository.modals.interfaces.Users</find>
-      <find>ch/hepia/repository/modals/</find>
-      <find>toggleac</find>
       <find>kataid</find>
       <find>&quot;Users&quot;</find>
       <find>increment</find>
@@ -115,7 +102,6 @@
       <find>decrement</find>
       <find>decrementResolvedKata</find>
       <find>detailsbyid</find>
-      <find>update</find>
       <find>chec</find>
       <find>uuid</find>
       <find>goal</find>
@@ -127,6 +113,16 @@
       <find>deleteK</find>
       <find>dup</find>
       <find>duploc</find>
+      <find>.get()</find>
+      <find>futu</find>
+      <find>kata</find>
+      <find>act</find>
+      <find>hasBeenSubscribed</find>
+      <find>iska</find>
+      <find>upfate</find>
+      <find>decre</find>
+      <find>updateka</find>
+      <find>update</find>
     </findStrings>
     <replaceStrings>
       <replace>Users</replace>
@@ -178,9 +174,9 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/Program.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/Kata.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java" />
-        <option value="$PROJECT_DIR$/src/main/java/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" />
+        <option value="$PROJECT_DIR$/src/main/java/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java" />
       </list>
     </option>
   </component>
@@ -211,8 +207,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="x" value="1920" />
+    <option name="width" value="1920" />
+    <option name="height" value="1200" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -222,6 +219,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -232,32 +230,6 @@
             <path>
               <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
               <item name="gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="readable-stream" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="readable-stream" type="462c0819:PsiDirectoryNode" />
-              <item name="doc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="readable-stream" type="462c0819:PsiDirectoryNode" />
-              <item name="doc" type="462c0819:PsiDirectoryNode" />
-              <item name="wg-meetings" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gateway" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -272,30 +244,12 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hepia" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hepia" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -435,11 +389,14 @@
       <workItem from="1560847798754" duration="636000" />
       <workItem from="1560856465452" duration="707000" />
       <workItem from="1561038623448" duration="1478000" />
+      <workItem from="1561100527963" duration="11017000" />
+      <workItem from="1561365575489" duration="106000" />
+      <workItem from="1561391560313" duration="636000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="282710000" />
+    <option name="totallyTimeSpent" value="294469000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -451,10 +408,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="1920" y="0" width="1920" height="1200" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49924126" visible="true" weight="0.2532189" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49924126" visible="true" weight="0.26091588" />
       <window_info id="Structure" order="1" sideWeight="0.5007587" side_tool="true" weight="0.20127796" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -463,7 +420,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32920355" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3433735" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34336284" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39734513" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -473,7 +430,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3283186" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32168674" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32123893" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -501,11 +458,6 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="ctx.pathParam(&quot;pid&quot;)" language="JAVA" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
@@ -573,13 +525,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/JWToken.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/io/javalin/javalin/2.8.0/javalin-2.8.0.jar!/io/javalin/Context.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="166" selection-start-line="166" selection-end-line="166" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/io/javalin/javalin/2.8.0/javalin-2.8.0.jar!/io/javalin/core/util/ContextUtil.class">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -707,43 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://JAVA/">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement />
-          <nodes>
-            <node x="" y="">com</node>
-            <node x="" y="">App</node>
-            <node x="" y="">images</node>
-            <node x="" y="">netscape</node>
-            <node x="" y="">ch</node>
-            <node x="" y="">org</node>
-            <node x="" y="">io</node>
-            <node x="" y="">kotlin</node>
-            <node x="" y="">toolbarButtonGraphics</node>
-            <node x="" y="">sun</node>
-            <node x="" y="">jdk</node>
-            <node x="" y="">META-INF</node>
-            <node x="" y="">apple</node>
-            <node x="" y="">groovyjarjarasm</node>
-            <node x="" y="">java</node>
-            <node x="" y="">groovy</node>
-            <node x="" y="">javax</node>
-            <node x="" y="">groovyjarjarcommonscli</node>
-            <node x="" y="">javalinjwt</node>
-            <node x="" y="">groovyjarjarantlr</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="251.0" y="262.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/program/Program.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -782,23 +690,10 @@
     <entry file="file://$PROJECT_DIR$/kataDocuments/6d3f099b-efd9-4ad3-8e03-fbd53f5f7fef/5e1feb9f-f635-4f20-be0a-d9ff42e3f1c3.jpg" />
     <entry file="file://$PROJECT_DIR$/kataDocuments/6d3f099b-efd9-4ad3-8e03-fbd53f5f7fef/013b5049-934c-4533-84a1-71c48afe2014.jpg" />
     <entry file="file://$PROJECT_DIR$/kataDocuments/6d3f099b-efd9-4ad3-8e03-fbd53f5f7fef/a45b0a6f-1ffa-44d9-9635-8a9851f52327.png" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/io/javalin/javalin/2.8.0/javalin-2.8.0.jar!/io/javalin/Context.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="115" column="38" selection-start-line="115" selection-start-column="38" selection-end-line="115" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="104">
+          <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
         </state>
       </provider>
     </entry>
@@ -819,12 +714,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="uml://JAVA/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="" y="">com</node>
+            <node x="" y="">App</node>
+            <node x="" y="">images</node>
+            <node x="" y="">netscape</node>
+            <node x="" y="">org</node>
+            <node x="" y="">ch.hepia</node>
+            <node x="" y="">io</node>
+            <node x="" y="">kotlin</node>
+            <node x="" y="">toolbarButtonGraphics</node>
+            <node x="" y="">sun</node>
+            <node x="" y="">jdk</node>
+            <node x="" y="">META-INF</node>
+            <node x="" y="">apple</node>
+            <node x="" y="">groovyjarjarasm</node>
+            <node x="" y="">java</node>
+            <node x="" y="">groovy</node>
+            <node x="" y="">javax</node>
+            <node x="" y="">groovyjarjarcommonscli</node>
+            <node x="" y="">javalinjwt</node>
+            <node x="" y="">groovyjarjarantlr</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="251.0" y="262.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="269" lean-forward="true" selection-start-line="269" selection-end-line="269" />
+        <state relative-caret-position="422">
+          <caret line="210" column="36" selection-start-line="210" selection-start-column="36" selection-end-line="210" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-24">
+          <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="500" column="22" selection-start-line="500" selection-start-column="12" selection-end-line="500" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2214#2215#0" expanded="true" />
+            <element signature="e#2298#2299#0" expanded="true" />
           </folding>
         </state>
       </provider>

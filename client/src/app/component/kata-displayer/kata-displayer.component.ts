@@ -113,6 +113,7 @@ export class KataDisplayerComponent implements OnInit {
         this.isOwner = true;
         this.isSubscribed = true;
       }
+      this.getSubs();
     });
   }
 
@@ -198,39 +199,43 @@ export class KataDisplayerComponent implements OnInit {
   getSubs() {
     this.programSubscription.getSubs(this.programid, this.currentUser.id).subscribe((data: ProgramSubscription) => {
       this.subscription = data;
-      this.isSubscribed = this.subscription.status;
-      if (!this.isSubscribed) {
-        this.subvalue = 'Subscribe';
-      }
-      this.nullsubs = false;
-    }, error1 => {
-      if (error1.status === 404) {
+      if (this.subscription.id != null) {
+        this.isSubscribed = this.subscription.status;
+        if (!this.isSubscribed) {
+          this.subvalue = 'Subscribe';
+        }
+        this.nullsubs = false;
+      } else {
         this.isSubscribed = false;
         this.subvalue = 'Subscribe';
         this.nullsubs = true;
       }
 
+      this.kataService.getKatasDetails(this.programid, this.currentUser.id).subscribe((datas: KataShowCase[]) => {
+        this.katas = datas;
+        this.inforreceived = true;
+      });
+    }, error1 => {
+      console.log(error1);
     });
   }
 
   getKatas() {
-
     this.ngxLoader.start();
     this.programService.getById(this.programid).subscribe((data: Program) => {
 
       this.program = data;
-      this.getIsOwner();
-      this.getSubs();
-      this.inforreceived = true;
-      this.kataService.getKatasDetails(this.programid, this.currentUser.id).subscribe((datas: KataShowCase[]) => {
-        this.katas = datas;
-        this.ngxLoader.stop();
-      });
-    }, (error1 => {
-      if (error1.status === 404) {
+      if (this.program.id === null) {
         this.error = true;
+        this.inforreceived = true;
+      } else {
         this.ngxLoader.stop();
+        this.getIsOwner();
       }
+    }, (error1 => {
+      console.log(error1);
+      this.error = true;
+      this.ngxLoader.stop();
     }));
   }
 
@@ -321,7 +326,7 @@ export class DuplicateProgramDialogComponent {
   templateUrl: 'program-dialog-prompt-password.html',
   styleUrls: ['../program-create/program-create.component.scss']
 })
-export class PromptPasswordDialogComponent{
+export class PromptPasswordDialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<PromptPasswordDialogComponent>,

@@ -207,14 +207,19 @@ export class KataCreateComponent implements OnInit {
         this.programService.getById(this.programId).subscribe((datas: Program) => {
 
           this.program = datas;
-          this.language = this.program.language;
-          this.getLANG(this.language);
-          this.inforreceived = true;
-        }, ((error1: any) => {
-          if (error1.status === 404) {
+          if (this.program) {
+            this.language = this.program.language;
+            this.getLANG(this.language);
+            this.inforreceived = true;
+          } else {
             this.error = true;
             this.ngxLoader.stop();
           }
+
+        }, ((error1: any) => {
+          console.log(error1);
+          this.error = true;
+          this.ngxLoader.stop();
         }));
       } else {
         this.error = true;

@@ -1,4 +1,4 @@
-<div class="container" *ngIf="programs">
+<div class="container" *ngIf="programs.length != 0">
   <h1 style="margin:2rem 0 0 2rem;text-align: center">My subscription</h1>
 <hr>
   <div *ngIf="programsOngoing.length != 0">
@@ -16,4 +16,4 @@
 </div>
 
 
-<span *ngIf="!programs"><ngx-ui-loader></ngx-ui-loader></span>
+<span *ngIf="programReceivedFailed"><ngx-ui-loader></ngx-ui-loader></span>

@@ -31,6 +31,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionStage;
 import java.util.concurrent.Future;
 
 import static io.javalin.security.SecurityUtil.roles;
@@ -170,22 +171,11 @@ public class App {
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
         app.get("/program/details", ctx -> {
-            List<ProgramShowCase> p = dbPrograms.programsDetails().get();
-            if (p == null)
-                ctx.status(404);
-            else if (p.size() == 0)
-                ctx.status(404);
-            else ctx.json(p);
-
+            ctx.json(dbPrograms.programsDetails().toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.get("program/details/:id", ctx -> {
-            Optional<ProgramShowCase> s = dbPrograms.programDetailsById(ctx.pathParam("id"));
-            if (s.isPresent())
-                ctx.json(s.get());
-            else
-                ctx.status(404);
-
+            ctx.json(dbPrograms.programDetailsById(ctx.pathParam("id")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.post("/program/update", ctx -> {
@@ -212,15 +202,14 @@ public class App {
         /** KATAS **/
 
         app.get("/kata/isactivated/:kataid/:programid", ctx -> {
-            boolean isActivated = dbPrograms.isKataActivated(ctx.pathParam("kataid"), ctx.pathParam("programid"));
-            ctx.status(200).json(isActivated);
+            ctx.status(200).json(dbPrograms.isKataActivated(ctx.pathParam("kataid"), ctx.pathParam("programid")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.post("/kata/update", ctx -> {
             JSONObject input = new JSONObject(ctx.body());
             Kata kata = objectMapper.readValue(input.getString("kata"), Kata.class);
-            String programid = dbPrograms.update(kata, input.getString("programid"));
-            ctx.status(200).json(programid);
+            ctx.json(dbPrograms.update(kata, input.getString("programid")).toCompletableFuture());
+
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
         app.post("/kata/upload/:pid", ctx -> {
@@ -256,23 +245,15 @@ public class App {
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
         app.get("/kata/details/:programid/:userid", ctx -> {
-            Optional<List<KataShowCase>> ktsc = dbPrograms.kataDetails(ctx.pathParam("programid"), ctx.pathParam("userid"));
-            ctx.json(ktsc.get());
+            ctx.json(dbPrograms.kataDetails(ctx.pathParam("programid"), ctx.pathParam("userid")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.get("/kata/:kataid/:programid", ctx -> {
-
-            Optional<Kata> kata = dbPrograms.kata(ctx.pathParam("kataid"), ctx.pathParam("programid"));
-            if (kata.isPresent())
-                ctx.json(kata.get());
-            else
-                ctx.status(404);
-
+            ctx.json(dbPrograms.kata(ctx.pathParam("kataid"), ctx.pathParam("programid")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.get("/kata/isowner/:programid/:kataid/:userid", ctx -> {
-            boolean isOwner = dbPrograms.isKataOwner(ctx.pathParam("userid"), ctx.pathParam("kataid"), ctx.pathParam("programid"));
-            ctx.status(200).json(isOwner);
+            ctx.json(dbPrograms.isKataOwner(ctx.pathParam("userid"), ctx.pathParam("kataid"), ctx.pathParam("programid")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
 
@@ -312,12 +293,7 @@ public class App {
 
         /** PROGRAM SEARCH **/
         app.get("program/search/:type/:resource", ctx -> {
-            Optional<List<ProgramShowCase>> p = dbPrograms.programDetailsFiltered(ctx.pathParam("type"), ctx.pathParam("resource"));
-            if (p.isPresent())
-                ctx.json(p.get());
-            else
-                ctx.status(404).json("No ch.hepia.database.modal.program matched the specified query");
-
+            ctx.json(dbPrograms.programDetailsFiltered(ctx.pathParam("type"), ctx.pathParam("resource")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         /******************/
@@ -330,40 +306,24 @@ public class App {
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.get("/program/issubscribed/:userid/:programid", ctx -> {
-            boolean isSubscribed = dbPrograms.isSubscribed(ctx.pathParam("userid"), ctx.pathParam("programid"));
-            ctx.status(200).json(isSubscribed);
+            ctx.json(dbPrograms.isSubscribed(ctx.pathParam("userid"), ctx.pathParam("programid")).toCompletableFuture());
+
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.get("/program/isowner/:userid/:programid", ctx -> {
-            boolean isOwner = dbPrograms.isProgramOwner(ctx.pathParam("userid"), ctx.pathParam("programid"));
-            ctx.status(200).json(isOwner);
+            ctx.json(dbPrograms.isProgramOwner(ctx.pathParam("userid"), ctx.pathParam("programid")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.get("program/subscription/:programid/:userid", ctx -> {
-            Optional<ProgramSubscription> p = dbPrograms.subscriptionByID(ctx.pathParam("userid"), ctx.pathParam("programid"));
-            if (p.isPresent())
-                ctx.json(p.get());
-            else {
-                ctx.status(404);
-            }
+            ctx.json(dbPrograms.subscriptionByID(ctx.pathParam("userid"), ctx.pathParam("programid")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.get("program/subscription/:userid", ctx -> {
-            Optional<List<ProgramShowCase>> prgsc = dbPrograms.userSubscriptions(ctx.pathParam("userid"));
-            if (prgsc.isPresent())
-                ctx.json(prgsc.get());
-            else
-                ctx.status(404);
-
+           ctx.json(dbPrograms.userSubscriptions(ctx.pathParam("userid")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.get("/program/:userid", ctx -> {
-            Optional<List<ProgramShowCase>> prgsc = dbPrograms.userPrograms(ctx.pathParam("userid"));
-
-            if (prgsc.isPresent())
-                ctx.json(prgsc.get());
-            else
-                ctx.status(404);
+           ctx.json(dbPrograms.userPrograms(ctx.pathParam("userid")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
         app.post("program/createsubscription", ctx -> {
@@ -384,13 +344,7 @@ public class App {
         /** KATA SUBSCRIPTION **/
 
         app.get("kata/get/subscriptioninfos/:userid/:programid/:kataid", ctx -> {
-            Optional<KataSubscription> k = dbPrograms.kataSubscriptionById(ctx.pathParam("kataid"), ctx.pathParam("programid"), ctx.pathParam("userid"));
-
-            if (k.isPresent())
-                ctx.status(200).json(k.get());
-            else
-                ctx.status(404);
-
+            ctx.json(dbPrograms.kataSubscriptionById(ctx.pathParam("kataid"), ctx.pathParam("programid"), ctx.pathParam("userid")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.post("kata/create/subscription", ctx -> {

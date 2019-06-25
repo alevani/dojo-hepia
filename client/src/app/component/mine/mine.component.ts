@@ -29,10 +29,7 @@ export class MineComponent implements OnInit {
       }
       this.ngxLoader.stop();
     }, (error1: any) => {
-      if (error1.status === 404) {
-        this.programReceivedFailed = true;
-        this.ngxLoader.stop();
-      }
+      console.log(error1);
     });
   }
 

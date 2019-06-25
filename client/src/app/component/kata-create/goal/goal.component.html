@@ -1,6 +1,6 @@
-<div class="container" style="margin-top:5%;">
+<div class="container"  *ngIf="inforreceived" style="margin-top:5%;">
 
-  <form [formGroup]="GoalForm" *ngIf="inforreceived">
+  <form [formGroup]="GoalForm">
     <h1>GOALS</h1>
     <hr>
     <mat-grid-list cols="2" rowHeight="420">

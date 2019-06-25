@@ -22,10 +22,7 @@ import org.bson.codecs.pojo.PojoCodecProvider;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 import java.util.regex.Pattern;
 
 import static com.mongodb.client.model.Aggregates.*;
@@ -67,15 +64,7 @@ public class Programs implements ProgramInterface {
             database.getCollection("Programs").updateOne(eq("_id", programid), combine(inc("nbKata", 1), push("katas", kata)));
     }
 
-/*
- CompletableFuture<> completableFuture
-                = CompletableFuture.supplyAsync(() -> {
-
-        });
-
-        return completableFuture;
- */
-    public Future<List<ProgramShowCase>> programsDetails() {
+    public CompletionStage<List<ProgramShowCase>> programsDetails() {
 
         CompletableFuture<List<ProgramShowCase>> completableFuture
                 = CompletableFuture.supplyAsync(() -> {
@@ -90,57 +79,61 @@ public class Programs implements ProgramInterface {
         return completableFuture;
     }
 
-    public Future<Kata> kata(String kataid, String programid) {
+    public CompletionStage<Kata> kata(String kataid, String programid) {
         CompletableFuture<Kata> completableFuture
                 = CompletableFuture.supplyAsync(() -> {
-            AggregateIterable<Kata> kata = database.getCollection("Programs", Kata.class).aggregate(Arrays.asList(
-                    match(eq("_id", programid)),
-                    unwind("$katas"),
-                    project(
-                            fields(excludeId(), include("katas"))),
-                    match(eq("katas._id", kataid)),
-                    replaceRoot("$katas")
-            ));
-
-            // TODO risque d'erreur ici
-            return kata.iterator().next();
+            try {
+                AggregateIterable<Kata> kata = database.getCollection("Programs", Kata.class).aggregate(Arrays.asList(
+                        match(eq("_id", programid)),
+                        unwind("$katas"),
+                        project(
+                                fields(excludeId(), include("katas"))),
+                        match(eq("katas._id", kataid)),
+                        replaceRoot("$katas")
+                ));
+                return kata.iterator().next();
+            } catch (NoSuchElementException e) {
+                return new Kata();
+            }
         });
 
         return completableFuture;
-
-
-/*
-        if (kata.iterator().hasNext())
-            return Optional.of(kata.iterator().next());
-        else
-            return Optional.empty();*/
     }
 
-    public boolean isKataActivated(String kataid, String programid) {
-        return database.getCollection("Programs", Kata.class).aggregate(Arrays.asList(
+    public CompletionStage<Boolean> isKataActivated(String kataid, String programid) {
+        CompletableFuture<Boolean> completableFuture
+                = CompletableFuture.supplyAsync(() -> database.getCollection("Programs", Kata.class).aggregate(Arrays.asList(
                 match(eq("_id", programid)),
                 unwind("$katas"),
                 project(
                         fields(excludeId(), include("katas"))),
                 match(eq("katas._id", kataid)),
                 replaceRoot("$katas")
-        )).iterator().next().isActivated();
+        )).iterator().next().isActivated());
+
+        return completableFuture;
+
     }
 
-    public Optional<List<KataShowCase>> kataDetails(String programid, String userid) {
+    public CompletionStage<List<KataShowCase>> kataDetails(String programid, String userid) {
 
-        AggregateIterable<Kata> kata = database.getCollection("Programs", Kata.class).aggregate(Arrays.asList(
-                unwind("$katas"),
-                match(eq("_id", programid)),
-                replaceRoot("$katas")
+        CompletableFuture<List<KataShowCase>> completableFuture
+                = CompletableFuture.supplyAsync(() -> {
+            AggregateIterable<Kata> kata = database.getCollection("Programs", Kata.class).aggregate(Arrays.asList(
+                    unwind("$katas"),
+                    match(eq("_id", programid)),
+                    replaceRoot("$katas")
 
-        ));
+            ));
 
-        ArrayList<KataShowCase> ktsc = new ArrayList<>();
-        for (Kata x : kata)
-            ktsc.add(new KataShowCase(x.getTitle(), x.getDifficulty(), x.getId(), getKataStatus(x.getId(), programid, userid), x.isActivated()));
+            ArrayList<KataShowCase> ktsc = new ArrayList<>();
+            for (Kata x : kata)
+                ktsc.add(new KataShowCase(x.getTitle(), x.getDifficulty(), x.getId(), getKataStatus(x.getId(), programid, userid), x.isActivated()));
 
-        return Optional.of(ktsc);
+            return ktsc;
+        });
+
+        return completableFuture;
     }
 
     private void decrementResolvedKata(String kataid, String programid) {
@@ -157,76 +150,91 @@ public class Programs implements ProgramInterface {
 
     private String getKataStatus(String kataid, String programid, String userid) {
 
-        if (isSubscribed(userid, programid) || hasBeenSubscribed(userid, programid)) {
-            AggregateIterable<KataSubscription> kata = database.getCollection("Users", KataSubscription.class).aggregate(Arrays.asList(
+        try {
+            if (isSubscribed(userid, programid).toCompletableFuture().get() || hasBeenSubscribed(userid, programid)) {
+                AggregateIterable<KataSubscription> kata = database.getCollection("Users", KataSubscription.class).aggregate(Arrays.asList(
+                        match(eq("_id", userid)),
+                        unwind("$programSubscriptions"),
+                        replaceRoot("$programSubscriptions"),
+                        match(eq("idprogram", programid)),
+                        unwind("$katas"),
+                        match(eq("katas._id", kataid)),
+                        replaceRoot("$katas"),
+                        project(fields(excludeId(), include("status")))
+                ));
+
+                try {
+                    return kata.iterator().next().getStatus();
+                } catch (NoSuchElementException e) {
+                    return "TODO";
+                }
+
+
+            } else
+                return "TODO";
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        return "TODO";
+    }
+
+    public CompletionStage<ProgramShowCase> programDetailsById(String id) {
+        CompletableFuture<ProgramShowCase> completableFuture
+                = CompletableFuture.supplyAsync(() -> {
+
+            try {
+                Program program = database.getCollection("Programs", Program.class).aggregate(Arrays.asList(match(eq("_id", id)))).iterator().next();
+                return new ProgramShowCase(program.getTitle(), program.getSensei(), program.getLanguage(), program.getDescription(), program.getNbKata(), program.getTags(), program.getId(), program.getPassword());
+            } catch (NoSuchElementException e) {
+                return new ProgramShowCase();
+            }
+        });
+
+        return completableFuture;
+    }
+
+    public CompletionStage<List<ProgramShowCase>> programDetailsFiltered(String type, String resource) {
+
+        CompletableFuture<List<ProgramShowCase>> completableFuture
+                = CompletableFuture.supplyAsync(() -> {
+            ArrayList<ProgramShowCase> p = new ArrayList<>();
+
+            MongoCollection<Program> cprograms = database.getCollection("Programs", Program.class);
+            Pattern regex = Pattern.compile(resource, Pattern.CASE_INSENSITIVE);
+            Iterable<Program> programs = cprograms.find(eq(type, regex));
+
+
+            programs.forEach(x -> {
+                p.add(new ProgramShowCase(x.getTitle(), x.getSensei(), x.getLanguage(), x.getDescription(), x.getNbKata(), x.getTags(), x.getId(), -1));
+            });
+            return p;
+        });
+
+        return completableFuture;
+    }
+
+    public CompletionStage<ProgramSubscription> subscriptionByID(String userid, String idrogram) {
+        CompletableFuture<ProgramSubscription> completableFuture
+                = CompletableFuture.supplyAsync(() -> {
+            AggregateIterable<ProgramSubscription> prgsub = database.getCollection("Users", ProgramSubscription.class).aggregate(Arrays.asList(
                     match(eq("_id", userid)),
                     unwind("$programSubscriptions"),
-                    replaceRoot("$programSubscriptions"),
-                    match(eq("idprogram", programid)),
-                    unwind("$katas"),
-                    match(eq("katas._id", kataid)),
-                    replaceRoot("$katas"),
-                    project(fields(excludeId(), include("status")))
+                    project(
+                            fields(excludeId(), include("programSubscriptions"))),
+                    match(eq("programSubscriptions.idprogram", idrogram)),
+                    replaceRoot("$programSubscriptions")
             ));
 
             try {
-                return kata.iterator().next().getStatus();
+                return prgsub.iterator().next();
             } catch (NoSuchElementException e) {
-                return "TODO";
+                return new ProgramSubscription();
             }
-
-
-        } else
-            return "TODO";
-    }
-
-    public Optional<ProgramShowCase> programDetailsById(String id) {
-        ProgramShowCase p;
-
-        try {
-            Program program = database.getCollection("Programs", Program.class).aggregate(Arrays.asList(match(eq("_id", id)))).iterator().next();
-            p = new ProgramShowCase(program.getTitle(), program.getSensei(), program.getLanguage(), program.getDescription(), program.getNbKata(), program.getTags(), program.getId(), program.getPassword());
-
-            return Optional.of(p);
-        } catch (NoSuchElementException e) {
-            return Optional.empty();
-        }
-    }
-
-    public Optional<List<ProgramShowCase>> programDetailsFiltered(String type, String resource) {
-        ArrayList<ProgramShowCase> p = new ArrayList<>();
-
-        MongoCollection<Program> cprograms = database.getCollection("Programs", Program.class);
-        Pattern regex = Pattern.compile(resource, Pattern.CASE_INSENSITIVE);
-        Iterable<Program> programs = cprograms.find(eq(type, regex));
-
-
-        programs.forEach(x -> {
-            p.add(new ProgramShowCase(x.getTitle(), x.getSensei(), x.getLanguage(), x.getDescription(), x.getNbKata(), x.getTags(), x.getId(), -1));
         });
 
-        if (p == null)
-            return Optional.empty();
-        else if (p.size() == 0)
-            return Optional.empty();
-        else return Optional.of(p);
-    }
-
-    public Optional<ProgramSubscription> subscriptionByID(String userid, String idrogram) {
-        AggregateIterable<ProgramSubscription> prgsub = database.getCollection("Users", ProgramSubscription.class).aggregate(Arrays.asList(
-                match(eq("_id", userid)),
-                unwind("$programSubscriptions"),
-                project(
-                        fields(excludeId(), include("programSubscriptions"))),
-                match(eq("programSubscriptions.idprogram", idrogram)),
-                replaceRoot("$programSubscriptions")
-        ));
-
-        if (prgsub.iterator().hasNext())
-            return Optional.of(prgsub.iterator().next());
-        else
-            return Optional.empty();
-
+        return completableFuture;
     }
 
 
@@ -275,46 +283,47 @@ public class Programs implements ProgramInterface {
         )));
     }
 
-    public Optional<List<ProgramShowCase>> userSubscriptions(String userid) {
+    public CompletionStage<List<ProgramShowCase>> userSubscriptions(String userid) {
 
-        AggregateIterable<ProgramSubscription> programids = database.getCollection("Users", ProgramSubscription.class).aggregate(Arrays.asList(
-                match(eq("_id", userid)),
-                project(
-                        fields(excludeId(), include("programSubscriptions"))),
-                unwind("$programSubscriptions"),
-                project(
-                        fields(excludeId(), exclude("katas"))),
-                match(eq("programSubscriptions.status", true)),
-                replaceRoot("$programSubscriptions")
-        ));
+        CompletableFuture<List<ProgramShowCase>> completableFuture
+                = CompletableFuture.supplyAsync(() -> {
+            AggregateIterable<ProgramSubscription> programids = database.getCollection("Users", ProgramSubscription.class).aggregate(Arrays.asList(
+                    match(eq("_id", userid)),
+                    project(
+                            fields(excludeId(), include("programSubscriptions"))),
+                    unwind("$programSubscriptions"),
+                    project(
+                            fields(excludeId(), exclude("katas"))),
+                    match(eq("programSubscriptions.status", true)),
+                    replaceRoot("$programSubscriptions")
+            ));
 
-        ArrayList<ProgramShowCase> prgsc = new ArrayList<>();
-        MongoCollection<Program> cprograms = database.getCollection("Programs", Program.class);
+            ArrayList<ProgramShowCase> prgsc = new ArrayList<>();
+            MongoCollection<Program> cprograms = database.getCollection("Programs", Program.class);
 
-        for (ProgramSubscription x : programids) {
-            Program p = cprograms.find(combine(eq("_id", x.idprogram), ne("idsensei", userid))).first();
-            if (!(p == null))
-                prgsc.add(new ProgramShowCase(p.getTitle(), p.getSensei(), p.getLanguage(), p.getDescription(), p.getNbKata(), p.getTags(), p.getId(), x.nbKataDone));
-        }
-        if (prgsc == null)
-            return Optional.empty();
-        else if (prgsc.size() == 0)
-            return Optional.empty();
-        else return Optional.of(prgsc);
+            for (ProgramSubscription x : programids) {
+                Program p = cprograms.find(combine(eq("_id", x.idprogram), ne("idsensei", userid))).first();
+                if (!(p == null))
+                    prgsc.add(new ProgramShowCase(p.getTitle(), p.getSensei(), p.getLanguage(), p.getDescription(), p.getNbKata(), p.getTags(), p.getId(), x.nbKataDone));
+            }
+            return prgsc;
+        });
+
+        return completableFuture;
     }
 
-    public Optional<List<ProgramShowCase>> userPrograms(String userid) {
-        Iterable<Program> cprograms = database.getCollection("Programs", Program.class).find(eq("idsensei", userid));
-        ArrayList<ProgramShowCase> prgsc = new ArrayList<>();
+    public CompletionStage<List<ProgramShowCase>> userPrograms(String userid) {
+        CompletableFuture<List<ProgramShowCase>> completableFuture
+                = CompletableFuture.supplyAsync(() -> {
+            Iterable<Program> cprograms = database.getCollection("Programs", Program.class).find(eq("idsensei", userid));
+            ArrayList<ProgramShowCase> prgsc = new ArrayList<>();
 
-        for (Program p : cprograms)
-            prgsc.add(new ProgramShowCase(p.getTitle(), p.getSensei(), p.getLanguage(), p.getDescription(), p.getNbKata(), p.getTags(), p.getId(), -1));
+            for (Program p : cprograms)
+                prgsc.add(new ProgramShowCase(p.getTitle(), p.getSensei(), p.getLanguage(), p.getDescription(), p.getNbKata(), p.getTags(), p.getId(), -1));
+            return prgsc;
+        });
 
-        if (prgsc == null)
-            return Optional.empty();
-        else if (prgsc.size() == 0)
-            return Optional.empty();
-        else return Optional.of(prgsc);
+        return completableFuture;
     }
 
     public void duplicateProgram(String programid, String newprogramid, String title) {
@@ -336,22 +345,32 @@ public class Programs implements ProgramInterface {
         create(p);
     }
 
-    public boolean isProgramOwner(String userid, String programid) {
-        try {
-            database.getCollection("Programs", Program.class).find(combine(eq("idsensei", userid), eq("_id", programid))).first().getId();
-            return true;
-        } catch (NullPointerException e) {
-            return false;
-        }
+    public CompletionStage<Boolean> isProgramOwner(String userid, String programid) {
+        CompletableFuture<Boolean> completableFuture
+                = CompletableFuture.supplyAsync(() -> {
+            try {
+                database.getCollection("Programs", Program.class).find(combine(eq("idsensei", userid), eq("_id", programid))).first().getId();
+                return true;
+            } catch (NullPointerException e) {
+                return false;
+            }
+        });
+
+        return completableFuture;
     }
 
-    public boolean isKataOwner(String userid, String kataid, String programid) {
-        try {
-            database.getCollection("Programs", Program.class).find(combine(eq("_id", programid), eq("idsensei", userid), eq("katas._id", kataid))).first().getId();
-            return true;
-        } catch (NullPointerException e) {
-            return false;
-        }
+    public CompletionStage<Boolean> isKataOwner(String userid, String kataid, String programid) {
+        CompletableFuture<Boolean> completableFuture
+                = CompletableFuture.supplyAsync(() -> {
+            try {
+                database.getCollection("Programs", Program.class).find(combine(eq("_id", programid), eq("idsensei", userid), eq("katas._id", kataid))).first().getId();
+                return true;
+            } catch (NullPointerException e) {
+                return false;
+            }
+        });
+
+        return completableFuture;
     }
 
     private boolean hasBeenSubscribed(String userid, String programid) {
@@ -372,41 +391,57 @@ public class Programs implements ProgramInterface {
         }
     }
 
-    public boolean isSubscribed(String userid, String programid) {
-        try {
-            return database.getCollection("Users").aggregate(Arrays.asList(
-                    match(eq("_id", userid)),
-                    unwind("$programSubscriptions"),
-                    project(
-                            fields(excludeId(), include("programSubscriptions"))),
-                    match(eq("programSubscriptions.idprogram", programid)),
-                    replaceRoot("$programSubscriptions"),
-                    project(
-                            fields(excludeId(), include("status")))
-            )).iterator().next().getBoolean("status");
-        } catch (NoSuchElementException e) {
-            return false;
-        }
+    /*
+     CompletableFuture<> completableFuture
+             = CompletableFuture.supplyAsync(() -> {
+
+     });
+
+         return completableFuture;*/
+    public CompletionStage<Boolean> isSubscribed(String userid, String programid) {
+        CompletableFuture<Boolean> completableFuture
+                = CompletableFuture.supplyAsync(() -> {
+            try {
+                return database.getCollection("Users").aggregate(Arrays.asList(
+                        match(eq("_id", userid)),
+                        unwind("$programSubscriptions"),
+                        project(
+                                fields(excludeId(), include("programSubscriptions"))),
+                        match(eq("programSubscriptions.idprogram", programid)),
+                        replaceRoot("$programSubscriptions"),
+                        project(
+                                fields(excludeId(), include("status")))
+                )).iterator().next().getBoolean("status");
+            } catch (NoSuchElementException e) {
+                return false;
+            }
+        });
+
+        return completableFuture;
     }
 
-    public Optional<KataSubscription> kataSubscriptionById(String kataid, String programid, String userid) {
+    public CompletionStage<KataSubscription> kataSubscriptionById(String kataid, String programid, String userid) {
+        CompletableFuture<KataSubscription> completableFuture
+                = CompletableFuture.supplyAsync(() -> {
+            AggregateIterable<KataSubscription> kata = database.getCollection("Users", KataSubscription.class).aggregate(Arrays.asList(
+                    match(eq("_id", userid)),
+                    unwind("$programSubscriptions"),
+                    replaceRoot("$programSubscriptions"),
+                    match(eq("idprogram", programid)),
+                    project(fields(excludeId(), include("katas"))),
+                    unwind("$katas"),
+                    match(eq("katas._id", kataid)),
+                    replaceRoot("$katas")
 
-        AggregateIterable<KataSubscription> kata = database.getCollection("Users", KataSubscription.class).aggregate(Arrays.asList(
-                match(eq("_id", userid)),
-                unwind("$programSubscriptions"),
-                replaceRoot("$programSubscriptions"),
-                match(eq("idprogram", programid)),
-                project(fields(excludeId(), include("katas"))),
-                unwind("$katas"),
-                match(eq("katas._id", kataid)),
-                replaceRoot("$katas")
+            ));
+            try {
+                return kata.iterator().next();
+            } catch (NoSuchElementException e) {
+                return new KataSubscription();
+            }
+        });
 
-        ));
-
-        if (kata.iterator().hasNext())
-            return Optional.of(kata.iterator().next());
-        else
-            return Optional.empty();
+        return completableFuture;
     }
 
 
@@ -424,7 +459,6 @@ public class Programs implements ProgramInterface {
     }
 
     public void updateKataSubscription(String kataid, String programid, String userid, String sol, String status) {
-
         database.getCollection("Users").updateOne(eq("_id", userid), combine(
                 set("programSubscriptions.$[i].katas.$[j].mysol", sol),
                 set("programSubscriptions.$[i].katas.$[j].status", status),
@@ -461,34 +495,48 @@ public class Programs implements ProgramInterface {
         ));
     }
 
-    public String update(Kata k, String programid) {
-        deleteKata(k.getId(), programid);
-        database.getCollection("Programs").updateOne(eq("_id", programid), push("katas", k));
+    public CompletionStage<String> update(Kata k, String programid) {
+        CompletableFuture<String> completableFuture
+                = CompletableFuture.supplyAsync(() -> {
+            deleteKata(k.getId(), programid);
+            database.getCollection("Programs").updateOne(eq("_id", programid), push("katas", k));
+            return programid;
 
-        return programid;
+        });
+
+        return completableFuture;
     }
 
     public void deleteKata(String kataid, String programid) {
 
-
-        if (isKataActivated(kataid, programid)) {
-            decrementResolvedKata(kataid, programid);
-            database.getCollection("Programs").updateOne(eq("_id", programid), inc("nbKata", -1));
-        }
-
+        isKataActivated(kataid, programid).toCompletableFuture().thenAccept(x -> {
+            if (x) {
+                decrementResolvedKata(kataid, programid);
+                database.getCollection("Programs").updateOne(eq("_id", programid), inc("nbKata", -1));
+            }
+        });
 
         database.getCollection("Users").updateMany(eq("programSubscriptions.katas._id", kataid), pull("programSubscriptions.$[i].katas", new BasicDBObject("_id", kataid)), new UpdateOptions().arrayFilters(Arrays.asList(
                 eq("i.idprogram", programid)
         )));
 
-        Optional<Kata> kata = kata(kataid, programid);
-        kata.ifPresent(value -> new File("kataDocuments/" + programid + "/" + value.getFilename()).delete());
+
+        kata(kataid, programid).toCompletableFuture().thenAccept(x -> {
+            new File("kataDocuments/" + programid + "/" + x.getFilename()).delete();
+        });
+
         database.getCollection("Programs").updateOne(eq("_id", programid), pull("katas", new BasicDBObject("_id", kataid)));
     }
 
-    public boolean check(String programid, String password) {
-        Program p = database.getCollection("Programs", Program.class).find(eq("_id", programid)).first();
-        return p.check(password);
+    public CompletionStage<Boolean> check(String programid, String password) {
+        CompletableFuture<Boolean> completableFuture
+                = CompletableFuture.supplyAsync(() -> {
+            Program p = database.getCollection("Programs", Program.class).find(eq("_id", programid)).first();
+            return p.check(password);
+        });
+
+        return completableFuture;
+
     }
 
 
