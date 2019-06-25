@@ -500,6 +500,7 @@ public class Programs implements ProgramInterface {
                 = CompletableFuture.supplyAsync(() -> {
             deleteKata(k.getId(), programid);
             database.getCollection("Programs").updateOne(eq("_id", programid), push("katas", k));
+            create(k,programid,k.getTitle() != "GOAL");
             return programid;
 
         });
