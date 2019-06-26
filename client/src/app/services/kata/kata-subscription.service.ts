@@ -26,7 +26,7 @@ export class KataSubscriptionService {
   }
 
   isSubscribed(userid: string, programid: string): Observable<boolean> {
-    return this.http.get<boolean>('http://localhost:7000/program/issubscribed/' + userid + '/' + programid);
+    return this.http.get<boolean>('http://localhost:7000/subscription/' + programid + '/user/' + userid + '');
   }
 
   constructor(private http: HttpClient) {

@@ -10,23 +10,23 @@ import {Program} from '../../../component/program-displayer/program';
 export class ProgramSubscriptionService {
 
   create(userid: string, obj: string) {
-    return this.http.post('http://localhost:7000/program/createsubscription', {userid, obj});
+    return this.http.post('http://localhost:7000/subscription', {userid, obj});
   }
 
   getMine(userid: string): Observable<Program[]> {
-    return this.http.get<Program[]>('http://localhost:7000/program/' + userid + '');
+    return this.http.get<Program[]>('http://localhost:7000/program/user/' + userid);
   }
 
   getSubscription(userid: string): Observable<Program[]> {
-    return this.http.get<Program[]>('http://localhost:7000/program/subscription/' + userid);
+    return this.http.get<Program[]>('http://localhost:7000/subscription/' + userid);
   }
 
   getSubs(programid: string, userid: string): Observable<ProgramSubscription> {
-    return this.http.get<ProgramSubscription>('http://localhost:7000/program/subscription/' + programid + '/' + userid + '');
+    return this.http.get<ProgramSubscription>('http://localhost:7000/subscription/' + programid + '/user/ ' + userid);
   }
 
-  toggle(obj: string) {
-    return this.http.post('http://localhost:7000/program/togglesubscription/', obj);
+  toggle(userid: string, programid: string) {
+    return this.http.post('http://localhost:7000/subscription/' + programid + '/user/' + userid + '/toggle', '');
   }
 
   constructor(private http: HttpClient) {

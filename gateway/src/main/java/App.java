@@ -22,7 +22,6 @@ import javalinjwt.JWTGenerator;
 import javalinjwt.JWTProvider;
 import javalinjwt.JavalinJWT;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.FilenameUtils;
 import org.json.JSONObject;
 
 import java.io.*;
@@ -30,9 +29,6 @@ import java.net.ConnectException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.*;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CompletionStage;
-import java.util.concurrent.Future;
 
 import static io.javalin.security.SecurityUtil.roles;
 
@@ -161,32 +157,37 @@ public class App {
 
         /** PROGRAM **/
 
-        /**
-         *  Create a ch.hepia.database.modal.program -> Expect complete object like Program.Program in body
-         */
-        app.post("/program/create", ctx -> {
+        app.post("program/", ctx -> {
             Program program = objectMapper.readValue(ctx.body(), Program.class);
             dbPrograms.create(program);
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
-        app.get("/program/details", ctx -> {
+        app.get("program/", ctx -> {
             ctx.json(dbPrograms.programsDetails().toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.get("program/details/:id", ctx -> {
+        app.get("/program/:programid/user/:userid/isowner", ctx -> {
+            ctx.json(dbPrograms.isProgramOwner(ctx.pathParam("userid"), ctx.pathParam("programid")).toCompletableFuture());
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
+
+        app.get("/program/user/:userid", ctx -> {
+            ctx.json(dbPrograms.userPrograms(ctx.pathParam("userid")).toCompletableFuture());
+        }, roles(Roles.SHODAI, Roles.SENSEI));
+
+        app.get("program/:id", ctx -> {
             ctx.json(dbPrograms.programDetailsById(ctx.pathParam("id")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.post("/program/update", ctx -> {
+        app.put("program/", ctx -> {
             JSONObject input = new JSONObject(ctx.body());
             ProgramShowCase program = objectMapper.readValue(input.get("program").toString(), ProgramShowCase.class);
             dbPrograms.update(input.getString("programid"), program);
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
-        app.post("program/delete", ctx -> {
-            dbPrograms.deleteProgram(new JSONObject(ctx.body()).getString("programid"));
+        app.delete("program/:programid", ctx -> {
+            dbPrograms.deleteProgram(ctx.pathParam("programid"));
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
@@ -201,26 +202,40 @@ public class App {
 
         /** KATAS **/
 
-        app.get("/kata/isactivated/:kataid/:programid", ctx -> {
+        app.post("program/:programid/kata/", ctx -> {
+            JSONObject input = new JSONObject(ctx.body());
+            Kata kata = objectMapper.readValue(input.getString("kata"), Kata.class);
+            dbPrograms.create(kata, ctx.pathParam("programid"), input.getBoolean("goal"));
+            ctx.status(200);
+        }, roles(Roles.SHODAI, Roles.SENSEI));
+
+        app.put("program/:programid/kata/", ctx -> {
+            Kata kata = objectMapper.readValue(new JSONObject(ctx.body()).getString("kata"), Kata.class);
+            ctx.json(dbPrograms.update(kata, ctx.pathParam("programid")).toCompletableFuture());
+        }, roles(Roles.SHODAI, Roles.SENSEI));
+
+        app.delete("program/:programid/kata/:kataid", ctx -> {
+            dbPrograms.deleteKata(ctx.pathParam("kataid"), ctx.pathParam("programid"));
+            ctx.status(200);
+        }, roles(Roles.SHODAI, Roles.SENSEI));
+
+        app.get("program/:programid/kata/:kataid/isactivated", ctx -> {
             ctx.status(200).json(dbPrograms.isKataActivated(ctx.pathParam("kataid"), ctx.pathParam("programid")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.post("/kata/update", ctx -> {
-            JSONObject input = new JSONObject(ctx.body());
-            Kata kata = objectMapper.readValue(input.getString("kata"), Kata.class);
-            ctx.json(dbPrograms.update(kata, input.getString("programid")).toCompletableFuture());
+        app.get("program/:programid/kata/:kataid", ctx -> {
+            ctx.json(dbPrograms.kata(ctx.pathParam("kataid"), ctx.pathParam("programid")).toCompletableFuture());
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        }, roles(Roles.SHODAI, Roles.SENSEI));
-
-        app.post("/kata/upload/:pid", ctx -> {
+        app.post("program/:programid/kata/upload", ctx -> {
             UploadedFile file = ctx.uploadedFile("file");
             UUID uuid = UUID.randomUUID();
-            FileUtil.streamToFile(file.getContent(), "kataDocuments/" + ctx.pathParam("pid") + "/" + uuid + file.getExtension());
+            FileUtil.streamToFile(file.getContent(), "kataDocuments/" + ctx.pathParam("programid") + "/" + uuid + file.getExtension());
             ctx.status(200).json(uuid + file.getExtension());
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
-        app.get("/kata/upload/:pid/:did", ctx -> {
-            String path = "kataDocuments/" + ctx.pathParam("pid") + "/" + ctx.pathParam("did");
+        app.get("program/:programid/kata/upload/:documentid", ctx -> {
+            String path = "kataDocuments/" + ctx.pathParam("programid") + "/" + ctx.pathParam("documentid");
             try {
                 ctx.status(200).json(convertFileContentToBlob(path));
             } catch (NullPointerException e) {
@@ -231,37 +246,21 @@ public class App {
 
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.post("kata/toggleactivation", ctx -> {
-            JSONObject input = new JSONObject(ctx.body());
-            dbPrograms.toggleKataActivation(input.getString("kid"), input.getString("pid"));
+        app.put("program/:programid/kata/:kataid/toggleactivation", ctx -> {
+            dbPrograms.toggleKataActivation(ctx.pathParam("kataid"), ctx.pathParam("programid"));
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
-        app.post("/kata/create", ctx -> {
-            JSONObject input = new JSONObject(ctx.body());
-            Kata kata = objectMapper.readValue(input.getString("kata"), Kata.class);
-            dbPrograms.create(kata, input.getString("programid"), input.getBoolean("goal"));
-            ctx.status(200);
-        }, roles(Roles.SHODAI, Roles.SENSEI));
 
-        app.get("/kata/details/:programid/:userid", ctx -> {
+        app.get("program/:programid/user/:userid/subscription", ctx -> {
             ctx.json(dbPrograms.kataDetails(ctx.pathParam("programid"), ctx.pathParam("userid")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.get("/kata/:kataid/:programid", ctx -> {
-            ctx.json(dbPrograms.kata(ctx.pathParam("kataid"), ctx.pathParam("programid")).toCompletableFuture());
-        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.get("/kata/isowner/:programid/:kataid/:userid", ctx -> {
+        app.get("program/:programid/kata/:kataid/user/:userid/isowner", ctx -> {
             ctx.json(dbPrograms.isKataOwner(ctx.pathParam("userid"), ctx.pathParam("kataid"), ctx.pathParam("programid")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-
-        app.post("/kata/delete/", ctx -> {
-            JSONObject input = new JSONObject(ctx.body());
-            dbPrograms.deleteKata(input.getString("kid"), input.getString("pid"));
-            ctx.status(200);
-        }, roles(Roles.SHODAI, Roles.SENSEI));
 
         /******************/
 
@@ -299,41 +298,34 @@ public class App {
 
         /** PROGRAM SUBSCRIPTION **/
 
-        app.get("/program/checkpassword/:programid/:password", ctx -> {
-            ctx.status(200).json(dbPrograms.check(ctx.pathParam("programid"), ctx.pathParam("password")));
-        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.get("/program/issubscribed/:userid/:programid", ctx -> {
-            ctx.json(dbPrograms.isSubscribed(ctx.pathParam("userid"), ctx.pathParam("programid")).toCompletableFuture());
 
-        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
-
-        app.get("/program/isowner/:userid/:programid", ctx -> {
-            ctx.json(dbPrograms.isProgramOwner(ctx.pathParam("userid"), ctx.pathParam("programid")).toCompletableFuture());
-        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
-
-        app.get("program/subscription/:programid/:userid", ctx -> {
+        app.get("subscription/:programid/user/:userid", ctx -> {
             ctx.json(dbPrograms.subscriptionByID(ctx.pathParam("userid"), ctx.pathParam("programid")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.get("program/subscription/:userid", ctx -> {
+        app.get("subscription/:userid", ctx -> {
             ctx.json(dbPrograms.userSubscriptions(ctx.pathParam("userid")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.get("/program/:userid", ctx -> {
-            ctx.json(dbPrograms.userPrograms(ctx.pathParam("userid")).toCompletableFuture());
-        }, roles(Roles.SHODAI, Roles.SENSEI));
 
-        app.post("program/createsubscription", ctx -> {
+        app.get("subscription/:programid/checkpassword/:password", ctx -> {
+            ctx.status(200).json(dbPrograms.check(ctx.pathParam("programid"), ctx.pathParam("password")));
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
+
+        app.get("subscription/:programid/user/:userid/issubscribed", ctx -> {
+            ctx.json(dbPrograms.isSubscribed(ctx.pathParam("userid"), ctx.pathParam("programid")).toCompletableFuture());
+
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
+        app.post("subscription/", ctx -> {
             JSONObject obj = new JSONObject(ctx.body());
             ProgramSubscription programSubscription = objectMapper.readValue(obj.getString("obj"), ProgramSubscription.class);
             dbPrograms.create(obj.getString("userid"), programSubscription);
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.post("program/togglesubscription", ctx -> {
-            JSONObject input = new JSONObject(ctx.body());
-            dbPrograms.toggleSubscription(input.getString("userid"), input.getString("programid"));
+        app.post("subscription/:programid/user/:userid/toggle", ctx -> {
+            dbPrograms.toggleSubscription(ctx.pathParam("userid"), ctx.pathParam("programid"));
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 

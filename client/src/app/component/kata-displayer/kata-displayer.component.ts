@@ -137,7 +137,7 @@ export class KataDisplayerComponent implements OnInit {
       });
     } else {
       this.isSubscribed = !this.isSubscribed;
-      this.programSubscription.toggle(JSON.stringify({programid: this.programid, userid: this.currentUser.id})).subscribe(() => {
+      this.programSubscription.toggle(this.currentUser.id, this.programid).subscribe(() => {
         if (this.isSubscribed) {
           this.subvalue = 'Unsubscribe';
           this.snackBar.open('Subscribed to ' + this.program.title, '', {
