@@ -24,7 +24,6 @@ export class MainLeftSideNavComponent {
   logout() {
     this.auth.logout();
     location.reload();
-    // TODO unset globlas
   }
 
   constructor(private breakpointObserver: BreakpointObserver, private auth: AuthenticationService) {

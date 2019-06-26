@@ -254,6 +254,20 @@ db.Users.updateMany({},
 
 
 
+db.Users.aggregate(
+	{$match: {"_id":"252600be-ae2e-4f79-a8e2-f64957ea607b"}},
+	{$unwind: "$programSubscriptions"},
+	{$project: {"_id":false,"programSubscriptions":true}},
+	{$match: {"programSubscriptions.idprogram":"97614887-c6d0-47ca-82a5-68de490add04"}},
+	{$replaceRoot: {newRoot:"$programSubscriptions"}}
+).pretty();
 
 
-
+AggregateIterable<ProgramSubscription> prgsub = database.getCollection("Users", ProgramSubscription.class).aggregate(Arrays.asList(
+	match(eq("_id", " 252600be-ae2e-4f79-a8e2-f64957ea607b")),
+	unwind("$programSubscriptions"),
+	project(
+		fields(excludeId(), include("programSubscriptions"))),
+	match(eq("programSubscriptions.idprogram", programid)),
+	replaceRoot("$programSubscriptions")
+));

@@ -21,8 +21,8 @@ export class ProgramSubscriptionService {
     return this.http.get<Program[]>('http://localhost:7000/subscription/' + userid);
   }
 
-  getSubs(programid: string, userid: string): Observable<ProgramSubscription> {
-    return this.http.get<ProgramSubscription>('http://localhost:7000/subscription/' + programid + '/user/ ' + userid);
+  getSub(programid: string, userid: string): Observable<ProgramSubscription> {
+    return this.http.get<ProgramSubscription>('http://localhost:7000/subscription/' + programid + '/user/' + userid);
   }
 
   toggle(userid: string, programid: string) {

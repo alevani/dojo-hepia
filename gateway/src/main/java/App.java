@@ -310,7 +310,7 @@ public class App {
 
 
         app.get("subscription/:programid/checkpassword/:password", ctx -> {
-            ctx.status(200).json(dbPrograms.check(ctx.pathParam("programid"), ctx.pathParam("password")));
+            ctx.status(200).json(dbPrograms.check(ctx.pathParam("programid"), ctx.pathParam("password")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.get("subscription/:programid/user/:userid/issubscribed", ctx -> {
@@ -337,19 +337,19 @@ public class App {
             ctx.json(dbPrograms.kataSubscriptionById(ctx.pathParam("kataid"), ctx.pathParam("programid"), ctx.pathParam("userid")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.post("kata/create/subscription", ctx -> {
+        app.post("subscription/kata", ctx -> {
             JSONObject obj = new JSONObject(ctx.body());
             dbPrograms.createKataSubscription(obj.getString("kataid"), obj.getString("programid"), obj.getString("userid"), obj.getString("status"));
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.post("kata/inc/subscription", ctx -> {
+        app.put("subscription/kata/inc", ctx -> {
             JSONObject obj = new JSONObject(ctx.body());
             dbPrograms.incrementKataSubscriptionAttempt(obj.getString("kataid"), obj.getString("programid"), obj.getString("userid"));
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
-        app.post("kata/update/subscription", ctx -> {
+        app.put("subscription/kata", ctx -> {
             JSONObject obj = new JSONObject(ctx.body());
             dbPrograms.updateKataSubscription(obj.getString("kataid"), obj.getString("programid"), obj.getString("userid"), obj.getString("sol"), obj.getString("status"));
             ctx.status(200);

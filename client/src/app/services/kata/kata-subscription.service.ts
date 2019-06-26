@@ -9,11 +9,11 @@ import {KataSubscription} from '../../interfaces/subscriptions/KataSubscription'
 export class KataSubscriptionService {
 
   create(obj: string) {
-    return this.http.post('http://localhost:7000/kata/create/subscription', obj);
+    return this.http.post('http://localhost:7000/subscription/kata', obj);
   }
 
   increment(obj: string) {
-    return this.http.post('http://localhost:7000/kata/inc/subscription', obj);
+    return this.http.put('http://localhost:7000/subscription/kata/inc', obj);
 
   }
 
@@ -22,11 +22,11 @@ export class KataSubscriptionService {
   }
 
   update(obj: string) {
-    return this.http.post('http://localhost:7000/kata/update/subscription', obj);
+    return this.http.put('http://localhost:7000/subscription/kata', obj);
   }
 
   isSubscribed(userid: string, programid: string): Observable<boolean> {
-    return this.http.get<boolean>('http://localhost:7000/subscription/' + programid + '/user/' + userid + '');
+    return this.http.get<boolean>('http://localhost:7000/subscription/' + programid + '/user/' + userid + '/issubscribed');
   }
 
   constructor(private http: HttpClient) {

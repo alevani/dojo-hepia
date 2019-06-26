@@ -133,7 +133,7 @@ export class KataDisplayerComponent implements OnInit {
           duration: 2000
         });
         // tslint:disable-next-line:max-line-length
-        this.programSubscription.getSubs(this.programid, this.currentUser.id).subscribe((data: ProgramSubscription) => this.subscription = data);
+        this.programSubscription.getSub(this.programid, this.currentUser.id).subscribe((data: ProgramSubscription) => this.subscription = data);
       });
     } else {
       this.isSubscribed = !this.isSubscribed;
@@ -197,7 +197,7 @@ export class KataDisplayerComponent implements OnInit {
   }
 
   getSubs() {
-    this.programSubscription.getSubs(this.programid, this.currentUser.id).subscribe((data: ProgramSubscription) => {
+    this.programSubscription.getSub(this.programid, this.currentUser.id).subscribe((data: ProgramSubscription) => {
       this.subscription = data;
       if (this.subscription.id != null) {
         this.isSubscribed = this.subscription.status;
@@ -360,6 +360,7 @@ export class PromptPasswordDialogComponent {
     this.loading = true;
 
     this.programService.check(this.data.programid, this.f.password.value).subscribe((data: boolean) => {
+
       if (data) {
         this.error = false;
         this.loading = false;

@@ -297,6 +297,7 @@ export class KataComponent implements OnInit {
   ngOnInit() {
     this.programid = this.route.snapshot.paramMap.get('prid') as string;
     this.kataid = this.route.snapshot.paramMap.get('id') as string;
+
     this.getKata();
     this.getSubscription();
   }

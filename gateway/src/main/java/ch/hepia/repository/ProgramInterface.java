@@ -27,11 +27,11 @@ public interface ProgramInterface {
 
     CompletionStage<List<ProgramShowCase>> programDetailsFiltered(String type, String resource);
 
-    CompletionStage<ProgramSubscription> subscriptionByID(String userid, String idrogram);
+    CompletionStage<ProgramSubscription> subscriptionByID(String userid, String programid);
 
     void create(String userid, ProgramSubscription p);
 
-    void toggleSubscription(String userid, String idprogram);
+    void toggleSubscription(String userid, String programid);
 
     CompletionStage<KataSubscription> kataSubscriptionById(String kataid, String programid, String userid);
 

@@ -255,7 +255,7 @@ public class Programs implements ProgramInterface {
         return completableFuture;
     }
 
-    public CompletionStage<ProgramSubscription> subscriptionByID(String userid, String idrogram) {
+    public CompletionStage<ProgramSubscription> subscriptionByID(String userid, String programid) {
         CompletableFuture<ProgramSubscription> completableFuture
                 = CompletableFuture.supplyAsync(() -> {
             AggregateIterable<ProgramSubscription> prgsub = database.getCollection("Users", ProgramSubscription.class).aggregate(Arrays.asList(
@@ -263,7 +263,7 @@ public class Programs implements ProgramInterface {
                     unwind("$programSubscriptions"),
                     project(
                             fields(excludeId(), include("programSubscriptions"))),
-                    match(eq("programSubscriptions.idprogram", idrogram)),
+                    match(eq("programSubscriptions.idprogram", programid)),
                     replaceRoot("$programSubscriptions")
             ));
 
@@ -282,7 +282,7 @@ public class Programs implements ProgramInterface {
         database.getCollection("Users").updateOne(eq("_id", userid), push("programSubscriptions", p));
     }
 
-    public void toggleSubscription(String userid, String idprogram) {
+    public void toggleSubscription(String userid, String programid) {
 
 
         Document status = database.getCollection("Users").aggregate(Arrays.asList(
@@ -290,14 +290,14 @@ public class Programs implements ProgramInterface {
                 unwind("$programSubscriptions"),
                 project(
                         fields(excludeId(), include("programSubscriptions"))),
-                match(eq("programSubscriptions.idprogram", idprogram)),
+                match(eq("programSubscriptions.idprogram", programid)),
                 replaceRoot("$programSubscriptions"),
                 project(
                         fields(excludeId(), include("status")))
         )).iterator().next();
 
         database.getCollection("Users").updateOne(eq("_id", userid), set("programSubscriptions.$[i].status", !status.getBoolean("status")), new UpdateOptions().arrayFilters(Arrays.asList(
-                eq("i.idprogram", idprogram)
+                eq("i.idprogram", programid)
         )));
 
     }
