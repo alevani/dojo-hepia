@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6a1f2e5-4f60-4227-82bb-83eb10fa94a5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../assets/document/THESE.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/document/THESE.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/document/~$THESE.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/UserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/Programs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ch/hepia/repository/Programs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/UserInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ch/hepia/repository/UserInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ch/hepia/repository/Users.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongodb/mongo/seed.js" beforeDir="false" afterPath="$PROJECT_DIR$/../mongodb/mongo/seed.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -32,25 +43,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2140">
-              <caret line="502" column="46" selection-start-line="502" selection-start-column="46" selection-end-line="502" selection-end-column="46" />
+            <state relative-caret-position="489">
+              <caret line="78" column="141" selection-start-line="78" selection-start-column="141" selection-end-line="78" selection-end-column="141" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2214#2215#0" expanded="true" />
-                <element signature="e#2298#2299#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="118" column="24" lean-forward="true" selection-start-line="118" selection-start-column="24" selection-end-line="118" selection-end-column="24" />
+            <state relative-caret-position="107">
+              <caret line="272" column="17" selection-start-line="272" selection-start-column="17" selection-end-line="272" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,7 +70,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
+            <state relative-caret-position="117">
               <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -81,10 +90,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>increment</find>
-      <find>createka</find>
-      <find>d</find>
-      <find>decrement</find>
       <find>decrementResolvedKata</find>
       <find>detailsbyid</find>
       <find>chec</find>
@@ -93,7 +98,6 @@
       <find>upd</find>
       <find>update(</find>
       <find>deleteP</find>
-      <find>deleteK</find>
       <find>dup</find>
       <find>duploc</find>
       <find>.get()</find>
@@ -105,12 +109,17 @@
       <find>upfate</find>
       <find>decre</find>
       <find>updateka</find>
-      <find>update</find>
       <find>creat</find>
       <find>deleteKa</find>
       <find>create</find>
       <find>delete</find>
       <find>deletek</find>
+      <find>increment</find>
+      <find>deleteK</find>
+      <find>updateK</find>
+      <find>update</find>
+      <find>update(ka</find>
+      <find>deleteKata</find>
     </findStrings>
     <replaceStrings>
       <replace>Users</replace>
@@ -157,13 +166,13 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/cursors/ProgramInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/MongoDB.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/cursors/Programs.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Users.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/ProgramShowCase.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/Program.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/Kata.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Users.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" />
       </list>
     </option>
@@ -195,9 +204,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="1920" />
-    <option name="width" value="1920" />
-    <option name="height" value="1200" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -232,6 +240,23 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hepia" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hepia" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -380,12 +405,16 @@
       <workItem from="1561100527963" duration="11017000" />
       <workItem from="1561365575489" duration="106000" />
       <workItem from="1561391560313" duration="636000" />
-      <workItem from="1561445176507" duration="1921000" />
+      <workItem from="1561445176507" duration="2966000" />
+      <workItem from="1561453875511" duration="1092000" />
+      <workItem from="1561472210857" duration="111000" />
+      <workItem from="1561472373647" duration="4025000" />
+      <workItem from="1561488905787" duration="1725000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="296390000" />
+    <option name="totallyTimeSpent" value="304388000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -397,10 +426,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="0" width="1920" height="1200" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49924126" visible="true" weight="0.26357827" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49924126" weight="0.3676681" />
       <window_info id="Structure" order="1" sideWeight="0.5007587" side_tool="true" weight="0.20127796" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -409,17 +438,17 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32920355" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34336284" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39734513" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.46746987" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39638555" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32891566" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3283186" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32771084" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32123893" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32048193" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -444,6 +473,18 @@
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/App.java</url>
+          <line>277</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/App.java</url>
+          <line>283</line>
+          <properties />
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -595,16 +636,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Users.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://JavaScript-modules-diagram//Users/freak/Desktop/dojo-hepia/gateway">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -740,22 +771,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java">
+    <entry file="file://$USER_HOME$/Downloads/Programs (4)">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2140">
-          <caret line="502" column="46" selection-start-line="502" selection-start-column="46" selection-end-line="502" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2214#2215#0" expanded="true" />
-            <element signature="e#2298#2299#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="6452" selection-start-column="6452" selection-end-column="6452" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/Users (1)">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1590" selection-end-column="1590" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
+        <state relative-caret-position="117">
           <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Users.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -764,8 +807,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="118" column="24" lean-forward="true" selection-start-line="118" selection-start-column="24" selection-end-line="118" selection-end-column="24" />
+        <state relative-caret-position="107">
+          <caret line="272" column="17" selection-start-line="272" selection-start-column="17" selection-end-line="272" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="78" column="141" selection-start-line="78" selection-start-column="141" selection-end-line="78" selection-end-column="141" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

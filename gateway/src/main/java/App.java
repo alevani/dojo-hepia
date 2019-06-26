@@ -270,10 +270,9 @@ public class App {
         app.post("/user/tokenrequest/", ctx -> {
             JSONObject ids = new JSONObject(ctx.body());
 
-            Optional<User> user = dbUsers.checkUserCredentials(ids.getString("username"), ids.getString("password"));
+            User u = dbUsers.checkUserCredentials(ids.getString("username"), ids.getString("password"));
+            if (u != null) {
 
-            if (user.isPresent()) {
-                User u = user.get();
                 String token = provider.generateToken(u);
 
                 HashMap<String, String> p = new HashMap<>();
@@ -286,7 +285,6 @@ public class App {
             } else {
                 ctx.status(400).json("Username or password is incorrect");
             }
-
         }, roles(Roles.ANYONE));
 
         /******************/
@@ -319,11 +317,11 @@ public class App {
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.get("program/subscription/:userid", ctx -> {
-           ctx.json(dbPrograms.userSubscriptions(ctx.pathParam("userid")).toCompletableFuture());
+            ctx.json(dbPrograms.userSubscriptions(ctx.pathParam("userid")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.get("/program/:userid", ctx -> {
-           ctx.json(dbPrograms.userPrograms(ctx.pathParam("userid")).toCompletableFuture());
+            ctx.json(dbPrograms.userPrograms(ctx.pathParam("userid")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI));
 
         app.post("program/createsubscription", ctx -> {
@@ -386,7 +384,7 @@ public class App {
             String username = input.getString("username");
             String password = input.getString("password");
             String id = input.getString("id");
-            if (dbUsers.isExisting(username)) {
+            if (dbUsers.isExisting(username).toCompletableFuture().get()) {
                 ctx.status(400).json("Username '" + username + "' already exists");
             } else {
 

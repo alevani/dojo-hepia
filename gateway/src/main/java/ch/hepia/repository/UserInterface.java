@@ -2,12 +2,12 @@ package ch.hepia.repository;
 
 import ch.hepia.model.user.User;
 
-import java.util.Optional;
+import java.util.concurrent.CompletionStage;
 
 public interface UserInterface {
     void create(User u);
 
-    Optional<User> checkUserCredentials(String username, String password);
+    User checkUserCredentials(String username, String password);
 
-    boolean isExisting(String username);
+    CompletionStage<Boolean> isExisting(String username);
 }

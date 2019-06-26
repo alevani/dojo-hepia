@@ -51,17 +51,50 @@ public class Programs implements ProgramInterface {
 
         database.getCollection("Programs").createIndex(Indexes.ascending("title"));
     }
-
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
 
     public void create(Program program) {
-        database.getCollection("Programs", Program.class).insertOne(program);
+        CompletableFuture.supplyAsync(() -> {
+            database.getCollection("Programs", Program.class).insertOne(program);
+            return null;
+        });
     }
 
     public void create(Kata kata, String programid, boolean goal) {
-        if (goal)
-            database.getCollection("Programs").updateOne(eq("_id", programid), combine(inc("nbKata", 1), pushEach("katas", Arrays.asList(kata), new PushOptions().position(0))));
-        else
-            database.getCollection("Programs").updateOne(eq("_id", programid), combine(inc("nbKata", 1), push("katas", kata)));
+        CompletableFuture.supplyAsync(() -> {
+            if (goal)
+                database.getCollection("Programs").updateOne(eq("_id", programid), combine(inc("nbKata", 1), pushEach("katas", Arrays.asList(kata), new PushOptions().position(0))));
+            else
+                database.getCollection("Programs").updateOne(eq("_id", programid), combine(inc("nbKata", 1), push("katas", kata)));
+            return null;
+        });
+
+
     }
 
     public CompletionStage<List<ProgramShowCase>> programsDetails() {
@@ -137,15 +170,22 @@ public class Programs implements ProgramInterface {
     }
 
     private void decrementResolvedKata(String kataid, String programid) {
-        database.getCollection("Users").updateMany(combine(eq("programSubscriptions.katas._id", kataid), eq("programSubscriptions.idprogram", programid)), inc("programSubscriptions.$[i].nbKataDone", -1), new UpdateOptions().arrayFilters(Arrays.asList(
-                eq("i.katas.status", "RESOLVED")
-        )));
+        CompletableFuture.supplyAsync(() -> {
+            database.getCollection("Users").updateMany(combine(eq("programSubscriptions.katas._id", kataid), eq("programSubscriptions.idprogram", programid)), inc("programSubscriptions.$[i].nbKataDone", -1), new UpdateOptions().arrayFilters(Arrays.asList(
+                    eq("i.katas.status", "RESOLVED")
+            )));
+            return null;
+        });
     }
 
     private void incrementResolvedKata(String kataid, String programid) {
-        database.getCollection("Users").updateMany(combine(eq("programSubscriptions.katas._id", kataid), eq("programSubscriptions.idprogram", programid)), inc("programSubscriptions.$[i].nbKataDone", 1), new UpdateOptions().arrayFilters(Arrays.asList(
-                eq("i.katas.status", "RESOLVED")
-        )));
+        CompletableFuture.supplyAsync(() -> {
+
+            database.getCollection("Users").updateMany(combine(eq("programSubscriptions.katas._id", kataid), eq("programSubscriptions.idprogram", programid)), inc("programSubscriptions.$[i].nbKataDone", 1), new UpdateOptions().arrayFilters(Arrays.asList(
+                    eq("i.katas.status", "RESOLVED")
+            )));
+            return null;
+        });
     }
 
     private String getKataStatus(String kataid, String programid, String userid) {
@@ -243,6 +283,8 @@ public class Programs implements ProgramInterface {
     }
 
     public void toggleSubscription(String userid, String idprogram) {
+
+
         Document status = database.getCollection("Users").aggregate(Arrays.asList(
                 match(eq("_id", userid)),
                 unwind("$programSubscriptions"),
@@ -257,6 +299,7 @@ public class Programs implements ProgramInterface {
         database.getCollection("Users").updateOne(eq("_id", userid), set("programSubscriptions.$[i].status", !status.getBoolean("status")), new UpdateOptions().arrayFilters(Arrays.asList(
                 eq("i.idprogram", idprogram)
         )));
+
     }
 
     public void toggleKataActivation(String kataid, String programid) {
@@ -281,6 +324,7 @@ public class Programs implements ProgramInterface {
         database.getCollection("Programs").updateOne(eq("_id", programid), combine(inc("nbKata", number), set("katas.$[i].activated", !isActivated)), new UpdateOptions().arrayFilters(Arrays.asList(
                 eq("i._id", kataid)
         )));
+
     }
 
     public CompletionStage<List<ProgramShowCase>> userSubscriptions(String userid) {
@@ -327,6 +371,8 @@ public class Programs implements ProgramInterface {
     }
 
     public void duplicateProgram(String programid, String newprogramid, String title) {
+
+
         Program p = database.getCollection("Programs", Program.class).find(eq("_id", programid)).first();
 
         File index = new File("kataDocuments/" + programid);
@@ -391,13 +437,6 @@ public class Programs implements ProgramInterface {
         }
     }
 
-    /*
-     CompletableFuture<> completableFuture
-             = CompletableFuture.supplyAsync(() -> {
-
-     });
-
-         return completableFuture;*/
     public CompletionStage<Boolean> isSubscribed(String userid, String programid) {
         CompletableFuture<Boolean> completableFuture
                 = CompletableFuture.supplyAsync(() -> {
@@ -446,19 +485,25 @@ public class Programs implements ProgramInterface {
 
 
     public void createKataSubscription(String kataid, String programid, String userid, String status) {
+
+
         database.getCollection("Users").updateOne(eq("_id", userid), push("programSubscriptions.$[index].katas", new KataSubscription(kataid, status, "", 0)), new UpdateOptions().arrayFilters(Arrays.asList(
                 eq("index.idprogram", programid)
         )));
+
     }
 
     public void incrementKataSubscriptionAttempt(String kataid, String programid, String userid) {
+
         database.getCollection("Users").updateOne(eq("_id", userid), inc("programSubscriptions.$[i].katas.$[j].nbAttempt", 1), new UpdateOptions().arrayFilters(Arrays.asList(
                 eq("i.idprogram", programid),
                 eq("j._id", kataid)
         )));
+
     }
 
     public void updateKataSubscription(String kataid, String programid, String userid, String sol, String status) {
+
         database.getCollection("Users").updateOne(eq("_id", userid), combine(
                 set("programSubscriptions.$[i].katas.$[j].mysol", sol),
                 set("programSubscriptions.$[i].katas.$[j].status", status),
@@ -467,9 +512,11 @@ public class Programs implements ProgramInterface {
                 eq("i.idprogram", programid),
                 eq("j._id", kataid)
         )));
+
     }
 
     public void deleteProgram(String programid) {
+
         database.getCollection("Users").updateMany(eq("programSubscriptions.idprogram", programid), pull("programSubscriptions", new BasicDBObject("idprogram", programid)));
         database.getCollection("Programs").deleteOne(eq("_id", programid));
         File index = new File("kataDocuments/" + programid);
@@ -499,8 +546,7 @@ public class Programs implements ProgramInterface {
         CompletableFuture<String> completableFuture
                 = CompletableFuture.supplyAsync(() -> {
             deleteKata(k.getId(), programid);
-            database.getCollection("Programs").updateOne(eq("_id", programid), push("katas", k));
-            create(k,programid,k.getTitle() != "GOAL");
+            create(k, programid, k.getTitle() != "GOAL");
             return programid;
 
         });

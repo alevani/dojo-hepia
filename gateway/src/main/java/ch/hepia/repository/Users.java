@@ -10,7 +10,8 @@ import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
 
 import java.util.Arrays;
-import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionStage;
 
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Updates.combine;
@@ -32,24 +33,28 @@ public class Users implements UserInterface {
     }
 
     public void create(User u) {
-        database.getCollection("Users", User.class).insertOne(u);
+        CompletableFuture.supplyAsync(() -> {
+            database.getCollection("Users", User.class).insertOne(u);
+            return null;
+        });
     }
 
-    public Optional<User> checkUserCredentials(String username, String password) {
-        User u = database.getCollection("Users", User.class).find(combine(eq("username", username), eq("password", password))).first();
+    public User checkUserCredentials(String username, String password) {
 
-        if (u == null)
-            return Optional.empty();
-        else
-            return Optional.of(u);
+        return database.getCollection("Users", User.class).find(combine(eq("username", username), eq("password", password))).first();
+
     }
 
-    public boolean isExisting(String username) {
-        User u = database.getCollection("Users", User.class).find(eq("username", username)).first();
-        if(u==null)
-            return false;
-        else
-            return true;
+    public CompletionStage<Boolean> isExisting(String username) {
+        CompletableFuture<Boolean> completableFuture
+                = CompletableFuture.supplyAsync(() -> {
+            User u = database.getCollection("Users", User.class).find(eq("username", username)).first();
+            if (u == null)
+                return false;
+            else
+                return true;
+        });
 
+        return completableFuture;
     }
 }
