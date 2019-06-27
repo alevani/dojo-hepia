@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d8fb2c1-8426-4933-8193-ee68625cf8de" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../assets/document/THESE.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/document/THESE.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/kata/Kata.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/kata/KataShowCase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/kata/KataSubscription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/program/Program.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/program/ProgramShowCase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/program/ProgramSubscription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/user/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/ProgramInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/Programs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/UserInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/Users.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/App.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -42,7 +32,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/DockerCompilation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-15">
+            <state relative-caret-position="15">
               <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
             </state>
           </provider>
@@ -113,8 +103,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -150,6 +138,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -298,12 +288,14 @@
       <workItem from="1561453874318" duration="1071000" />
       <workItem from="1561472208583" duration="113000" />
       <workItem from="1561472372281" duration="437000" />
-      <workItem from="1561623037805" duration="1115000" />
+      <workItem from="1561623037805" duration="1574000" />
+      <workItem from="1561625515244" duration="228000" />
+      <workItem from="1561625991543" duration="525000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81544000" />
+    <option name="totallyTimeSpent" value="82756000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -316,9 +308,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29872206" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30511183" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -464,20 +455,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker/python/dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="92" column="2" selection-start-line="92" selection-start-column="2" selection-end-line="92" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://MODULES/mdl-05">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -488,16 +465,10 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="47.5" y="10.0" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="48.0" y="10.0" />
           <SelectedNodes />
           <Categories />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
@@ -513,21 +484,42 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="228.04518964959215" y="187.23607659799495" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="228.0" y="187.0" />
           <SelectedNodes />
           <Categories>
+            <Category>Fields</Category>
             <Category>Constructors</Category>
             <Category>Methods</Category>
-            <Category>Fields</Category>
           </Categories>
           <SCOPE>Project Files</SCOPE>
           <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker/python/dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="92" column="2" selection-start-line="92" selection-start-column="2" selection-end-line="92" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DockerCompilation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
+        <state relative-caret-position="15">
           <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
         </state>
       </provider>
