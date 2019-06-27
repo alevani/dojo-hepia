@@ -2,13 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d8fb2c1-8426-4933-8193-ee68625cf8de" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../assets/document/THESE.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/document/THESE.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/services/kata/kata-subscription.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/services/kata/kata-subscription.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DockerCompilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DockerCompilation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/app.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/kata/Kata.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/kata/KataShowCase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/kata/KataSubscription.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/program/Program.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/program/ProgramShowCase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/program/ProgramSubscription.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/user/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/ProgramInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/Programs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/UserInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/Users.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -32,44 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/DockerCompilation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="-15">
               <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="uml://JAVA/">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>JAVA</ID>
-              <OriginalElement />
-              <nodes>
-                <node x="88.0" y="144.0">App</node>
-                <node x="-32.0" y="-79.0">HostCompilation</node>
-                <node x="0.0" y="0.0">DockerCompilation</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="App" target="DockerCompilation">
-                  <point x="-40.5" y="-24.0" />
-                  <point x="128.5" y="119.0" />
-                  <point x="84.5" y="119.0" />
-                  <point x="-84.5" y="47.0" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="1.0" x="228.04518964959215" y="187.23607659799495" />
-              <SelectedNodes />
-              <Categories>
-                <Category>Constructors</Category>
-                <Category>Methods</Category>
-                <Category>Fields</Category>
-              </Categories>
-              <SCOPE>Project Files</SCOPE>
-              <VISIBILITY>private</VISIBILITY>
             </state>
           </provider>
         </entry>
@@ -324,12 +298,12 @@
       <workItem from="1561453874318" duration="1071000" />
       <workItem from="1561472208583" duration="113000" />
       <workItem from="1561472372281" duration="437000" />
-      <workItem from="1561623037805" duration="462000" />
+      <workItem from="1561623037805" duration="1115000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80891000" />
+    <option name="totallyTimeSpent" value="81544000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -527,32 +501,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DockerCompilation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://JAVA/">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
           <ID>JAVA</ID>
           <OriginalElement />
           <nodes>
-            <node x="88.0" y="144.0">App</node>
-            <node x="-32.0" y="-79.0">HostCompilation</node>
-            <node x="0.0" y="0.0">DockerCompilation</node>
+            <node x="" y="">App</node>
+            <node x="" y="">HostCompilation</node>
+            <node x="" y="">DockerCompilation</node>
           </nodes>
           <notes />
-          <edges>
-            <edge source="App" target="DockerCompilation">
-              <point x="-40.5" y="-24.0" />
-              <point x="128.5" y="119.0" />
-              <point x="84.5" y="119.0" />
-              <point x="-84.5" y="47.0" />
-            </edge>
-          </edges>
+          <edges />
           <settings layout="Hierarchic Group" zoom="1.0" x="228.04518964959215" y="187.23607659799495" />
           <SelectedNodes />
           <Categories>
@@ -562,6 +522,13 @@
           </Categories>
           <SCOPE>Project Files</SCOPE>
           <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DockerCompilation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
         </state>
       </provider>
     </entry>

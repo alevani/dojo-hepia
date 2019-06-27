@@ -13,7 +13,7 @@ import java.util.concurrent.CompletionStage;
 public interface ProgramInterface {
     void create(Program program);
 
-    void create(Kata kata, String programid,boolean goal);
+    void create(Kata kata, String programid, boolean goal);
 
     CompletionStage<List<ProgramShowCase>> programsDetails();
 
@@ -35,11 +35,11 @@ public interface ProgramInterface {
 
     CompletionStage<KataSubscription> kataSubscriptionById(String kataid, String programid, String userid);
 
-    void createKataSubscription(String kataid, String programid, String userid, String status  );
+    void createKataSubscription(String kataid, String programid, String userid, String status);
 
     void deleteProgram(String programid);
 
-    void deleteKata(String kataid,String programid);
+    void deleteKata(String kataid, String programid);
 
     CompletionStage<Boolean> isProgramOwner(String userid, String programid);
 
@@ -49,9 +49,9 @@ public interface ProgramInterface {
 
     CompletionStage<String> update(Kata k, String programid);
 
-    void toggleKataActivation(String kataid,String programid);
+    void toggleKataActivation(String kataid, String programid);
 
-    void duplicateProgram(String programid,String newprogramid,String title);
+    void duplicateProgram(String programid, String newprogramid, String title);
 
     void incrementKataSubscriptionAttempt(String kataid, String programid, String userid);
 

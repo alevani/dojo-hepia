@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6a1f2e5-4f60-4227-82bb-83eb10fa94a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../assets/document/THESE.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/document/THESE.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/services/kata/kata-subscription.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/services/kata/kata-subscription.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../compilation/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../compilation/src/main/java/DockerCompilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/src/main/java/DockerCompilation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/Kata.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/KataShowCase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/KataSubscription.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/Program.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/ProgramShowCase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/ProgramSubscription.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/model/user/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/UserInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Users.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,249 +42,8 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file pinned="false" current-in-tab="true">
-              <entry file="uml://JAVA/">
-                <provider selected="true" editor-type-id="UmlEditorProvider">
-                  <state>
-                    <ID>JAVA</ID>
-                    <OriginalElement />
-                    <nodes>
-                      <node x="1663.4525" y="3876.0">App</node>
-                      <node x="43.8125" y="1463.0">ch.hepia.model.program.Program</node>
-                      <node x="1064.9525" y="1705.0">ch.hepia.model.program.ProgramShowCase</node>
-                      <node x="488.9525000000001" y="2288.0">ch.hepia.repository.ProgramInterface</node>
-                      <node x="1818.9637500000003" y="3306.0">ch.hepia.repository.Users</node>
-                      <node x="1731.9637500000003" y="2552.0">ch.hepia.repository.UserInterface</node>
-                      <node x="1206.76125" y="0.0">ch.hepia.model.kata.KataSubscription</node>
-                      <node x="1862.4637500000001" y="1616.5">ch.hepia.model.user.User</node>
-                      <node x="44.26125000000002" y="452.0">ch.hepia.model.kata.Kata</node>
-                      <node x="307.8125" y="1771.0">ch.hepia.model.kata.KataShowCase</node>
-                      <node x="632.9525000000002" y="2998.0">ch.hepia.repository.Programs</node>
-                      <node x="1759.0529166666668" y="837.5">ch.hepia.model.program.ProgramSubscription</node>
-                    </nodes>
-                    <notes />
-                    <edges>
-                      <edge source="ch.hepia.repository.Programs" target="ch.hepia.model.kata.KataSubscription">
-                        <point x="161.8749999999999" y="-399.0" />
-                        <point x="1072.3275" y="2958.0" />
-                        <point x="1653.4525" y="2958.0" />
-                        <point x="1653.4525" y="432.0" />
-                        <point x="1404.88625" y="432.0" />
-                        <point x="39.625" y="201.0" />
-                      </edge>
-                      <edge source="ch.hepia.repository.Users" target="ch.hepia.repository.UserInterface">
-                        <point x="-81.75" y="-91.0" />
-                        <point x="1900.7137500000003" y="2978.0" />
-                        <point x="1895.4637500000003" y="2978.0" />
-                        <point x="0.0" y="46.0" />
-                      </edge>
-                      <edge source="ch.hepia.repository.Users" target="ch.hepia.model.user.User">
-                        <point x="81.75" y="-91.0" />
-                        <point x="2064.2137500000003" y="2978.0" />
-                        <point x="2069.4637500000003" y="2978.0" />
-                        <point x="2069.4637500000003" y="2268.0" />
-                        <point x="2028.5887500000001" y="2268.0" />
-                        <point x="-55.375" y="234.0" />
-                      </edge>
-                      <edge source="App" target="ch.hepia.model.program.Program">
-                        <point x="-103.25" y="-68.5" />
-                        <point x="1707.7025" y="3846.0" />
-                        <point x="11.0" y="3846.0" />
-                        <point x="11.0" y="2268.0" />
-                        <point x="84.3125" y="2268.0" />
-                        <point x="-81.0" y="387.5" />
-                      </edge>
-                      <edge source="App" target="ch.hepia.repository.Users">
-                        <point x="14.75" y="-68.5" />
-                        <point x="1825.7025" y="3816.0" />
-                        <point x="1900.7137500000003" y="3816.0" />
-                        <point x="-81.75" y="91.0" />
-                      </edge>
-                      <edge source="ch.hepia.repository.ProgramInterface" target="ch.hepia.model.kata.Kata">
-                        <point x="-46.25" y="-310.0" />
-                        <point x="720.2025000000001" y="2268.0" />
-                        <point x="771.6875" y="2268.0" />
-                        <point x="771.6875" y="1423.0" />
-                        <point x="250.51125000000002" y="1423.0" />
-                        <point x="93.75" y="475.5" />
-                      </edge>
-                      <edge source="App" target="ch.hepia.model.program.ProgramShowCase">
-                        <point x="-14.75" y="-68.5" />
-                        <point x="1796.2025" y="3816.0" />
-                        <point x="1721.4637500000003" y="3816.0" />
-                        <point x="1721.4637500000003" y="2268.0" />
-                        <point x="1570.7025" y="2268.0" />
-                        <point x="216.75" y="145.5" />
-                      </edge>
-                      <edge source="ch.hepia.repository.ProgramInterface" target="ch.hepia.model.program.ProgramShowCase">
-                        <point x="231.25" y="-310.0" />
-                        <point x="997.7025000000001" y="2268.0" />
-                        <point x="1137.2025" y="2268.0" />
-                        <point x="-216.75" y="145.5" />
-                      </edge>
-                      <edge source="ch.hepia.model.user.User" target="ch.hepia.model.program.ProgramSubscription">
-                        <point x="110.74999999999977" y="-234.0" />
-                        <point x="2194.71375" y="1433.0" />
-                        <point x="1954.0529166666668" y="1433.0" />
-                        <point x="65.0" y="90.0" />
-                      </edge>
-                      <edge source="ch.hepia.repository.ProgramInterface" target="ch.hepia.model.program.Program">
-                        <point x="-231.25" y="-310.0" />
-                        <point x="535.2025000000001" y="2258.0" />
-                        <point x="246.3125" y="2258.0" />
-                        <point x="81.0" y="387.5" />
-                      </edge>
-                      <edge source="ch.hepia.repository.ProgramInterface" target="ch.hepia.model.kata.KataSubscription">
-                        <point x="46.25" y="-310.0" />
-                        <point x="812.7025000000001" y="2268.0" />
-                        <point x="791.8125" y="2268.0" />
-                        <point x="791.8125" y="422.0" />
-                        <point x="1246.38625" y="422.0" />
-                        <point x="-118.875" y="201.0" />
-                      </edge>
-                      <edge source="ch.hepia.repository.Programs" target="ch.hepia.model.kata.KataShowCase">
-                        <point x="-69.37500000000011" y="-399.0" />
-                        <point x="841.0775000000001" y="2938.0" />
-                        <point x="454.74541666666676" y="2938.0" />
-                        <point x="454.74541666666676" y="2268.0" />
-                        <point x="498.3125" y="2268.0" />
-                        <point x="0.0" y="79.5" />
-                      </edge>
-                      <edge source="ch.hepia.repository.Programs" target="ch.hepia.model.kata.Kata">
-                        <point x="-254.3750000000001" y="-399.0" />
-                        <point x="656.0775000000001" y="2978.0" />
-                        <point x="33.3125" y="2978.0" />
-                        <point x="33.3125" y="1433.0" />
-                        <point x="100.51125000000002" y="1433.0" />
-                        <point x="-56.25" y="475.5" />
-                      </edge>
-                      <edge source="ch.hepia.model.program.Program" target="ch.hepia.model.kata.Kata">
-                        <point x="60.75" y="-387.5" />
-                        <point x="226.0625" y="1443.0" />
-                        <point x="175.51125000000002" y="1443.0" />
-                        <point x="18.75" y="475.5" />
-                      </edge>
-                      <edge source="App" target="ch.hepia.model.user.User">
-                        <point x="73.75" y="-68.5" />
-                        <point x="1884.7025" y="3836.0" />
-                        <point x="2156.4637500000003" y="3836.0" />
-                        <point x="2156.4637500000003" y="2268.0" />
-                        <point x="2139.33875" y="2268.0" />
-                        <point x="55.375" y="234.0" />
-                      </edge>
-                      <edge source="ch.hepia.repository.ProgramInterface" target="ch.hepia.model.program.ProgramSubscription">
-                        <point x="138.75" y="-310.0" />
-                        <point x="905.2025000000001" y="2268.0" />
-                        <point x="835.0112500000001" y="2268.0" />
-                        <point x="835.0112500000001" y="1423.0" />
-                        <point x="1780.7195833333335" y="1423.0" />
-                        <point x="-108.33333333333326" y="90.0" />
-                      </edge>
-                      <edge source="ch.hepia.repository.ProgramInterface" target="ch.hepia.model.kata.KataShowCase">
-                        <point x="-138.75" y="-310.0" />
-                        <point x="627.7025000000001" y="2268.0" />
-                        <point x="625.3125" y="2268.0" />
-                        <point x="127.0" y="79.5" />
-                      </edge>
-                      <edge source="ch.hepia.model.program.ProgramSubscription" target="ch.hepia.model.kata.KataSubscription">
-                        <point x="0.0" y="-90.0" />
-                        <point x="1889.0529166666668" y="422.0" />
-                        <point x="1484.13625" y="422.0" />
-                        <point x="118.875" y="201.0" />
-                      </edge>
-                      <edge source="ch.hepia.repository.Programs" target="ch.hepia.model.program.Program">
-                        <point x="-208.1250000000001" y="-399.0" />
-                        <point x="702.3275000000001" y="2968.0" />
-                        <point x="165.3125" y="2968.0" />
-                        <point x="0.0" y="387.5" />
-                      </edge>
-                      <edge source="ch.hepia.repository.Programs" target="ch.hepia.model.program.ProgramSubscription">
-                        <point x="254.3749999999999" y="-399.0" />
-                        <point x="1164.8275" y="2978.0" />
-                        <point x="1707.7025" y="2978.0" />
-                        <point x="1707.7025" y="1443.0" />
-                        <point x="1867.38625" y="1443.0" />
-                        <point x="-21.666666666666742" y="90.0" />
-                      </edge>
-                      <edge source="App" target="ch.hepia.model.kata.Kata">
-                        <point x="-132.75" y="-68.5" />
-                        <point x="1678.2025" y="3856.0" />
-                        <point x="0.0" y="3856.0" />
-                        <point x="0.0" y="1423.0" />
-                        <point x="63.01125000000002" y="1423.0" />
-                        <point x="-93.75" y="475.5" />
-                      </edge>
-                      <edge source="ch.hepia.repository.Programs" target="ch.hepia.repository.ProgramInterface">
-                        <point x="-23.125000000000114" y="-399.0" />
-                        <point x="887.3275000000001" y="2928.0" />
-                        <point x="766.4525000000001" y="2928.0" />
-                        <point x="0.0" y="310.0" />
-                      </edge>
-                      <edge source="ch.hepia.repository.UserInterface" target="ch.hepia.model.user.User">
-                        <point x="-2.2737367544323206E-13" y="-46.0" />
-                        <point x="1895.46375" y="2268.0" />
-                        <point x="1917.8387500000001" y="2268.0" />
-                        <point x="-166.125" y="234.0" />
-                      </edge>
-                      <edge source="ch.hepia.repository.Programs" target="ch.hepia.model.program.ProgramShowCase">
-                        <point x="115.62499999999989" y="-399.0" />
-                        <point x="1026.0775" y="2948.0" />
-                        <point x="1370.76125" y="2948.0" />
-                        <point x="1370.76125" y="2268.0" />
-                        <point x="1426.2025" y="2268.0" />
-                        <point x="72.25" y="145.5" />
-                      </edge>
-                      <edge source="App" target="ch.hepia.model.program.ProgramSubscription">
-                        <point x="132.75" y="-68.5" />
-                        <point x="1943.7025" y="3856.0" />
-                        <point x="2315.9637500000003" y="3856.0" />
-                        <point x="2315.9637500000003" y="1423.0" />
-                        <point x="1997.38625" y="1423.0" />
-                        <point x="108.33333333333326" y="90.0" />
-                      </edge>
-                      <edge source="App" target="ch.hepia.repository.Programs">
-                        <point x="-73.75" y="-68.5" />
-                        <point x="1737.2025" y="3836.0" />
-                        <point x="771.7025000000002" y="3836.0" />
-                        <point x="-138.75" y="399.0" />
-                      </edge>
-                    </edges>
-                    <settings layout="Hierarchic Group" zoom="1.288353924782345" x="1102.7114256878376" y="236.88833716872014" />
-                    <SelectedNodes />
-                    <Categories>
-                      <Category>Inner Classes</Category>
-                      <Category>Constructors</Category>
-                      <Category>Methods</Category>
-                      <Category>Fields</Category>
-                    </Categories>
-                    <SCOPE>Project Files</SCOPE>
-                    <VISIBILITY>private</VISIBILITY>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/KataSubscription.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -287,7 +54,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>update(</find>
       <find>deleteP</find>
       <find>dup</find>
       <find>duploc</find>
@@ -317,6 +83,7 @@
       <find>idrogram</find>
       <find>idprogr</find>
       <find>issu</find>
+      <find>ProgramSho</find>
     </findStrings>
     <replaceStrings>
       <replace>Users</replace>
@@ -364,13 +131,16 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/MongoDB.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/cursors/Programs.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/ProgramShowCase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/Program.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Users.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramInterface.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" />
         <option value="$PROJECT_DIR$/src/main/java/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/KataSubscription.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/Kata.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/Program.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/model/user/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Users.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" />
+        <option value="$PROJECT_DIR$/src/main/java/java/ch/hepia/model/kata/Kata.java" />
       </list>
     </option>
   </component>
@@ -432,40 +202,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hepia" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hepia" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gateway" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hepia" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="kata" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -478,7 +214,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -621,12 +357,12 @@
       <workItem from="1561553842432" duration="7485000" />
       <workItem from="1561564326524" duration="810000" />
       <workItem from="1561565578398" duration="1123000" />
-      <workItem from="1561617269430" duration="2588000" />
+      <workItem from="1561617269430" duration="3279000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="316394000" />
+    <option name="totallyTimeSpent" value="317085000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -639,7 +375,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1200" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49924126" visible="true" weight="0.36741215" />
       <window_info id="Structure" order="1" sideWeight="0.5007587" side_tool="true" weight="0.20127796" />
@@ -834,13 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/program/ProgramSubscription.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.10.2/mongo-java-driver-3.10.2.jar!/com/mongodb/client/model/Aggregates.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
@@ -852,27 +580,10 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/LiveDB.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/KataShowCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/cursors/Katas.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/modals/interfaces/Users.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/ProgramsDataBase.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/MongoDB.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/UserInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://JavaScript-modules-diagram//Users/freak/Desktop/dojo-hepia/gateway">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -906,13 +617,6 @@
           </Categories>
           <SCOPE>All</SCOPE>
           <VISIBILITY>Details</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/program/ProgramShowCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -950,16 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Users.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/io/javalin/javalin/2.8.0/javalin-2.8.0.jar!/io/javalin/Context.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
@@ -969,26 +663,6 @@
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/io/javalin/javalin/2.8.0/javalin-2.8.0.jar!/io/javalin/core/util/ContextUtil.class">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/program/Program.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="102" selection-start-line="102" selection-end-line="102" />
-          <folding>
-            <element signature="e#1992#1993#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/user/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="uml://JAVA/ch.hepia.model.kata.Kata">
       <provider selected="true" editor-type-id="UmlEditorProvider">
@@ -1034,290 +708,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://JAVA/">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement />
-          <nodes>
-            <node x="1663.4525" y="3876.0">App</node>
-            <node x="43.8125" y="1463.0">ch.hepia.model.program.Program</node>
-            <node x="1064.9525" y="1705.0">ch.hepia.model.program.ProgramShowCase</node>
-            <node x="488.9525000000001" y="2288.0">ch.hepia.repository.ProgramInterface</node>
-            <node x="1818.9637500000003" y="3306.0">ch.hepia.repository.Users</node>
-            <node x="1731.9637500000003" y="2552.0">ch.hepia.repository.UserInterface</node>
-            <node x="1206.76125" y="0.0">ch.hepia.model.kata.KataSubscription</node>
-            <node x="1862.4637500000001" y="1616.5">ch.hepia.model.user.User</node>
-            <node x="44.26125000000002" y="452.0">ch.hepia.model.kata.Kata</node>
-            <node x="307.8125" y="1771.0">ch.hepia.model.kata.KataShowCase</node>
-            <node x="632.9525000000002" y="2998.0">ch.hepia.repository.Programs</node>
-            <node x="1759.0529166666668" y="837.5">ch.hepia.model.program.ProgramSubscription</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="ch.hepia.repository.Programs" target="ch.hepia.model.kata.KataSubscription">
-              <point x="161.8749999999999" y="-399.0" />
-              <point x="1072.3275" y="2958.0" />
-              <point x="1653.4525" y="2958.0" />
-              <point x="1653.4525" y="432.0" />
-              <point x="1404.88625" y="432.0" />
-              <point x="39.625" y="201.0" />
-            </edge>
-            <edge source="ch.hepia.repository.Users" target="ch.hepia.repository.UserInterface">
-              <point x="-81.75" y="-91.0" />
-              <point x="1900.7137500000003" y="2978.0" />
-              <point x="1895.4637500000003" y="2978.0" />
-              <point x="0.0" y="46.0" />
-            </edge>
-            <edge source="ch.hepia.repository.Users" target="ch.hepia.model.user.User">
-              <point x="81.75" y="-91.0" />
-              <point x="2064.2137500000003" y="2978.0" />
-              <point x="2069.4637500000003" y="2978.0" />
-              <point x="2069.4637500000003" y="2268.0" />
-              <point x="2028.5887500000001" y="2268.0" />
-              <point x="-55.375" y="234.0" />
-            </edge>
-            <edge source="App" target="ch.hepia.model.program.Program">
-              <point x="-103.25" y="-68.5" />
-              <point x="1707.7025" y="3846.0" />
-              <point x="11.0" y="3846.0" />
-              <point x="11.0" y="2268.0" />
-              <point x="84.3125" y="2268.0" />
-              <point x="-81.0" y="387.5" />
-            </edge>
-            <edge source="App" target="ch.hepia.repository.Users">
-              <point x="14.75" y="-68.5" />
-              <point x="1825.7025" y="3816.0" />
-              <point x="1900.7137500000003" y="3816.0" />
-              <point x="-81.75" y="91.0" />
-            </edge>
-            <edge source="ch.hepia.repository.ProgramInterface" target="ch.hepia.model.kata.Kata">
-              <point x="-46.25" y="-310.0" />
-              <point x="720.2025000000001" y="2268.0" />
-              <point x="771.6875" y="2268.0" />
-              <point x="771.6875" y="1423.0" />
-              <point x="250.51125000000002" y="1423.0" />
-              <point x="93.75" y="475.5" />
-            </edge>
-            <edge source="App" target="ch.hepia.model.program.ProgramShowCase">
-              <point x="-14.75" y="-68.5" />
-              <point x="1796.2025" y="3816.0" />
-              <point x="1721.4637500000003" y="3816.0" />
-              <point x="1721.4637500000003" y="2268.0" />
-              <point x="1570.7025" y="2268.0" />
-              <point x="216.75" y="145.5" />
-            </edge>
-            <edge source="ch.hepia.repository.ProgramInterface" target="ch.hepia.model.program.ProgramShowCase">
-              <point x="231.25" y="-310.0" />
-              <point x="997.7025000000001" y="2268.0" />
-              <point x="1137.2025" y="2268.0" />
-              <point x="-216.75" y="145.5" />
-            </edge>
-            <edge source="ch.hepia.model.user.User" target="ch.hepia.model.program.ProgramSubscription">
-              <point x="110.74999999999977" y="-234.0" />
-              <point x="2194.71375" y="1433.0" />
-              <point x="1954.0529166666668" y="1433.0" />
-              <point x="65.0" y="90.0" />
-            </edge>
-            <edge source="ch.hepia.repository.ProgramInterface" target="ch.hepia.model.program.Program">
-              <point x="-231.25" y="-310.0" />
-              <point x="535.2025000000001" y="2258.0" />
-              <point x="246.3125" y="2258.0" />
-              <point x="81.0" y="387.5" />
-            </edge>
-            <edge source="ch.hepia.repository.ProgramInterface" target="ch.hepia.model.kata.KataSubscription">
-              <point x="46.25" y="-310.0" />
-              <point x="812.7025000000001" y="2268.0" />
-              <point x="791.8125" y="2268.0" />
-              <point x="791.8125" y="422.0" />
-              <point x="1246.38625" y="422.0" />
-              <point x="-118.875" y="201.0" />
-            </edge>
-            <edge source="ch.hepia.repository.Programs" target="ch.hepia.model.kata.KataShowCase">
-              <point x="-69.37500000000011" y="-399.0" />
-              <point x="841.0775000000001" y="2938.0" />
-              <point x="454.74541666666676" y="2938.0" />
-              <point x="454.74541666666676" y="2268.0" />
-              <point x="498.3125" y="2268.0" />
-              <point x="0.0" y="79.5" />
-            </edge>
-            <edge source="ch.hepia.repository.Programs" target="ch.hepia.model.kata.Kata">
-              <point x="-254.3750000000001" y="-399.0" />
-              <point x="656.0775000000001" y="2978.0" />
-              <point x="33.3125" y="2978.0" />
-              <point x="33.3125" y="1433.0" />
-              <point x="100.51125000000002" y="1433.0" />
-              <point x="-56.25" y="475.5" />
-            </edge>
-            <edge source="ch.hepia.model.program.Program" target="ch.hepia.model.kata.Kata">
-              <point x="60.75" y="-387.5" />
-              <point x="226.0625" y="1443.0" />
-              <point x="175.51125000000002" y="1443.0" />
-              <point x="18.75" y="475.5" />
-            </edge>
-            <edge source="App" target="ch.hepia.model.user.User">
-              <point x="73.75" y="-68.5" />
-              <point x="1884.7025" y="3836.0" />
-              <point x="2156.4637500000003" y="3836.0" />
-              <point x="2156.4637500000003" y="2268.0" />
-              <point x="2139.33875" y="2268.0" />
-              <point x="55.375" y="234.0" />
-            </edge>
-            <edge source="ch.hepia.repository.ProgramInterface" target="ch.hepia.model.program.ProgramSubscription">
-              <point x="138.75" y="-310.0" />
-              <point x="905.2025000000001" y="2268.0" />
-              <point x="835.0112500000001" y="2268.0" />
-              <point x="835.0112500000001" y="1423.0" />
-              <point x="1780.7195833333335" y="1423.0" />
-              <point x="-108.33333333333326" y="90.0" />
-            </edge>
-            <edge source="ch.hepia.repository.ProgramInterface" target="ch.hepia.model.kata.KataShowCase">
-              <point x="-138.75" y="-310.0" />
-              <point x="627.7025000000001" y="2268.0" />
-              <point x="625.3125" y="2268.0" />
-              <point x="127.0" y="79.5" />
-            </edge>
-            <edge source="ch.hepia.model.program.ProgramSubscription" target="ch.hepia.model.kata.KataSubscription">
-              <point x="0.0" y="-90.0" />
-              <point x="1889.0529166666668" y="422.0" />
-              <point x="1484.13625" y="422.0" />
-              <point x="118.875" y="201.0" />
-            </edge>
-            <edge source="ch.hepia.repository.Programs" target="ch.hepia.model.program.Program">
-              <point x="-208.1250000000001" y="-399.0" />
-              <point x="702.3275000000001" y="2968.0" />
-              <point x="165.3125" y="2968.0" />
-              <point x="0.0" y="387.5" />
-            </edge>
-            <edge source="ch.hepia.repository.Programs" target="ch.hepia.model.program.ProgramSubscription">
-              <point x="254.3749999999999" y="-399.0" />
-              <point x="1164.8275" y="2978.0" />
-              <point x="1707.7025" y="2978.0" />
-              <point x="1707.7025" y="1443.0" />
-              <point x="1867.38625" y="1443.0" />
-              <point x="-21.666666666666742" y="90.0" />
-            </edge>
-            <edge source="App" target="ch.hepia.model.kata.Kata">
-              <point x="-132.75" y="-68.5" />
-              <point x="1678.2025" y="3856.0" />
-              <point x="0.0" y="3856.0" />
-              <point x="0.0" y="1423.0" />
-              <point x="63.01125000000002" y="1423.0" />
-              <point x="-93.75" y="475.5" />
-            </edge>
-            <edge source="ch.hepia.repository.Programs" target="ch.hepia.repository.ProgramInterface">
-              <point x="-23.125000000000114" y="-399.0" />
-              <point x="887.3275000000001" y="2928.0" />
-              <point x="766.4525000000001" y="2928.0" />
-              <point x="0.0" y="310.0" />
-            </edge>
-            <edge source="ch.hepia.repository.UserInterface" target="ch.hepia.model.user.User">
-              <point x="-2.2737367544323206E-13" y="-46.0" />
-              <point x="1895.46375" y="2268.0" />
-              <point x="1917.8387500000001" y="2268.0" />
-              <point x="-166.125" y="234.0" />
-            </edge>
-            <edge source="ch.hepia.repository.Programs" target="ch.hepia.model.program.ProgramShowCase">
-              <point x="115.62499999999989" y="-399.0" />
-              <point x="1026.0775" y="2948.0" />
-              <point x="1370.76125" y="2948.0" />
-              <point x="1370.76125" y="2268.0" />
-              <point x="1426.2025" y="2268.0" />
-              <point x="72.25" y="145.5" />
-            </edge>
-            <edge source="App" target="ch.hepia.model.program.ProgramSubscription">
-              <point x="132.75" y="-68.5" />
-              <point x="1943.7025" y="3856.0" />
-              <point x="2315.9637500000003" y="3856.0" />
-              <point x="2315.9637500000003" y="1423.0" />
-              <point x="1997.38625" y="1423.0" />
-              <point x="108.33333333333326" y="90.0" />
-            </edge>
-            <edge source="App" target="ch.hepia.repository.Programs">
-              <point x="-73.75" y="-68.5" />
-              <point x="1737.2025" y="3836.0" />
-              <point x="771.7025000000002" y="3836.0" />
-              <point x="-138.75" y="399.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.288353924782345" x="1102.7114256878376" y="236.88833716872014" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Inner Classes</Category>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-            <Category>Fields</Category>
-          </Categories>
-          <SCOPE>Project Files</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/Kata.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-          <folding>
-            <element signature="e#264#265#0" expanded="true" />
-            <element signature="e#297#298#0" expanded="true" />
-            <element signature="e#350#351#0" expanded="true" />
-            <element signature="e#394#395#0" expanded="true" />
-            <element signature="e#426#427#0" expanded="true" />
-            <element signature="e#454#455#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
-            <element signature="e#530#531#0" expanded="true" />
-            <element signature="e#562#563#0" expanded="true" />
-            <element signature="e#590#591#0" expanded="true" />
-            <element signature="e#632#633#0" expanded="true" />
-            <element signature="e#666#667#0" expanded="true" />
-            <element signature="e#700#701#0" expanded="true" />
-            <element signature="e#730#731#0" expanded="true" />
-            <element signature="e#776#777#0" expanded="true" />
-            <element signature="e#814#815#0" expanded="true" />
-            <element signature="e#849#850#0" expanded="true" />
-            <element signature="e#880#881#0" expanded="true" />
-            <element signature="e#928#929#0" expanded="true" />
-            <element signature="e#968#969#0" expanded="true" />
-            <element signature="e#1000#1001#0" expanded="true" />
-            <element signature="e#1028#1029#0" expanded="true" />
-            <element signature="e#1070#1071#0" expanded="true" />
-            <element signature="e#1104#1105#0" expanded="true" />
-            <element signature="e#1140#1141#0" expanded="true" />
-            <element signature="e#1172#1173#0" expanded="true" />
-            <element signature="e#1222#1223#0" expanded="true" />
-            <element signature="e#1264#1265#0" expanded="true" />
-            <element signature="e#1302#1303#0" expanded="true" />
-            <element signature="e#1335#1336#0" expanded="true" />
-            <element signature="e#1387#1388#0" expanded="true" />
-            <element signature="e#1431#1432#0" expanded="true" />
-            <element signature="e#1466#1467#0" expanded="true" />
-            <element signature="e#1497#1498#0" expanded="true" />
-            <element signature="e#1545#1546#0" expanded="true" />
-            <element signature="e#1585#1586#0" expanded="true" />
-            <element signature="e#1615#1616#0" expanded="true" />
-            <element signature="e#1641#1642#0" expanded="true" />
-            <element signature="e#1679#1680#0" expanded="true" />
-            <element signature="e#1709#1710#0" expanded="true" />
-            <element signature="e#1738#1739#0" expanded="true" />
-            <element signature="e#1763#1764#0" expanded="true" />
-            <element signature="e#1799#1800#0" expanded="true" />
-            <element signature="e#1827#1828#0" expanded="true" />
-            <element signature="e#1863#1864#0" expanded="true" />
-            <element signature="e#1895#1896#0" expanded="true" />
-            <element signature="e#1946#1947#0" expanded="true" />
-            <element signature="e#1988#1989#0" expanded="true" />
-            <element signature="e#2022#2023#0" expanded="true" />
-            <element signature="e#2052#2053#0" expanded="true" />
-            <element signature="e#2099#2100#0" expanded="true" />
-            <element signature="e#2137#2138#0" expanded="true" />
-            <element signature="e#2172#2173#0" expanded="true" />
-            <element signature="e#2203#2204#0" expanded="true" />
-            <element signature="e#2251#2252#0" expanded="true" />
-            <element signature="e#2291#2292#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -1328,10 +718,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/KataShowCase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="270" selection-start-line="270" selection-end-line="270" />
+        <state relative-caret-position="60">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/Kata.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#264#265#0" expanded="true" />
+            <element signature="e#297#298#0" expanded="true" />
+            <element signature="e#350#351#0" expanded="true" />
+            <element signature="e#394#395#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/program/Program.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="e#1939#1940#0" expanded="true" />
+            <element signature="e#1992#1993#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/program/ProgramShowCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/program/ProgramSubscription.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/user/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1348,12 +786,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/KataSubscription.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/UserInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+        <state relative-caret-position="90">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Users.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="" y="">App</node>
+            <node x="" y="">ch.hepia.model.program.Program</node>
+            <node x="" y="">ch.hepia.model.program.ProgramShowCase</node>
+            <node x="" y="">ch.hepia.repository.ProgramInterface</node>
+            <node x="" y="">ch.hepia.repository.Users</node>
+            <node x="" y="">ch.hepia.repository.UserInterface</node>
+            <node x="" y="">ch.hepia.model.kata.KataSubscription</node>
+            <node x="" y="">ch.hepia.model.user.User</node>
+            <node x="" y="">ch.hepia.model.kata.Kata</node>
+            <node x="" y="">ch.hepia.model.kata.KataShowCase</node>
+            <node x="" y="">ch.hepia.repository.Programs</node>
+            <node x="" y="">ch.hepia.model.program.ProgramSubscription</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.7675107458664362" x="814.8892736869223" y="418.99299887931363" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Inner Classes</Category>
+            <Category>Constructors</Category>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>Project Files</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="84" column="35" selection-start-line="84" selection-start-column="35" selection-end-line="84" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/model/kata/KataSubscription.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+          <folding>
+            <element signature="e#484#485#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/java/ch/hepia/model/kata/Kata.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
