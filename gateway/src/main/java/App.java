@@ -333,7 +333,7 @@ public class App {
 
         /** KATA SUBSCRIPTION **/
 
-        app.get("kata/get/subscriptioninfos/:userid/:programid/:kataid", ctx -> {
+        app.get("subscription/:programid/kata/:kataid/user/:userid", ctx -> {
             ctx.json(dbPrograms.kataSubscriptionById(ctx.pathParam("kataid"), ctx.pathParam("programid"), ctx.pathParam("userid")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 

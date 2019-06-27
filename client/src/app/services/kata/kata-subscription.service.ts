@@ -17,8 +17,8 @@ export class KataSubscriptionService {
 
   }
 
-  get(kataid: string, programid: string, userid: string): Observable<KataSubscription>{
-    return this.http.get<KataSubscription>('http://localhost:7000/kata/get/subscriptioninfos/' + userid + '/' + programid + '/' + kataid);
+  get(kataid: string, programid: string, userid: string): Observable<KataSubscription> {
+    return this.http.get<KataSubscription>('http://localhost:7000/subscription/' + programid + '/kata/' + kataid + '/user/' + userid);
   }
 
   update(obj: string) {

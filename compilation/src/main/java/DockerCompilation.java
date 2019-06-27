@@ -27,7 +27,7 @@ public class DockerCompilation {
         this.filenameDic.put("java", java);
     }
 
-    public Map<String, Object> execute_kata(JSONObject input) {
+    public Map<String, Object> executeKata(JSONObject input) {
 
 
         String line, output = "", error = "";
