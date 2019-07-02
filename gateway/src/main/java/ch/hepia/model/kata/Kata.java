@@ -1,11 +1,9 @@
 package ch.hepia.model.kata;
 
 public class Kata {
-    private String _id, id,title, canva, cassert, solution, rules,difficulty,language,filename;
-    private boolean keepAssert,activated,hasfile;
+    private String _id, id, title, canva, cassert, solution, rules, difficulty, language, filename;
+    private boolean keepAssert, activated, hasfile, closed;
     private double nbAttempt;
-
-
 
 
     public boolean isKeepAssert() {
@@ -119,5 +117,14 @@ public class Kata {
 
     public void setFilename(String filepath) {
         this.filename = filepath;
+    }
+
+
+    public boolean isClosed() {
+        return closed;
+    }
+
+    public void setClosed(boolean closed) {
+        this.closed = closed;
     }
 }

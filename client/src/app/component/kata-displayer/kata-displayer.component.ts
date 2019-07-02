@@ -102,8 +102,9 @@ export class KataDisplayerComponent implements OnInit {
   }
 
   reloadKatas() {
-    this.kataService.getKatasDetails(this.programid, this.currentUser.id).subscribe((datas: KataShowCase[]) => {
-      this.katas = datas;
+    this.kataService.getKatasDetails(this.programid, this.currentUser.id).subscribe((katas: KataShowCase[]) => {
+      console.log(katas);
+      this.katas = katas;
     });
   }
 
@@ -179,8 +180,15 @@ export class KataDisplayerComponent implements OnInit {
 
   }
 
-  deactivate(id: string): void {
+  toggleactivation(id: string): void {
     this.kataService.toggleActivation(id, this.programid).subscribe(() => {
+      this.reloadKatas();
+
+    });
+  }
+
+  toggleclose(id: string): void {
+    this.kataService.toggleIsClosed(id, this.programid).subscribe(() => {
       this.reloadKatas();
 
     });

@@ -12,4 +12,5 @@ export interface Kata {
   activated: boolean;
   filename: string;
   hasfile: boolean;
+  closed: boolean;
 }

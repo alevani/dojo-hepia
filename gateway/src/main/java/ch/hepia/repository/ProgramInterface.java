@@ -51,6 +51,11 @@ public interface ProgramInterface {
 
     void toggleKataActivation(String kataid, String programid);
 
+
+    void toggleIsClosed(String kataid, String programid);
+
+    CompletionStage<Boolean> isKataClosed(String kataid, String programid);
+
     void duplicateProgram(String programid, String newprogramid, String title);
 
     void incrementKataSubscriptionAttempt(String kataid, String programid, String userid);

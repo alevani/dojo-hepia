@@ -18,6 +18,8 @@ export class CardNoneallDisplayerComponent implements OnInit {
   // @ts-ignore
   programNonFiltered: object;
 
+
+
   querySearch(type: string, res: string) {
 
     this.programs = this.programNonFiltered;
@@ -37,7 +39,6 @@ export class CardNoneallDisplayerComponent implements OnInit {
 
   ngOnInit() {
     this.programNonFiltered = this.programs;
-
   }
 
 }

@@ -38,7 +38,7 @@
         disabled>{{result}}</textarea>
     </div>
 
-    <div class="p-2">
+    <div class="p-2" *ngIf="!isClosed">
 
       <button mat-button [hidden]="!isResolved" [disabled]="newTry" (click)="newtry()" style="margin-right: 10px">Try again</button>
       <button mat-button [disabled]="compiling || (isResolved && !newTry )"

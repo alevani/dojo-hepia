@@ -170,7 +170,8 @@ export class KataCreateComponent implements OnInit {
       difficulty: 'White belt',
       activated: true,
       hasfile: !this.choiceMK,
-      filename: fpath
+      filename: fpath,
+      closed: false
 
     }), this.programId, false).subscribe(() => {
       this.router.navigate(['/kata-displayer/' + this.programId + '']);

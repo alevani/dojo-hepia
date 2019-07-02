@@ -50,6 +50,8 @@ export class KataComponent implements OnInit {
   result = '';
   programid = '';
 
+  isClosed = false;
+
   // @ts-ignore
   program: Program;
 
@@ -242,53 +244,58 @@ export class KataComponent implements OnInit {
 
     this.kataSubscriptionService.isSubscribed(this.auth.currentUserValue.id, this.programid).subscribe((isSubscribed: boolean) => {
       this.kataService.isActivated(this.kataid, this.programid).subscribe((data: boolean) => {
-        if (!isSubscribed || !data) {
-          this.router.navigate([/kata-displayer/ + this.programid]);
-        } else {
-          this.kataSubscriptionService.get(this.kataid, this.programid, this.auth.currentUserValue.id).subscribe((kata: KataSubscription) => {
-            this.kataInfo = kata;
-            if (this.kataInfo.id === null) {
-              let newStatus = 'ONGOING';
+        this.kataService.isClosed(this.kataid, this.programid).subscribe((isClosed: boolean) => {
 
-              if (this.isGoal) {
-                newStatus = 'DONE';
-              }
+          this.isClosed = isClosed;
+          if (!isSubscribed || !data) {
+            this.router.navigate([/kata-displayer/ + this.programid]);
+          } else {
+            // tslint:disable-next-line:max-line-length
+            this.kataSubscriptionService.get(this.kataid, this.programid, this.auth.currentUserValue.id).subscribe((kata: KataSubscription) => {
+              this.kataInfo = kata;
+              if (this.kataInfo.id === null) {
+                let newStatus = 'ONGOING';
 
-              this.kataSubscriptionService.create(JSON.stringify({
-                id: uuid(),
-                status: newStatus,
-                kataid: this.kataid,
-                programid: this.programid,
-                userid: this.auth.currentUserValue.id
-              })).subscribe(() => {
-                this.nbAttempt = 0;
-                this.kataStatus = 'ONGOING';
                 if (this.isGoal) {
-                  this.kataSubscriptionService.update(JSON.stringify({
-                    kataid: this.kataid,
-                    programid: this.programid,
-                    userid: this.auth.currentUserValue.id,
-                    sol: 'read.',
-                    status: newStatus
-                  })).subscribe(() => {
-                    this.katareceived = true;
-                  });
+                  newStatus = 'DONE';
+                }
+
+                this.kataSubscriptionService.create(JSON.stringify({
+                  id: uuid(),
+                  status: newStatus,
+                  kataid: this.kataid,
+                  programid: this.programid,
+                  userid: this.auth.currentUserValue.id
+                })).subscribe(() => {
+                  this.nbAttempt = 0;
+                  this.kataStatus = 'ONGOING';
+                  if (this.isGoal) {
+                    this.kataSubscriptionService.update(JSON.stringify({
+                      kataid: this.kataid,
+                      programid: this.programid,
+                      userid: this.auth.currentUserValue.id,
+                      sol: 'read.',
+                      status: newStatus
+                    })).subscribe(() => {
+                      this.katareceived = true;
+                    });
+                  }
+                  this.katareceived = true;
+                });
+              } else {
+                this.nbAttempt = this.kataInfo.nbAttempt;
+                this.kataStatus = this.kataInfo.status;
+                if (this.kataInfo.status === 'RESOLVED' || this.kataInfo.status === 'FAILED') {
+                  this.isResolved = true;
+                  this.kata.canva = this.kataInfo.mysol;
                 }
                 this.katareceived = true;
-              });
-            } else {
-              this.nbAttempt = this.kataInfo.nbAttempt;
-              this.kataStatus = this.kataInfo.status;
-              if (this.kataInfo.status === 'RESOLVED' || this.kataInfo.status === 'FAILED') {
-                this.isResolved = true;
-                this.kata.canva = this.kataInfo.mysol;
               }
-              this.katareceived = true;
-            }
-          }, (error1: any) => {
-            console.log(error1);
-          });
-        }
+            }, (error1: any) => {
+              console.log(error1);
+            });
+          }
+        });
       });
     });
 

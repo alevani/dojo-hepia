@@ -27,6 +27,7 @@
   background: var(--color-dark-blue);
 }
 
+
 .mat-menu-item {
   color: var(--color-cloud) !important;
 }
@@ -87,6 +88,10 @@ a:hover{
 
 .DISABLED{
   color: rgba(9, 132, 227, 1.0);
+}
+
+.CLOSED{
+   color : #34495e;
 }
 
 .README{

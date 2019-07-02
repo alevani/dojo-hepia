@@ -77,6 +77,17 @@ public class Programs implements ProgramInterface {
 // TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
 // TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
 // TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
+    // TODO SI ON PEUT JE PEUX METTRE LES EFFACER LES QUERY DANS LES TOGGLE ET LES REMPLACER AVEC LES ISKATAACTIVATED/CLOSED
+    // TODO SI ON PEUT JE PEUX METTRE LES EFFACER LES QUERY DANS LES TOGGLE ET LES REMPLACER AVEC LES ISKATAACTIVATED/CLOSED
+    // TODO SI ON PEUT JE PEUX METTRE LES EFFACER LES QUERY DANS LES TOGGLE ET LES REMPLACER AVEC LES ISKATAACTIVATED/CLOSED
+    // TODO SI ON PEUT JE PEUX METTRE LES EFFACER LES QUERY DANS LES TOGGLE ET LES REMPLACER AVEC LES ISKATAACTIVATED/CLOSED
+    // TODO SI ON PEUT JE PEUX METTRE LES EFFACER LES QUERY DANS LES TOGGLE ET LES REMPLACER AVEC LES ISKATAACTIVATED/CLOSED
+    // TODO SI ON PEUT JE PEUX METTRE LES EFFACER LES QUERY DANS LES TOGGLE ET LES REMPLACER AVEC LES ISKATAACTIVATED/CLOSED
+    // TODO SI ON PEUT JE PEUX METTRE LES EFFACER LES QUERY DANS LES TOGGLE ET LES REMPLACER AVEC LES ISKATAACTIVATED/CLOSED
+    // TODO SI ON PEUT JE PEUX METTRE LES EFFACER LES QUERY DANS LES TOGGLE ET LES REMPLACER AVEC LES ISKATAACTIVATED/CLOSED
+    // TODO SI ON PEUT JE PEUX METTRE LES EFFACER LES QUERY DANS LES TOGGLE ET LES REMPLACER AVEC LES ISKATAACTIVATED/CLOSED
+    // TODO SI ON PEUT JE PEUX METTRE LES EFFACER LES QUERY DANS LES TOGGLE ET LES REMPLACER AVEC LES ISKATAACTIVATED/CLOSED
+    // TODO SI ON PEUT JE PEUX METTRE LES EFFACER LES QUERY DANS LES TOGGLE ET LES REMPLACER AVEC LES ISKATAACTIVATED/CLOSED
 
     public void create(Program program) {
         CompletableFuture.supplyAsync(() -> {
@@ -148,6 +159,21 @@ public class Programs implements ProgramInterface {
 
     }
 
+    public CompletionStage<Boolean> isKataClosed(String kataid, String programid) {
+        CompletableFuture<Boolean> completableFuture
+                = CompletableFuture.supplyAsync(() -> database.getCollection("Programs", Kata.class).aggregate(Arrays.asList(
+                match(eq("_id", programid)),
+                unwind("$katas"),
+                project(
+                        fields(excludeId(), include("katas"))),
+                match(eq("katas._id", kataid)),
+                replaceRoot("$katas")
+        )).iterator().next().isClosed());
+
+        return completableFuture;
+
+    }
+
     public CompletionStage<List<KataShowCase>> kataDetails(String programid, String userid) {
 
         CompletableFuture<List<KataShowCase>> completableFuture
@@ -161,7 +187,7 @@ public class Programs implements ProgramInterface {
 
             ArrayList<KataShowCase> ktsc = new ArrayList<>();
             for (Kata x : kata)
-                ktsc.add(new KataShowCase(x.getTitle(), x.getDifficulty(), x.getId(), getKataStatus(x.getId(), programid, userid), x.isActivated()));
+                ktsc.add(new KataShowCase(x.getTitle(), x.getDifficulty(), x.getId(), getKataStatus(x.getId(), programid, userid), x.isActivated(), x.isClosed()));
 
             return ktsc;
         });
@@ -303,7 +329,7 @@ public class Programs implements ProgramInterface {
     }
 
     public void toggleKataActivation(String kataid, String programid) {
-        int number;
+        int number = 0;
         boolean isActivated = database.getCollection("Programs", Kata.class).aggregate(Arrays.asList(
                 match(eq("_id", programid)),
                 project(fields(excludeId(), include("katas"))),
@@ -313,6 +339,7 @@ public class Programs implements ProgramInterface {
 
         )).first().isActivated();
 
+
         if (isActivated) {
             decrementResolvedKata(kataid, programid);
             number = -1;
@@ -321,11 +348,54 @@ public class Programs implements ProgramInterface {
             incrementResolvedKata(kataid, programid);
         }
 
+
         database.getCollection("Programs").updateOne(eq("_id", programid), combine(inc("nbKata", number), set("katas.$[i].activated", !isActivated)), new UpdateOptions().arrayFilters(Arrays.asList(
                 eq("i._id", kataid)
         )));
 
     }
+
+    public void toggleIsClosed(String kataid, String programid) {
+        int number = 0;
+        boolean isClosed = database.getCollection("Programs", Kata.class).aggregate(Arrays.asList(
+                match(eq("_id", programid)),
+                project(fields(excludeId(), include("katas"))),
+                unwind("$katas"),
+                replaceRoot("$katas"),
+                match(eq("_id", kataid))
+
+        )).first().isClosed();
+
+
+        if (!isClosed) {
+            decrementResolvedKata(kataid, programid);
+            number = -1;
+        } else  {
+            number = 1;
+            incrementResolvedKata(kataid, programid);
+        }
+
+
+        database.getCollection("Programs").updateOne(eq("_id", programid), combine(inc("nbKata", number), set("katas.$[i].closed", !isClosed)), new UpdateOptions().arrayFilters(Arrays.asList(
+                eq("i._id", kataid)
+        )));
+
+    }
+
+
+            import static org.junit.Assert.*;
+
+            public class Main {
+
+                public static void main(String[] args) {
+                    // Example :
+                    // assertEquals(Kata.yourfunction(someValues,targetedValues))
+                }
+            }
+            public class Kata {
+
+            }
+
 
     public CompletionStage<List<ProgramShowCase>> userSubscriptions(String userid) {
 
@@ -556,11 +626,13 @@ public class Programs implements ProgramInterface {
 
     public void deleteKata(String kataid, String programid) {
 
-        isKataActivated(kataid, programid).toCompletableFuture().thenAccept(x -> {
-            if (x) {
-                decrementResolvedKata(kataid, programid);
-                database.getCollection("Programs").updateOne(eq("_id", programid), inc("nbKata", -1));
-            }
+        isKataActivated(kataid, programid).toCompletableFuture().thenAccept(isActivated -> {
+            isKataClosed(kataid, programid).toCompletableFuture().thenAccept(isClosed -> {
+                if (isActivated || !isClosed) {
+                    decrementResolvedKata(kataid, programid);
+                    database.getCollection("Programs").updateOne(eq("_id", programid), inc("nbKata", -1));
+                }
+            });
         });
 
         database.getCollection("Users").updateMany(eq("programSubscriptions.katas._id", kataid), pull("programSubscriptions.$[i].katas", new BasicDBObject("_id", kataid)), new UpdateOptions().arrayFilters(Arrays.asList(

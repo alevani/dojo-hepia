@@ -29,6 +29,10 @@ export class KataService {
     return this.http.put('http://localhost:7000/program/' + programid + '/kata/' + kataid + '/toggleactivation', '');
   }
 
+  toggleIsClosed(kataid: string, programid: string) {
+    return this.http.put('http://localhost:7000/program/' + programid + '/kata/' + kataid + '/toggleisclosed', '');
+  }
+
   isOwner(kataid: string, userid: string, programid: string): Observable<boolean> {
     return this.http.get<boolean>('http://localhost:7000/program/' + programid + '/kata/' + kataid + '/user/' + userid + '/isowner');
   }
@@ -39,6 +43,10 @@ export class KataService {
 
   isActivated(kataid: string, programid: string): Observable<boolean> {
     return this.http.get<boolean>('http://localhost:7000/program/' + programid + '/kata/' + kataid + '/isactivated');
+  }
+
+  isClosed(kataid: string, programid: string): Observable<boolean> {
+    return this.http.get<boolean>('http://localhost:7000/program/' + programid + '/kata/' + kataid + '/isclosed');
   }
 
   upload(file: FormData, programid: string): Observable<string> {

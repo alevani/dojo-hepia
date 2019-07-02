@@ -117,7 +117,8 @@ export class KataEditComponent implements OnInit {
       keepAssert: this.f.assert.value,
       nbAttempt: this.f.number.value,
       difficulty: 'White Belt',
-      activated: this.kata.activated
+      activated: this.kata.activated,
+      closed: this.kata.closed
     }), this.programid).subscribe((data: string) => {
       this.router.navigate(['kata-displayer/' + data]);
     });
@@ -126,7 +127,7 @@ export class KataEditComponent implements OnInit {
 
   ngOnInit() {
     this.kataid = this.route.snapshot.paramMap.get('id') as string;
-    this.programid = this.route.snapshot.paramMap.get('programid') as string ;
+    this.programid = this.route.snapshot.paramMap.get('programid') as string;
     this.language = this.route.snapshot.paramMap.get('language') as string;
 
     this.getKata();

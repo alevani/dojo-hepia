@@ -4,6 +4,7 @@ export interface KataShowCase {
   id: string;
   status: string;
   activated: boolean;
+  closed: boolean;
 }
 
 

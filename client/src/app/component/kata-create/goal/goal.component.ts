@@ -57,7 +57,8 @@ export class GoalComponent implements OnInit {
       title: 'GOALS',
       difficulty: 'Introduction',
       rules: this.f.instruction.value,
-      activated: true
+      activated: true,
+      closed: false
 
     }), this.programid, true).subscribe(data => this.router.navigate(['/kata-displayer/' + this.programid + '']));
   }

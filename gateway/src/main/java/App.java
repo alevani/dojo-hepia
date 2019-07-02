@@ -224,6 +224,10 @@ public class App {
             ctx.status(200).json(dbPrograms.isKataActivated(ctx.pathParam("kataid"), ctx.pathParam("programid")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
+        app.get("program/:programid/kata/:kataid/isclosed", ctx -> {
+            ctx.status(200).json(dbPrograms.isKataClosed(ctx.pathParam("kataid"), ctx.pathParam("programid")).toCompletableFuture());
+        }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
+
         app.get("program/:programid/kata/:kataid", ctx -> {
             ctx.json(dbPrograms.kata(ctx.pathParam("kataid"), ctx.pathParam("programid")).toCompletableFuture());
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
@@ -249,6 +253,11 @@ public class App {
 
         app.put("program/:programid/kata/:kataid/toggleactivation", ctx -> {
             dbPrograms.toggleKataActivation(ctx.pathParam("kataid"), ctx.pathParam("programid"));
+            ctx.status(200);
+        }, roles(Roles.SHODAI, Roles.SENSEI));
+
+        app.put("program/:programid/kata/:kataid/toggleisclosed", ctx -> {
+            dbPrograms.toggleIsClosed(ctx.pathParam("kataid"), ctx.pathParam("programid"));
             ctx.status(200);
         }, roles(Roles.SHODAI, Roles.SENSEI));
 

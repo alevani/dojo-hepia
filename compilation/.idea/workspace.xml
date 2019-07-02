@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8d8fb2c1-8426-4933-8193-ee68625cf8de" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../assets/document/THESE.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/document/THESE.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/kata/Kata.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/kata/Kata.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/kata/KataShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/kata/KataShowCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/ProgramInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/ProgramInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/Programs.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/Programs.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -30,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/DockerCompilation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+            <state relative-caret-position="362">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -288,12 +294,13 @@
       <workItem from="1561472372281" duration="437000" />
       <workItem from="1561623037805" duration="1574000" />
       <workItem from="1561625515244" duration="228000" />
-      <workItem from="1561625991543" duration="525000" />
+      <workItem from="1561625991543" duration="652000" />
+      <workItem from="1561709776845" duration="796000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82756000" />
+    <option name="totallyTimeSpent" value="83679000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -305,10 +312,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30511183" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3090129" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -518,8 +525,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DockerCompilation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+        <state relative-caret-position="362">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>

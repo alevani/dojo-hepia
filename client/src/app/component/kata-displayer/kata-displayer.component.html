@@ -40,10 +40,15 @@
           <div class="card-body">
             <h5 class="card-title" [ngClass]="kata.activated ? '' : 'deactivatedcard'"><a class="title"
                                                                                           routerLink="/kata/{{programid}}/{{kata.id}}">{{kata.title}}</a>
-            <span style="float:right;" *ngIf="kata.activated && !(kata.title ==='GOALS')"
+            <span style="float:right;" *ngIf="!kata.closed && kata.activated && !(kata.title ==='GOALS')"
                   [ngClass]="{'TODO':kata.status==='TODO','ONGOING':kata.status==='ONGOING','RESOLVED':kata.status==='RESOLVED','FAILED': kata.status==='FAILED'}">{{kata.status}}</span>
-            <span style="float:right;" *ngIf="!kata.activated && !(kata.title ==='GOALS')"
-                  class="DISABLED">DISABLED</span>
+
+              <span style="float:right;" *ngIf="!kata.activated && !(kata.title ==='GOALS')"
+                    class="DISABLED">DISABLED</span>
+
+              <span style="float:right;" *ngIf="kata.closed && kata.activated && !(kata.title ==='GOALS')"
+                    class="CLOSED">CLOSED</span>
+
             <span style="float:right;" *ngIf="kata.title ==='GOALS'"
                   class="README"><span *ngIf="kata.status === 'TODO'">READ ME !</span><span
               *ngIf="!(kata.status === 'TODO')">DONE</span></span></h5>
@@ -54,8 +59,14 @@
 
       <mat-menu #kataActions="matMenu">
         <button *ngIf="kata.title !== 'GOALS'" mat-menu-item (click)="edit(kata.id)">Edit</button>
-        <button *ngIf="kata.title !== 'GOALS' && kata.activated" mat-menu-item (click)="deactivate(kata.id)">Disable</button>
-        <button *ngIf="kata.title !== 'GOALS' && !kata.activated" mat-menu-item (click)="deactivate(kata.id)">Enable</button>
+        <span *ngIf="!kata.closed">
+        <button *ngIf="kata.title !== 'GOALS' && kata.activated" mat-menu-item (click)="toggleactivation(kata.id)">Disable</button>
+        <button *ngIf="kata.title !== 'GOALS' && !kata.activated" mat-menu-item (click)="toggleactivation(kata.id)">Enable</button>
+        </span>
+        <span *ngIf="kata.activated">
+        <button *ngIf="kata.title !== 'GOALS' && !kata.closed" mat-menu-item (click)="toggleclose(kata.id)">Close</button>
+        <button *ngIf="kata.title !== 'GOALS' && kata.closed" mat-menu-item (click)="toggleclose(kata.id)">Open</button>
+          </span>
         <button mat-menu-item (click)="delete(kata.id)">Delete</button>
       </mat-menu>
       </div>
