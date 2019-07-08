@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d8fb2c1-8426-4933-8193-ee68625cf8de" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assets/document/THESE.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/document/THESE.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/program/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/program/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/program/ProgramShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/program/ProgramShowCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/model/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/Programs.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/ch/hepia/repository/Programs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/app$Roles.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/app$Roles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/app.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/model/program/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/model/program/Program.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/model/program/ProgramShowCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/model/program/ProgramShowCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/model/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/model/user/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/ProgramInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/ProgramInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/Programs.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/Programs.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -306,12 +290,12 @@
       <workItem from="1561625991543" duration="652000" />
       <workItem from="1561709776845" duration="796000" />
       <workItem from="1562247435317" duration="222000" />
-      <workItem from="1562589894307" duration="289000" />
+      <workItem from="1562589894307" duration="563000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84190000" />
+    <option name="totallyTimeSpent" value="84464000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

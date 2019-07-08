@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6a1f2e5-4f60-4227-82bb-83eb10fa94a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assets/document/THESE.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/document/THESE.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/component/kata/kata.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/ProgramShowCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/ProgramShowCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/model/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app$Roles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app$Roles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/model/program/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ch/hepia/model/program/Program.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/model/program/ProgramShowCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ch/hepia/model/program/ProgramShowCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/model/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ch/hepia/model/user/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/ProgramInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ch/hepia/repository/ProgramInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/Programs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ch/hepia/repository/Programs.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -463,12 +447,12 @@
       <workItem from="1562169327924" duration="100000" />
       <workItem from="1562224513275" duration="227000" />
       <workItem from="1562241655591" duration="2189000" />
-      <workItem from="1562589893170" duration="289000" />
+      <workItem from="1562589893170" duration="596000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="329982000" />
+    <option name="totallyTimeSpent" value="330289000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
