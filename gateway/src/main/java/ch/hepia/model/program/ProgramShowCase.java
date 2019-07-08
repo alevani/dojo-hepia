@@ -1,15 +1,15 @@
 package ch.hepia.model.program;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class ProgramShowCase {
     public String title, sensei, language, description, id,password;
     public int nbKata;
-    public ArrayList<String> tags;
+    public List<String> tags;
     public int nbKataDone;
 
 
-    public ProgramShowCase(String title, String sensei, String language, String description, int nbKata, ArrayList<String> tags, String id, int nbKataDone) {
+    public ProgramShowCase(String title, String sensei, String language, String description, int nbKata, List<String> tags, String id, int nbKataDone) {
         this.title = title;
         this.sensei = sensei;
         this.language = language;
@@ -22,7 +22,7 @@ public class ProgramShowCase {
 
     }
 
-    public ProgramShowCase(String title, String sensei, String language, String description, int nbKata, ArrayList<String> tags, String id, String password) {
+    public ProgramShowCase(String title, String sensei, String language, String description, int nbKata, List<String> tags, String id, String password) {
         this.title = title;
         this.sensei = sensei;
         this.language = language;

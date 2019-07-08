@@ -2,11 +2,12 @@ package ch.hepia.model.user;
 
 import ch.hepia.model.program.ProgramSubscription;
 
-import java.util.ArrayList;
+
+import java.util.List;
 
 public class User {
     private String id, _id, username, password, level;
-    private ArrayList<ProgramSubscription> programSubscriptions;
+    private List<ProgramSubscription> programSubscriptions;
 
     public User(String id, String username, String level, String password) {
         this.id = id;
@@ -15,7 +16,8 @@ public class User {
         this.password = password;
     }
 
-    public User(){}
+    public User() {
+    }
 
     public String getId() {
         return id;
@@ -58,11 +60,11 @@ public class User {
     }
 
 
-    public ArrayList<ProgramSubscription> getProgramSubscriptions() {
+    public List<ProgramSubscription> getProgramSubscriptions() {
         return programSubscriptions;
     }
 
-    public void setProgramSubscriptions(ArrayList<ProgramSubscription> programSubscriptions) {
+    public void setProgramSubscriptions(List<ProgramSubscription> programSubscriptions) {
         this.programSubscriptions = programSubscriptions;
     }
 }

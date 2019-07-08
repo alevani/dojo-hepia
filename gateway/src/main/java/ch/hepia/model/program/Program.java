@@ -2,13 +2,13 @@ package ch.hepia.model.program;
 
 import ch.hepia.model.kata.Kata;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Program {
     private String _id, id, sensei, language, title, description, idsensei, password;
-    private ArrayList<String> tags;
+    private List<String> tags;
     private int nbKata;
-    private ArrayList<Kata> katas;
+    private List<Kata> katas;
 
     public String getSensei() {
         return sensei;
@@ -51,19 +51,19 @@ public class Program {
     }
 
 
-    public ArrayList<Kata> getKatas() {
+    public List<Kata> getKatas() {
         return katas;
     }
 
-    public void setKatas(ArrayList<Kata> katas) {
+    public void setKatas(List<Kata> katas) {
         this.katas = katas;
     }
 
-    public ArrayList<String> getTags() {
+    public List<String> getTags() {
         return tags;
     }
 
-    public void setTags(ArrayList<String> tags) {
+    public void setTags(List<String> tags) {
         this.tags = tags;
     }
 

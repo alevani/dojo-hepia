@@ -51,43 +51,6 @@ public class Programs implements ProgramInterface {
 
         database.getCollection("Programs").createIndex(Indexes.ascending("title"));
     }
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-// TODO demander a cavat si ya pas moy de s'abonner au post, ou de retourner le ctx 200 seulemen quand fini ,ça eviterai beaucoup de problème
-    // TODO SI ON PEUT JE PEUX METTRE LES EFFACER LES QUERY DANS LES TOGGLE ET LES REMPLACER AVEC LES ISKATAACTIVATED/CLOSED
-    // TODO SI ON PEUT JE PEUX METTRE LES EFFACER LES QUERY DANS LES TOGGLE ET LES REMPLACER AVEC LES ISKATAACTIVATED/CLOSED
-    // TODO SI ON PEUT JE PEUX METTRE LES EFFACER LES QUERY DANS LES TOGGLE ET LES REMPLACER AVEC LES ISKATAACTIVATED/CLOSED
-    // TODO SI ON PEUT JE PEUX METTRE LES EFFACER LES QUERY DANS LES TOGGLE ET LES REMPLACER AVEC LES ISKATAACTIVATED/CLOSED
-    // TODO SI ON PEUT JE PEUX METTRE LES EFFACER LES QUERY DANS LES TOGGLE ET LES REMPLACER AVEC LES ISKATAACTIVATED/CLOSED
-    // TODO SI ON PEUT JE PEUX METTRE LES EFFACER LES QUERY DANS LES TOGGLE ET LES REMPLACER AVEC LES ISKATAACTIVATED/CLOSED
-    // TODO SI ON PEUT JE PEUX METTRE LES EFFACER LES QUERY DANS LES TOGGLE ET LES REMPLACER AVEC LES ISKATAACTIVATED/CLOSED
-    // TODO SI ON PEUT JE PEUX METTRE LES EFFACER LES QUERY DANS LES TOGGLE ET LES REMPLACER AVEC LES ISKATAACTIVATED/CLOSED
-    // TODO SI ON PEUT JE PEUX METTRE LES EFFACER LES QUERY DANS LES TOGGLE ET LES REMPLACER AVEC LES ISKATAACTIVATED/CLOSED
-    // TODO SI ON PEUT JE PEUX METTRE LES EFFACER LES QUERY DANS LES TOGGLE ET LES REMPLACER AVEC LES ISKATAACTIVATED/CLOSED
-    // TODO SI ON PEUT JE PEUX METTRE LES EFFACER LES QUERY DANS LES TOGGLE ET LES REMPLACER AVEC LES ISKATAACTIVATED/CLOSED
 
     public void create(Program program) {
         CompletableFuture.supplyAsync(() -> {
@@ -352,7 +315,6 @@ public class Programs implements ProgramInterface {
         database.getCollection("Programs").updateOne(eq("_id", programid), combine(inc("nbKata", number), set("katas.$[i].activated", !isActivated)), new UpdateOptions().arrayFilters(Arrays.asList(
                 eq("i._id", kataid)
         )));
-
     }
 
     public void toggleIsClosed(String kataid, String programid) {
@@ -383,18 +345,7 @@ public class Programs implements ProgramInterface {
     }
 
 
-            import static org.junit.Assert.*;
 
-            public class Main {
-
-                public static void main(String[] args) {
-                    // Example :
-                    // assertEquals(Kata.yourfunction(someValues,targetedValues))
-                }
-            }
-            public class Kata {
-
-            }
 
 
     public CompletionStage<List<ProgramShowCase>> userSubscriptions(String userid) {
@@ -412,7 +363,7 @@ public class Programs implements ProgramInterface {
                     replaceRoot("$programSubscriptions")
             ));
 
-            ArrayList<ProgramShowCase> prgsc = new ArrayList<>();
+            List<ProgramShowCase> prgsc = new ArrayList<>();
             MongoCollection<Program> cprograms = database.getCollection("Programs", Program.class);
 
             for (ProgramSubscription x : programids) {
@@ -430,7 +381,7 @@ public class Programs implements ProgramInterface {
         CompletableFuture<List<ProgramShowCase>> completableFuture
                 = CompletableFuture.supplyAsync(() -> {
             Iterable<Program> cprograms = database.getCollection("Programs", Program.class).find(eq("idsensei", userid));
-            ArrayList<ProgramShowCase> prgsc = new ArrayList<>();
+            List<ProgramShowCase> prgsc = new ArrayList<>();
 
             for (Program p : cprograms)
                 prgsc.add(new ProgramShowCase(p.getTitle(), p.getSensei(), p.getLanguage(), p.getDescription(), p.getNbKata(), p.getTags(), p.getId(), -1));
@@ -616,7 +567,7 @@ public class Programs implements ProgramInterface {
         CompletableFuture<String> completableFuture
                 = CompletableFuture.supplyAsync(() -> {
             deleteKata(k.getId(), programid);
-            create(k, programid, k.getTitle() != "GOAL");
+            create(k, programid, k.getTitle() == "GOAL");
             return programid;
 
         });

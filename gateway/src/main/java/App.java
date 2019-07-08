@@ -29,6 +29,8 @@ import java.net.ConnectException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.*;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionStage;
 
 import static io.javalin.security.SecurityUtil.roles;
 
@@ -64,6 +66,7 @@ public class App {
         return fileContent;
     }
 
+//TODO mettre le tuto javalni token en lien rapport et ici
 
     /**
      * Entry point of the gateway, no args needed
@@ -252,9 +255,9 @@ public class App {
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.put("program/:programid/kata/:kataid/toggleactivation", ctx -> {
-            dbPrograms.toggleKataActivation(ctx.pathParam("kataid"), ctx.pathParam("programid"));
-            ctx.status(200);
-        }, roles(Roles.SHODAI, Roles.SENSEI));
+            dbPrograms.toggleKataActivation(ctx.pathParam("kataid"), ctx.pathParam("programid");
+            ctx.json(200);
+        }), roles(Roles.SHODAI, Roles.SENSEI);
 
         app.put("program/:programid/kata/:kataid/toggleisclosed", ctx -> {
             dbPrograms.toggleIsClosed(ctx.pathParam("kataid"), ctx.pathParam("programid"));
@@ -284,7 +287,7 @@ public class App {
 
                 String token = provider.generateToken(u);
 
-                HashMap<String, String> p = new HashMap<>();
+                Map<String, String> p = new HashMap<>();
                 p.put("id", String.valueOf(u.getId()));
                 p.put("username", u.getUsername());
                 p.put("token", token);
@@ -307,7 +310,6 @@ public class App {
 
 
         /** PROGRAM SUBSCRIPTION **/
-
 
 
         app.get("subscription/:programid/user/:userid", ctx -> {
