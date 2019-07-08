@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d8fb2c1-8426-4933-8193-ee68625cf8de" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../assets/document/~$I_LOG_memoire_diplome_Vanini_2019docx.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/ProgramInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/ProgramInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/Programs.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/Programs.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -290,12 +294,12 @@
       <workItem from="1561625991543" duration="652000" />
       <workItem from="1561709776845" duration="796000" />
       <workItem from="1562247435317" duration="222000" />
-      <workItem from="1562589894307" duration="563000" />
+      <workItem from="1562589894307" duration="725000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84464000" />
+    <option name="totallyTimeSpent" value="84626000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -308,9 +312,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31616595" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31616595" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />

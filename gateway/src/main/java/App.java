@@ -255,9 +255,9 @@ public class App {
         }, roles(Roles.SHODAI, Roles.SENSEI, Roles.MONJI));
 
         app.put("program/:programid/kata/:kataid/toggleactivation", ctx -> {
-            dbPrograms.toggleKataActivation(ctx.pathParam("kataid"), ctx.pathParam("programid");
+            dbPrograms.toggleKataActivation(ctx.pathParam("kataid"), ctx.pathParam("programid"));
             ctx.json(200);
-        }), roles(Roles.SHODAI, Roles.SENSEI);
+        }, roles(Roles.SHODAI, Roles.SENSEI));
 
         app.put("program/:programid/kata/:kataid/toggleisclosed", ctx -> {
             dbPrograms.toggleIsClosed(ctx.pathParam("kataid"), ctx.pathParam("programid"));
