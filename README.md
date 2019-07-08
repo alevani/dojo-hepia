@@ -42,7 +42,7 @@ npm install
 ng serve --open
 ```
 
-#### 4. Compiler
+#### 4. Compiler service
 
 ##### 4.1 Pull java container
 
