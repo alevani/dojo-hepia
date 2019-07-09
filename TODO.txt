@@ -1,0 +1,6 @@
+- Enlever le 66,6666%
+- Changer Disabled par Hide
+- Mettre des commentaires sur tous composants
+- Voir si je peux générer des JAR pour les service de compilation et le Gateway
+- Voir pour un thème clair et le design de la réalisation d'un Kata.
+- Refaire le MongoSeed qui est pas mal buger
