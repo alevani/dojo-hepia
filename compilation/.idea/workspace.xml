@@ -2,11 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d8fb2c1-8426-4933-8193-ee68625cf8de" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../assets/document/~$I_LOG_memoire_diplome_Vanini_2019docx.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/document/ITI_LOG_memoire_diplome_Vanini_2019docx.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/document/ITI_LOG_memoire_diplome_Vanini_2019docx.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/document/ITI_LOG_memoire_diplome_Vanini_2019docx.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/mockup/Plan de travail 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/mockup/Sans titre - 1.ai" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/mockup/component/kata-tails-details.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/mockup/component/kata-tails-details.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/mockup/pic/7-512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/mockup/pic/Comments-512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/mockup/pic/Java_Logo.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/mockup/pic/MySQL.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/mockup/pic/Python_logo_and_wordmark.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/mockup/pic/check-mark-icon-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/mockup/pic/star-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/ProgramInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/ProgramInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/Programs.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/ch/hepia/repository/Programs.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,7 +43,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/DockerCompilation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="963">
+            <state relative-caret-position="585">
               <caret line="70" column="32" selection-start-line="70" selection-start-column="32" selection-end-line="70" selection-end-column="32" />
             </state>
           </provider>
@@ -105,7 +115,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -141,6 +150,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -149,8 +159,11 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -295,11 +308,13 @@
       <workItem from="1561709776845" duration="796000" />
       <workItem from="1562247435317" duration="222000" />
       <workItem from="1562589894307" duration="725000" />
+      <workItem from="1564645992557" duration="596000" />
+      <workItem from="1564820401620" duration="28000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84626000" />
+    <option name="totallyTimeSpent" value="85250000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -313,7 +328,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31616595" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32474965" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -523,7 +538,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DockerCompilation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="963">
+        <state relative-caret-position="585">
           <caret line="70" column="32" selection-start-line="70" selection-start-column="32" selection-end-line="70" selection-end-column="32" />
         </state>
       </provider>

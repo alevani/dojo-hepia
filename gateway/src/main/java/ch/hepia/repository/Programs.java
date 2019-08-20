@@ -60,6 +60,7 @@ public class Programs implements ProgramInterface {
     }
 
     public void create(Kata kata, String programid, boolean goal) {
+
         CompletableFuture.supplyAsync(() -> {
             if (goal)
                 database.getCollection("Programs").updateOne(eq("_id", programid), combine(inc("nbKata", 1), pushEach("katas", Arrays.asList(kata), new PushOptions().position(0))));
@@ -318,7 +319,6 @@ public class Programs implements ProgramInterface {
     }
 
     public void toggleIsClosed(String kataid, String programid) {
-        int number = 0;
         boolean isClosed = database.getCollection("Programs", Kata.class).aggregate(Arrays.asList(
                 match(eq("_id", programid)),
                 project(fields(excludeId(), include("katas"))),
@@ -329,23 +329,11 @@ public class Programs implements ProgramInterface {
         )).first().isClosed();
 
 
-        if (!isClosed) {
-            decrementResolvedKata(kataid, programid);
-            number = -1;
-        } else  {
-            number = 1;
-            incrementResolvedKata(kataid, programid);
-        }
-
-
-        database.getCollection("Programs").updateOne(eq("_id", programid), combine(inc("nbKata", number), set("katas.$[i].closed", !isClosed)), new UpdateOptions().arrayFilters(Arrays.asList(
+        database.getCollection("Programs").updateOne(eq("_id", programid), set("katas.$[i].closed", !isClosed), new UpdateOptions().arrayFilters(Arrays.asList(
                 eq("i._id", kataid)
         )));
 
     }
-
-
-
 
 
     public CompletionStage<List<ProgramShowCase>> userSubscriptions(String userid) {

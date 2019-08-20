@@ -2,13 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6a1f2e5-4f60-4227-82bb-83eb10fa94a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../assets/document/~$I_LOG_memoire_diplome_Vanini_2019docx.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/document/ITI_LOG_memoire_diplome_Vanini_2019docx.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/document/ITI_LOG_memoire_diplome_Vanini_2019docx.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/document/ITI_LOG_memoire_diplome_Vanini_2019docx.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/mockup/Plan de travail 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/mockup/Sans titre - 1.ai" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/mockup/component/kata-tails-details.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/mockup/component/kata-tails-details.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/mockup/pic/7-512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/mockup/pic/Comments-512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/mockup/pic/Java_Logo.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/mockup/pic/MySQL.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/mockup/pic/Python_logo_and_wordmark.svg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/mockup/pic/check-mark-icon-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/mockup/pic/star-icon.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../compilation/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/ProgramInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ch/hepia/repository/ProgramInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ch/hepia/repository/Programs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ch/hepia/repository/Programs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -37,11 +46,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="286" selection-start-line="286" selection-end-line="286" />
+            <state relative-caret-position="190">
+              <caret line="569" column="33" selection-start-line="569" selection-start-column="33" selection-end-line="569" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,10 +58,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
+            <state relative-caret-position="15">
               <caret line="263" column="28" selection-start-line="263" selection-start-column="12" selection-end-line="263" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -72,9 +81,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>updateK</find>
-      <find>update(ka</find>
-      <find>deleteKata</find>
       <find>isown</find>
       <find>program</find>
       <find>idpro</find>
@@ -90,7 +96,6 @@
       <find>new Katash</find>
       <find>toggl</find>
       <find>isClo</find>
-      <find>isKataClosed</find>
       <find>kataShowca</find>
       <find>isClosed</find>
       <find>togg</find>
@@ -102,6 +107,10 @@
       <find>hashma</find>
       <find>ArrayL</find>
       <find>toggleK</find>
+      <find>isKataClosed</find>
+      <find>close</find>
+      <find>delete</find>
+      <find>deletek</find>
     </findStrings>
     <replaceStrings>
       <replace>Users</replace>
@@ -159,8 +168,8 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/Program.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/model/program/ProgramShowCase.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/hepia/model/user/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" />
         <option value="$PROJECT_DIR$/src/main/java/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java" />
       </list>
     </option>
   </component>
@@ -191,8 +200,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1920" />
-    <option name="height" value="1200" />
+    <option name="x" value="1280" />
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -202,6 +212,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -287,8 +299,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -298,8 +308,11 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -454,11 +467,14 @@
       <workItem from="1562224513275" duration="227000" />
       <workItem from="1562241655591" duration="2189000" />
       <workItem from="1562589893170" duration="760000" />
+      <workItem from="1564645990972" duration="596000" />
+      <workItem from="1564820397046" duration="237000" />
+      <workItem from="1565610078620" duration="1522000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="330453000" />
+    <option name="totallyTimeSpent" value="332808000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -470,10 +486,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="1280" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49924126" visible="true" weight="0.20100144" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49924126" visible="true" weight="0.21001616" />
       <window_info id="Structure" order="1" sideWeight="0.5007587" side_tool="true" weight="0.20127796" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -482,7 +498,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32920355" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33614457" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.43835616" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39638555" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -492,7 +508,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32771084" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3180723" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3178082" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -885,20 +901,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="286" selection-start-line="286" selection-end-line="286" />
+        <state relative-caret-position="15">
+          <caret line="263" column="28" selection-start-line="263" selection-start-column="12" selection-end-line="263" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/hepia/repository/Programs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="263" column="28" selection-start-line="263" selection-start-column="12" selection-end-line="263" selection-end-column="28" />
+        <state relative-caret-position="190">
+          <caret line="569" column="33" selection-start-line="569" selection-start-column="33" selection-end-line="569" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
